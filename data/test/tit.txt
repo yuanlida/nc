@@ -1,0 +1,200 @@
+Hospital Administrator 
+Repair Occupation
+Food Service Manager 
+Promotions Supervisor 
+Processors Operator
+Promotions Manager
+Customer Manager 
+Education Other
+Engineering 
+Sales Assistant 
+Powerhouse Relay
+Sales Promotion Department 
+Emergency Medical Technicians Paramedic
+Ship Loader
+Veterinary Technologists Technician
+Economics Teachers, Postsecondary
+Special Education School Teacher
+Salesperson 
+Painters Illustrator
+Timekeeping Clerk
+Brokerage Clerk
+Biomedical Engineer
+Operator 
+Personnel Consultant 
+Correctional Officers Jailer
+Information Analyst
+Employment Consultant 
+Switchboard Operators, Including Answering Service
+OM 
+Mechanical Engineer
+Furniture Finisher
+Transit Polouse
+Motorcycle Mechanic
+Health Supervisor 
+SCW 
+Artists Worker
+Pruner
+Mobile Equipment Service Technicians Mechanic
+Transportation Security Screener
+Sports Competitor
+Clinical Director 
+Barber
+Receiving Clerk
+Physical Sciences Teachers, Postsecondary
+Registered Nurse
+Export Department 
+Database Administrator
+License Clerk
+Chemical Engineer
+Librarian 
+Airlines Sales Representative 
+Broadcast Producer 
+Measurers Recordkeeping
+Miscellaneous Religious Worker
+Cleaners Cleaner
+Model 
+Office Other
+Animal Breeder
+Police Sergeant 
+Vendors Worker
+Creative Designer 
+Nursing Aide
+Repairers Installer
+Metal Workers Other
+Meat Trimmer
+Technical Product
+Human Resources Assistant 
+Anthropology Postsecondary
+Research Specialist Staff 
+Dancers Choreographer
+Research Analyst 
+Insurance Claims Clerk
+Musicians Worker
+Sales Director 
+Loan Interviewers Clerk
+Safety Manager 
+SAD 
+Sewers, Hand
+Motion Picture Camera Operators Editor
+Customer Service Director 
+Entertainment 
+Manicurists Pedicurist
+Other Office Worker
+Public Address System Announcer
+Operators Service
+Miscellaneous Agricultural Worker
+Grinders Sharpener
+Ranch Animal
+Miscellaneous Sales Representatives, Service
+Auditor
+Marble Setter
+Production Team Leader 
+Sorters Product
+Boilermaker
+Cleaning Staff 
+Finance Director 
+Emergency Management Director
+Market Research Analysts Specialist
+Sales Executive 
+Motel Clerk
+Financial Analysis Supervisor 
+Fish Cutters Trimmer
+Singer
+Engineering Postsecondary
+Anesthesiologist
+Life Scientists, All Other
+Legal Executive
+Marine Oiler
+Traffic Control Specialist 
+Lifeguards Worker
+Social Scientists
+Supervisor of Transportation Workers
+Loading Machine Operator
+Caster
+ProfessorTeacher 
+Assets Valuation 
+Authorizers Clerk
+Occupational Therapist 
+Treasury Supervisor 
+Health Services Manager
+Operations Manager
+Preschool Teachers
+Occupational Therapy Aide
+Legal Secretary 
+Export Sales Manager 
+Couriers Messenger
+IT Manager 
+Computer Network Architect
+Telephonist 
+Booth Cashier
+Gaming Cage Worker
+Real Estate Agent 
+Motorboat Operator
+Proof-reader 
+Medical Manager
+Electronic Equipment Installers Vehicle
+Pipelayers Steamfitter
+Roof Bolters, Mining
+Security Manager 
+Writer 
+Assistant VP HR 
+Wholesale Buyer 
+Leather Worker
+Events Planner 
+Administrative Assistant 
+Production Supervisor Leader 
+Clarifying Tender
+Repair Worker
+Performance
+Communications Postsecondary
+Computer Manager
+Office Clerks, General
+Facility Manager 
+Plant Manager 
+Ship Operator
+Job Placement Officer 
+Market Development Manager 
+Gas Pumping Station Operator
+District Manager 
+Environmental Science Health
+Advertising Account Director 
+Channel Manager 
+Courier 
+Printing Press Operator
+Parking Lot Attendant
+Receptionist 
+Word Processors Typist
+Medical Doctor 
+Other Transportation Worker
+Compensation Manager
+Art Postsecondary
+Law Clerk 
+Miscellaneous Physical Scientist
+PM 
+Information Security Analyst
+Detective
+Aquacultural Animal
+Textile Worker
+Aircraft Mechanics Technician
+Compensation & Benefits Assistant 
+Miscellaneous Computer Occupation
+Metal-Refining Furnace Operators Tender
+Computer Data Input Operator 
+Regional Planner
+Amusement Attendant
+Mechanical Engineer 
+Secretarial Pool 
+Vice-President of Finance 
+AAD 
+Mining Machine Operator
+Optician 
+Therapist
+Other Sales Worker
+Nurse 
+CTO 
+Sports Worker
+Computer Operations Supervisor 
+Electronic Equipment Repairer 
+Building Cleaning Worker
+Musicians Singer
