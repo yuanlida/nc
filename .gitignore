@@ -1,3 +1,5 @@
+enmbeding_chars.*
+embeding_words.*
 gen_data/char2id.json
 gen_data/words2id.json
 # Byte-compiled / optimized / DLL files
