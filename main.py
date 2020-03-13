@@ -2,10 +2,12 @@ import tensorflow as tf
 import numpy as np
 from build_data import random_embedding, load_dic_json
 from build_data import words_json_file, chars_json_file
-# the dimension of random words and char matrix
 
+# the dimension of random words and char matrix
 dim = 300
-if __name__ == '__main__':
+
+
+def main():
     print('loading words dict')
     words_dic = load_dic_json(words_json_file)
     print('loading chars dict')
@@ -16,3 +18,6 @@ if __name__ == '__main__':
     np.save('enmbeding_chars', enmbeding_chars)
     print('embeding data saved.')
 
+
+if __name__ == '__main__':
+    main()

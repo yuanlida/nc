@@ -5,8 +5,6 @@ UNK = "<UNK>"
 NUM = "<NUM>"
 NONE = "O"
 
-
-
 # train_files = ['./data/train/loc.txt',
 #                './data/train/name.txt',
 #                './data/train/org.txt',
@@ -21,10 +19,10 @@ NONE = "O"
 
 
 train_files = ['./data/test/loc.txt',
-              './data/test/name.txt',
-              './data/test/org.txt',
-              './data/test/tel.txt',
-              './data/test/tit.txt']
+               './data/test/name.txt',
+               './data/test/org.txt',
+               './data/test/tel.txt',
+               './data/test/tit.txt']
 
 test_files = ['./data/test/loc.txt',
               './data/test/name.txt',
@@ -86,8 +84,8 @@ def random_embedding(vocab, embedding_dim):
     :return:
     """
     embedding_mat = np.random.uniform(-0.25, 0.25, (len(vocab), embedding_dim))
-    embedding_mat = np.float32(embedding_mat) ## drawing random uniform samples from embedding within range
-    return embedding_mat #represents output after one-hot matrix X embedding weight matrix = hidden layer
+    embedding_mat = np.float32(embedding_mat)  ## drawing random uniform samples from embedding within range
+    return embedding_mat  # represents output after one-hot matrix X embedding weight matrix = hidden layer
 
 
 def main():
