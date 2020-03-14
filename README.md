@@ -6,7 +6,7 @@
 2. 多分类问题 搞定
 3. 训练测试一体化  搞定
 4. 随机矩阵使用 搞定
-5. character + word  
+5. character + word  改变sequece的网络结构使其之能够实现预测功能。
 6. 选择最佳方案  
 7. 保存为TFLite  
 8. glove引入，解决大小写问题
