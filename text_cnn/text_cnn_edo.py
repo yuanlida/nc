@@ -171,7 +171,7 @@ class Dataset(object):
 
         # 去除低频词
         words = [item[0] for item in sortWordCount if item[1] >= 1]
-# todo by Dalio 这里需要修改
+
         vocab, wordEmbedding = self._getWordEmbedding(words)
         self.wordEmbedding = wordEmbedding
 
