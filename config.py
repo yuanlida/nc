@@ -1,10 +1,10 @@
-# tags = {
-#     "loc": 0,
-#     "name": 1,
-#     "org": 2,
-#     "tel": 3,
-#     "tit": 4
-# }
+tags_int = {
+    "loc": 0,
+    "name": 1,
+    "org": 2,
+    "tel": 3,
+    "tit": 4
+}
 
 tags = [
     "loc",

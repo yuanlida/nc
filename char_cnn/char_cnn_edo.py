@@ -30,6 +30,8 @@ class TrainingConfig(object):
 
 
 class ModelConfig(object):
+    numFilters = 256
+    filterSizes = [4, 4, 4]
     # 该列表中子列表的三个元素分别是卷积核的数量，卷积核的高度，池化的尺寸
     convLayers = [[256, 7, 4],
                   [256, 7, 4],
@@ -42,6 +44,7 @@ class ModelConfig(object):
 
     epsilon = 1e-3  # BN层中防止分母为0而加入的极小值
     decay = 0.999  # BN层中用来计算滑动平均的值
+    l2RegLambda = 0.0
 
 
 class Config(object):
@@ -87,6 +90,9 @@ class Dataset(object):
 
         self._charToIndex = {}
         self._indexToChar = {}
+
+        self.labelList = []
+
 
     def _readData(self, filePath):
         """
@@ -144,8 +150,9 @@ class Dataset(object):
         for i in range(len(x)):
             reviewVec = self._reviewProcess(x[i], self._sequenceLength, self._charToIndex)
             reviews.append(reviewVec)
+            labels.append(constant.tags_int[y[i]])
 
-            labels.append([y[i]])
+            # labels.append([y[i]])
 
         trainIndex = int(len(x) * rate)
 
@@ -178,7 +185,7 @@ class Dataset(object):
 
         self._charToIndex = dict(zip(vocab, list(range(len(vocab)))))
         self._indexToChar = dict(zip(list(range(len(vocab))), vocab))
-
+        self.labelList = list(range(len(constant.tags)))
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
         with open("../data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
             json.dump(self._charToIndex, f)
@@ -191,7 +198,7 @@ class Dataset(object):
         按照one的形式将字符映射成向量
         """
 
-        alphabet = [build_data.UNK] + [char for char in self._alphabet]
+        alphabet = [build_data.UNK] + [build_data.NUM] + [char for char in self._alphabet]
         vocab = [build_data.PAD] + alphabet
         charEmbedding = []
         charEmbedding.append(np.zeros(len(alphabet), dtype="float32"))
@@ -276,14 +283,14 @@ class CharCNN(object):
         # placeholders for input, output and dropuot
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
         # self.inputY = tf.placeholder(tf.float32, [None, 1], name="inputY")
-        self.inputY = tf.placeholder(tf.float32, [None], name="inputY")
+        self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
         self.dropoutKeepProb = tf.placeholder(tf.float32, name="dropoutKeepProb")
         self.isTraining = tf.placeholder(tf.bool, name="isTraining")
 
         self.epsilon = config.model.epsilon
         self.decay = config.model.decay
-        # TODO by Dalio , I don't know if it can be used.
+
         l2Loss = tf.constant(0.0)
 
         # 字符嵌入
@@ -365,24 +372,52 @@ class CharCNN(object):
 
         with tf.name_scope("outputLayer"):
             stdv = 1 / sqrt(weights[-1])
+
+            numFiltersTotal = config.model.numFilters * len(config.model.filterSizes)
+
             # 定义隐层到输出层的权重系数和偏差的初始化方法
             #             w_out = tf.Variable(tf.truncated_normal([fc_layers[-1], num_classes], stddev=0.1), name="W")
             #             b_out = tf.Variable(tf.constant(0.1, shape=[num_classes]), name="b")
 
-            wOut = tf.Variable(tf.random_uniform([config.model.fcLayers[-1], 1], minval=-stdv, maxval=stdv),
-                               dtype="float32", name="w")
-            bOut = tf.Variable(tf.random_uniform(shape=[1], minval=-stdv, maxval=stdv), name="b")
+            # wOut = tf.Variable(tf.random_uniform([config.model.fcLayers[-1], 1], minval=-stdv, maxval=stdv),
+            #                    dtype="float32", name="w")
+            wOut = tf.get_variable(
+                "outputW",
+                shape=[numFiltersTotal, config.numClasses],
+                initializer=tf.contrib.layers.xavier_initializer())
+            # bOut = tf.Variable(tf.random_uniform(shape=[1], minval=-stdv, maxval=stdv), name="b")
+            bOut = tf.Variable(tf.constant(0.1, shape=[config.numClasses]), name="outputB")
+            l2Loss += tf.nn.l2_loss(wOut)
+            l2Loss += tf.nn.l2_loss(bOut)
+
             # tf.nn.xw_plus_b就是x和w的乘积加上b
-            self.predictions = tf.nn.xw_plus_b(self.inputReshape, wOut, bOut, name="predictions")
-            # 进行二元分类
-            self.binaryPreds = tf.cast(tf.greater_equal(self.predictions, 0.0), tf.float32, name="binaryPreds")
+            self.logits = tf.nn.xw_plus_b(self.inputReshape, wOut, bOut, name="logits")
+            # self.predictions = tf.nn.xw_plus_b(self.inputReshape, wOut, bOut, name="predictions")
+            if config.numClasses == 1:
+                # self.predictions = tf.nn.xw_plus_b(self.inputReshape, wOut, bOut, name="predictions")
+                # 进行二元分类
+                # self.binaryPreds = tf.cast(tf.greater_equal(self.predictions, 0.0), tf.float32, name="binaryPreds")
+                self.predictions = tf.cast(tf.greater_equal(self.logits, 0.0), tf.int32, name="predictions")
+            elif config.numClasses > 1:
+                self.predictions = tf.argmax(self.logits, axis=-1, name="predictions")
+
+            print(self.predictions)
 
         with tf.name_scope("loss"):
             # 定义损失函数，对预测值进行softmax，再求交叉熵。
+            #
+            # losses = tf.nn.sigmoid_cross_entropy_with_logits(logits=self.predictions, labels=self.inputY)
+            # self.loss = tf.reduce_mean(losses)
+            if config.numClasses == 1:
+                losses = tf.nn.sigmoid_cross_entropy_with_logits(logits=self.logits,
+                                                                 labels=tf.cast(tf.reshape(self.inputY, [-1, 1]),
+                                                                                dtype=tf.float32))
+            elif config.numClasses > 1:
+                losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.logits, labels=self.inputY)
 
-            losses = tf.nn.sigmoid_cross_entropy_with_logits(logits=self.predictions, labels=self.inputY)
-            self.loss = tf.reduce_mean(losses)
+            self.loss = tf.reduce_mean(losses) + config.model.l2RegLambda * l2Loss
 
+# TODO by dalio , useless .
     def _batchNorm(self, x):
 
         gamma = tf.Variable(tf.ones([x.get_shape()[3].value]))
@@ -412,23 +447,175 @@ class CharCNN(object):
 
 # %%
 
-# 定义性能指标函数
+"""
+定义各类性能指标
+"""
 
-def mean(item):
-    return sum(item) / len(item)
 
-
-def genMetrics(trueY, predY, binaryPredY):
+def mean(item: list) -> float:
     """
-    生成acc和auc值
+    计算列表中元素的平均值
+    :param item: 列表对象
+    :return:
     """
+    res = sum(item) / len(item) if len(item) > 0 else 0
+    return res
 
-    auc = roc_auc_score(trueY, predY)
-    accuracy = accuracy_score(trueY, binaryPredY)
-    precision = precision_score(trueY, binaryPredY, average='macro')
-    recall = recall_score(trueY, binaryPredY, average='macro')
 
-    return round(accuracy, 4), round(auc, 4), round(precision, 4), round(recall, 4)
+def accuracy(pred_y, true_y):
+    """
+    计算二类和多类的准确率
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :return:
+    """
+    if isinstance(pred_y[0], list):
+        pred_y = [item[0] for item in pred_y]
+    corr = 0
+    for i in range(len(pred_y)):
+        if pred_y[i] == true_y[i]:
+            corr += 1
+    acc = corr / len(pred_y) if len(pred_y) > 0 else 0
+    return acc
+
+
+def binary_precision(pred_y, true_y, positive=1):
+    """
+    二类的精确率计算
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :param positive: 正例的索引表示
+    :return:
+    """
+    corr = 0
+    pred_corr = 0
+    for i in range(len(pred_y)):
+        if pred_y[i] == positive:
+            pred_corr += 1
+            if pred_y[i] == true_y[i]:
+                corr += 1
+
+    prec = corr / pred_corr if pred_corr > 0 else 0
+    return prec
+
+
+def binary_recall(pred_y, true_y, positive=1):
+    """
+    二类的召回率
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :param positive: 正例的索引表示
+    :return:
+    """
+    corr = 0
+    true_corr = 0
+    for i in range(len(pred_y)):
+        if true_y[i] == positive:
+            true_corr += 1
+            if pred_y[i] == true_y[i]:
+                corr += 1
+
+    rec = corr / true_corr if true_corr > 0 else 0
+    return rec
+
+
+def binary_f_beta(pred_y, true_y, beta=1.0, positive=1):
+    """
+    二类的f beta值
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :param beta: beta值
+    :param positive: 正例的索引表示
+    :return:
+    """
+    precision = binary_precision(pred_y, true_y, positive)
+    recall = binary_recall(pred_y, true_y, positive)
+    try:
+        f_b = (1 + beta * beta) * precision * recall / (beta * beta * precision + recall)
+    except:
+        f_b = 0
+    return f_b
+
+
+def multi_precision(pred_y, true_y, labels):
+    """
+    多类的精确率
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :param labels: 标签列表
+    :return:
+    """
+    if isinstance(pred_y[0], list):
+        pred_y = [item[0] for item in pred_y]
+
+    precisions = [binary_precision(pred_y, true_y, label) for label in labels]
+    prec = mean(precisions)
+    return prec
+
+
+def multi_recall(pred_y, true_y, labels):
+    """
+    多类的召回率
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :param labels: 标签列表
+    :return:
+    """
+    if isinstance(pred_y[0], list):
+        pred_y = [item[0] for item in pred_y]
+
+    recalls = [binary_recall(pred_y, true_y, label) for label in labels]
+    rec = mean(recalls)
+    return rec
+
+
+def multi_f_beta(pred_y, true_y, labels, beta=1.0):
+    """
+    多类的f beta值
+    :param pred_y: 预测结果
+    :param true_y: 真实结果
+    :param labels: 标签列表
+    :param beta: beta值
+    :return:
+    """
+    if isinstance(pred_y[0], list):
+        pred_y = [item[0] for item in pred_y]
+
+    f_betas = [binary_f_beta(pred_y, true_y, beta, label) for label in labels]
+    f_beta = mean(f_betas)
+    return f_beta
+
+
+def get_binary_metrics(pred_y, true_y, f_beta=1.0):
+    """
+    得到二分类的性能指标
+    :param pred_y:
+    :param true_y:
+    :param f_beta:
+    :return:
+    """
+    acc = accuracy(pred_y, true_y)
+    recall = binary_recall(pred_y, true_y)
+    precision = binary_precision(pred_y, true_y)
+    f_beta = binary_f_beta(pred_y, true_y, f_beta)
+    return acc, recall, precision, f_beta
+
+
+def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0):
+    """
+    得到多分类的性能指标
+    :param pred_y:
+    :param true_y:
+    :param labels:
+    :param f_beta:
+    :return:
+    """
+    acc = accuracy(pred_y, true_y)
+    recall = multi_recall(pred_y, true_y, labels)
+    precision = multi_precision(pred_y, true_y, labels)
+    f_beta = multi_f_beta(pred_y, true_y, labels, f_beta)
+    return acc, recall, precision, f_beta
+
 
 
 # %%
@@ -442,6 +629,7 @@ evalReviews = data.evalReviews
 evalLabels = data.evalLabels
 
 charEmbedding = data.charEmbedding
+labelList = data.labelList
 
 # 定义计算图
 with tf.Graph().as_default():
@@ -501,14 +689,21 @@ with tf.Graph().as_default():
                 cnn.dropoutKeepProb: config.model.dropoutKeepProb,
                 cnn.isTraining: True
             }
-            _, summary, step, loss, predictions, binaryPreds = sess.run(
-                [trainOp, summaryOp, globalStep, cnn.loss, cnn.predictions, cnn.binaryPreds],
+            _, summary, step, loss, predictions = sess.run(
+                [trainOp, summaryOp, globalStep, cnn.loss, cnn.predictions],
                 feed_dict)
             timeStr = datetime.datetime.now().isoformat()
-            acc, auc, precision, recall = genMetrics(batchY, predictions, binaryPreds)
+
+            # acc, auc, precision, recall = genMetrics(batchY, predictions, binaryPreds)
+            if config.numClasses == 1:
+                acc, recall, prec, f_beta = get_binary_metrics(pred_y=predictions, true_y=batchY)
+            elif config.numClasses > 1:
+                acc, recall, prec, f_beta = get_multi_metrics(pred_y=predictions, true_y=batchY,
+                                                              labels=labelList)
             print("{}, step: {}, loss: {}, acc: {}, auc: {}, precision: {}, recall: {}".format(timeStr, step, loss, acc,
                                                                                                auc, precision, recall))
             trainSummaryWriter.add_summary(summary, step)
+            return loss, acc, prec, recall, f_beta
 
 
         def devStep(batchX, batchY):
@@ -521,22 +716,27 @@ with tf.Graph().as_default():
                 cnn.dropoutKeepProb: 1.0,
                 cnn.isTraining: False
             }
-            summary, step, loss, predictions, binaryPreds = sess.run(
-                [summaryOp, globalStep, cnn.loss, cnn.predictions, cnn.binaryPreds],
+            summary, step, loss, predictions = sess.run(
+                [summaryOp, globalStep, cnn.loss, cnn.predictions],
                 feed_dict)
 
-            acc, auc, precision, recall = genMetrics(batchY, predictions, binaryPreds)
+            # acc, auc, precision, recall = genMetrics(batchY, predictions, binaryPreds)
+            if config.numClasses == 1:
+                acc, precision, recall, f_beta = get_binary_metrics(pred_y=predictions, true_y=batchY)
+            elif config.numClasses > 1:
+                acc, precision, recall, f_beta = get_multi_metrics(pred_y=predictions, true_y=batchY, labels=labelList)
 
             evalSummaryWriter.add_summary(summary, step)
 
-            return loss, acc, auc, precision, recall
+            return loss, acc, precision, recall, f_beta
 
 
         for i in range(config.training.epoches):
             # 训练模型
             print("start training model")
             for batchTrain in nextBatch(trainReviews, trainLabels, config.batchSize):
-                trainStep(batchTrain[0], batchTrain[1])
+                # trainStep(batchTrain[0], batchTrain[1])
+                loss, acc, prec, recall, f_beta = trainStep(batchTrain[0], batchTrain[1])
 
                 currentStep = tf.train.global_step(sess, globalStep)
                 if currentStep % config.training.evaluateEvery == 0:
@@ -547,12 +747,14 @@ with tf.Graph().as_default():
                     aucs = []
                     precisions = []
                     recalls = []
+                    f_betas = []
 
                     for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
-                        loss, acc, auc, precision, recall = devStep(batchEval[0], batchEval[1])
+                        # loss, acc, auc, precision, recall = devStep(batchEval[0], batchEval[1])
+                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
                         losses.append(loss)
                         accs.append(acc)
-                        aucs.append(auc)
+                        f_betas.append(f_beta)
                         precisions.append(precision)
                         recalls.append(recall)
 

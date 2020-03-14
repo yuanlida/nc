@@ -139,7 +139,7 @@ class Dataset(object):
             if len(review) >= self._sequenceLength:
                 reviews.append(review[:self._sequenceLength])
             else:
-                reviews.append(review + [word2idx["PAD"]] * (self._sequenceLength - len(review)))
+                reviews.append(review + [word2idx[build_data.PAD]] * (self._sequenceLength - len(review)))
 
         trainIndex = int(len(x) * rate)
 
