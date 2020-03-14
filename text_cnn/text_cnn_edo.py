@@ -137,9 +137,8 @@ class Dataset(object):
                 reviews.append(review[:self._sequenceLength])
             else:
                 reviews.append(review + [word2idx[build_data.PAD]] * (self._sequenceLength - len(review)))
-        # 随机取值
         trainIndex = int(len(x) * rate)
-
+        # 随机取值
         datas = list(zip(reviews, y))
         random.shuffle(datas)
         reviews = []

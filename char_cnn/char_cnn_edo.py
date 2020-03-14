@@ -275,12 +275,16 @@ class CharCNN(object):
     def __init__(self, config, charEmbedding):
         # placeholders for input, output and dropuot
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
-        self.inputY = tf.placeholder(tf.float32, [None, 1], name="inputY")
+        # self.inputY = tf.placeholder(tf.float32, [None, 1], name="inputY")
+        self.inputY = tf.placeholder(tf.float32, [None], name="inputY")
+
         self.dropoutKeepProb = tf.placeholder(tf.float32, name="dropoutKeepProb")
         self.isTraining = tf.placeholder(tf.bool, name="isTraining")
 
         self.epsilon = config.model.epsilon
         self.decay = config.model.decay
+        # TODO by Dalio , I don't know if it can be used.
+        l2Loss = tf.constant(0.0)
 
         # 字符嵌入
         with tf.name_scope("embedding"):
