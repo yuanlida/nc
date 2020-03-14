@@ -18,7 +18,9 @@ import tensorflow as tf
 from sklearn.metrics import roc_auc_score, accuracy_score, precision_score, recall_score
 
 warnings.filterwarnings("ignore")
-
+from build_data import get_data, train_files
+import build_data
+import config as constant
 
 # %%
 
@@ -48,7 +50,7 @@ class Config(object):
 
     stopWordSource = "../data/english"
 
-    numClasses = 1  # 二分类设置为1，多分类设置为类别的数目
+    numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
     rate = 0.8  # 训练集的比例
 
@@ -93,15 +95,24 @@ class Dataset(object):
         从csv文件中读取数据集
         """
 
-        df = pd.read_csv(filePath)
+        reviews = []
+        labels = []
+        for index, file in enumerate(train_files):
+            with open(file) as f:
+                lines = f.readlines()
+                for line in lines:
+                    reviews.append(line.strip().split())
+                    labels.append(constant.tags[index])
 
-        if self.config.numClasses == 1:
-            labels = df["sentiment"].tolist()
-        elif self.config.numClasses > 1:
-            labels = df["rate"].tolist()
-
-        review = df["review"].tolist()
-        reviews = [line.strip().split() for line in review]
+        # df = pd.read_csv(filePath)
+        #
+        # if self.config.numClasses == 1:
+        #     labels = df["sentiment"].tolist()
+        # elif self.config.numClasses > 1:
+        #     labels = df["rate"].tolist()
+        #
+        # review = df["review"].tolist()
+        # reviews = [line.strip().split() for line in review]
 
         return reviews, labels
 
@@ -116,7 +127,7 @@ class Dataset(object):
         """
         将词转换成索引
         """
-        reviewIds = [[word2idx.get(item, word2idx["UNK"]) for item in review] for review in reviews]
+        reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
         return reviewIds
 
     def _genTrainEvalData(self, x, y, word2idx, rate):
@@ -131,6 +142,15 @@ class Dataset(object):
                 reviews.append(review + [word2idx["PAD"]] * (self._sequenceLength - len(review)))
 
         trainIndex = int(len(x) * rate)
+
+        # 随机取值
+        datas = list(zip(reviews, y))
+        random.shuffle(datas)
+        reviews = []
+        y = []
+        for review, tag in datas:
+            reviews.append(review)
+            y.append(tag)
 
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
         trainLabels = np.array(y[:trainIndex], dtype="float32")
@@ -148,13 +168,13 @@ class Dataset(object):
         allWords = [word for review in reviews for word in review]
 
         # 去掉停用词
-        subWords = [word for word in allWords if word not in self.stopWordDict]
+        # subWords = [word for word in allWords if word not in self.stopWordDict]
 
-        wordCount = Counter(subWords)  # 统计词频
+        wordCount = Counter(allWords)  # 统计词频
         sortWordCount = sorted(wordCount.items(), key=lambda x: x[1], reverse=True)
 
         # 去除低频词
-        words = [item[0] for item in sortWordCount if item[1] >= 5]
+        words = [item[0] for item in sortWordCount if item[1] >= 1]
 
         vocab, wordEmbedding = self._getWordEmbedding(words)
         self.wordEmbedding = wordEmbedding
@@ -183,19 +203,27 @@ class Dataset(object):
         vocab = []
         wordEmbedding = []
 
-        # 添加 "pad" 和 "UNK",
-        vocab.append("PAD")
-        vocab.append("UNK")
+        # 添加 "<pad>" 和 "<UNK>", "<NUM>"
+        vocab.append(build_data.PAD)
+        vocab.append(build_data.UNK)
+        vocab.append(build_data.NUM)
         wordEmbedding.append(np.zeros(self._embeddingSize))
+        wordEmbedding.append(np.random.randn(self._embeddingSize))
         wordEmbedding.append(np.random.randn(self._embeddingSize))
 
         for word in words:
             try:
-                vector = wordVec.wv[word]
+                wordEmbedding.append(np.random.randn(self._embeddingSize))
                 vocab.append(word)
-                wordEmbedding.append(vector)
             except:
-                print(word + "不存在于词向量中")
+                print(word + "无法生成随机矩阵")
+        # for word in words:
+        #     try:
+        #         vector = wordVec.wv[word]
+        #         vocab.append(word)
+        #         wordEmbedding.append(vector)
+        #     except:
+        #         print(word + "不存在于词向量中")
 
         return vocab, np.array(wordEmbedding)
 
