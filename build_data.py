@@ -3,6 +3,7 @@ import numpy as np
 
 UNK = "<UNK>"
 NUM = "<NUM>"
+PAD = "<PAD>"
 NONE = "O"
 
 # train_files = ['./data/train/loc.txt',
@@ -18,17 +19,29 @@ NONE = "O"
 #               './data/test/tit.txt']
 
 
-train_files = ['./data/test/loc.txt',
-               './data/test/name.txt',
-               './data/test/org.txt',
-               './data/test/tel.txt',
-               './data/test/tit.txt']
+# train_files = ['./data/test/loc.txt',
+#                './data/test/name.txt',
+#                './data/test/org.txt',
+#                './data/test/tel.txt',
+#                './data/test/tit.txt']
+#
+# test_files = ['./data/test/loc.txt',
+#               './data/test/name.txt',
+#               './data/test/org.txt',
+#               './data/test/tel.txt',
+#               './data/test/tit.txt']
 
-test_files = ['./data/test/loc.txt',
-              './data/test/name.txt',
-              './data/test/org.txt',
-              './data/test/tel.txt',
-              './data/test/tit.txt']
+train_files = ['../data/test/loc.txt',
+               '../data/test/name.txt',
+               '../data/test/org.txt',
+               '../data/test/tel.txt',
+               '../data/test/tit.txt']
+
+test_files = ['../data/test/loc.txt',
+              '../data/test/name.txt',
+              '../data/test/org.txt',
+              '../data/test/tel.txt',
+              '../data/test/tit.txt']
 
 words_json_file = './gen_data/words2id.json'
 chars_json_file = './gen_data/char2id.json'
@@ -46,6 +59,7 @@ def build_vocab_words():
     print("- done. {} tokens".format(len(vocab_words)))
     vocab_words.add(UNK)
     vocab_words.add(NUM)
+    vocab_words.add(PAD)
     return vocab_words
 
 
@@ -75,6 +89,10 @@ def load_dic_json(j_file):
         data = json.load(json_file)
     print("length is ", len(data))
     return data
+
+
+def get_data():
+    pass
 
 
 def random_embedding(vocab, embedding_dim):
