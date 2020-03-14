@@ -36,7 +36,7 @@ class ModelConfig(object):
 
     filters = 128  # 内层一维卷积核的数量，外层卷积核的数量应该等于embeddingSize，因为要确保每个layer后的输出维度和输入维度是一致的。
     numHeads = 8  # Attention 的头数
-    numBlocks = 1  # 设置transformer block的数量
+    numBlocks = 10  # 设置transformer block的数量
     epsilon = 1e-8  # LayerNorm 层中的最小除数
     keepProp = 0.9  # multi head attention 中的dropout
 
@@ -52,7 +52,7 @@ class Config(object):
 
     stopWordSource = "../data/english"
 
-    numClasses = 10  # 二分类设置为1，多分类设置为类别的数目
+    numClasses = 1  # 二分类设置为1，多分类设置为类别的数目
 
     rate = 0.8  # 训练集的比例
 

@@ -18,14 +18,16 @@ import tensorflow as tf
 from sklearn.metrics import roc_auc_score, accuracy_score, precision_score, recall_score
 
 warnings.filterwarnings("ignore")
-
+from build_data import get_data, train_files
+import build_data
+import config as constant
 
 # %%
 
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 4
+    epoches = 10
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -34,21 +36,24 @@ class TrainingConfig(object):
 class ModelConfig(object):
     embeddingSize = 200
 
-    hiddenSizes = [256, 128]  # LSTM结构的神经元个数
+    hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
 
     dropoutKeepProb = 0.5
     l2RegLambda = 0.0
 
 
 class Config(object):
-    sequenceLength = 200  # 取了所有序列长度的均值
+    sequenceLength = 64  # 取了所有序列长度的均值
     batchSize = 128
+
+    alphabet = "abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
+    #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
     dataSource = "../data/preProcess/labeledTrain.csv"
 
     stopWordSource = "../data/english"
 
-    numClasses = 10  # 二分类设置为1，多分类设置为类别的数目
+    numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
     rate = 0.8  # 训练集的比例
 
@@ -93,15 +98,24 @@ class Dataset(object):
         从csv文件中读取数据集
         """
 
-        df = pd.read_csv(filePath)
+        reviews = []
+        labels = []
+        for index, file in enumerate(train_files):
+            with open(file) as f:
+                lines = f.readlines()
+                for line in lines:
+                    reviews.append(line.strip().split())
+                    labels.append(constant.tags[index])
 
-        if self.config.numClasses == 1:
-            labels = df["sentiment"].tolist()
-        elif self.config.numClasses > 1:
-            labels = df["rate"].tolist()
-
-        review = df["review"].tolist()
-        reviews = [line.strip().split() for line in review]
+        # df = pd.read_csv(filePath)
+        #
+        # if self.config.numClasses == 1:
+        #     labels = df["sentiment"].tolist()
+        # elif self.config.numClasses > 1:
+        #     labels = df["rate"].tolist()
+        #
+        # review = df["review"].tolist()
+        # reviews = [line.strip().split() for line in review]
 
         return reviews, labels
 
@@ -116,7 +130,7 @@ class Dataset(object):
         """
         将词转换成索引
         """
-        reviewIds = [[word2idx.get(item, word2idx["UNK"]) for item in review] for review in reviews]
+        reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
         return reviewIds
 
     def _genTrainEvalData(self, x, y, word2idx, rate):
@@ -128,9 +142,18 @@ class Dataset(object):
             if len(review) >= self._sequenceLength:
                 reviews.append(review[:self._sequenceLength])
             else:
-                reviews.append(review + [word2idx["PAD"]] * (self._sequenceLength - len(review)))
+                reviews.append(review + [word2idx[build_data.PAD]] * (self._sequenceLength - len(review)))
 
         trainIndex = int(len(x) * rate)
+
+        # 随机取值
+        datas = list(zip(reviews, y))
+        random.shuffle(datas)
+        reviews = []
+        y = []
+        for review, tag in datas:
+            reviews.append(review)
+            y.append(tag)
 
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
         trainLabels = np.array(y[:trainIndex], dtype="float32")
@@ -148,13 +171,13 @@ class Dataset(object):
         allWords = [word for review in reviews for word in review]
 
         # 去掉停用词
-        subWords = [word for word in allWords if word not in self.stopWordDict]
+        # subWords = [word for word in allWords if word not in self.stopWordDict]
 
-        wordCount = Counter(subWords)  # 统计词频
+        wordCount = Counter(allWords)  # 统计词频
         sortWordCount = sorted(wordCount.items(), key=lambda x: x[1], reverse=True)
 
         # 去除低频词
-        words = [item[0] for item in sortWordCount if item[1] >= 5]
+        words = [item[0] for item in sortWordCount if item[1] >= 1]
 
         vocab, wordEmbedding = self._getWordEmbedding(words)
         self.wordEmbedding = wordEmbedding
@@ -183,19 +206,27 @@ class Dataset(object):
         vocab = []
         wordEmbedding = []
 
-        # 添加 "pad" 和 "UNK",
-        vocab.append("PAD")
-        vocab.append("UNK")
+        # 添加 "<pad>" 和 "<UNK>", "<NUM>"
+        vocab.append(build_data.PAD)
+        vocab.append(build_data.UNK)
+        vocab.append(build_data.NUM)
         wordEmbedding.append(np.zeros(self._embeddingSize))
+        wordEmbedding.append(np.random.randn(self._embeddingSize))
         wordEmbedding.append(np.random.randn(self._embeddingSize))
 
         for word in words:
             try:
-                vector = wordVec.wv[word]
+                wordEmbedding.append(np.random.randn(self._embeddingSize))
                 vocab.append(word)
-                wordEmbedding.append(vector)
             except:
-                print(word + "不存在于词向量中")
+                print(word + "无法生成随机矩阵")
+        # for word in words:
+        #     try:
+        #         vector = wordVec.wv[word]
+        #         vocab.append(word)
+        #         wordEmbedding.append(vector)
+        #     except:
+        #         print(word + "不存在于词向量中")
 
         return vocab, np.array(wordEmbedding)
 
@@ -276,9 +307,9 @@ def nextBatch(x, y, batchSize):
 # %%
 
 # 构建模型
-class BiLSTMAttention(object):
+class BiLSTM(object):
     """
-    Text CNN 用于文本分类
+    Bi-LSTM 用于文本分类
     """
 
     def __init__(self, config, wordEmbedding):
@@ -302,6 +333,7 @@ class BiLSTMAttention(object):
 
         # 定义两层双向LSTM的模型结构
         with tf.name_scope("Bi-LSTM"):
+
             for idx, hiddenSize in enumerate(config.model.hiddenSizes):
                 with tf.name_scope("Bi-LSTM" + str(idx)):
                     # 定义前向LSTM结构
@@ -316,23 +348,18 @@ class BiLSTMAttention(object):
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
-                    outputs_, self.current_state = tf.nn.bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
-                                                                                   self.embeddedWords, dtype=tf.float32,
-                                                                                   scope="bi-lstm" + str(idx))
+                    outputs, self.current_state = tf.nn.bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
+                                                                                  self.embeddedWords, dtype=tf.float32,
+                                                                                  scope="bi-lstm" + str(idx))
 
-                    # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2], 传入到下一层Bi-LSTM中
-                    self.embeddedWords = tf.concat(outputs_, 2)
+                    # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
+                    self.embeddedWords = tf.concat(outputs, 2)
 
-        # 将最后一层Bi-LSTM输出的结果分割成前向和后向的输出
-        outputs = tf.split(self.embeddedWords, 2, -1)
+        # 去除最后时间步的输出作为全连接的输入
+        finalOutput = self.embeddedWords[:, -1, :]
 
-        # 在Bi-LSTM+Attention的论文中，将前向和后向的输出相加
-        with tf.name_scope("Attention"):
-            H = outputs[0] + outputs[1]
-
-            # 得到Attention的输出
-            output = self.attention(H)
-            outputSize = config.model.hiddenSizes[-1]
+        outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
+        output = tf.reshape(finalOutput, [-1, outputSize])  # reshape成全连接层的输入维度
 
         # 全连接层的输出
         with tf.name_scope("output"):
@@ -345,7 +372,6 @@ class BiLSTMAttention(object):
             l2Loss += tf.nn.l2_loss(outputW)
             l2Loss += tf.nn.l2_loss(outputB)
             self.logits = tf.nn.xw_plus_b(output, outputW, outputB, name="logits")
-
             if config.numClasses == 1:
                 self.predictions = tf.cast(tf.greater_equal(self.logits, 0.0), tf.float32, name="predictions")
             elif config.numClasses > 1:
@@ -362,42 +388,6 @@ class BiLSTMAttention(object):
                 losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.logits, labels=self.inputY)
 
             self.loss = tf.reduce_mean(losses) + config.model.l2RegLambda * l2Loss
-
-    def attention(self, H):
-        """
-        利用Attention机制得到句子的向量表示
-        """
-        # 获得最后一层LSTM的神经元数量
-        hiddenSize = config.model.hiddenSizes[-1]
-
-        # 初始化一个权重向量，是可训练的参数
-        W = tf.Variable(tf.random_normal([hiddenSize], stddev=0.1))
-
-        # 对Bi-LSTM的输出用激活函数做非线性转换
-        M = tf.tanh(H)
-
-        # 对W和M做矩阵运算，W=[batch_size, time_step, hidden_size]，计算前做维度转换成[batch_size * time_step, hidden_size]
-        # newM = [batch_size, time_step, 1]，每一个时间步的输出由向量转换成一个数字
-        newM = tf.matmul(tf.reshape(M, [-1, hiddenSize]), tf.reshape(W, [-1, 1]))
-
-        # 对newM做维度转换成[batch_size, time_step]
-        restoreM = tf.reshape(newM, [-1, config.sequenceLength])
-
-        # 用softmax做归一化处理[batch_size, time_step]
-        self.alpha = tf.nn.softmax(restoreM)
-
-        # 利用求得的alpha的值对H进行加权求和，用矩阵运算直接操作
-        r = tf.matmul(tf.transpose(H, [0, 2, 1]), tf.reshape(self.alpha, [-1, config.sequenceLength, 1]))
-
-        # 将三维压缩成二维sequeezeR=[batch_size, hidden_size]
-        sequeezeR = tf.reshape(r, [-1, hiddenSize])
-
-        sentenceRepren = tf.tanh(sequeezeR)
-
-        # 对Attention的输出可以做dropout处理
-        output = tf.nn.dropout(sentenceRepren, self.dropoutKeepProb)
-
-        return output
 
 
 # %%
@@ -595,7 +585,7 @@ with tf.Graph().as_default():
 
     # 定义会话
     with sess.as_default():
-        lstm = BiLSTMAttention(config, wordEmbedding)
+        lstm = BiLSTM(config, wordEmbedding)
 
         globalStep = tf.Variable(0, name="globalStep", trainable=False)
         # 定义优化函数，传入学习速率参数
@@ -628,7 +618,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "../model/bilstm-atten/savedModel"
+        savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
         builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
@@ -648,11 +638,11 @@ with tf.Graph().as_default():
             _, summary, step, loss, predictions = sess.run(
                 [trainOp, summaryOp, globalStep, lstm.loss, lstm.predictions],
                 feed_dict)
+
             timeStr = datetime.datetime.now().isoformat()
 
             if config.numClasses == 1:
                 acc, recall, prec, f_beta = get_binary_metrics(pred_y=predictions, true_y=batchY)
-
 
             elif config.numClasses > 1:
                 acc, recall, prec, f_beta = get_multi_metrics(pred_y=predictions, true_y=batchY,
@@ -725,7 +715,7 @@ with tf.Graph().as_default():
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
-                    path = saver.save(sess, "../model/Bi-LSTM-atten/model/my-model", global_step=currentStep)
+                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
         inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
@@ -754,11 +744,11 @@ with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
-xIds = [word2idx.get(item, word2idx["UNK"]) for item in x.split(" ")]
+xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
 else:
-    xIds = xIds + [word2idx["PAD"]] * (config.sequenceLength - len(xIds))
+    xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
 
 graph = tf.Graph()
 with graph.as_default():
@@ -767,7 +757,7 @@ with graph.as_default():
     sess = tf.Session(config=session_conf)
 
     with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM-atten/model/")
+        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/model/")
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 

@@ -34,7 +34,7 @@ class TrainingConfig(object):
 
 
 class ModelConfig(object):
-    embeddingSize = 200
+    embeddingSize = 32
 
     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
 
