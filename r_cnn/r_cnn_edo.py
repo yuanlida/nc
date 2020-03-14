@@ -800,7 +800,7 @@ with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
-xIds = [word2idx.get(item, word2idx["UNK"]) for item in x.split(" ")]
+xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
 else:
