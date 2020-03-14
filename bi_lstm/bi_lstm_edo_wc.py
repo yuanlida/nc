@@ -86,9 +86,11 @@ class Dataset(object):
         self._stopWordDict = {}
 
         self.trainReviews = []
+        self.trainChars = []
         self.trainLabels = []
 
         self.evalReviews = []
+        self.evalChars = []
         self.evalLabels = []
 
         self.wordEmbedding = None
@@ -340,9 +342,11 @@ class Dataset(object):
         trainReviews, trainLabels, train_chars, evalReviews, evalLabels, eval_chars = self._genTrainEvalData(reviewIds, labelIds, word2idx,
                                                                                     self._rate, char_ids)
         self.trainReviews = trainReviews
+        self.trainChars = train_chars
         self.trainLabels = trainLabels
 
         self.evalReviews = evalReviews
+        self.evalChars = eval_chars
         self.evalLabels = evalLabels
 
 
