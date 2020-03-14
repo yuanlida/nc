@@ -8,3 +8,4 @@ data1[1][1] = 2
 print('data1:\n', data1)
 print('arr2:\n', arr2)
 print('arr3:\n', arr3)
+print('arr4:\n',arr3[:,-1])
