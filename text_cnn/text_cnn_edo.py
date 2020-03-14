@@ -633,6 +633,12 @@ with tf.Graph().as_default():
             os.rmdir(savedModelPath)
         builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
+        # tf.saved_model.simple_save(sess,
+        #                            "./per_model",
+        #                            inputs={"inputX": tf.saved_model.utils.build_tensor_info(cnn.inputX),
+        #                                    "keepProb": tf.saved_model.utils.build_tensor_info(cnn.dropoutKeepProb)},
+        #                            outputs={"predictions": tf.saved_model.utils.build_tensor_info(cnn.predictions)})
+
         sess.run(tf.global_variables_initializer())
 
 
@@ -754,11 +760,12 @@ with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
-xIds = [word2idx.get(item, word2idx["UNK"]) for item in x.split(" ")]
+
+xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
 else:
-    xIds = xIds + [word2idx["PAD"]] * (config.sequenceLength - len(xIds))
+    xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
 
 graph = tf.Graph()
 with graph.as_default():
