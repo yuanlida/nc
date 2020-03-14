@@ -153,7 +153,7 @@ class Dataset(object):
             y.append(tag)
 
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
-        trainLabels = np.array(y[:trainIndex], dtype="float32")
+        trainLabels = np.array(y[:trainIndex], dtype="int64")
 
         evalReviews = np.asarray(reviews[trainIndex:], dtype="int64")
         evalLabels = np.array(y[trainIndex:], dtype="float32")
