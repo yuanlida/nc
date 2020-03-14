@@ -1,6 +1,7 @@
 # %%
 
 import os
+import random
 import time
 import datetime
 import csv
@@ -12,7 +13,8 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from sklearn.metrics import roc_auc_score, accuracy_score, precision_score, recall_score
-
+import config as constant
+import build_data
 warnings.filterwarnings("ignore")
 
 
@@ -46,8 +48,10 @@ class Config(object):
     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
     #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-    sequenceLength = 1014
+    sequenceLength = 500
     batchSize = 128
+
+    numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
     rate = 0.8  # 训练集的比例
 
@@ -88,11 +92,21 @@ class Dataset(object):
         """
         从csv文件中读取数据集
         """
+        reviews = []
+        labels = []
+        for index, file in enumerate(build_data.train_files):
+            with open(file) as f:
+                lines = f.readlines()
+                for line in lines:
+                    line = line.strip()
+                    review = [char for char in line]
+                    reviews.append(review)
+                    labels.append(constant.tags[index])
 
-        df = pd.read_csv(filePath)
-        labels = df["sentiment"].tolist()
-        review = df["review"].tolist()
-        reviews = [[char for char in line if char != " "] for line in review]
+        # df = pd.read_csv(filePath)
+        # labels = df["sentiment"].tolist()
+        # review = df["review"].tolist()
+        # reviews = [[char for char in line if char != " "] for line in review]
 
         return reviews, labels
 
@@ -113,7 +127,7 @@ class Dataset(object):
             if review[i] in charToIndex:
                 reviewVec[i] = charToIndex[review[i]]
             else:
-                reviewVec[i] = charToIndex["UNK"]
+                reviewVec[i] = charToIndex[build_data.UNK]
 
         return reviewVec
 
@@ -135,6 +149,14 @@ class Dataset(object):
 
         trainIndex = int(len(x) * rate)
 
+        datas = list(zip(reviews, y))
+        random.shuffle(datas)
+        reviews = []
+        y = []
+        for review, tag in datas:
+            reviews.append(review)
+            y.append(tag)
+
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
         trainLabels = np.array(labels[:trainIndex], dtype="float32")
 
@@ -148,6 +170,7 @@ class Dataset(object):
         生成字符向量和字符-索引映射字典
         """
 
+        # 这个地方可能要换成所有字符
         chars = [char for char in self._alphabet]
 
         vocab, charEmbedding = self._getCharEmbedding(chars)
@@ -168,8 +191,8 @@ class Dataset(object):
         按照one的形式将字符映射成向量
         """
 
-        alphabet = ["UNK"] + [char for char in self._alphabet]
-        vocab = ["pad"] + alphabet
+        alphabet = [build_data.UNK] + [char for char in self._alphabet]
+        vocab = [build_data.PAD] + alphabet
         charEmbedding = []
         charEmbedding.append(np.zeros(len(alphabet), dtype="float32"))
 
