@@ -24,7 +24,7 @@ import config as constant
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 5
+    epoches = 1
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -701,33 +701,34 @@ with tf.Graph().as_default():
                 currentStep = tf.train.global_step(sess, globalStep)
                 print("train: step: {}, loss: {}, acc: {}, recall: {}, precision: {}, f_beta: {}".format(
                     currentStep, loss, acc, recall, prec, f_beta))
-                if currentStep % config.training.evaluateEvery == 0:
-                    print("\nEvaluation:")
-
-                    losses = []
-                    accs = []
-                    f_betas = []
-                    precisions = []
-                    recalls = []
-
-                    for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
-                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
-                        losses.append(loss)
-                        accs.append(acc)
-                        f_betas.append(f_beta)
-                        precisions.append(precision)
-                        recalls.append(recall)
-
-                    time_str = datetime.datetime.now().isoformat()
-                    print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
-                                                                                                         currentStep,
-                                                                                                         mean(losses),
-                                                                                                         mean(accs),
-                                                                                                         mean(
-                                                                                                             precisions),
-                                                                                                         mean(recalls),
-                                                                                                         mean(f_betas)))
-
+                # 这个地方要看看，我也没太懂。
+                # if currentStep % config.training.evaluateEvery == 0:
+                #     print("\nEvaluation:")
+                #
+                #     losses = []
+                #     accs = []
+                #     f_betas = []
+                #     precisions = []
+                #     recalls = []
+                #
+                #     for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
+                #         loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
+                #         losses.append(loss)
+                #         accs.append(acc)
+                #         f_betas.append(f_beta)
+                #         precisions.append(precision)
+                #         recalls.append(recall)
+                #
+                #     time_str = datetime.datetime.now().isoformat()
+                #     print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
+                #                                                                                          currentStep,
+                #                                                                                          mean(losses),
+                #                                                                                          mean(accs),
+                #                                                                                          mean(
+                #                                                                                              precisions),
+                #                                                                                          mean(recalls),
+                #                                                                                          mean(f_betas)))
+                #
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
                     path = saver.save(sess, "../model/textCNN/model/my-model", global_step=currentStep)
@@ -749,42 +750,42 @@ with tf.Graph().as_default():
 
 # %%
 
-x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
-
-# 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
-with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
-    word2idx = json.load(f)
-
-with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
-    label2idx = json.load(f)
-idx2label = {value: key for key, value in label2idx.items()}
-
-
-xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
-if len(xIds) >= config.sequenceLength:
-    xIds = xIds[:config.sequenceLength]
-else:
-    xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
-
-graph = tf.Graph()
-with graph.as_default():
-    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-    session_conf = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False, gpu_options=gpu_options)
-    sess = tf.Session(config=session_conf)
-
-    with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("../model/textCNN/model/")
-        saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
-        saver.restore(sess, checkpoint_file)
-
-        # 获得需要喂给模型的参数，输出的结果依赖的输入值
-        inputX = graph.get_operation_by_name("inputX").outputs[0]
-        dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
-
-        # 获得输出的结果
-        predictions = graph.get_tensor_by_name("output/predictions:0")
-
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0})[0]
-
-pred = [idx2label[item] for item in pred]
-print(pred)
+# x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
+#
+# # 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
+# with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
+#     word2idx = json.load(f)
+#
+# with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
+#     label2idx = json.load(f)
+# idx2label = {value: key for key, value in label2idx.items()}
+#
+#
+# xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
+# if len(xIds) >= config.sequenceLength:
+#     xIds = xIds[:config.sequenceLength]
+# else:
+#     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
+#
+# graph = tf.Graph()
+# with graph.as_default():
+#     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+#     session_conf = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False, gpu_options=gpu_options)
+#     sess = tf.Session(config=session_conf)
+#
+#     with sess.as_default():
+#         checkpoint_file = tf.train.latest_checkpoint("../model/textCNN/model/")
+#         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
+#         saver.restore(sess, checkpoint_file)
+#
+#         # 获得需要喂给模型的参数，输出的结果依赖的输入值
+#         inputX = graph.get_operation_by_name("inputX").outputs[0]
+#         dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
+#
+#         # 获得输出的结果
+#         predictions = graph.get_tensor_by_name("output/predictions:0")
+#
+#         pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0})[0]
+#
+# pred = [idx2label[item] for item in pred]
+# print(pred)
