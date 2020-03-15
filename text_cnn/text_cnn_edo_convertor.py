@@ -24,7 +24,8 @@ import config as constant
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 1
+    # 可以修改加大epoch
+    epoches = 10
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -310,7 +311,7 @@ class TextCNN(object):
         # 定义模型的输入
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
-
+        # convert constant to constant list
         self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
@@ -367,6 +368,7 @@ class TextCNN(object):
 
         # dropout
         with tf.name_scope("dropout"):
+            # convertor add seed to dropout
             self.hDrop = tf.nn.dropout(self.hPoolFlat, self.dropoutKeepProb[0], seed=time.time())
 
         # 全连接层的输出
@@ -627,9 +629,9 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        # savedModelPath = "../model/textCNN/savedModel"
-        # if os.path.exists(savedModelPath):
-        #     os.rmdir(savedModelPath)
+        savedModelPath = "../model/textCNN/savedModel"
+        if os.path.exists(savedModelPath):
+            os.rmdir(savedModelPath)
         # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
         # tf.saved_model.simple_save(sess,
@@ -645,6 +647,7 @@ with tf.Graph().as_default():
             """
             训练函数
             """
+            # convertor data constructor
             feeddrop = [config.model.dropoutKeepProb] * len(batchX)
             feed_dict = {
                 cnn.inputX: batchX,
@@ -674,6 +677,7 @@ with tf.Graph().as_default():
             """
             验证函数
             """
+            # convertor data constructor
             feeddrop = [1.0] * len(batchX)
             feed_dict = {
                 cnn.inputX: batchX,
@@ -705,34 +709,36 @@ with tf.Graph().as_default():
                 currentStep = tf.train.global_step(sess, globalStep)
                 print("train: step: {}, loss: {}, acc: {}, recall: {}, precision: {}, f_beta: {}".format(
                     currentStep, loss, acc, recall, prec, f_beta))
-                # 这个地方要看看，我也没太懂。
-                # if currentStep % config.training.evaluateEvery == 0:
-                #     print("\nEvaluation:")
-                #
-                #     losses = []
-                #     accs = []
-                #     f_betas = []
-                #     precisions = []
-                #     recalls = []
-                #
-                #     for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
-                #         loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
-                #         losses.append(loss)
-                #         accs.append(acc)
-                #         f_betas.append(f_beta)
-                #         precisions.append(precision)
-                #         recalls.append(recall)
-                #
-                #     time_str = datetime.datetime.now().isoformat()
-                #     print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
-                #                                                                                          currentStep,
-                #                                                                                          mean(losses),
-                #                                                                                          mean(accs),
-                #                                                                                          mean(
-                #                                                                                              precisions),
-                #                                                                                          mean(recalls),
-                #                                                                                          mean(f_betas)))
-                #
+                # 这个部分代码用来做批量测试。
+                if currentStep % config.training.evaluateEvery == 0:
+                    print("\nEvaluation:")
+
+                    losses = []
+                    accs = []
+                    f_betas = []
+                    precisions = []
+                    recalls = []
+
+                    for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
+                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
+                        losses.append(loss)
+                        accs.append(acc)
+                        f_betas.append(f_beta)
+                        precisions.append(precision)
+                        recalls.append(recall)
+
+                    time_str = datetime.datetime.now().isoformat()
+                    print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
+                                                                                                         currentStep,
+                                                                                                         mean(losses),
+                                                                                                         mean(accs),
+                                                                                                         mean(
+                                                                                                             precisions),
+                                                                                                         mean(recalls),
+                                                                                                         mean(f_betas)))
+
+
+
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
                     path = saver.save(sess, "../model/textCNN/model/my-model", global_step=currentStep)
@@ -757,7 +763,7 @@ with tf.Graph().as_default():
         #                            outputs={"predictions": tf.saved_model.utils.build_tensor_info(cnn.predictions)})
 
         tf.compat.v1.saved_model.simple_save(sess,
-                                   "./per_model",
+                                   "../model/textCNN/savedModel",
                                    inputs={"inputX": cnn.inputX,
                                            "keepProb": cnn.dropoutKeepProb
                                            },
@@ -768,42 +774,43 @@ with tf.Graph().as_default():
 
 # %%
 
-# x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
-#
-# # 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
-# with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
-#     word2idx = json.load(f)
-#
-# with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
-#     label2idx = json.load(f)
-# idx2label = {value: key for key, value in label2idx.items()}
-#
-#
-# xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
-# if len(xIds) >= config.sequenceLength:
-#     xIds = xIds[:config.sequenceLength]
-# else:
-#     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
-#
-# graph = tf.Graph()
-# with graph.as_default():
-#     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-#     session_conf = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False, gpu_options=gpu_options)
-#     sess = tf.Session(config=session_conf)
-#
-#     with sess.as_default():
-#         checkpoint_file = tf.train.latest_checkpoint("../model/textCNN/model/")
-#         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
-#         saver.restore(sess, checkpoint_file)
-#
-#         # 获得需要喂给模型的参数，输出的结果依赖的输入值
-#         inputX = graph.get_operation_by_name("inputX").outputs[0]
-#         dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
-#
-#         # 获得输出的结果
-#         predictions = graph.get_tensor_by_name("output/predictions:0")
-#
-#         pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0})[0]
-#
-# pred = [idx2label[item] for item in pred]
-# print(pred)
+# 以下代码为了单一测试
+x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
+
+# 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
+with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
+    word2idx = json.load(f)
+
+with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
+    label2idx = json.load(f)
+idx2label = {value: key for key, value in label2idx.items()}
+
+
+xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
+if len(xIds) >= config.sequenceLength:
+    xIds = xIds[:config.sequenceLength]
+else:
+    xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
+
+graph = tf.Graph()
+with graph.as_default():
+    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+    session_conf = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False, gpu_options=gpu_options)
+    sess = tf.Session(config=session_conf)
+
+    with sess.as_default():
+        checkpoint_file = tf.train.latest_checkpoint("../model/textCNN/model/")
+        saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
+        saver.restore(sess, checkpoint_file)
+
+        # 获得需要喂给模型的参数，输出的结果依赖的输入值
+        inputX = graph.get_operation_by_name("inputX").outputs[0]
+        dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
+
+        # 获得输出的结果
+        predictions = graph.get_tensor_by_name("output/predictions:0")
+
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: [1.0]})[0]
+
+pred = [idx2label[item] for item in pred]
+print(pred)
