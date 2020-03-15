@@ -35,7 +35,8 @@ class TrainingConfig(object):
 
 
 class ModelConfig(object):
-    hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
+    #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
+    hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
 
     dropoutKeepProb = 0.5
     l2RegLambda = 0.0
@@ -47,8 +48,8 @@ class ModelConfig(object):
     dim_char = 100
 
     # model hyperparameters
-    hidden_size_lstm = 300 # lstm on word embeddings
-    hidden_size_char = 100 # lstm on chars
+    hidden_size_lstm = 300  # lstm on word embeddings
+    hidden_size_char = 100  # lstm on chars
 
 
 class Config(object):
@@ -76,6 +77,8 @@ class Config(object):
     training = TrainingConfig()
 
     model = ModelConfig()
+
+    char_size = 0
 
 
 # 实例化配置参数对象
@@ -202,7 +205,6 @@ class Dataset(object):
         trainChars = np.asarray(char_ids[:trainIndex], dtype="int64")
         trainLabels = np.array(y[:trainIndex], dtype="float32")
 
-
         evalReviews = np.asarray(reviews[trainIndex:], dtype="int64")
         evalChars = np.array(char_ids[trainIndex:], dtype="int64")
         evalLabels = np.array(y[trainIndex:], dtype="float32")
@@ -221,6 +223,9 @@ class Dataset(object):
 
         with open("../data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
             json.dump(self._indexToChar, f)
+
+        config.char_size = len(self._indexToChar)
+
 
     def _getCharEmbedding(self, chars):
         """
@@ -321,7 +326,6 @@ class Dataset(object):
             # 将停用词用列表的形式生成，之后查找停用词时会比较快
             self.stopWordDict = dict(zip(stopWordList, list(range(len(stopWordList)))))
 
-
     def _char_to_ids(self, reviews, char2id):
         char_ids = []
         for setence in reviews:
@@ -331,7 +335,6 @@ class Dataset(object):
                 setence_ids.append(ids)
             char_ids.append(setence_ids)
         return char_ids
-
 
     def dataGen(self):
         """
@@ -353,8 +356,11 @@ class Dataset(object):
         char_ids = self._char_to_ids(reviews, self._charToIndex)
 
         # 初始化训练集和测试集
-        trainReviews, trainLabels, train_chars, evalReviews, evalLabels, eval_chars = self._genTrainEvalData(reviewIds, labelIds, word2idx,
-                                                                                    self._rate, char_ids)
+        trainReviews, trainLabels, train_chars, evalReviews, evalLabels, eval_chars = self._genTrainEvalData(reviewIds,
+                                                                                                             labelIds,
+                                                                                                             word2idx,
+                                                                                                             self._rate,
+                                                                                                             char_ids)
         self.trainReviews = trainReviews
         self.trainChars = train_chars
         self.trainLabels = trainLabels
@@ -426,12 +432,62 @@ class BiLSTM(object):
         # 词嵌入层
         with tf.name_scope("embedding"):
 
-            # 利用预训练的词向量初始化词嵌入矩阵
-            self.W = tf.Variable(tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"), name="W")
-            # 利用词嵌入矩阵将输入的数据中的词转换成词向量，维度[batch_size, sequence_length, embedding_size]
-            self.embeddedWords = tf.nn.embedding_lookup(self.W, self.inputX)
+            # # 利用预训练的词向量初始化词嵌入矩阵
+            # self.W = tf.Variable(tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"), name="W")
+            # # 利用词嵌入矩阵将输入的数据中的词转换成词向量，维度[batch_size, sequence_length, embedding_size]
+            # self.embeddedWords = tf.nn.embedding_lookup(self.W, self.inputX)
 
+            with tf.variable_scope("words"):
+                # self.logger.info("WARNING: randomly initializing word vectors")
+                # self.W = tf.get_variable(
+                #     name="_word_embeddings",
+                #     dtype=tf.float32,
+                #     shape=[len(wordEmbedding), config.model.embeddingSize])
 
+                self.W = tf.Variable(
+                    tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"),
+                    name="_word_embeddings",
+                    dtype=tf.float32,
+                    trainable=True)
+
+                self.word_embeddings = tf.nn.embedding_lookup(self.W,
+                                                            self.inputX, name="word_embeddings")
+
+            with tf.variable_scope("chars"):
+                    # get char embeddings matrix
+                _char_embeddings = tf.get_variable(
+                    name="_char_embeddings",
+                    dtype=tf.float32,
+                    shape=[config.char_size, config.model.dim_char])
+                char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
+                                                         self.char_ids, name="char_embeddings")
+
+                # put the time dimension on axis=1
+                s = tf.shape(char_embeddings)
+                char_embeddings = tf.reshape(char_embeddings,
+                                             shape=[s[0] * s[1], s[-2], config.model.dim_char])
+                # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
+
+                # bi lstm on chars
+                cell_fw = tf.contrib.rnn.LSTMCell(config.model.hidden_size_char,
+                                                  state_is_tuple=True)
+                cell_bw = tf.contrib.rnn.LSTMCell(config.model.hidden_size_char,
+                                                  state_is_tuple=True)
+                _output = tf.nn.bidirectional_dynamic_rnn(
+                    cell_fw, cell_bw, char_embeddings,
+                    # sequence_length=word_lengths,
+                    dtype=tf.float32)
+
+                # read and concat output
+                _, ((_, output_fw), (_, output_bw)) = _output
+                output = tf.concat([output_fw, output_bw], axis=-1)
+
+                # shape = (batch size, max sentence length, char hidden size)
+                output = tf.reshape(output,
+                                    shape=[s[0], s[1], 2 * config.model.hidden_size_char])
+                word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
+
+            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
 
         # 定义两层双向LSTM的模型结构
         with tf.name_scope("Bi-LSTM"):
