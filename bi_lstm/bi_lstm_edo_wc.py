@@ -384,7 +384,7 @@ print("eval data shape: {}".format(data.evalReviews.shape))
 
 # 输出batch数据集
 
-def nextBatch(x, y, batchSize):
+def nextBatch(x, y, z, batchSize):
     """
     生成batch数据集，用生成器的方式输出
     """
@@ -393,6 +393,7 @@ def nextBatch(x, y, batchSize):
     np.random.shuffle(perm)
     x = x[perm]
     y = y[perm]
+    z = z[perm]
 
     numBatches = len(x) // batchSize
 
@@ -401,8 +402,9 @@ def nextBatch(x, y, batchSize):
         end = start + batchSize
         batchX = np.array(x[start: end], dtype="int64")
         batchY = np.array(y[start: end], dtype="float32")
+        batchZ = np.array(z[start: end], dtype="int64")
 
-        yield batchX, batchY
+        yield batchX, batchY, batchZ
 
 
 # %%
@@ -726,8 +728,11 @@ def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0):
 
 # 生成训练集和验证集
 trainReviews = data.trainReviews
+trainChars = data.trainChars
 trainLabels = data.trainLabels
+
 evalReviews = data.evalReviews
+evalChars = data.evalChars
 evalLabels = data.evalLabels
 
 wordEmbedding = data.wordEmbedding
@@ -784,13 +789,14 @@ with tf.Graph().as_default():
         sess.run(tf.global_variables_initializer())
 
 
-        def trainStep(batchX, batchY):
+        def trainStep(batchX, batchY, batchZ):
             """
             训练函数
             """
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
+                lstm.char_ids: batchZ,
                 lstm.dropoutKeepProb: config.model.dropoutKeepProb
             }
             _, summary, step, loss, predictions = sess.run(
@@ -811,13 +817,14 @@ with tf.Graph().as_default():
             return loss, acc, prec, recall, f_beta
 
 
-        def devStep(batchX, batchY):
+        def devStep(batchX, batchY, batchZ):
             """
             验证函数
             """
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
+                lstm.char_ids: batchZ,
                 lstm.dropoutKeepProb: 1.0
             }
             summary, step, loss, predictions = sess.run(
@@ -838,8 +845,8 @@ with tf.Graph().as_default():
         for i in range(config.training.epoches):
             # 训练模型
             print("start training model")
-            for batchTrain in nextBatch(trainReviews, trainLabels, config.batchSize):
-                loss, acc, prec, recall, f_beta = trainStep(batchTrain[0], batchTrain[1])
+            for batchTrain in nextBatch(trainReviews, trainLabels, trainChars, config.batchSize):
+                loss, acc, prec, recall, f_beta = trainStep(batchTrain[0], batchTrain[1], batchTrain[2])
 
                 currentStep = tf.train.global_step(sess, globalStep)
                 print("train: step: {}, loss: {}, acc: {}, recall: {}, precision: {}, f_beta: {}".format(
@@ -853,8 +860,8 @@ with tf.Graph().as_default():
                     precisions = []
                     recalls = []
 
-                    for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
-                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
+                    for batchEval in nextBatch(evalReviews, evalLabels, evalChars, config.batchSize):
+                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1], batchEval[2])
                         losses.append(loss)
                         accs.append(acc)
                         f_betas.append(f_beta)
