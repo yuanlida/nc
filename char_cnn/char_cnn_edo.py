@@ -381,12 +381,19 @@ class CharCNN(object):
 
             # wOut = tf.Variable(tf.random_uniform([config.model.fcLayers[-1], 1], minval=-stdv, maxval=stdv),
             #                    dtype="float32", name="w")
-            wOut = tf.get_variable(
-                "outputW",
-                shape=[numFiltersTotal, config.numClasses],
-                initializer=tf.contrib.layers.xavier_initializer())
-            # bOut = tf.Variable(tf.random_uniform(shape=[1], minval=-stdv, maxval=stdv), name="b")
-            bOut = tf.Variable(tf.constant(0.1, shape=[config.numClasses]), name="outputB")
+
+
+            # wOut = tf.get_variable(
+            #     "outputW",
+            #     shape=[numFiltersTotal, config.numClasses],
+            #     initializer=tf.contrib.layers.xavier_initializer())
+            # # bOut = tf.Variable(tf.random_uniform(shape=[1], minval=-stdv, maxval=stdv), name="b")
+
+            # bOut = tf.Variable(tf.constant(0.1, shape=[config.numClasses]), name="outputB")
+
+            wOut = tf.Variable(tf.random_uniform([config.model.fcLayers[-1], config.numClasses], minval=-stdv, maxval=stdv),
+                               dtype="float32", name="w")
+            bOut = tf.Variable(tf.random_uniform(shape=[5], minval=-stdv, maxval=stdv), name="b")
             l2Loss += tf.nn.l2_loss(wOut)
             l2Loss += tf.nn.l2_loss(bOut)
 
@@ -700,8 +707,8 @@ with tf.Graph().as_default():
             elif config.numClasses > 1:
                 acc, recall, prec, f_beta = get_multi_metrics(pred_y=predictions, true_y=batchY,
                                                               labels=labelList)
-            print("{}, step: {}, loss: {}, acc: {}, auc: {}, precision: {}, recall: {}".format(timeStr, step, loss, acc,
-                                                                                               auc, precision, recall))
+            print("{}, step: {}, loss: {}, acc: {}, precision: {}, recall: {}".format(timeStr, step, loss, acc,
+                                                                                                prec, recall))
             trainSummaryWriter.add_summary(summary, step)
             return loss, acc, prec, recall, f_beta
 
