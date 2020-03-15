@@ -1,3 +1,4 @@
+text_cnn/per_model/
 convert
 .DS_Store
 model/**

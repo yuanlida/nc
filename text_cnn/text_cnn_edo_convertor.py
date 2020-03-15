@@ -311,7 +311,7 @@ class TextCNN(object):
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
-        self.dropoutKeepProb = tf.placeholder(tf.float32, name="dropoutKeepProb")
+        self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
         l2Loss = tf.constant(0.0)
@@ -367,7 +367,7 @@ class TextCNN(object):
 
         # dropout
         with tf.name_scope("dropout"):
-            self.hDrop = tf.nn.dropout(self.hPoolFlat, self.dropoutKeepProb)
+            self.hDrop = tf.nn.dropout(self.hPoolFlat, self.dropoutKeepProb[0], seed=time.time())
 
         # 全连接层的输出
         with tf.name_scope("output"):
@@ -627,10 +627,10 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "../model/textCNN/savedModel"
-        if os.path.exists(savedModelPath):
-            os.rmdir(savedModelPath)
-        builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
+        # savedModelPath = "../model/textCNN/savedModel"
+        # if os.path.exists(savedModelPath):
+        #     os.rmdir(savedModelPath)
+        # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
         # tf.saved_model.simple_save(sess,
         #                            "./per_model",
@@ -645,10 +645,12 @@ with tf.Graph().as_default():
             """
             训练函数
             """
+            feeddrop = [config.model.dropoutKeepProb] * len(batchX)
             feed_dict = {
                 cnn.inputX: batchX,
                 cnn.inputY: batchY,
-                cnn.dropoutKeepProb: config.model.dropoutKeepProb
+                # cnn.dropoutKeepProb: config.model.dropoutKeepProb
+                cnn.dropoutKeepProb: feeddrop
             }
             _, summary, step, loss, predictions = sess.run(
                 [trainOp, summaryOp, globalStep, cnn.loss, cnn.predictions],
@@ -672,10 +674,12 @@ with tf.Graph().as_default():
             """
             验证函数
             """
+            feeddrop = [1.0] * len(batchX)
             feed_dict = {
                 cnn.inputX: batchX,
                 cnn.inputY: batchY,
-                cnn.dropoutKeepProb: 1.0
+                # cnn.dropoutKeepProb: 1.0
+                cnn.dropoutKeepProb: feeddrop
             }
             summary, step, loss, predictions = sess.run(
                 [summaryOp, globalStep, cnn.loss, cnn.predictions],
@@ -734,19 +738,33 @@ with tf.Graph().as_default():
                     path = saver.save(sess, "../model/textCNN/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
-        inputs = {"inputX": tf.saved_model.utils.build_tensor_info(cnn.inputX),
-                  "keepProb": tf.saved_model.utils.build_tensor_info(cnn.dropoutKeepProb)}
+        # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(cnn.inputX),
+        #           "keepProb": tf.saved_model.utils.build_tensor_info(cnn.dropoutKeepProb)}
+        #
+        # outputs = {"predictions": tf.saved_model.utils.build_tensor_info(cnn.predictions)}
+        #
+        # prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
+        #                                                                               method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
+        # legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
+        # builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
+        #                                      signature_def_map={"predict": prediction_signature},
+        #                                      legacy_init_op=legacy_init_op)
 
-        outputs = {"predictions": tf.saved_model.utils.build_tensor_info(cnn.predictions)}
+        # tf.compat.v1.saved_model.simple_save(sess,
+        #                            "./per_model",
+        #                            inputs={"inputX": tf.saved_model.utils.build_tensor_info(cnn.inputX),
+        #                                    "keepProb": tf.saved_model.utils.build_tensor_info(cnn.dropoutKeepProb)},
+        #                            outputs={"predictions": tf.saved_model.utils.build_tensor_info(cnn.predictions)})
 
-        prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
-                                                                                      method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
-        legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
-        builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
-                                             signature_def_map={"predict": prediction_signature},
-                                             legacy_init_op=legacy_init_op)
+        tf.compat.v1.saved_model.simple_save(sess,
+                                   "./per_model",
+                                   inputs={"inputX": cnn.inputX,
+                                           "keepProb": cnn.dropoutKeepProb
+                                           },
+                                   outputs={"predictions": cnn.predictions})
 
-        builder.save()
+
+        # builder.save()
 
 # %%
 
