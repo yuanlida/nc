@@ -55,7 +55,7 @@ class Config(object):
 
     stopWordSource = "../data/english"
 
-    numClasses = 1  # 二分类设置为1，多分类设置为类别的数目
+    numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
     rate = 0.8  # 训练集的比例
 
