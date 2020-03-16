@@ -48,10 +48,10 @@ class ModelConfig(object):
 
 
 class Config(object):
-    alphabet = "abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
+    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
     #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-    sequenceLength = 500
+    sequenceLength = 200
     batchSize = 128
 
     numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
@@ -156,7 +156,7 @@ class Dataset(object):
 
         trainIndex = int(len(x) * rate)
 
-        datas = list(zip(reviews, y))
+        datas = list(zip(reviews, labels))
         random.shuffle(datas)
         reviews = []
         y = []
@@ -373,7 +373,7 @@ class CharCNN(object):
         with tf.name_scope("outputLayer"):
             stdv = 1 / sqrt(weights[-1])
 
-            numFiltersTotal = config.model.numFilters * len(config.model.filterSizes)
+            # numFiltersTotal = config.model.numFilters * len(config.model.filterSizes)
 
             # 定义隐层到输出层的权重系数和偏差的初始化方法
             #             w_out = tf.Variable(tf.truncated_normal([fc_layers[-1], num_classes], stddev=0.1), name="W")
