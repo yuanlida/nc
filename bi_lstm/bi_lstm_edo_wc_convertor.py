@@ -1,4 +1,6 @@
 # %%
+import os
+os.environ['TF_ENABLE_CONTROL_FLOW_V2'] = '1'
 
 import os
 import csv
@@ -17,6 +19,11 @@ import numpy as np
 import tensorflow as tf
 from sklearn.metrics import roc_auc_score, accuracy_score, precision_score, recall_score
 
+from tensorflow.contrib.rnn import LSTMCell
+# from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
+from tensorflow.nn import bidirectional_dynamic_rnn
+# from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
+
 warnings.filterwarnings("ignore")
 from build_data import get_data, train_files
 import build_data
@@ -28,7 +35,8 @@ import config as constant
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 10
+    # epoches = 10
+    epoches = 1
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -426,7 +434,7 @@ class BiLSTM(object):
 
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
-        self.dropoutKeepProb = tf.placeholder(tf.float32, name="dropoutKeepProb")
+        self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
         l2Loss = tf.constant(0.0)
@@ -471,11 +479,12 @@ class BiLSTM(object):
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
                 # bi lstm on chars
-                cell_fw = tf.contrib.rnn.LSTMCell(config.model.hidden_size_char,
+                #     TODO by Dalio, will add dropout?
+                cell_fw = LSTMCell(config.model.hidden_size_char,
                                                   state_is_tuple=True)
-                cell_bw = tf.contrib.rnn.LSTMCell(config.model.hidden_size_char,
+                cell_bw = LSTMCell(config.model.hidden_size_char,
                                                   state_is_tuple=True)
-                _output = tf.nn.bidirectional_dynamic_rnn(
+                _output = bidirectional_dynamic_rnn(
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
                     dtype=tf.float32)
@@ -489,7 +498,7 @@ class BiLSTM(object):
                                     shape=[s[0], s[1], 2 * config.model.hidden_size_char])
                 word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
-            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
+            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb[0], seed=time.time())
 
         # 定义两层双向LSTM的模型结构
         with tf.name_scope("Bi-LSTM"):
@@ -498,17 +507,17 @@ class BiLSTM(object):
                 with tf.name_scope("Bi-LSTM" + str(idx)):
                     # 定义前向LSTM结构
                     lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        tf.nn.rnn_cell.LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb)
+                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                        output_keep_prob=self.dropoutKeepProb[0])
                     # 定义反向LSTM结构
                     lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        tf.nn.rnn_cell.LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb)
+                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                        output_keep_prob=self.dropoutKeepProb[0])
 
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
-                    outputs, self.current_state = tf.nn.bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
+                    outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
                                                                                   self.embeddedWords, dtype=tf.float32,
                                                                                   scope="bi-lstm" + str(idx))
 
@@ -784,7 +793,8 @@ with tf.Graph().as_default():
         savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
-        builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
+
+        # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
         sess.run(tf.global_variables_initializer())
 
@@ -793,11 +803,13 @@ with tf.Graph().as_default():
             """
             训练函数
             """
+            feeddrop = [config.model.dropoutKeepProb] * len(batchX)
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
                 lstm.char_ids: batchZ,
-                lstm.dropoutKeepProb: config.model.dropoutKeepProb
+                # lstm.dropoutKeepProb: config.model.dropoutKeepProb
+                lstm.dropoutKeepProb: feeddrop
             }
             _, summary, step, loss, predictions = sess.run(
                 [trainOp, summaryOp, globalStep, lstm.loss, lstm.predictions],
@@ -821,11 +833,13 @@ with tf.Graph().as_default():
             """
             验证函数
             """
+            feeddrop = [1.0] * len(batchX)
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
                 lstm.char_ids: batchZ,
-                lstm.dropoutKeepProb: 1.0
+                # lstm.dropoutKeepProb: 1.0
+                lstm.dropoutKeepProb: feeddrop
             }
             summary, step, loss, predictions = sess.run(
                 [summaryOp, globalStep, lstm.loss, lstm.predictions],
@@ -891,11 +905,11 @@ with tf.Graph().as_default():
         prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
                                                                                       method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
         legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
-        builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
-                                             signature_def_map={"predict": prediction_signature},
-                                             legacy_init_op=legacy_init_op)
-
-        builder.save()
+        # builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
+        #                                      signature_def_map={"predict": prediction_signature},
+        #                                      legacy_init_op=legacy_init_op)
+        #
+        # builder.save()
 
 # %%
 
