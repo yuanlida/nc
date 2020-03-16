@@ -932,23 +932,24 @@ for word in setence:
     ids = [char2index.get(item, char2index[build_data.UNK]) for item in word]
     char_ids.append(ids)
 
+# 先补充sequece数量
+if len(char_ids) < config.sequenceLength:
+    for i in range(config.sequenceLength - len(char_ids)):
+        char_ids.append([char2index[build_data.PAD]])
+elif len(char_ids) > config.sequenceLength:
+    char_ids = char_ids[:config.sequenceLength]
+
+
 char_list = []
-for ids in char_ids:
-    # 先补充sequece数量
-    if len(ids) < config.sequenceLength:
-        for i in range(config.sequenceLength - len(ids)):
-            ids.append([char2index[build_data.PAD]])
-    elif len(ids) > config.sequenceLength:
-        ids = ids[:config.sequenceLength]
+for word in char_ids:
     temp_ids = []
     # 再补充每个word内的char数量
-    for word in ids:
-        if len(word) < config.word_length:
-            for i in range(config.word_length - len(word)):
-                word.append(char2index[build_data.PAD])
-        elif len(word) > config.word_length:
-            word = word[:config.word_length]
-        temp_ids.append(word)
+    if len(word) < config.word_length:
+        for i in range(config.word_length - len(word)):
+            word.append(char2index[build_data.PAD])
+    elif len(word) > config.word_length:
+        word = word[:config.word_length]
+    temp_ids.append(word)
     char_list.append(temp_ids)
 
 graph = tf.Graph()
