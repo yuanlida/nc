@@ -1,3 +1,5 @@
+char_cnn_raw/runs/
+char_cnn_raw/test.vec
 text_cnn/per_model/
 convert
 .DS_Store

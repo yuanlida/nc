@@ -8,8 +8,8 @@ import os
 from py._builtin import execfile
 
 import config
-from .data_utils import Data
-from .char_cnn import CharConvNet
+from data_utils import Data
+from char_cnn_raw import CharCNN as CharConvNet
 
 learning_rate = 0.001
 if __name__ == '__main__':
