@@ -17,4 +17,7 @@
 3.  Jeffery做模型测试，看模型大小，和精确度。  进行中
 4.  Dalio修改charcnn模型后，移植bi_lstm_wc. 搞定 
 5. character调用 搞定
-6.  如果是数字，在word内提取出来，在char内是不是提取，看精度决定。 by Jerffery
+6.  如果是数字，在word内提取出来，在char内是不是提取，看精度决定。 by Jerffery  
+
+## work
+明天测试完lstm模型，就开始往其他模型上挪，要找个最小的，最准的。

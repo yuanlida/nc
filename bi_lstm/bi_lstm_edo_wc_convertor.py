@@ -514,6 +514,12 @@ class BiLSTM(object):
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb[0])
 
+                    # cell_a = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # shell_b = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # lstmFwCell = tf.nn.dropout(cell_a, self.dropoutKeepProb[0], seed=time.time())
+                    # lstmBwCell = tf.nn.dropout(shell_b, self.dropoutKeepProb[0], seed=time.time())
+
+
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
