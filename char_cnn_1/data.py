@@ -1,0 +1,2 @@
+class EdoData(object):
+    pass

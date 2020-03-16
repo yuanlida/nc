@@ -199,7 +199,7 @@ class Dataset(object):
         按照我们的数据集中的单词取出预训练好的word2vec中的词向量
         """
 
-        wordVec = gensim.models.KeyedVectors.load_word2vec_format("../word2vec/word2Vec.bin", binary=True)
+        # wordVec = gensim.models.KeyedVectors.load_word2vec_format("../word2vec/word2Vec.bin", binary=True)
         vocab = []
         wordEmbedding = []
 

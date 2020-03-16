@@ -7,7 +7,7 @@ class Data(object):
     
     def __init__(self,
                  data_source,
-                 alphabet="abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}",
+                 alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}",
                  l0=1014,
                  batch_size=128,
                  no_of_classes=4):
