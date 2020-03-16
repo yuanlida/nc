@@ -11,8 +11,10 @@
 7. 保存为TFLite  搞定。
 8. glove引入，解决大小写问题.推迟   
 
+## today work
 1.  一部分准确率低的原因是随机矩阵维度太低。  
 2.  维度低可以加快迭代速度。  
 3.  Jeffery做模型测试，看模型大小，和精确度。  
 4.  Dalio修改charcnn模型后，移植bi_lstm_wc.  
-5.  如果是数字，在word内提取出来，在char内是不是提取，看精度决定。 by Jerffery
+5. character调用
+6.  如果是数字，在word内提取出来，在char内是不是提取，看精度决定。 by Jerffery
