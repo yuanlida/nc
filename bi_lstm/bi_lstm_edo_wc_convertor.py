@@ -898,7 +898,8 @@ with tf.Graph().as_default():
                     print("Saved model checkpoint to {}\n".format(path))
 
         inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
-                  "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb)}
+                  "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
+                  "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
 
         outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
 

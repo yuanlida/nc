@@ -884,7 +884,8 @@ with tf.Graph().as_default():
                     print("Saved model checkpoint to {}\n".format(path))
 
         inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
-                  "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb)}
+                  "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
+                  "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
 
         outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
 
@@ -909,11 +910,46 @@ with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
+# word list
 xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
 else:
     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
+
+# character list
+with open("../data/charJson/charToIndex.json") as f:
+    char2index = json.load(f)
+
+with open("../data/charJson/indexToChar.json") as f:
+    index2char = json.load(f)
+
+# setence 分解成char_ids
+setence = [item for item in x.split(" ")]
+
+char_ids = []
+for word in setence:
+    ids = [char2index.get(item, char2index[build_data.UNK]) for item in word]
+    char_ids.append(ids)
+
+char_list = []
+for ids in char_ids:
+    # 先补充sequece数量
+    if len(ids) < config.sequenceLength:
+        for i in range(config.sequenceLength - len(ids)):
+            ids.append([char2index[build_data.PAD]])
+    elif len(ids) > config.sequenceLength:
+        ids = ids[:config.sequenceLength]
+    temp_ids = []
+    # 再补充每个word内的char数量
+    for word in ids:
+        if len(word) < config.word_length:
+            for i in range(config.word_length - len(word)):
+                word.append(char2index[build_data.PAD])
+        elif len(word) > config.word_length:
+            word = word[:config.word_length]
+        temp_ids.append(word)
+    char_list.append(temp_ids)
 
 graph = tf.Graph()
 with graph.as_default():
@@ -929,11 +965,12 @@ with graph.as_default():
         # 获得需要喂给模型的参数，输出的结果依赖的输入值
         inputX = graph.get_operation_by_name("inputX").outputs[0]
         dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
+        char_ids = graph.get_operation_by_name("char_ids").outputs[0]
 
         # 获得输出的结果
         predictions = graph.get_tensor_by_name("output/predictions:0")
 
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0})[0]
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0, char_ids: [char_list]})[0]
 
 pred = [idx2label[item] for item in pred]
 print(pred)
