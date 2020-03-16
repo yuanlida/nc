@@ -19,10 +19,10 @@ import numpy as np
 import tensorflow as tf
 from sklearn.metrics import roc_auc_score, accuracy_score, precision_score, recall_score
 
-from tensorflow.contrib.rnn import LSTMCell
-# from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
-from tensorflow.nn import bidirectional_dynamic_rnn
-# from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
+# from tensorflow.contrib.rnn import LSTMCell
+from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
+# from tensorflow.nn import bidirectional_dynamic_rnn
+from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
 
 warnings.filterwarnings("ignore")
 from build_data import get_data, train_files
@@ -514,6 +514,12 @@ class BiLSTM(object):
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb[0])
 
+                    # cell_a = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # shell_b = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # lstmFwCell = tf.nn.dropout(cell_a, self.dropoutKeepProb[0], seed=time.time())
+                    # lstmBwCell = tf.nn.dropout(shell_b, self.dropoutKeepProb[0], seed=time.time())
+
+
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
@@ -868,29 +874,29 @@ with tf.Graph().as_default():
                 if currentStep % config.training.evaluateEvery == 0:
                     print("\nEvaluation:")
 
-                    losses = []
-                    accs = []
-                    f_betas = []
-                    precisions = []
-                    recalls = []
-
-                    for batchEval in nextBatch(evalReviews, evalLabels, evalChars, config.batchSize):
-                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1], batchEval[2])
-                        losses.append(loss)
-                        accs.append(acc)
-                        f_betas.append(f_beta)
-                        precisions.append(precision)
-                        recalls.append(recall)
-
-                    time_str = datetime.datetime.now().isoformat()
-                    print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
-                                                                                                         currentStep,
-                                                                                                         mean(losses),
-                                                                                                         mean(accs),
-                                                                                                         mean(
-                                                                                                             precisions),
-                                                                                                         mean(recalls),
-                                                                                                         mean(f_betas)))
+                    # losses = []
+                    # accs = []
+                    # f_betas = []
+                    # precisions = []
+                    # recalls = []
+                    #
+                    # for batchEval in nextBatch(evalReviews, evalLabels, evalChars, config.batchSize):
+                    #     loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1], batchEval[2])
+                    #     losses.append(loss)
+                    #     accs.append(acc)
+                    #     f_betas.append(f_beta)
+                    #     precisions.append(precision)
+                    #     recalls.append(recall)
+                    #
+                    # time_str = datetime.datetime.now().isoformat()
+                    # print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
+                    #                                                                                      currentStep,
+                    #                                                                                      mean(losses),
+                    #                                                                                      mean(accs),
+                    #                                                                                      mean(
+                    #                                                                                          precisions),
+                    #                                                                                      mean(recalls),
+                    #                                                                                      mean(f_betas)))
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
@@ -912,7 +918,16 @@ with tf.Graph().as_default():
         #
         # builder.save()
 
+        tf.compat.v1.saved_model.simple_save(sess,
+                                   "../model/Bi-LSTM/savedModel",
+                                   inputs={"inputX": lstm.inputX,
+                                           "keepProb": lstm.dropoutKeepProb,
+                                           "char_ids": lstm.char_ids
+                                           },
+                                   outputs={"predictions": lstm.predictions})
+
 # %%
+
 
 x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
 
@@ -924,11 +939,47 @@ with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
+# word list
 xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
 else:
     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
+
+# character list
+with open("../data/charJson/charToIndex.json") as f:
+    char2index = json.load(f)
+
+with open("../data/charJson/indexToChar.json") as f:
+    index2char = json.load(f)
+
+# setence 分解成char_ids
+setence = [item for item in x.split(" ")]
+
+char_ids = []
+for word in setence:
+    ids = [char2index.get(item, char2index[build_data.UNK]) for item in word]
+    char_ids.append(ids)
+
+# 先补充sequece数量
+if len(char_ids) < config.sequenceLength:
+    for i in range(config.sequenceLength - len(char_ids)):
+        char_ids.append([char2index[build_data.PAD]])
+elif len(char_ids) > config.sequenceLength:
+    char_ids = char_ids[:config.sequenceLength]
+
+
+char_list = []
+for word in char_ids:
+    temp_ids = []
+    # 再补充每个word内的char数量
+    if len(word) < config.word_length:
+        for i in range(config.word_length - len(word)):
+            word.append(char2index[build_data.PAD])
+    elif len(word) > config.word_length:
+        word = word[:config.word_length]
+    temp_ids.append(word)
+    char_list.append(temp_ids)
 
 graph = tf.Graph()
 with graph.as_default():
@@ -944,11 +995,13 @@ with graph.as_default():
         # 获得需要喂给模型的参数，输出的结果依赖的输入值
         inputX = graph.get_operation_by_name("inputX").outputs[0]
         dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
+        char_ids = graph.get_operation_by_name("char_ids").outputs[0]
 
         # 获得输出的结果
         predictions = graph.get_tensor_by_name("output/predictions:0")
 
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0})[0]
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0, char_ids: [char_list]})[0]
 
 pred = [idx2label[item] for item in pred]
 print(pred)
+
