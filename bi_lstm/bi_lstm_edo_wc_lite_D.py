@@ -3,6 +3,7 @@
 import os
 import csv
 import time
+os.environ['TF_ENABLE_CONTROL_FLOW_V2'] = '1'
 import datetime
 import random
 import json
@@ -22,11 +23,13 @@ from build_data import get_data, train_files
 import build_data
 import config as constant
 
-from tensorflow.contrib.rnn import LSTMCell
-# from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
 
-from tensorflow.nn import bidirectional_dynamic_rnn
-# from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
+
+# from tensorflow.contrib.rnn import LSTMCell
+from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
+
+# from tensorflow.nn import bidirectional_dynamic_rnn
+from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
 
 # %%
 
@@ -41,20 +44,20 @@ class TrainingConfig(object):
 
 class ModelConfig(object):
     #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
-    hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
+    hiddenSizes = [200, 200]  # 单层LSTM结构的神经元个数
 
     dropoutKeepProb = 0.5
     l2RegLambda = 0.0
 
-    embeddingSize = 300
+    embeddingSize = 50
 
     # embeddings
-    dim_word = 300
-    dim_char = 100
+    dim_word = 50
+    dim_char = 25
 
     # model hyperparameters
-    hidden_size_lstm = 300  # lstm on word embeddings
-    hidden_size_char = 100  # lstm on chars
+    hidden_size_lstm = 200  # lstm on word embeddings
+    hidden_size_char = 50  # lstm on chars
 
 
 class Config(object):
@@ -471,8 +474,10 @@ class BiLSTM(object):
 
                 # put the time dimension on axis=1
                 s = tf.shape(char_embeddings)
+                # char_embeddings = tf.reshape(char_embeddings,
+                #                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
                 char_embeddings = tf.reshape(char_embeddings,
-                                             shape=[s[0] * s[1], s[-2], config.model.dim_char])
+                                             shape=[s[-2],s[0] * s[1],  config.model.dim_char])
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
                 # bi lstm on chars
@@ -483,48 +488,88 @@ class BiLSTM(object):
                 _output = bidirectional_dynamic_rnn(
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
-                    dtype=tf.float32)
-
+                    dtype=tf.float32,
+	                time_major=True
+                )
+                # toutput = tf.reshape(_output,
+                #                              shape=[s[1],s[0] ,  config.model.dim_char ])
+            
                 # read and concat output
                 _, ((_, output_fw), (_, output_bw)) = _output
+                output_fw = tf.reshape(output_fw,shape=[s[1],s[0] ,  config.model.hidden_size_char ])
+                output_bw= tf.reshape(output_bw,shape=[s[1],s[0] ,  config.model.hidden_size_char ])
                 output = tf.concat([output_fw, output_bw], axis=-1)
+                
+                
 
                 # shape = (batch size, max sentence length, char hidden size)
-                output = tf.reshape(output,
-                                    shape=[s[0], s[1], 2 * config.model.hidden_size_char])
+                output = tf.reshape(output, shape=[s[0], s[1], 2 * config.model.hidden_size_char])
+                # output = tf.reshape(output, shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
             self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
-
-        # 定义两层双向LSTM的模型结构
+            
+        # 单层
         with tf.name_scope("Bi-LSTM"):
+            lstmFwCell = LSTMCell(num_units=config.model.hidden_size_lstm, state_is_tuple=True)
+            # 定义反向LSTM结构
+            lstmBwCell = LSTMCell(num_units=config.model.hidden_size_lstm, state_is_tuple=True)
+    
+            sw = tf.shape(self.embeddedWords)
+            print(self.embeddedWords.get_shape())
+            self.embeddedWords = tf.reshape(self.embeddedWords, shape=[config.sequenceLength, config.batchSize, 2*config.model.hidden_size_char + config.model.dim_word])
+            print(self.embeddedWords.get_shape())
+    
+            # self.embeddedWords = tf.reshape(self.embeddedWords, shape=[32, 128,-1])
+            # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
+            # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
+            # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
+            outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
+                                                                   self.embeddedWords, dtype=tf.float32, time_major=True)
+            (output_fw, output_bw) = outputs
+            output_fw = tf.reshape(output_fw, shape=[s[1], s[0], config.model.hidden_size_lstm])
+            output_bw = tf.reshape(output_bw, shape=[s[1], s[0], config.model.hidden_size_lstm])
+            output = tf.concat([output_fw, output_bw], axis=-1)
+            output = tf.reshape(output, shape=[config.batchSize, config.sequenceLength, 2 * config.model.hidden_size_lstm])
 
-            for idx, hiddenSize in enumerate(config.model.hiddenSizes):
-                with tf.name_scope("Bi-LSTM" + str(idx)):
-                    # 定义前向LSTM结构
-                    lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb)
-                    # 定义反向LSTM结构
-                    lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb)
-
-                    # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
-                    # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
-                    # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
-                    outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
-                                                                                  self.embeddedWords, dtype=tf.float32,
-                                                                                  scope="bi-lstm" + str(idx),
-                                                                            time_major=True)
-
-                    # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
-                    self.embeddedWords = tf.concat(outputs, 2)
+        # # 定义两层双向LSTM的模型结构
+        # with tf.name_scope("Bi-LSTM"):
+        #
+        #     for idx, hiddenSize in enumerate(config.model.hiddenSizes):
+        #         with tf.name_scope("Bi-LSTM" + str(idx)):
+        #             # 定义前向LSTM结构
+        #             lstmFwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+        #             # 定义反向LSTM结构
+        #             lstmBwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+        #
+        #             sw = tf.shape(self.embeddedWords)
+        #             print(self.embeddedWords.get_shape())
+        #             self.embeddedWords = tf.reshape(self.embeddedWords, shape=[config.sequenceLength,config.batchSize  , -1])
+        #             print(self.embeddedWords.get_shape())
+        #
+        #             # self.embeddedWords = tf.reshape(self.embeddedWords, shape=[32, 128,-1])
+        #             # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
+        #             # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
+        #             # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
+        #             outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
+        #                                                                           self.embeddedWords, dtype=tf.float32,
+        #                                                                           scope="bi-lstm" + str(idx),time_major=True)
+        #             # self.embeddedWords = tf.concat(outputs, 2)
+        #
+                    
+                    # (output_fw, output_bw) = outputs
+                    # output_fw = tf.reshape(output_fw,shape=[sw[1],sw[0] ,  config.model.hidden_size_lstm ])
+                    # output_bw = tf.reshape(output_bw,shape=[sw[1],sw[0] ,  config.model.hidden_size_lstm ])
+                    # # output = tf.concat([output_fw, output_bw], axis=-1)
+                    # # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
+                    #
+                    # self.embeddedWords = tf.concat([output_fw, output_bw], axis=-1)
 
         # 去除最后时间步的输出作为全连接的输入
-        finalOutput = self.embeddedWords[:, -1, :]
+        finalOutput = tf.reduce_mean(output, 1)  # word vector  addition
 
-        outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
+        # outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
+        outputSize = config.model.hidden_size_lstm  * 2 
         output = tf.reshape(finalOutput, [-1, outputSize])  # reshape成全连接层的输入维度
 
         # 全连接层的输出
@@ -787,7 +832,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "../model/Bi-LSTM/savedModel"
+        savedModelPath = "../model/Bi-LSTM/savedModel_lite"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
         builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
@@ -886,7 +931,7 @@ with tf.Graph().as_default():
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
-                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
+                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model_lite", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
         inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
@@ -965,7 +1010,7 @@ with graph.as_default():
     sess = tf.Session(config=session_conf)
 
     with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/model/")
+        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/model_lite/")
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
@@ -981,3 +1026,6 @@ with graph.as_default():
 
 pred = [idx2label[item] for item in pred]
 print(pred)
+
+if __name__ == '__main__':
+    pass
