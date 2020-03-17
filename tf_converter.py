@@ -31,6 +31,6 @@ converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
                                        tf.lite.OpsSet.SELECT_TF_OPS]
 
 tflite_model = converter.convert()
-open("./model/textCNN/text_cnn.tflite", "wb").write(tflite_model)
+open("./model/Bi-LSTM/bi-lstm.tflite", "wb").write(tflite_model)
 
 print('ok')

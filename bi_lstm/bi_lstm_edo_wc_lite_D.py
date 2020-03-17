@@ -36,6 +36,7 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 # 配置参数
 
 class TrainingConfig(object):
+    # TODO by Dalio : 10
     epoches = 10
     evaluateEvery = 100
     checkpointEvery = 100
@@ -136,6 +137,9 @@ class Dataset(object):
         reviews = []
         labels = []
         for index, file in enumerate(train_files):
+            # TODO by Dalio
+            # if index != 3:
+            #     continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
@@ -434,7 +438,7 @@ class BiLSTM(object):
 
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
-        self.dropoutKeepProb = tf.placeholder(tf.float32, name="dropoutKeepProb")
+        self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
         l2Loss = tf.constant(0.0)
@@ -481,10 +485,13 @@ class BiLSTM(object):
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
                 # bi lstm on chars
-                cell_fw = LSTMCell(config.model.hidden_size_char,
-                                                  state_is_tuple=True)
-                cell_bw = LSTMCell(config.model.hidden_size_char,
-                                                  state_is_tuple=True)
+
+                cell_fw = tf.nn.rnn_cell.DropoutWrapper(LSTMCell(config.model.hidden_size_char,
+                                                                 state_is_tuple=True),
+                                                        output_keep_prob=self.dropoutKeepProb[0])
+                cell_bw = tf.nn.rnn_cell.DropoutWrapper(LSTMCell(config.model.hidden_size_char,
+                                                                 state_is_tuple=True),
+                                                        output_keep_prob=self.dropoutKeepProb[0])
                 _output = bidirectional_dynamic_rnn(
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
@@ -500,20 +507,32 @@ class BiLSTM(object):
                 output_bw= tf.reshape(output_bw,shape=[s[1],s[0] ,  config.model.hidden_size_char ])
                 output = tf.concat([output_fw, output_bw], axis=-1)
                 
-                
+
 
                 # shape = (batch size, max sentence length, char hidden size)
                 output = tf.reshape(output, shape=[s[0], s[1], 2 * config.model.hidden_size_char])
                 # output = tf.reshape(output, shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
-            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
-            
+            # TODO by Dalio
+            # self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
+            self.embeddedWords = word_embeddings
         # 单层
         with tf.name_scope("Bi-LSTM"):
-            lstmFwCell = LSTMCell(num_units=config.model.hidden_size_lstm, state_is_tuple=True)
+            # TODO by Dalio
+            # lstmFwCell = LSTMCell(num_units=config.model.hidden_size_lstm,
+            #                                                     state_is_tuple=True)
+            # # 定义反向LSTM结构
+            # lstmBwCell = LSTMCell(num_units=config.model.hidden_size_lstm,
+            #                                                     state_is_tuple=True)
+
+            lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(LSTMCell(num_units=config.model.hidden_size_lstm,
+                                                                state_is_tuple=True),
+                                                    output_keep_prob=self.dropoutKeepProb[0])
             # 定义反向LSTM结构
-            lstmBwCell = LSTMCell(num_units=config.model.hidden_size_lstm, state_is_tuple=True)
+            lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(LSTMCell(num_units=config.model.hidden_size_lstm,
+                                                            state_is_tuple=True),
+                                                    output_keep_prob=self.dropoutKeepProb[0])
     
             sw = tf.shape(self.embeddedWords)
             print(self.embeddedWords.get_shape())
@@ -835,7 +854,7 @@ with tf.Graph().as_default():
         savedModelPath = "../model/Bi-LSTM/savedModel_lite"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
-        builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
+        # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
         sess.run(tf.global_variables_initializer())
 
@@ -844,11 +863,12 @@ with tf.Graph().as_default():
             """
             训练函数
             """
+            feeddrop = [config.model.dropoutKeepProb] * len(batchX)
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
                 lstm.char_ids: batchZ,
-                lstm.dropoutKeepProb: config.model.dropoutKeepProb
+                lstm.dropoutKeepProb: feeddrop
             }
             _, summary, step, loss, predictions = sess.run(
                 [trainOp, summaryOp, globalStep, lstm.loss, lstm.predictions],
@@ -872,11 +892,13 @@ with tf.Graph().as_default():
             """
             验证函数
             """
+            feeddrop = [1.0] * len(batchX)
+
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
                 lstm.char_ids: batchZ,
-                lstm.dropoutKeepProb: 1.0
+                lstm.dropoutKeepProb: feeddrop
             }
             summary, step, loss, predictions = sess.run(
                 [summaryOp, globalStep, lstm.loss, lstm.predictions],
@@ -934,20 +956,27 @@ with tf.Graph().as_default():
                     path = saver.save(sess, "../model/Bi-LSTM/model/my-model_lite", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
-        inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
-                  "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
-                  "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
-
-        outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
-
-        prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
-                                                                                      method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
-        legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
-        builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
-                                             signature_def_map={"predict": prediction_signature},
-                                             legacy_init_op=legacy_init_op)
-
-        builder.save()
+        # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
+        #           "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
+        #           "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
+        #
+        # outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
+        #
+        # prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
+        #                                                                               method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
+        # legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
+        # builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
+        #                                      signature_def_map={"predict": prediction_signature},
+        #                                      legacy_init_op=legacy_init_op)
+        #
+        # builder.save()
+        tf.compat.v1.saved_model.simple_save(sess,
+                                   "../model/Bi-LSTM/savedModel",
+                                   inputs={"inputX": lstm.inputX,
+                                           "keepProb": lstm.dropoutKeepProb,
+                                           "char_ids": lstm.char_ids
+                                           },
+                                   outputs={"predictions": lstm.predictions})
 
 # %%
 
@@ -1022,10 +1051,10 @@ with graph.as_default():
         # 获得输出的结果
         predictions = graph.get_tensor_by_name("output/predictions:0")
 
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0, char_ids: [[char_list]]})[0]
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: [1.0], char_ids: [[char_list]]})[0]
 
 pred = [idx2label[item] for item in pred]
 print(pred)
 
-if __name__ == '__main__':
-    pass
+# if __name__ == '__main__':
+#     pass
