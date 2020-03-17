@@ -24,11 +24,11 @@ import tensorflow as tf
 # tf.saved_model.signature_constants.PREDICT_METHOD_NAME
 # tf.saved_model.tag_constants.SERVING
 # converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/textCNN/savedModel", tag_set=[tf.saved_model.tag_constants.SERVING])
-converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/textCNN/savedModel", tag_set=[tf.saved_model.tag_constants.SERVING])
-converter.target_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
-                        tf.lite.OpsSet.SELECT_TF_OPS]
-# converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
-#                                        tf.lite.OpsSet.SELECT_TF_OPS]
+converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel", tag_set=[tf.saved_model.tag_constants.SERVING])
+# converter.target_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
+#                         tf.lite.OpsSet.SELECT_TF_OPS]
+converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
+                                       tf.lite.OpsSet.SELECT_TF_OPS]
 
 tflite_model = converter.convert()
 open("./model/textCNN/text_cnn.tflite", "wb").write(tflite_model)

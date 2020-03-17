@@ -467,7 +467,8 @@ class BiLSTM(object):
                 _char_embeddings = tf.get_variable(
                     name="_char_embeddings",
                     dtype=tf.float32,
-                    shape=[config.char_size, config.model.dim_char])
+                    shape=[config.char_size, config.model.dim_char],
+                initializer=tf.glorot_uniform_initializer(seed=time.time()))
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
                                                          self.char_ids, name="char_embeddings")
 
@@ -510,19 +511,22 @@ class BiLSTM(object):
             for idx, hiddenSize in enumerate(config.model.hiddenSizes):
                 with tf.name_scope("Bi-LSTM" + str(idx)):
                     # 定义前向LSTM结构
-                    lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb[0])
-                    # 定义反向LSTM结构
-                    lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb[0])
-
-
-                    # # 定义前向LSTM结构
-                    # lstmFwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
+                    #     LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                    #     output_keep_prob=self.dropoutKeepProb[0])
                     # # 定义反向LSTM结构
-                    # lstmBwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
+                    #     LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                    #     output_keep_prob=self.dropoutKeepProb[0])
+
+
+                    # 定义前向LSTM结构
+                    lstmFwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+                    # 定义反向LSTM结构
+                    lstmBwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
+
+                    # lstmFwCell = tf.nn.dropout(lstmFwCell_h, self.dropoutKeepProb[0], seed=time.time())
+                    # lstmBwCell = tf.nn.dropout(lstmBwCell_h, self.dropoutKeepProb[0], seed=time.time())
 
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
@@ -923,7 +927,7 @@ with tf.Graph().as_default():
         # builder.save()
 
         tf.compat.v1.saved_model.simple_save(sess,
-                                   "../model/textCNN/savedModel",
+                                   "../model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
                                            "keepProb": lstm.dropoutKeepProb,
                                            "char_ids": lstm.char_ids
