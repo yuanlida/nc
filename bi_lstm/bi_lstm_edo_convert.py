@@ -2,6 +2,7 @@
 import os
 os.environ['TF_ENABLE_CONTROL_FLOW_V2'] = '1'
 
+import os
 import csv
 import time
 import datetime
@@ -23,12 +24,12 @@ from build_data import get_data, train_files
 import build_data
 import config as constant
 
-
 # from tensorflow.contrib.rnn import LSTMCell
 from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
 
 # from tensorflow.nn import bidirectional_dynamic_rnn
 from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
+
 
 # %%
 
@@ -42,30 +43,17 @@ class TrainingConfig(object):
 
 
 class ModelConfig(object):
-    #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
-    hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
+    embeddingSize = 300
+
+    hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
 
     dropoutKeepProb = 0.5
     l2RegLambda = 0.0
 
-    embeddingSize = 300
-
-    # embeddings
-    dim_word = 300
-    dim_char = 100
-
-    # model hyperparameters
-    hidden_size_lstm = 300  # lstm on word embeddings
-    hidden_size_char = 100  # lstm on chars
-
 
 class Config(object):
-    sequenceLength = 32  # 取了所有序列长度的均值
+    sequenceLength = 200  # 取了所有序列长度的均值
     batchSize = 128
-    word_length = 10
-
-    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
-    #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
     dataSource = "../data/preProcess/labeledTrain.csv"
 
@@ -75,17 +63,9 @@ class Config(object):
 
     rate = 0.8  # 训练集的比例
 
-    embeddings = None
-
-    train_embeddings = True
-
-    use_chars = True
-
     training = TrainingConfig()
 
     model = ModelConfig()
-
-    char_size = 0
 
 
 # 实例化配置参数对象
@@ -104,27 +84,18 @@ class Dataset(object):
 
         self._sequenceLength = config.sequenceLength  # 每条输入的序列处理为定长
         self._embeddingSize = config.model.embeddingSize
-        self._charEmbdingSize = config.model.dim_char
         self._batchSize = config.batchSize
         self._rate = config.rate
 
         self._stopWordDict = {}
 
         self.trainReviews = []
-        self.trainChars = []
         self.trainLabels = []
 
         self.evalReviews = []
-        self.evalChars = []
         self.evalLabels = []
 
         self.wordEmbedding = None
-        self.charEmbedding = None
-
-        self._alphabet = config.alphabet
-
-        self._charToIndex = {}
-        self._indexToChar = {}
 
         self.labelList = []
 
@@ -136,7 +107,6 @@ class Dataset(object):
         reviews = []
         labels = []
         for index, file in enumerate(train_files):
-            # TODO by Dalio
             if index != 3:
                 continue
             with open(file) as f:
@@ -171,7 +141,7 @@ class Dataset(object):
         reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
         return reviewIds
 
-    def _genTrainEvalData(self, x, y, word2idx, rate, char_ids):
+    def _genTrainEvalData(self, x, y, word2idx, rate):
         """
         生成训练集和验证集
         """
@@ -182,93 +152,24 @@ class Dataset(object):
             else:
                 reviews.append(review + [word2idx[build_data.PAD]] * (self._sequenceLength - len(review)))
 
-        char_list = []
-        for ids in char_ids:
-            if len(ids) < config.sequenceLength:
-                for i in range(config.sequenceLength - len(ids)):
-                    ids.append([self._charToIndex[build_data.PAD]])
-            elif len(ids) > config.sequenceLength:
-                ids = ids[:config.sequenceLength]
-            temp_ids = []
-            for word in ids:
-                if len(word) < config.word_length:
-                    for i in range(config.word_length - len(word)):
-                        word.append(self._charToIndex[build_data.PAD])
-                elif len(word) > config.word_length:
-                    word = word[:config.word_length]
-                temp_ids.append(word)
-            char_list.append(temp_ids)
-
         trainIndex = int(len(x) * rate)
 
         # 随机取值
-        datas = list(zip(reviews, y, char_list))
+        datas = list(zip(reviews, y))
         random.shuffle(datas)
         reviews = []
         y = []
-        char_ids = []
-        for review, tag, chars in datas:
+        for review, tag in datas:
             reviews.append(review)
             y.append(tag)
-            char_ids.append(chars)
 
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
-        trainChars = np.asarray(char_ids[:trainIndex], dtype="int64")
-        trainLabels = np.array(y[:trainIndex], dtype="float32")
+        trainLabels = np.array(y[:trainIndex], dtype="int64")
 
         evalReviews = np.asarray(reviews[trainIndex:], dtype="int64")
-        evalChars = np.array(char_ids[trainIndex:], dtype="int64")
         evalLabels = np.array(y[trainIndex:], dtype="float32")
 
-        return trainReviews, trainLabels, trainChars, evalReviews, evalLabels, evalChars
-
-    def _gen_char_vacablulary(self):
-        chars = [char for char in self._alphabet]
-        vocab, embeding_char = self._getCharEmbedding(chars)
-        self.charEmbedding = embeding_char
-
-        self._charToIndex = dict(zip(vocab, list(range(len(vocab)))))
-        self._indexToChar = dict(zip(list(range(len(vocab))), vocab))
-
-        # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("../data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
-            json.dump(self._charToIndex, f)
-
-        with open("../data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
-            json.dump(self._indexToChar, f)
-
-        config.char_size = len(self._indexToChar)
-
-
-    def _getCharEmbedding(self, chars):
-        """
-        按照one的形式将字符映射成向量
-        """
-
-        alphabet = [build_data.UNK] + [char for char in self._alphabet]
-        cab = [build_data.PAD] + alphabet
-        charEmbedding = []
-        charEmbedding.append(np.zeros(self._charEmbdingSize))
-        vocab = [build_data.PAD]
-        for word in alphabet:
-            try:
-                charEmbedding.append(np.random.randn(self._charEmbdingSize))
-                vocab.append(word)
-            except:
-                print(word + "无法生成随机矩阵")
-        # charEmbedding = []
-        # charEmbedding.append(np.zeros(len(alphabet), dtype="float32"))
-        #
-        # for i, alpha in enumerate(alphabet):
-        #     onehot = np.zeros(len(alphabet), dtype="float32")
-        #
-        #     # 生成每个字符对应的向量
-        #     onehot[i] = 1
-        #
-        #     # 生成字符嵌入的向量矩阵
-        #     charEmbedding.append(onehot)
-
-        return vocab, np.array(charEmbedding)
+        return trainReviews, trainLabels, evalReviews, evalLabels
 
     def _genVocabulary(self, reviews, labels):
         """
@@ -348,16 +249,6 @@ class Dataset(object):
             # 将停用词用列表的形式生成，之后查找停用词时会比较快
             self.stopWordDict = dict(zip(stopWordList, list(range(len(stopWordList)))))
 
-    def _char_to_ids(self, reviews, char2id):
-        char_ids = []
-        for setence in reviews:
-            setence_ids = []
-            for word in setence:
-                ids = [char2id.get(item, char2id[build_data.UNK]) for item in word]
-                setence_ids.append(ids)
-            char_ids.append(setence_ids)
-        return char_ids
-
     def dataGen(self):
         """
         初始化训练集和验证集
@@ -365,30 +256,24 @@ class Dataset(object):
 
         # 初始化停用词
         self._readStopWord(self._stopWordSource)
+
         # 初始化数据集
         reviews, labels = self._readData(self._dataSource)
 
-        self._gen_char_vacablulary()
         # 初始化词汇-索引映射表和词向量矩阵
         word2idx, label2idx = self._genVocabulary(reviews, labels)
 
         # 将标签和句子数值化
         labelIds = self._labelToIndex(labels, label2idx)
         reviewIds = self._wordToIndex(reviews, word2idx)
-        char_ids = self._char_to_ids(reviews, self._charToIndex)
 
         # 初始化训练集和测试集
-        trainReviews, trainLabels, train_chars, evalReviews, evalLabels, eval_chars = self._genTrainEvalData(reviewIds,
-                                                                                                             labelIds,
-                                                                                                             word2idx,
-                                                                                                             self._rate,
-                                                                                                             char_ids)
+        trainReviews, trainLabels, evalReviews, evalLabels = self._genTrainEvalData(reviewIds, labelIds, word2idx,
+                                                                                    self._rate)
         self.trainReviews = trainReviews
-        self.trainChars = train_chars
         self.trainLabels = trainLabels
 
         self.evalReviews = evalReviews
-        self.evalChars = eval_chars
         self.evalLabels = evalLabels
 
 
@@ -406,7 +291,7 @@ print("eval data shape: {}".format(data.evalReviews.shape))
 
 # 输出batch数据集
 
-def nextBatch(x, y, z, batchSize):
+def nextBatch(x, y, batchSize):
     """
     生成batch数据集，用生成器的方式输出
     """
@@ -415,7 +300,6 @@ def nextBatch(x, y, z, batchSize):
     np.random.shuffle(perm)
     x = x[perm]
     y = y[perm]
-    z = z[perm]
 
     numBatches = len(x) // batchSize
 
@@ -424,9 +308,8 @@ def nextBatch(x, y, z, batchSize):
         end = start + batchSize
         batchX = np.array(x[start: end], dtype="int64")
         batchY = np.array(y[start: end], dtype="float32")
-        batchZ = np.array(z[start: end], dtype="int64")
 
-        yield batchX, batchY, batchZ
+        yield batchX, batchY
 
 
 # %%
@@ -437,99 +320,24 @@ class BiLSTM(object):
     Bi-LSTM 用于文本分类
     """
 
-    def __init__(self, config, wordEmbedding, charEmbeding):
+    def __init__(self, config, wordEmbedding):
 
         # 定义模型的输入
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
-
-        # shape = (batch size, max length of sentence, max length of word)
-        self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
-                                       name="char_ids")
-
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
         self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
-        # l2Loss = tf.constant(0.0)
+        l2Loss = tf.constant(0.0)
 
         # 词嵌入层
         with tf.name_scope("embedding"):
 
-            # # 利用预训练的词向量初始化词嵌入矩阵
-            # self.W = tf.Variable(tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"), name="W")
-            # # 利用词嵌入矩阵将输入的数据中的词转换成词向量，维度[batch_size, sequence_length, embedding_size]
-            # self.embeddedWords = tf.nn.embedding_lookup(self.W, self.inputX)
-
-            with tf.variable_scope("words"):
-                # self.logger.info("WARNING: randomly initializing word vectors")
-                # self.W = tf.get_variable(
-                #     name="_word_embeddings",
-                #     dtype=tf.float32,
-                #     shape=[len(wordEmbedding), config.model.embeddingSize])
-
-                self.W = tf.Variable(
-                    tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"),
-                    name="_word_embeddings",
-                    dtype=tf.float32,
-                    trainable=True)
-
-                self.word_embeddings = tf.nn.embedding_lookup(self.W,
-                                                            self.inputX, name="word_embeddings")
-
-            with tf.variable_scope("chars"):
-                with tf.name_scope("dird"):
-                    # get char embeddings matrix
-                    _char_embeddings = tf.Variable(
-                        tf.cast(charEmbedding, dtype=tf.float32, name="char2vec"),
-                        name="_char_embeddings",
-                        dtype=tf.float32,
-                        trainable=True)
-
-                    # _char_embeddings = tf.get_variable(
-                    #     name="_char_embeddings",
-                    #     dtype=tf.float32,
-                    #     shape=[config.char_size, config.model.dim_char],
-                    #     initializer=tf.glorot_uniform_initializer(seed=time.time())
-                    #     # initializer=tf.glorot_uniform_initializer()
-                    # )
-                    char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
-                                                             self.char_ids, name="char_embeddings")
-
-                    # put the time dimension on axis=1
-                    s = tf.shape(char_embeddings)
-                    # char_embeddings = tf.reshape(char_embeddings,
-                    #                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
-
-                    char_embeddings = tf.reshape(char_embeddings,
-                                                 shape=[s[-2], s[0] * s[1], config.model.dim_char])
-
-                    # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
-                with tf.name_scope("dirc"):
-                # bi lstm on chars
-                    cell_fw = LSTMCell(config.model.hidden_size_char,
-                                                      state_is_tuple=True)
-                    cell_bw = LSTMCell(config.model.hidden_size_char,
-                                                      state_is_tuple=True)
-                    with tf.name_scope("dirf"):
-                        _output = bidirectional_dynamic_rnn(
-                            cell_fw, cell_bw, char_embeddings,
-                            # sequence_length=word_lengths,
-                            dtype=tf.float32,
-                            time_major=True
-                            )
-                with tf.name_scope("dira"):
-                # read and concat output
-                    _, ((_, output_fw), (_, output_bw)) = _output
-                    output = tf.concat([output_fw, output_bw], axis=-1)
-
-                    # shape = (batch size, max sentence length, char hidden size)
-                    output = tf.reshape(output,
-                                        shape=[s[0], s[1], 2 * config.model.hidden_size_char])
-                    word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
-            # with tf.variable_scope("tf.nn.dropout"):
-            with tf.name_scope("dirb"):
-                self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb[0], seed=time.time())
+            # 利用预训练的词向量初始化词嵌入矩阵
+            self.W = tf.Variable(tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"), name="W")
+            # 利用词嵌入矩阵将输入的数据中的词转换成词向量，维度[batch_size, sequence_length, embedding_size]
+            self.embeddedWords = tf.nn.embedding_lookup(self.W, self.inputX)
 
         # 定义两层双向LSTM的模型结构
         with tf.name_scope("Bi-LSTM"):
@@ -537,66 +345,41 @@ class BiLSTM(object):
             for idx, hiddenSize in enumerate(config.model.hiddenSizes):
                 with tf.name_scope("Bi-LSTM" + str(idx)):
                     # 定义前向LSTM结构
-                    # lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
-                    #     LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                    #     output_keep_prob=self.dropoutKeepProb[0])
-                    # # 定义反向LSTM结构
-                    # lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
-                    #     LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                    #     output_keep_prob=self.dropoutKeepProb[0])
-                    with tf.name_scope("dirdira"):
-
-                        lstmFwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
-                        # 定义反向LSTM结构
-                        lstmBwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
-
-
-                    # # 定义前向LSTM结构
-                    # lstmFwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
-                    # # 定义反向LSTM结构
-                    # lstmBwCell = LSTMCell(num_units=hiddenSize, state_is_tuple=True)
-
-                    # lstmFwCell = tf.nn.dropout(lstmFwCell_h, self.dropoutKeepProb[0], seed=time.time())
-                    # lstmBwCell = tf.nn.dropout(lstmBwCell_h, self.dropoutKeepProb[0], seed=time.time())
+                    lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
+                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                        output_keep_prob=self.dropoutKeepProb[0])
+                    # 定义反向LSTM结构
+                    lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
+                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                        output_keep_prob=self.dropoutKeepProb[0])
 
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
-                    with tf.name_scope("dirdirb"):
-                        outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell,
-                                                                                lstmBwCell,
-                                                                                self.embeddedWords,
-                                                                                dtype=tf.float32,
-                                                                                scope="bi-lstm" + str(idx),
-                                                                                time_major=True)
+                    outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
+                                                                                  self.embeddedWords, dtype=tf.float32,
+                                                                                  scope="bi-lstm" + str(idx),
+                                                                                  time_major=True)
 
-                        # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
-                        self.embeddedWords = tf.concat(outputs, 2)
-        with tf.name_scope("finalOutput"):
-            # 去除最后时间步的输出作为全连接的输入
-            finalOutput = self.embeddedWords[:, -1, :]
+                    # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
+                    self.embeddedWords = tf.concat(outputs, 2)
 
-            outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
-            output = tf.reshape(finalOutput, [-1, outputSize])  # reshape成全连接层的输入维度
+        # 去除最后时间步的输出作为全连接的输入
+        finalOutput = self.embeddedWords[:, -1, :]
+
+        outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
+        output = tf.reshape(finalOutput, [-1, outputSize])  # reshape成全连接层的输入维度
 
         # 全连接层的输出
         with tf.name_scope("output"):
             outputW = tf.get_variable(
                 "outputW",
                 shape=[outputSize, config.numClasses],
-                initializer=tf.glorot_uniform_initializer()
-                # initializer=tf.glorot_uniform_initializer()
-            )
+                initializer=tf.contrib.layers.xavier_initializer())
 
-            outputB = tf.compat.v1.get_variable(name="outputB",
-                                          shape=[config.numClasses],
-                                          initializer=tf.zeros_initializer(),  # generates tensors initialised to 0
-                                          dtype=tf.float32)
-
-            # outputB = tf.Variable(tf.constant(0.1, shape=[config.numClasses]), name="outputB")
-
-            # l2Loss += tf.nn.l2_loss(outputW)
-            # l2Loss += tf.nn.l2_loss(outputB)
+            outputB = tf.Variable(tf.constant(0.1, shape=[config.numClasses]), name="outputB")
+            l2Loss += tf.nn.l2_loss(outputW)
+            l2Loss += tf.nn.l2_loss(outputB)
             self.logits = tf.nn.xw_plus_b(output, outputW, outputB, name="logits")
             if config.numClasses == 1:
                 self.predictions = tf.cast(tf.greater_equal(self.logits, 0.0), tf.float32, name="predictions")
@@ -613,7 +396,7 @@ class BiLSTM(object):
             elif config.numClasses > 1:
                 losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=self.logits, labels=self.inputY)
 
-            self.loss = tf.reduce_mean(losses) #+ config.model.l2RegLambda * l2Loss
+            self.loss = tf.reduce_mean(losses) + config.model.l2RegLambda * l2Loss
 
 
 # %%
@@ -794,15 +577,11 @@ def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0):
 
 # 生成训练集和验证集
 trainReviews = data.trainReviews
-trainChars = data.trainChars
 trainLabels = data.trainLabels
-
 evalReviews = data.evalReviews
-evalChars = data.evalChars
 evalLabels = data.evalLabels
 
 wordEmbedding = data.wordEmbedding
-charEmbedding = data.charEmbedding
 labelList = data.labelList
 
 # 定义计算图
@@ -815,7 +594,7 @@ with tf.Graph().as_default():
 
     # 定义会话
     with sess.as_default():
-        lstm = BiLSTM(config, wordEmbedding, charEmbedding)
+        lstm = BiLSTM(config, wordEmbedding)
 
         globalStep = tf.Variable(0, name="globalStep", trainable=False)
         # 定义优化函数，传入学习速率参数
@@ -826,50 +605,49 @@ with tf.Graph().as_default():
         trainOp = optimizer.apply_gradients(gradsAndVars, global_step=globalStep)
 
         # 用summary绘制tensorBoard
-        # gradSummaries = []
-        # for g, v in gradsAndVars:
-        #     if g is not None:
-        #         tf.summary.histogram("{}/grad/hist".format(v.name), g)
-        #         tf.summary.scalar("{}/grad/sparsity".format(v.name), tf.nn.zero_fraction(g))
-        #
-        # outDir = os.path.abspath(os.path.join(os.path.curdir, "summarys"))
-        # print("Writing to {}\n".format(outDir))
-        #
-        # lossSummary = tf.summary.scalar("loss", lstm.loss)
-        # summaryOp = tf.summary.merge_all()
-        #
-        # trainSummaryDir = os.path.join(outDir, "train")
-        # trainSummaryWriter = tf.summary.FileWriter(trainSummaryDir, sess.graph)
-        #
-        # evalSummaryDir = os.path.join(outDir, "eval")
-        # evalSummaryWriter = tf.summary.FileWriter(evalSummaryDir, sess.graph)
+        gradSummaries = []
+        for g, v in gradsAndVars:
+            if g is not None:
+                tf.summary.histogram("{}/grad/hist".format(v.name), g)
+                tf.summary.scalar("{}/grad/sparsity".format(v.name), tf.nn.zero_fraction(g))
+
+        outDir = os.path.abspath(os.path.join(os.path.curdir, "summarys"))
+        print("Writing to {}\n".format(outDir))
+
+        lossSummary = tf.summary.scalar("loss", lstm.loss)
+        summaryOp = tf.summary.merge_all()
+
+        trainSummaryDir = os.path.join(outDir, "train")
+        trainSummaryWriter = tf.summary.FileWriter(trainSummaryDir, sess.graph)
+
+        evalSummaryDir = os.path.join(outDir, "eval")
+        evalSummaryWriter = tf.summary.FileWriter(evalSummaryDir, sess.graph)
 
         # 初始化所有变量
-        # saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
+        saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
         savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
-        # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
+        builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
-        sess.run(tf.compat.v1.global_variables_initializer())
+        sess.run(tf.global_variables_initializer())
 
 
-        def trainStep(batchX, batchY, batchZ):
+        def trainStep(batchX, batchY):
             """
             训练函数
             """
             feeddrop = [config.model.dropoutKeepProb] * len(batchX)
+
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
-                lstm.char_ids: batchZ,
-                # lstm.dropoutKeepProb: config.model.dropoutKeepProb
                 lstm.dropoutKeepProb: feeddrop
             }
-            _, step, loss, predictions = sess.run(
-                [trainOp, globalStep, lstm.loss, lstm.predictions],
+            _, summary, step, loss, predictions = sess.run(
+                [trainOp, summaryOp, globalStep, lstm.loss, lstm.predictions],
                 feed_dict)
 
             timeStr = datetime.datetime.now().isoformat()
@@ -881,12 +659,12 @@ with tf.Graph().as_default():
                 acc, recall, prec, f_beta = get_multi_metrics(pred_y=predictions, true_y=batchY,
                                                               labels=labelList)
 
-            # trainSummaryWriter.add_summary(summary, step)
+            trainSummaryWriter.add_summary(summary, step)
 
             return loss, acc, prec, recall, f_beta
 
 
-        def devStep(batchX, batchY, batchZ):
+        def devStep(batchX, batchY):
             """
             验证函数
             """
@@ -894,12 +672,10 @@ with tf.Graph().as_default():
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
-                lstm.char_ids: batchZ,
-                # lstm.dropoutKeepProb: 1.0
                 lstm.dropoutKeepProb: feeddrop
             }
-            step, loss, predictions = sess.run(
-                [ globalStep, lstm.loss, lstm.predictions],
+            summary, step, loss, predictions = sess.run(
+                [summaryOp, globalStep, lstm.loss, lstm.predictions],
                 feed_dict)
 
             if config.numClasses == 1:
@@ -908,7 +684,7 @@ with tf.Graph().as_default():
             elif config.numClasses > 1:
                 acc, precision, recall, f_beta = get_multi_metrics(pred_y=predictions, true_y=batchY, labels=labelList)
 
-            # evalSummaryWriter.add_summary(summary, step)
+            evalSummaryWriter.add_summary(summary, step)
 
             return loss, acc, precision, recall, f_beta
 
@@ -916,47 +692,46 @@ with tf.Graph().as_default():
         for i in range(config.training.epoches):
             # 训练模型
             print("start training model")
-            for batchTrain in nextBatch(trainReviews, trainLabels, trainChars, config.batchSize):
-                loss, acc, prec, recall, f_beta = trainStep(batchTrain[0], batchTrain[1], batchTrain[2])
+            for batchTrain in nextBatch(trainReviews, trainLabels, config.batchSize):
+                loss, acc, prec, recall, f_beta = trainStep(batchTrain[0], batchTrain[1])
 
                 currentStep = tf.train.global_step(sess, globalStep)
                 print("train: step: {}, loss: {}, acc: {}, recall: {}, precision: {}, f_beta: {}".format(
                     currentStep, loss, acc, recall, prec, f_beta))
-                # if currentStep % config.training.evaluateEvery == 0:
-                #     print("\nEvaluation:")
-                #
-                #     losses = []
-                #     accs = []
-                #     f_betas = []
-                #     precisions = []
-                #     recalls = []
-                #
-                #     for batchEval in nextBatch(evalReviews, evalLabels, evalChars, config.batchSize):
-                #         loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1], batchEval[2])
-                #         losses.append(loss)
-                #         accs.append(acc)
-                #         f_betas.append(f_beta)
-                #         precisions.append(precision)
-                #         recalls.append(recall)
-                #
-                #     time_str = datetime.datetime.now().isoformat()
-                #     print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
-                #                                                                                          currentStep,
-                #                                                                                          mean(losses),
-                #                                                                                          mean(accs),
-                #                                                                                          mean(
-                #                                                                                              precisions),
-                #                                                                                          mean(recalls),
-                #                                                                                          mean(f_betas)))
+                if currentStep % config.training.evaluateEvery == 0:
+                    print("\nEvaluation:")
 
-                # if currentStep % config.training.checkpointEvery == 0:
-                #     # 保存模型的另一种方法，保存checkpoint文件
-                #     path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
-                #     print("Saved model checkpoint to {}\n".format(path))
+                    losses = []
+                    accs = []
+                    f_betas = []
+                    precisions = []
+                    recalls = []
+
+                    # for batchEval in nextBatch(evalReviews, evalLabels, config.batchSize):
+                    #     loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1])
+                    #     losses.append(loss)
+                    #     accs.append(acc)
+                    #     f_betas.append(f_beta)
+                    #     precisions.append(precision)
+                    #     recalls.append(recall)
+                    #
+                    # time_str = datetime.datetime.now().isoformat()
+                    # print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
+                    #                                                                                      currentStep,
+                    #                                                                                      mean(losses),
+                    #                                                                                      mean(accs),
+                    #                                                                                      mean(
+                    #                                                                                          precisions),
+                    #                                                                                      mean(recalls),
+                    #                                                                                      mean(f_betas)))
+
+                if currentStep % config.training.checkpointEvery == 0:
+                    # 保存模型的另一种方法，保存checkpoint文件
+                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
+                    print("Saved model checkpoint to {}\n".format(path))
 
         # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
-        #           "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
-        #           "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
+        #           "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb)}
         #
         # outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
         #
@@ -968,12 +743,10 @@ with tf.Graph().as_default():
         #                                      legacy_init_op=legacy_init_op)
         #
         # builder.save()
-
         tf.compat.v1.saved_model.simple_save(sess,
                                    "../model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
                                            "keepProb": lstm.dropoutKeepProb,
-                                           "char_ids": lstm.char_ids
                                            },
                                    outputs={"predictions": lstm.predictions})
 
@@ -989,47 +762,11 @@ with tf.Graph().as_default():
 #     label2idx = json.load(f)
 # idx2label = {value: key for key, value in label2idx.items()}
 #
-# # word list
 # xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 # if len(xIds) >= config.sequenceLength:
 #     xIds = xIds[:config.sequenceLength]
 # else:
 #     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
-#
-# # character list
-# with open("../data/charJson/charToIndex.json") as f:
-#     char2index = json.load(f)
-#
-# with open("../data/charJson/indexToChar.json") as f:
-#     index2char = json.load(f)
-#
-# # setence 分解成char_ids
-# setence = [item for item in x.split(" ")]
-#
-# char_ids = []
-# for word in setence:
-#     ids = [char2index.get(item, char2index[build_data.UNK]) for item in word]
-#     char_ids.append(ids)
-#
-# # 先补充sequece数量
-# if len(char_ids) < config.sequenceLength:
-#     for i in range(config.sequenceLength - len(char_ids)):
-#         char_ids.append([char2index[build_data.PAD]])
-# elif len(char_ids) > config.sequenceLength:
-#     char_ids = char_ids[:config.sequenceLength]
-#
-#
-# char_list = []
-# for word in char_ids:
-#     temp_ids = []
-#     # 再补充每个word内的char数量
-#     if len(word) < config.word_length:
-#         for i in range(config.word_length - len(word)):
-#             word.append(char2index[build_data.PAD])
-#     elif len(word) > config.word_length:
-#         word = word[:config.word_length]
-#     temp_ids.append(word)
-#     char_list.append(temp_ids)
 #
 # graph = tf.Graph()
 # with graph.as_default():
@@ -1045,12 +782,11 @@ with tf.Graph().as_default():
 #         # 获得需要喂给模型的参数，输出的结果依赖的输入值
 #         inputX = graph.get_operation_by_name("inputX").outputs[0]
 #         dropoutKeepProb = graph.get_operation_by_name("dropoutKeepProb").outputs[0]
-#         char_ids = graph.get_operation_by_name("char_ids").outputs[0]
 #
 #         # 获得输出的结果
 #         predictions = graph.get_tensor_by_name("output/predictions:0")
 #
-#         pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: [1.0], char_ids: [[char_list]]})[0]
+#         pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0})[0]
 #
 # pred = [idx2label[item] for item in pred]
 # print(pred)
