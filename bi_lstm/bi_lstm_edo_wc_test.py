@@ -503,20 +503,25 @@ class BiLSTM(object):
                 with tf.name_scope("Bi-LSTM" + str(idx)):
                     # 定义前向LSTM结构
                     lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        tf.nn.rnn_cell.LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb)
                     # 定义反向LSTM结构
                     lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
-                        tf.nn.rnn_cell.LSTMCell(num_units=hiddenSize, state_is_tuple=True),
+                        LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb)
 
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
+                    # config.model.dim_word
+                    # d = tf.shape(self.embeddedWords)
+                    # self.embeddedWords = tf.reshape(self.embeddedWords,
+                    #                              shape=[d[0], d[1], d[2]])
                     outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
                                                                                   self.embeddedWords, dtype=tf.float32,
                                                                                   scope="bi-lstm" + str(idx),
-                                                                            time_major=True)
+                                                                            # time_major=True
+                                                                            )
 
                     # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
                     self.embeddedWords = tf.concat(outputs, 2)
