@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"tel": 0}
+=======
+{"name": 0, "tit": 1, "org": 2, "tel": 3, "loc": 4}
+>>>>>>> b7a819b6a4f6a094dc8076b526cd863df5e1ecf4
