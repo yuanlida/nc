@@ -37,7 +37,7 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 
 class TrainingConfig(object):
     # TODO by Dalio : 10
-    epoches = 10
+    epoches = 1
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -138,8 +138,8 @@ class Dataset(object):
         labels = []
         for index, file in enumerate(train_files):
             # TODO by Dalio
-            # if index != 3:
-            #     continue
+            if index != 3:
+                continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
@@ -980,7 +980,8 @@ with tf.Graph().as_default():
 
 # %%
 
-x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
+# x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
+x = 'this is 123123'
 
 # 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
 with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
@@ -1051,7 +1052,7 @@ with graph.as_default():
         # 获得输出的结果
         predictions = graph.get_tensor_by_name("output/predictions:0")
 
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: [1.0], char_ids: [[char_list]]})[0]
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: [1.0], char_ids: [char_list]})[0]
 
 pred = [idx2label[item] for item in pred]
 print(pred)
