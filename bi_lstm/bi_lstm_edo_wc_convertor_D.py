@@ -516,7 +516,8 @@ class BiLSTM(object):
                     outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
                                                                                   self.embeddedWords, dtype=tf.float32,
                                                                                   scope="bi-lstm" + str(idx),
-                                                                            time_major=True)
+                                                                            # time_major=True
+                                                                            )
 
                     # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
                     self.embeddedWords = tf.concat(outputs, 2)
