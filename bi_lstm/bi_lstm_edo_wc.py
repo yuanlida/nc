@@ -971,7 +971,7 @@ with graph.as_default():
         # 获得输出的结果
         predictions = graph.get_tensor_by_name("output/predictions:0")
 
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0, char_ids: [char_list]})[0]
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0, char_ids: [[char_list]]})[0]
 
 pred = [idx2label[item] for item in pred]
 print(pred)

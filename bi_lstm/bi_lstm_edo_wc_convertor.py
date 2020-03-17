@@ -24,18 +24,18 @@ import build_data
 import config as constant
 
 
-from tensorflow.contrib.rnn import LSTMCell
-# from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
+# from tensorflow.contrib.rnn import LSTMCell
+from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
 
-from tensorflow.nn import bidirectional_dynamic_rnn
-# from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
+# from tensorflow.nn import bidirectional_dynamic_rnn
+from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
 
 # %%
 
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 10
+    epoches = 1
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -433,7 +433,7 @@ class BiLSTM(object):
 
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
-        self.dropoutKeepProb = tf.placeholder(tf.float32, name="dropoutKeepProb")
+        self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
         l2Loss = tf.constant(0.0)
@@ -473,8 +473,12 @@ class BiLSTM(object):
 
                 # put the time dimension on axis=1
                 s = tf.shape(char_embeddings)
+                # char_embeddings = tf.reshape(char_embeddings,
+                #                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
+
                 char_embeddings = tf.reshape(char_embeddings,
-                                             shape=[s[0] * s[1], s[-2], config.model.dim_char])
+                                             shape=[s[-2], s[0] * s[1], config.model.dim_char])
+
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
                 # bi lstm on chars
@@ -486,7 +490,7 @@ class BiLSTM(object):
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
                     dtype=tf.float32,
-                    # time_major=True
+                    time_major=True
                     )
 
                 # read and concat output
@@ -498,7 +502,7 @@ class BiLSTM(object):
                                     shape=[s[0], s[1], 2 * config.model.hidden_size_char])
                 word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
-            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
+            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb[0], seed=time.time())
 
         # 定义两层双向LSTM的模型结构
         with tf.name_scope("Bi-LSTM"):
@@ -508,11 +512,11 @@ class BiLSTM(object):
                     # 定义前向LSTM结构
                     lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb)
+                        output_keep_prob=self.dropoutKeepProb[0])
                     # 定义反向LSTM结构
                     lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
-                        output_keep_prob=self.dropoutKeepProb)
+                        output_keep_prob=self.dropoutKeepProb[0])
 
 
                     # # 定义前向LSTM结构
@@ -800,7 +804,7 @@ with tf.Graph().as_default():
         savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
-        builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
+        # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
 
         sess.run(tf.global_variables_initializer())
 
@@ -809,11 +813,13 @@ with tf.Graph().as_default():
             """
             训练函数
             """
+            feeddrop = [config.model.dropoutKeepProb] * len(batchX)
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
                 lstm.char_ids: batchZ,
-                lstm.dropoutKeepProb: config.model.dropoutKeepProb
+                # lstm.dropoutKeepProb: config.model.dropoutKeepProb
+                lstm.dropoutKeepProb: feeddrop
             }
             _, summary, step, loss, predictions = sess.run(
                 [trainOp, summaryOp, globalStep, lstm.loss, lstm.predictions],
@@ -837,11 +843,13 @@ with tf.Graph().as_default():
             """
             验证函数
             """
+            feeddrop = [1.0] * len(batchX)
             feed_dict = {
                 lstm.inputX: batchX,
                 lstm.inputY: batchY,
                 lstm.char_ids: batchZ,
-                lstm.dropoutKeepProb: 1.0
+                # lstm.dropoutKeepProb: 1.0
+                lstm.dropoutKeepProb: feeddrop
             }
             summary, step, loss, predictions = sess.run(
                 [summaryOp, globalStep, lstm.loss, lstm.predictions],
@@ -867,52 +875,60 @@ with tf.Graph().as_default():
                 currentStep = tf.train.global_step(sess, globalStep)
                 print("train: step: {}, loss: {}, acc: {}, recall: {}, precision: {}, f_beta: {}".format(
                     currentStep, loss, acc, recall, prec, f_beta))
-                if currentStep % config.training.evaluateEvery == 0:
-                    print("\nEvaluation:")
-
-                    losses = []
-                    accs = []
-                    f_betas = []
-                    precisions = []
-                    recalls = []
-
-                    for batchEval in nextBatch(evalReviews, evalLabels, evalChars, config.batchSize):
-                        loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1], batchEval[2])
-                        losses.append(loss)
-                        accs.append(acc)
-                        f_betas.append(f_beta)
-                        precisions.append(precision)
-                        recalls.append(recall)
-
-                    time_str = datetime.datetime.now().isoformat()
-                    print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
-                                                                                                         currentStep,
-                                                                                                         mean(losses),
-                                                                                                         mean(accs),
-                                                                                                         mean(
-                                                                                                             precisions),
-                                                                                                         mean(recalls),
-                                                                                                         mean(f_betas)))
+                # if currentStep % config.training.evaluateEvery == 0:
+                #     print("\nEvaluation:")
+                #
+                #     losses = []
+                #     accs = []
+                #     f_betas = []
+                #     precisions = []
+                #     recalls = []
+                #
+                #     for batchEval in nextBatch(evalReviews, evalLabels, evalChars, config.batchSize):
+                #         loss, acc, precision, recall, f_beta = devStep(batchEval[0], batchEval[1], batchEval[2])
+                #         losses.append(loss)
+                #         accs.append(acc)
+                #         f_betas.append(f_beta)
+                #         precisions.append(precision)
+                #         recalls.append(recall)
+                #
+                #     time_str = datetime.datetime.now().isoformat()
+                #     print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}".format(time_str,
+                #                                                                                          currentStep,
+                #                                                                                          mean(losses),
+                #                                                                                          mean(accs),
+                #                                                                                          mean(
+                #                                                                                              precisions),
+                #                                                                                          mean(recalls),
+                #                                                                                          mean(f_betas)))
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
                     path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
-        inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
-                  "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
-                  "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
+        # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
+        #           "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
+        #           "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
+        #
+        # outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
+        #
+        # prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
+        #                                                                               method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
+        # legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
+        # builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
+        #                                      signature_def_map={"predict": prediction_signature},
+        #                                      legacy_init_op=legacy_init_op)
+        #
+        # builder.save()
 
-        outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
-
-        prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
-                                                                                      method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
-        legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
-        builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
-                                             signature_def_map={"predict": prediction_signature},
-                                             legacy_init_op=legacy_init_op)
-
-        builder.save()
+        tf.compat.v1.saved_model.simple_save(sess,
+                                   "../model/textCNN/savedModel",
+                                   inputs={"inputX": lstm.inputX,
+                                           "keepProb": lstm.dropoutKeepProb,
+                                           "char_ids": lstm.char_ids
+                                           },
+                                   outputs={"predictions": lstm.predictions})
 
 # %%
 
@@ -987,7 +1003,7 @@ with graph.as_default():
         # 获得输出的结果
         predictions = graph.get_tensor_by_name("output/predictions:0")
 
-        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: 1.0, char_ids: [char_list]})[0]
+        pred = sess.run(predictions, feed_dict={inputX: [xIds], dropoutKeepProb: [1.0], char_ids: [[char_list]]})[0]
 
 pred = [idx2label[item] for item in pred]
 print(pred)
