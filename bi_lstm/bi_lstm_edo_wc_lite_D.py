@@ -1,5 +1,9 @@
 # %%
-
+"""
+如果想调试程序效果，请搜索TODO
+把epoch修改为1，
+index！=3 continue注释掉
+"""
 import os
 import csv
 import time
@@ -37,7 +41,7 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 
 class TrainingConfig(object):
     # TODO by Dalio : 10
-    epoches = 1
+    epoches = 10
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -138,8 +142,8 @@ class Dataset(object):
         labels = []
         for index, file in enumerate(train_files):
             # TODO by Dalio
-            if index != 3:
-                continue
+            # if index != 3:
+            #     continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
