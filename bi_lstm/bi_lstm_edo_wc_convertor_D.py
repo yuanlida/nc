@@ -523,18 +523,26 @@ class BiLSTM(object):
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb)
 
+                    # (? 32 500)(batch_size, max_time, cell_fw.output_size)
+                    # change to (32 ? 500)(max_time, batch_size, cell_fw.output_size)
+
+                    # e_s = tf.shape(self.embeddedWords)
+                    # print(e_s)
+                    if idx == 0:
+                        self.embeddedWords = tf.transpose(self.embeddedWords, perm=[1, 0, 2])
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
                     # self.current_state 是最终的状态，二元组(state_fw, state_bw)，state_fw=[batch_size, s]，s是一个元祖(h, c)
                     outputs, self.current_state = bidirectional_dynamic_rnn(lstmFwCell, lstmBwCell,
                                                                                   self.embeddedWords, dtype=tf.float32,
                                                                                   scope="bi-lstm" + str(idx),
-                                                                            # time_major=True
+                                                                            time_major=True
                                                                             )
 
                     # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
+                    # (?, 32, 600) (batch_size, max_time, cell_fw.output_size)
                     self.embeddedWords = tf.concat(outputs, 2)
-
+        self.embeddedWords = tf.transpose(self.embeddedWords, [1, 0, 2])
         # 去除最后时间步的输出作为全连接的输入
         finalOutput = self.embeddedWords[:, -1, :]
 
