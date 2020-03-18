@@ -500,7 +500,7 @@ class BiLSTM(object):
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
                     dtype=tf.float32,
-                    time_major=True
+                    # time_major=True
                 )
 
                 # outputs, _ = _output
@@ -515,7 +515,8 @@ class BiLSTM(object):
                 # output = tf.transpose(output, perm=[1, 0, 2])
 
                 output = tf.reshape(output,
-                                    shape=[s[0], s[1], 2 * config.model.hidden_size_char])
+                                    shape=[s[1], s[0], 2 * config.model.hidden_size_char])
+                output = tf.transpose(output, perm=[1, 0, 2])
             word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
             # dropout不能在tflite上正常工作
