@@ -107,6 +107,7 @@ class Dataset(object):
         self._sequenceLength = config.sequenceLength  # 每条输入的序列处理为定长
         self._embeddingSize = config.model.embeddingSize
         self._batchSize = config.batchSize
+        self._dim_char = config.model.dim_char
         self._rate = config.rate
 
         self._stopWordDict = {}
@@ -224,7 +225,8 @@ class Dataset(object):
 
     def _gen_char_vacablulary(self):
         chars = [char for char in self._alphabet]
-        vocab = self._getCharEmbedding(chars)
+        vocab, char_embeding = self._getCharEmbedding(chars)
+        self.charEmbedding = char_embeding
         self._charToIndex = dict(zip(vocab, list(range(len(vocab)))))
         self._indexToChar = dict(zip(list(range(len(vocab))), vocab))
 
@@ -245,6 +247,13 @@ class Dataset(object):
 
         alphabet = [build_data.UNK] + [build_data.NUM] + [char for char in self._alphabet]
         vocab = [build_data.PAD] + alphabet
+        charEmbedding = []
+        charEmbedding.append(np.zeros(self._dim_char))
+        for word in alphabet:
+            try:
+                charEmbedding.append(np.random.randn(self._dim_char))
+            except:
+                print(word + "无法生成随机矩阵")
         # charEmbedding = []
         # charEmbedding.append(np.zeros(len(alphabet), dtype="float32"))
         #
@@ -257,7 +266,7 @@ class Dataset(object):
         #     # 生成字符嵌入的向量矩阵
         #     charEmbedding.append(onehot)
 
-        return vocab  # , np.array(charEmbedding)
+        return vocab, np.array(charEmbedding)
 
     def _genVocabulary(self, reviews, labels):
         """
@@ -426,7 +435,7 @@ class BiLSTM(object):
     Bi-LSTM 用于文本分类
     """
 
-    def __init__(self, config, wordEmbedding):
+    def __init__(self, config, wordEmbedding, charEmbeding):
 
         # 定义模型的输入
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
@@ -468,10 +477,16 @@ class BiLSTM(object):
 
             with tf.variable_scope("chars"):
                     # get char embeddings matrix
-                _char_embeddings = tf.get_variable(
-                    name="_char_embeddings",
+                # _char_embeddings = tf.get_variable(
+                #     name="_char_embeddings",
+                #     dtype=tf.float32,
+                #     shape=[config.char_size, config.model.dim_char])
+
+                _char_embeddings = tf.Variable(
+                    tf.cast(charEmbeding, dtype=tf.float32, name="word2vec"),
+                    name="_word_embeddings",
                     dtype=tf.float32,
-                    shape=[config.char_size, config.model.dim_char])
+                    trainable=True)
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
                                                          self.char_ids, name="char_embeddings")
 
@@ -787,6 +802,7 @@ evalChars = data.evalChars
 evalLabels = data.evalLabels
 
 wordEmbedding = data.wordEmbedding
+charEmbeding = data.charEmbedding
 labelList = data.labelList
 
 # 定义计算图
@@ -799,7 +815,7 @@ with tf.Graph().as_default():
 
     # 定义会话
     with sess.as_default():
-        lstm = BiLSTM(config, wordEmbedding)
+        lstm = BiLSTM(config, wordEmbedding, charEmbeding)
 
         globalStep = tf.Variable(0, name="globalStep", trainable=False)
         # 定义优化函数，传入学习速率参数
