@@ -60,6 +60,21 @@ class ModelConfig(object):
     hidden_size_lstm = 300  # lstm on word embeddings
     hidden_size_char = 100  # lstm on chars
 
+#     # anbo's minimize config
+#     hiddenSizes = [100, 100]  # 单层LSTM结构的神经元个数
+#
+#     dropoutKeepProb = 0.5
+#     l2RegLambda = 0.0
+#
+#     embeddingSize = 50
+#
+#     # embeddings
+#     dim_word = 50
+#     dim_char = 50
+#     # model hyperparameters
+#     hidden_size_lstm = 100  # lstm on word embeddings
+#     hidden_size_char = 50  # lstm on chars
+
 
 class Config(object):
     sequenceLength = 32  # 取了所有序列长度的均值
@@ -199,6 +214,8 @@ class Dataset(object):
                     word = word[:config.word_length]
                 temp_ids.append(word)
             char_list.append(temp_ids)
+            # for it in temp_ids:
+            #     char_list.append(it)
 
         trainIndex = int(len(x) * rate)
 
@@ -441,6 +458,9 @@ class BiLSTM(object):
         self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
 
         # shape = (batch size, max length of sentence, max length of word)
+        # 弄不好要把他变成
+        # self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength * config.word_length],
+        #                                name="char_ids")
         self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
                                        name="char_ids")
 
@@ -487,8 +507,11 @@ class BiLSTM(object):
                     name="_word_embeddings",
                     dtype=tf.float32,
                     trainable=True)
+                # new shape transpose is ok. TODO by dalio, three demesions to two demesions
+                # self.char_ids = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length, ))
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
                                                          self.char_ids, name="char_embeddings")
+
 
                 # put the time dimension on axis=1
                 s = tf.shape(char_embeddings)
