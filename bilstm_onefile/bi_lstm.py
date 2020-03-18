@@ -37,7 +37,8 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 10
+    # change the epochs.
+    epoches = 5
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
