@@ -1,4 +1,8 @@
 # %%
+import os
+import csv
+import time
+os.environ['TF_ENABLE_CONTROL_FLOW_V2'] = '1'
 
 import os
 import csv
@@ -22,11 +26,11 @@ from build_data import get_data, train_files
 import build_data
 import config as constant
 
-from tensorflow.contrib.rnn import LSTMCell
-# from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
+# from tensorflow.contrib.rnn import LSTMCell
+from tensorflow.lite.experimental.examples.lstm.rnn_cell import TFLiteLSTMCell as LSTMCell
 
-from tensorflow.nn import bidirectional_dynamic_rnn
-# from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
+# from tensorflow.nn import bidirectional_dynamic_rnn
+from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic_rnn
 
 # %%
 
