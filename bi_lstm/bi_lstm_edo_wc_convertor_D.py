@@ -478,7 +478,7 @@ class BiLSTM(object):
                                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
-                # char_embeddings = tf.transpose(char_embeddings, perm=[1, 0, 2])
+                char_embeddings = tf.transpose(char_embeddings, perm=[1, 0, 2])
                 # s = tf.shape(char_embeddings)
                 # 在cell层增加dropout
                 # bi lstm on chars
@@ -500,7 +500,7 @@ class BiLSTM(object):
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
                     dtype=tf.float32,
-                    # time_major=True
+                    time_major=True
                 )
 
                 # outputs, _ = _output
