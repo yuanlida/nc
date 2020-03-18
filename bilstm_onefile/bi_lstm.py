@@ -243,7 +243,7 @@ class Dataset(object):
         按照one的形式将字符映射成向量
         """
 
-        alphabet = [build_data.UNK] + [char for char in self._alphabet]
+        alphabet = [build_data.UNK] + [build_data.NUM] + [char for char in self._alphabet]
         vocab = [build_data.PAD] + alphabet
         # charEmbedding = []
         # charEmbedding.append(np.zeros(len(alphabet), dtype="float32"))
