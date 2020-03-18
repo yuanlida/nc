@@ -79,7 +79,8 @@ class Dataset(object):
         """
         将词转换成索引
         """
-        reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
+        reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) if not item.isdigit() else word2idx[build_data.NUM] for item in review] for review in reviews]
+        # reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
         return reviewIds
 
     def _genTrainEvalData(self, x, y, word2idx, rate, char_ids):
@@ -253,7 +254,8 @@ class Dataset(object):
         for setence in reviews:
             setence_ids = []
             for word in setence:
-                ids = [char2id.get(item, char2id[build_data.UNK]) for item in word]
+                # ids = [char2id.get(item, char2id[build_data.UNK]) for item in word]
+                ids = [char2id.get(item, char2id[build_data.UNK]) if not item.isdigit() else char2id[build_data.NUM] for item in word]
                 setence_ids.append(ids)
             char_ids.append(setence_ids)
         return char_ids

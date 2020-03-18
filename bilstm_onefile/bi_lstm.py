@@ -44,36 +44,36 @@ class TrainingConfig(object):
 
 
 class ModelConfig(object):
-    #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
-    hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
-
-    dropoutKeepProb = 0.5
-    l2RegLambda = 0.0
-
-    embeddingSize = 300
-
-    # embeddings
-    dim_word = 300
-    dim_char = 100
-
-    # model hyperparameters
-    hidden_size_lstm = 300  # lstm on word embeddings
-    hidden_size_char = 100  # lstm on chars
-
-#     # anbo's minimize config
-#     hiddenSizes = [100, 100]  # 单层LSTM结构的神经元个数
+#     #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
+#     hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
 #
 #     dropoutKeepProb = 0.5
 #     l2RegLambda = 0.0
 #
-#     embeddingSize = 50
+#     embeddingSize = 300
 #
 #     # embeddings
-#     dim_word = 50
-#     dim_char = 50
+#     dim_word = 300
+#     dim_char = 100
+#
 #     # model hyperparameters
-#     hidden_size_lstm = 100  # lstm on word embeddings
-#     hidden_size_char = 50  # lstm on chars
+#     hidden_size_lstm = 300  # lstm on word embeddings
+#     hidden_size_char = 100  # lstm on chars
+
+    # anbo's minimize config
+    hiddenSizes = [100, 100]  # 单层LSTM结构的神经元个数
+
+    dropoutKeepProb = 0.5
+    l2RegLambda = 0.0
+
+    embeddingSize = 50
+
+    # embeddings
+    dim_word = 50
+    dim_char = 50
+    # model hyperparameters
+    hidden_size_lstm = 100  # lstm on word embeddings
+    hidden_size_char = 50  # lstm on chars
 
 
 class Config(object):
@@ -86,7 +86,7 @@ class Config(object):
 
     dataSource = "./data/preProcess/labeledTrain.csv"
 
-    stopWordSource = "./data/english"
+    stopWordSource = "../data/english"
 
     numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
@@ -184,7 +184,8 @@ class Dataset(object):
         """
         将词转换成索引
         """
-        reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
+        reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) if not item.isdigit() else word2idx[build_data.NUM] for item in review] for review in reviews]
+        # reviewIds = [[word2idx.get(item, word2idx[build_data.UNK]) for item in review] for review in reviews]
         return reviewIds
 
     def _genTrainEvalData(self, x, y, word2idx, rate, char_ids):
@@ -248,10 +249,10 @@ class Dataset(object):
         self._indexToChar = dict(zip(list(range(len(vocab))), vocab))
 
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("./data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
+        with open("../data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
             json.dump(self._charToIndex, f)
 
-        with open("./data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
+        with open("../data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
             json.dump(self._indexToChar, f)
 
         config.char_size = len(self._indexToChar)
@@ -311,10 +312,10 @@ class Dataset(object):
         self.labelList = list(range(len(uniqueLabel)))
 
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("./data/wordJson/word2idx.json", "w", encoding="utf-8") as f:
+        with open("../data/wordJson/word2idx.json", "w", encoding="utf-8") as f:
             json.dump(word2idx, f)
 
-        with open("./data/wordJson/label2idx.json", "w", encoding="utf-8") as f:
+        with open("../data/wordJson/label2idx.json", "w", encoding="utf-8") as f:
             json.dump(label2idx, f)
 
         return word2idx, label2idx
@@ -368,7 +369,7 @@ class Dataset(object):
         for setence in reviews:
             setence_ids = []
             for word in setence:
-                ids = [char2id.get(item, char2id[build_data.UNK]) for item in word]
+                ids = [char2id.get(item, char2id[build_data.UNK]) if not item.isdigit() else char2id[build_data.NUM] for item in word]
                 setence_ids.append(ids)
             char_ids.append(setence_ids)
         return char_ids
@@ -871,7 +872,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "./model/Bi-LSTM/savedModel"
+        savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
         # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
@@ -974,7 +975,7 @@ with tf.Graph().as_default():
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
-                    path = saver.save(sess, "./model/Bi-LSTM/model/my-model", global_step=currentStep)
+                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
         # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
@@ -992,7 +993,7 @@ with tf.Graph().as_default():
         #
         # builder.save()
         tf.compat.v1.saved_model.simple_save(sess,
-                                   "./model/Bi-LSTM/savedModel",
+                                   "../model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
                                            "keepProb": lstm.dropoutKeepProb,
                                            "char_ids": lstm.char_ids
