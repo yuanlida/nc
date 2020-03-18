@@ -133,8 +133,8 @@ class Dataset(object):
         reviews = []
         labels = []
         for index, file in enumerate(train_files):
-            if index != 3:
-                continue
+            # if index != 3:
+            #     continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
