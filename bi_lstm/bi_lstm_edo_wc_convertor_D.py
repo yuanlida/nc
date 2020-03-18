@@ -475,11 +475,22 @@ class BiLSTM(object):
                                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
+                # 在cell层增加dropout
                 # bi lstm on chars
-                cell_fw = LSTMCell(config.model.hidden_size_char,
-                                                  state_is_tuple=True)
-                cell_bw = LSTMCell(config.model.hidden_size_char,
-                                                  state_is_tuple=True)
+                # cell_fw = LSTMCell(config.model.hidden_size_char,
+                #                                   state_is_tuple=True)
+                # cell_bw = LSTMCell(config.model.hidden_size_char,
+                #                                   state_is_tuple=True)
+
+                cell_fw = tf.nn.rnn_cell.DropoutWrapper(
+                                        LSTMCell(config.model.hidden_size_char,
+                                        state_is_tuple=True),
+                                        output_keep_prob=self.dropoutKeepProb)
+                cell_bw = tf.nn.rnn_cell.DropoutWrapper(
+                                        LSTMCell(config.model.hidden_size_char,
+                                        state_is_tuple=True),
+                                        output_keep_prob=self.dropoutKeepProb)
+
                 _output = bidirectional_dynamic_rnn(
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
@@ -494,7 +505,9 @@ class BiLSTM(object):
                                     shape=[s[0], s[1], 2 * config.model.hidden_size_char])
                 word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
-            self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
+            # dropout不能在tflite上正常工作
+            # self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
+            self.embeddedWords = word_embeddings
 
         # 定义两层双向LSTM的模型结构
         with tf.name_scope("Bi-LSTM"):
