@@ -37,7 +37,7 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 # 配置参数
 
 class TrainingConfig(object):
-    epoches = 1
+    epoches = 10
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -138,8 +138,8 @@ class Dataset(object):
         reviews = []
         labels = []
         for index, file in enumerate(train_files):
-            if index != 3:
-                continue
+            # if index != 3:
+            #     continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
