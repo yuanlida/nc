@@ -133,6 +133,8 @@ class Dataset(object):
         reviews = []
         labels = []
         for index, file in enumerate(train_files):
+            if index != 3:
+                continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
@@ -471,10 +473,13 @@ class BiLSTM(object):
 
                 # put the time dimension on axis=1
                 s = tf.shape(char_embeddings)
+                #     s[0]输入了多少行, s[1]是每行多少个词，s[-2]每个词多少个character
                 char_embeddings = tf.reshape(char_embeddings,
                                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
                 # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
+                # char_embeddings = tf.transpose(char_embeddings, perm=[1, 0, 2])
+                # s = tf.shape(char_embeddings)
                 # 在cell层增加dropout
                 # bi lstm on chars
                 # cell_fw = LSTMCell(config.model.hidden_size_char,
@@ -494,16 +499,24 @@ class BiLSTM(object):
                 _output = bidirectional_dynamic_rnn(
                     cell_fw, cell_bw, char_embeddings,
                     # sequence_length=word_lengths,
-                    dtype=tf.float32)
+                    dtype=tf.float32,
+                    time_major=True
+                )
 
-                # read and concat output
+                # outputs, _ = _output
+                # output = tf.concat(outputs, 2)
+
+                # # read and concat output
                 _, ((_, output_fw), (_, output_bw)) = _output
                 output = tf.concat([output_fw, output_bw], axis=-1)
 
                 # shape = (batch size, max sentence length, char hidden size)
+
+                # output = tf.transpose(output, perm=[1, 0, 2])
+
                 output = tf.reshape(output,
                                     shape=[s[0], s[1], 2 * config.model.hidden_size_char])
-                word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
+            word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
             # dropout不能在tflite上正常工作
             # self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
