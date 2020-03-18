@@ -507,6 +507,7 @@ class BiLSTM(object):
                 # output = tf.concat(outputs, 2)
 
                 # # read and concat output
+                #     不知道为什么这么用，是不是就是把time维度去掉了？
                 _, ((_, output_fw), (_, output_bw)) = _output
                 output = tf.concat([output_fw, output_bw], axis=-1)
 
@@ -514,6 +515,10 @@ class BiLSTM(object):
 
                 # output = tf.transpose(output, perm=[1, 0, 2])
 
+                # output = tf.reshape(output,
+                #                 shape=[s[0], s[1], 2 * config.model.hidden_size_char])
+
+                #     对于上述矩阵的这个转换对吗？
                 output = tf.reshape(output,
                                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 output = tf.transpose(output, perm=[1, 0, 2])
