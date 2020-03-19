@@ -41,7 +41,7 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 
 class TrainingConfig(object):
     # TODO by Dalio : 10
-    epoches = 10
+    epoches = 1
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -142,8 +142,8 @@ class Dataset(object):
         labels = []
         for index, file in enumerate(train_files):
             # TODO by Dalio
-            # if index != 3:
-            #     continue
+            if index != 3:
+                continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
@@ -855,7 +855,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "../model/Bi-LSTM/savedModel_lite"
+        savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
         # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
