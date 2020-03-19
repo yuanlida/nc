@@ -231,9 +231,9 @@ class Dataset(object):
         for review, tag, chars in datas:
             reviews.append(review)
             y.append(tag)
-            # char_ids.append(chars)
-            datas = [c for cs in chars for c in cs ]
-            char_ids.append(datas)
+            char_ids.append(chars)
+            # datas = [c for cs in chars for c in cs ]
+            # char_ids.append(datas)
 
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
         trainChars = np.asarray(char_ids[:trainIndex], dtype="int64")
@@ -466,10 +466,10 @@ class BiLSTM(object):
 
         # shape = (batch size, max length of sentence, max length of word)
         # 弄不好要把他变成
-        self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength * config.word_length],
-                                       name="char_ids")
-        # self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
+        # self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength * config.word_length],
         #                                name="char_ids")
+        self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
+                                       name="char_ids")
 
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
@@ -514,11 +514,11 @@ class BiLSTM(object):
                     name="_word_embeddings",
                     dtype=tf.float32,
                     trainable=True)
-                # new shape transpose is ok. TODO by dalio, three demesions to two demesions
-                self.char_ids_reshape = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
+                # new shape transpose is ok.
+                # self.char_ids_reshape = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
 
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
-                                                         self.char_ids_reshape, name="char_embeddings")
+                                                         self.char_ids, name="char_embeddings")
 
 
                 # put the time dimension on axis=1
