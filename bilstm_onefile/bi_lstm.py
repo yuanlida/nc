@@ -217,7 +217,8 @@ class Dataset(object):
                 temp_ids.append(word)
             char_list.append(temp_ids)
             # for it in temp_ids:
-            #     char_list.append(it)
+            #     for chars in it:
+            #         char_list.append(chars)
 
         trainIndex = int(len(x) * rate)
 
@@ -230,7 +231,9 @@ class Dataset(object):
         for review, tag, chars in datas:
             reviews.append(review)
             y.append(tag)
-            char_ids.append(chars)
+            # char_ids.append(chars)
+            datas = [c for cs in chars for c in cs ]
+            char_ids.append(datas)
 
         trainReviews = np.asarray(reviews[:trainIndex], dtype="int64")
         trainChars = np.asarray(char_ids[:trainIndex], dtype="int64")
@@ -463,10 +466,10 @@ class BiLSTM(object):
 
         # shape = (batch size, max length of sentence, max length of word)
         # 弄不好要把他变成
-        # self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength * config.word_length],
-        #                                name="char_ids")
-        self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
+        self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength * config.word_length],
                                        name="char_ids")
+        # self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
+        #                                name="char_ids")
 
         self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
 
@@ -512,9 +515,10 @@ class BiLSTM(object):
                     dtype=tf.float32,
                     trainable=True)
                 # new shape transpose is ok. TODO by dalio, three demesions to two demesions
-                # self.char_ids = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
+                self.char_ids_reshape = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
+
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
-                                                         self.char_ids, name="char_embeddings")
+                                                         self.char_ids_reshape, name="char_embeddings")
 
 
                 # put the time dimension on axis=1
@@ -1009,10 +1013,10 @@ with tf.Graph().as_default():
 x = 'this is 123123'
 
 # 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
-with open("./data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
+with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
     word2idx = json.load(f)
 
-with open("./data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
+with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
@@ -1028,10 +1032,10 @@ else:
     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
 
 # character list
-with open("./data/charJson/charToIndex.json") as f:
+with open("../data/charJson/charToIndex.json") as f:
     char2index = json.load(f)
 
-with open("./data/charJson/indexToChar.json") as f:
+with open("../data/charJson/indexToChar.json") as f:
     index2char = json.load(f)
 
 # setence 分解成char_ids
