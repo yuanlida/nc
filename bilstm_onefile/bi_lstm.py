@@ -371,7 +371,8 @@ class Dataset(object):
         for setence in reviews:
             setence_ids = []
             for word in setence:
-                ids = [char2id.get(item, char2id[build_data.UNK]) if not item.isdigit() else char2id[build_data.NUM] for item in word]
+                # ids = [char2id.get(item, char2id[build_data.UNK]) if not item.isdigit() else char2id[build_data.NUM] for item in word]
+                ids = [char2id.get(item, char2id[build_data.UNK]) for item in word]
                 setence_ids.append(ids)
             char_ids.append(setence_ids)
         return char_ids
@@ -1064,7 +1065,7 @@ with graph.as_default():
     sess = tf.Session(config=session_conf)
 
     with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("./model/Bi-LSTM/model_lite/")
+        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/my-model/")
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
