@@ -1,14 +1,16 @@
 import tensorflow as tf
 import numpy as np
 
-input = np.arange(32).reshape(1, 32)
-print(input)
+# input = np.arange(32).reshape(1, 32)
+input = np.zeros(shape=(1, 32))
+# print(input)
 
-chars = np.arange(320).reshape(1, 32, 10)
-print(chars)
+# chars = np.arange(320).reshape(1, 32, 10)
+chars = np.zeros(shape=(1, 32, 10))
+# print(chars)
 
 chars = np.zeros(shape=(1, 32, 10))
-print(chars)
+# print(chars)
 if __name__ == '__main__':
     with tf.Session(graph=tf.Graph()) as sess:
         tf.saved_model.loader.load(sess, ["serve"], "./model/Bi-LSTM/savedModel")

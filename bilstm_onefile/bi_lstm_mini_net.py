@@ -527,11 +527,19 @@ class BiLSTM(object):
 
                 _, ((_, output_fw), (_, output_bw)) = _output
                 output = tf.concat([output_fw, output_bw], axis=-1)
+                # tf.reshape(output_fw, [s[0], 50])
+                # tf.reshape(output_bw, [s[0], 50])
+                # output = tf.concat([output_fw, output_bw], axis=-1)
+
+                # outputs, self.current_state = _output
+                # output = tf.concat(outputs, 2)
+                # output = output[:, -1, :]
 
                 output = tf.reshape(output,
                                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 output = tf.transpose(output, perm=[1, 0, 2])
-            word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
+            # word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
+            word_embeddings = tf.concat([self.word_embeddings, output], axis=2)
             self.embeddedWords = word_embeddings
 
         # 定义两层双向LSTM的模型结构
