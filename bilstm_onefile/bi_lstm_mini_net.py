@@ -481,18 +481,7 @@ class BiLSTM(object):
         # 词嵌入层
         with tf.name_scope("embedding"):
 
-            # # 利用预训练的词向量初始化词嵌入矩阵
-            # self.W = tf.Variable(tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"), name="W")
-            # # 利用词嵌入矩阵将输入的数据中的词转换成词向量，维度[batch_size, sequence_length, embedding_size]
-            # self.embeddedWords = tf.nn.embedding_lookup(self.W, self.inputX)
-
             with tf.variable_scope("words"):
-                # self.logger.info("WARNING: randomly initializing word vectors")
-                # self.W = tf.get_variable(
-                #     name="_word_embeddings",
-                #     dtype=tf.float32,
-                #     shape=[len(wordEmbedding), config.model.embeddingSize])
-
                 self.W = tf.Variable(
                     tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"),
                     name="_word_embeddings",
@@ -503,39 +492,22 @@ class BiLSTM(object):
                                                             self.inputX, name="word_embeddings")
 
             with tf.variable_scope("chars"):
-                    # get char embeddings matrix
-                # _char_embeddings = tf.get_variable(
-                #     name="_char_embeddings",
-                #     dtype=tf.float32,
-                #     shape=[config.char_size, config.model.dim_char])
 
                 _char_embeddings = tf.Variable(
                     tf.cast(charEmbeding, dtype=tf.float32, name="word2vec"),
                     name="_word_embeddings",
                     dtype=tf.float32,
                     trainable=True)
-                # new shape transpose is ok.
-                # self.char_ids_reshape = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
 
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
                                                          self.char_ids, name="char_embeddings")
 
 
-                # put the time dimension on axis=1
                 s = tf.shape(char_embeddings)
-                #     s[0]输入了多少行, s[1]是每行多少个词，s[-2]每个词多少个character
                 char_embeddings = tf.reshape(char_embeddings,
                                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
-                # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
                 char_embeddings = tf.transpose(char_embeddings, perm=[1, 0, 2])
-                # s = tf.shape(char_embeddings)
-                # 在cell层增加dropout
-                # bi lstm on chars
-                # cell_fw = LSTMCell(config.model.hidden_size_char,
-                #                                   state_is_tuple=True)
-                # cell_bw = LSTMCell(config.model.hidden_size_char,
-                #                                   state_is_tuple=True)
 
                 cell_fw = tf.nn.rnn_cell.DropoutWrapper(
                                         LSTMCell(config.model.hidden_size_char,
@@ -553,29 +525,13 @@ class BiLSTM(object):
                     time_major=True
                 )
 
-                # outputs, _ = _output
-                # output = tf.concat(outputs, 2)
-
-                # # read and concat output
-                #     不知道为什么这么用，是不是就是把time维度去掉了？
                 _, ((_, output_fw), (_, output_bw)) = _output
                 output = tf.concat([output_fw, output_bw], axis=-1)
 
-                # shape = (batch size, max sentence length, char hidden size)
-
-                # output = tf.transpose(output, perm=[1, 0, 2])
-
-                # output = tf.reshape(output,
-                #                 shape=[s[0], s[1], 2 * config.model.hidden_size_char])
-
-                #     对于上述矩阵的这个转换对吗？
                 output = tf.reshape(output,
                                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 output = tf.transpose(output, perm=[1, 0, 2])
             word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
-
-            # dropout不能在tflite上正常工作
-            # self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
             self.embeddedWords = word_embeddings
 
         # 定义两层双向LSTM的模型结构
