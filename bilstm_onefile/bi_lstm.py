@@ -22,8 +22,11 @@ import tensorflow as tf
 from sklearn.metrics import roc_auc_score, accuracy_score, precision_score, recall_score
 
 warnings.filterwarnings("ignore")
-from build_data import get_data, train_files
+
+
 import build_data
+from build_data import get_data, train_files
+
 import config as constant
 
 # from tensorflow.contrib.rnn import LSTMCell
@@ -85,9 +88,9 @@ class Config(object):
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
     #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-    dataSource = "./data/preProcess/labeledTrain.csv"
+    dataSource = "../data/preProcess/labeledTrain.csv"
 
-    stopWordSource = "./data/english"
+    stopWordSource = "../data/english"
 
     numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
@@ -253,10 +256,10 @@ class Dataset(object):
         self._indexToChar = dict(zip(list(range(len(vocab))), vocab))
 
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("./data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
+        with open("../data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
             json.dump(self._charToIndex, f)
 
-        with open("./data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
+        with open("../data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
             json.dump(self._indexToChar, f)
 
         config.char_size = len(self._indexToChar)
@@ -317,10 +320,10 @@ class Dataset(object):
         self.labelList = list(range(len(uniqueLabel)))
 
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("./data/wordJson/word2idx.json", "w", encoding="utf-8") as f:
+        with open("../data/wordJson/word2idx.json", "w", encoding="utf-8") as f:
             json.dump(word2idx, f)
 
-        with open("./data/wordJson/label2idx.json", "w", encoding="utf-8") as f:
+        with open("../data/wordJson/label2idx.json", "w", encoding="utf-8") as f:
             json.dump(label2idx, f)
 
         return word2idx, label2idx
@@ -879,7 +882,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "./model/Bi-LSTM/savedModel"
+        savedModelPath = "..model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
         # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
@@ -982,7 +985,7 @@ with tf.Graph().as_default():
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
-                    path = saver.save(sess, "./model/Bi-LSTM/model/my-model", global_step=currentStep)
+                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
         # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
@@ -1000,7 +1003,7 @@ with tf.Graph().as_default():
         #
         # builder.save()
         tf.compat.v1.saved_model.simple_save(sess,
-                                   "./model/Bi-LSTM/savedModel",
+                                   "../model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
                                            "keepProb": lstm.dropoutKeepProb,
                                            "char_ids": lstm.char_ids
@@ -1093,5 +1096,5 @@ with graph.as_default():
 pred = [idx2label[item] for item in pred]
 print(pred)
 
-# if __name__ == '__main__':
-#     pass
+if __name__ == '__main__':
+    pass
