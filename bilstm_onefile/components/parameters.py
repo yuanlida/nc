@@ -6,25 +6,40 @@ class TrainingConfig(object):
 
 
 class ModelConfig(object):
-    #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
-    hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
+    # #     hiddenSizes = [256, 256]  # 单层LSTM结构的神经元个数
+    # hiddenSizes = [300, 300]  # 单层LSTM结构的神经元个数
+    #
+    # dropoutKeepProb = 0.5
+    # l2RegLambda = 0.0
+    #
+    # embeddingSize = 300
+    #
+    # # embeddings
+    # dim_word = 300
+    # dim_char = 100
+    #
+    # # model hyperparameters
+    # hidden_size_lstm = 300  # lstm on word embeddings
+    # hidden_size_char = 100  # lstm on chars
+
+    # anbo's minimize config
+    hiddenSizes = [100, 100]  # 单层LSTM结构的神经元个数
 
     dropoutKeepProb = 0.5
     l2RegLambda = 0.0
 
-    embeddingSize = 300
+    embeddingSize = 50
 
     # embeddings
-    dim_word = 300
-    dim_char = 100
-
+    dim_word = 50
+    dim_char = 50
     # model hyperparameters
-    hidden_size_lstm = 300  # lstm on word embeddings
-    hidden_size_char = 100  # lstm on chars
+    hidden_size_lstm = 100  # lstm on word embeddings
+    hidden_size_char = 50  # lstm on chars
 
 class Config(object):
     sequenceLength = 32  # 取了所有序列长度的均值
-    batchSize = 128
+    batchSize = 256
     word_length = 10
 
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"

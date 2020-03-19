@@ -79,13 +79,13 @@ class ModelConfig(object):
 
 class Config(object):
     sequenceLength = 32  # 取了所有序列长度的均值
-    batchSize = 128
+    batchSize = 256
     word_length = 10
 
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
     #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-    dataSource = "./data/preProcess/labeledTrain.csv"
+    # dataSource = "./data/preProcess/labeledTrain.csv"
 
     stopWordSource = "../data/english"
 
