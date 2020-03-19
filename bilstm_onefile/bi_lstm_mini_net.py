@@ -1040,7 +1040,7 @@ with graph.as_default():
 
     with sess.as_default():
         checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/my-model/")
-        saver = tf.compat.v1.import_meta_graph("{}.meta".format(checkpoint_file))
+        saver = tf.compat.v1.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
         # 获得需要喂给模型的参数，输出的结果依赖的输入值
