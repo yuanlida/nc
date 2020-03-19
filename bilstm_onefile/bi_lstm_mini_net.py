@@ -462,18 +462,18 @@ class BiLSTM(object):
     def __init__(self, config, wordEmbedding, charEmbeding):
 
         # 定义模型的输入
-        self.inputX = tf.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
+        self.inputX = tf.compat.v1.placeholder(tf.int32, [None, config.sequenceLength], name="inputX")
 
         # shape = (batch size, max length of sentence, max length of word)
         # 弄不好要把他变成
         # self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength * config.word_length],
         #                                name="char_ids")
-        self.char_ids = tf.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
+        self.char_ids = tf.compat.v1.placeholder(tf.int32, shape=[None, config.sequenceLength, config.word_length],
                                        name="char_ids")
 
-        self.inputY = tf.placeholder(tf.int32, [None], name="inputY")
+        self.inputY = tf.compat.v1.placeholder(tf.int32, [None], name="inputY")
 
-        self.dropoutKeepProb = tf.placeholder(tf.float32, [None], name="dropoutKeepProb")
+        self.dropoutKeepProb = tf.compat.v1.placeholder(tf.float32, [None], name="dropoutKeepProb")
 
         # 定义l2损失
         l2Loss = tf.constant(0.0)
@@ -481,7 +481,7 @@ class BiLSTM(object):
         # 词嵌入层
         with tf.name_scope("embedding"):
 
-            with tf.variable_scope("words"):
+            with tf.compat.v1.variable_scope("words"):
                 self.W = tf.Variable(
                     tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"),
                     name="_word_embeddings",
@@ -491,7 +491,7 @@ class BiLSTM(object):
                 self.word_embeddings = tf.nn.embedding_lookup(self.W,
                                                             self.inputX, name="word_embeddings")
 
-            with tf.variable_scope("chars"):
+            with tf.compat.v1.variable_scope("chars"):
 
                 _char_embeddings = tf.Variable(
                     tf.cast(charEmbeding, dtype=tf.float32, name="word2vec"),
@@ -509,11 +509,11 @@ class BiLSTM(object):
 
                 char_embeddings = tf.transpose(char_embeddings, perm=[1, 0, 2])
 
-                cell_fw = tf.nn.rnn_cell.DropoutWrapper(
+                cell_fw = tf.compat.v1.nn.rnn_cell.DropoutWrapper(
                                         LSTMCell(config.model.hidden_size_char,
                                         state_is_tuple=True),
                                         output_keep_prob=self.dropoutKeepProb[0])
-                cell_bw = tf.nn.rnn_cell.DropoutWrapper(
+                cell_bw = tf.compat.v1.nn.rnn_cell.DropoutWrapper(
                                         LSTMCell(config.model.hidden_size_char,
                                         state_is_tuple=True),
                                         output_keep_prob=self.dropoutKeepProb[0])
@@ -548,11 +548,11 @@ class BiLSTM(object):
             for idx, hiddenSize in enumerate(config.model.hiddenSizes):
                 with tf.name_scope("Bi-LSTM" + str(idx)):
                     # 定义前向LSTM结构
-                    lstmFwCell = tf.nn.rnn_cell.DropoutWrapper(
+                    lstmFwCell = tf.compat.v1.nn.rnn_cell.DropoutWrapper(
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb[0])
                     # 定义反向LSTM结构
-                    lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
+                    lstmBwCell = tf.compat.v1.nn.rnn_cell.DropoutWrapper(
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb[0])
 
@@ -584,15 +584,17 @@ class BiLSTM(object):
 
         # 全连接层的输出
         with tf.name_scope("output"):
-            outputW = tf.get_variable(
+            outputW = tf.compat.v1.get_variable(
                 "outputW",
                 shape=[outputSize, config.numClasses],
-                initializer=tf.contrib.layers.xavier_initializer())
+                # initializer=tf.contrib.layers.xavier_initializer()
+                initializer=tf.compat.v1.glorot_uniform_initializer()
+            )
 
             outputB = tf.Variable(tf.constant(0.1, shape=[config.numClasses]), name="outputB")
             l2Loss += tf.nn.l2_loss(outputW)
             l2Loss += tf.nn.l2_loss(outputB)
-            self.logits = tf.nn.xw_plus_b(output, outputW, outputB, name="logits")
+            self.logits = tf.compat.v1.nn.xw_plus_b(output, outputW, outputB, name="logits")
             if config.numClasses == 1:
                 self.predictions = tf.cast(tf.greater_equal(self.logits, 0.0), tf.float32, name="predictions")
             elif config.numClasses > 1:
@@ -802,11 +804,11 @@ labelList = data.labelList
 
 # 定义计算图
 with tf.Graph().as_default():
-    session_conf = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)
+    session_conf = tf.compat.v1.ConfigProto(allow_soft_placement=True, log_device_placement=False)
     session_conf.gpu_options.allow_growth = True
     session_conf.gpu_options.per_process_gpu_memory_fraction = 0.9  # 配置gpu占用率
 
-    sess = tf.Session(config=session_conf)
+    sess = tf.compat.v1.Session(config=session_conf)
 
     # 定义会话
     with sess.as_default():
@@ -814,7 +816,7 @@ with tf.Graph().as_default():
 
         globalStep = tf.Variable(0, name="globalStep", trainable=False)
         # 定义优化函数，传入学习速率参数
-        optimizer = tf.train.AdamOptimizer(config.training.learningRate)
+        optimizer = tf.compat.v1.train.AdamOptimizer (config.training.learningRate)
         # 计算梯度,得到梯度和变量
         gradsAndVars = optimizer.compute_gradients(lstm.loss)
         # 将梯度应用到变量下，生成训练器
@@ -824,31 +826,31 @@ with tf.Graph().as_default():
         gradSummaries = []
         for g, v in gradsAndVars:
             if g is not None:
-                tf.summary.histogram("{}/grad/hist".format(v.name), g)
-                tf.summary.scalar("{}/grad/sparsity".format(v.name), tf.nn.zero_fraction(g))
+                tf.compat.v1.summary.histogram("{}/grad/hist".format(v.name), g)
+                tf.compat.v1.summary.scalar("{}/grad/sparsity".format(v.name), tf.nn.zero_fraction(g))
 
         outDir = os.path.abspath(os.path.join(os.path.curdir, "summarys"))
         print("Writing to {}\n".format(outDir))
 
-        lossSummary = tf.summary.scalar("loss", lstm.loss)
-        summaryOp = tf.summary.merge_all()
+        lossSummary = tf.compat.v1.summary.scalar("loss", lstm.loss)
+        summaryOp = tf.compat.v1.summary.merge_all()
 
         trainSummaryDir = os.path.join(outDir, "train")
-        trainSummaryWriter = tf.summary.FileWriter(trainSummaryDir, sess.graph)
+        trainSummaryWriter = tf.compat.v1.summary.FileWriter(trainSummaryDir, sess.graph)
 
         evalSummaryDir = os.path.join(outDir, "eval")
-        evalSummaryWriter = tf.summary.FileWriter(evalSummaryDir, sess.graph)
+        evalSummaryWriter = tf.compat.v1.summary.FileWriter(evalSummaryDir, sess.graph)
 
         # 初始化所有变量
-        saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
+        saver = tf.compat.v1.train.Saver(tf.compat.v1.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
         savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
-        # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
+        builder = tf.compat.v1.saved_model.builder.SavedModelBuilder(savedModelPath)
 
-        sess.run(tf.global_variables_initializer())
+        sess.run(tf.compat.v1.global_variables_initializer())
 
 
         def trainStep(batchX, batchY, batchZ):
@@ -949,27 +951,27 @@ with tf.Graph().as_default():
                     path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
-        # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
-        #           "keepProb": tf.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
-        #           "char_ids": tf.saved_model.utils.build_tensor_info(lstm.char_ids)}
-        #
-        # outputs = {"predictions": tf.saved_model.utils.build_tensor_info(lstm.predictions)}
-        #
-        # prediction_signature = tf.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
-        #                                                                               method_name=tf.saved_model.signature_constants.PREDICT_METHOD_NAME)
-        # legacy_init_op = tf.group(tf.tables_initializer(), name="legacy_init_op")
-        # builder.add_meta_graph_and_variables(sess, [tf.saved_model.tag_constants.SERVING],
-        #                                      signature_def_map={"predict": prediction_signature},
-        #                                      legacy_init_op=legacy_init_op)
-        #
-        # builder.save()
-        tf.compat.v1.saved_model.simple_save(sess,
-                                   "../model/Bi-LSTM/savedModel",
-                                   inputs={"inputX": lstm.inputX,
-                                           "keepProb": lstm.dropoutKeepProb,
-                                           "char_ids": lstm.char_ids
-                                           },
-                                   outputs={"predictions": lstm.predictions})
+        inputs = {"inputX": tf.compat.v1.saved_model.utils.build_tensor_info(lstm.inputX),
+                  "keepProb":  tf.compat.v1.saved_model.utils.build_tensor_info(lstm.dropoutKeepProb),
+                  "char_ids":  tf.compat.v1.saved_model.utils.build_tensor_info(lstm.char_ids)}
+
+        outputs = {"predictions":  tf.compat.v1.saved_model.utils.build_tensor_info(lstm.predictions)}
+
+        prediction_signature = tf.compat.v1.saved_model.signature_def_utils.build_signature_def(inputs=inputs, outputs=outputs,
+                                                                                      method_name= tf.compat.v1.saved_model.signature_constants.PREDICT_METHOD_NAME)
+        legacy_init_op = tf.compat.v1.group( tf.compat.v1.tables_initializer(), name="legacy_init_op")
+        builder.add_meta_graph_and_variables(sess, [ tf.compat.v1.saved_model.tag_constants.SERVING],
+                                             signature_def_map={"predict": prediction_signature},
+                                             legacy_init_op=legacy_init_op)
+
+        builder.save()
+        # tf.compat.v1.saved_model.simple_save(sess,
+        #                            "../model/Bi-LSTM/savedModel",
+        #                            inputs={"inputX": lstm.inputX,
+        #                                    "keepProb": lstm.dropoutKeepProb,
+        #                                    "char_ids": lstm.char_ids
+        #                                    },
+        #                            outputs={"predictions": lstm.predictions})
 
 # %%
 
@@ -1032,13 +1034,13 @@ for word in char_ids:
 
 graph = tf.Graph()
 with graph.as_default():
-    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-    session_conf = tf.ConfigProto(allow_soft_placement=True, log_device_placement=False, gpu_options=gpu_options)
-    sess = tf.Session(config=session_conf)
+    gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.333)
+    session_conf = tf.compat.v1.ConfigProto(allow_soft_placement=True, log_device_placement=False, gpu_options=gpu_options)
+    sess = tf.compat.v1.Session(config=session_conf)
 
     with sess.as_default():
         checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/my-model/")
-        saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
+        saver = tf.compat.v1.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
         # 获得需要喂给模型的参数，输出的结果依赖的输入值
