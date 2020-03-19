@@ -176,7 +176,8 @@ class Dataset(object):
         生成词向量和词汇-索引映射字典，可以用全数据集
         """
 
-        allWords = [word for review in reviews for word in review]
+        # allWords = [word for review in reviews for word in review]
+        allWords = [word for review in reviews for word in review if not word.isdigit()]
 
         # 去掉停用词
         # subWords = [word for word in allWords if word not in self.stopWordDict]
