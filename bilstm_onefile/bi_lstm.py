@@ -1017,6 +1017,10 @@ with open("./data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
 idx2label = {value: key for key, value in label2idx.items()}
 
 # word list
+# TODO by Jeffery
+# reviewIds = [
+#     [word2idx.get(item, word2idx[build_data.UNK]) if not item.isdigit() else word2idx[build_data.NUM] for item in
+#      review] for review in reviews]
 xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
