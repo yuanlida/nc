@@ -85,7 +85,7 @@ class Config(object):
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
     #     alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
-    # dataSource = "./data/preProcess/labeledTrain.csv"
+    dataSource = "./data/preProcess/labeledTrain.csv"
 
     stopWordSource = "../data/english"
 
@@ -512,7 +512,7 @@ class BiLSTM(object):
                     dtype=tf.float32,
                     trainable=True)
                 # new shape transpose is ok. TODO by dalio, three demesions to two demesions
-                # self.char_ids = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length, ))
+                # self.char_ids = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
                                                          self.char_ids, name="char_embeddings")
 
