@@ -38,7 +38,7 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 
 class TrainingConfig(object):
     # change the epochs.
-    epoches = 10
+    epoches = 1
     evaluateEvery = 100
     checkpointEvery = 100
     learningRate = 0.001
@@ -87,7 +87,7 @@ class Config(object):
 
     dataSource = "./data/preProcess/labeledTrain.csv"
 
-    stopWordSource = "./data/english"
+    stopWordSource = "../data/english"
 
     numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
 
@@ -154,8 +154,8 @@ class Dataset(object):
         reviews = []
         labels = []
         for index, file in enumerate(train_files):
-            # if index != 3:
-            #     continue
+            if index != 3:
+                continue
             with open(file) as f:
                 lines = f.readlines()
                 for line in lines:
@@ -253,10 +253,10 @@ class Dataset(object):
         self._indexToChar = dict(zip(list(range(len(vocab))), vocab))
 
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("./data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
+        with open("../data/charJson/charToIndex.json", "w", encoding="utf-8") as f:
             json.dump(self._charToIndex, f)
 
-        with open("./data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
+        with open("../data/charJson/indexToChar.json", "w", encoding="utf-8") as f:
             json.dump(self._indexToChar, f)
 
         config.char_size = len(self._indexToChar)
@@ -317,10 +317,10 @@ class Dataset(object):
         self.labelList = list(range(len(uniqueLabel)))
 
         # 将词汇-索引映射表保存为json数据，之后做inference时直接加载来处理数据
-        with open("./data/wordJson/word2idx.json", "w", encoding="utf-8") as f:
+        with open("../data/wordJson/word2idx.json", "w", encoding="utf-8") as f:
             json.dump(word2idx, f)
 
-        with open("./data/wordJson/label2idx.json", "w", encoding="utf-8") as f:
+        with open("../data/wordJson/label2idx.json", "w", encoding="utf-8") as f:
             json.dump(label2idx, f)
 
         return word2idx, label2idx
@@ -481,18 +481,7 @@ class BiLSTM(object):
         # 词嵌入层
         with tf.name_scope("embedding"):
 
-            # # 利用预训练的词向量初始化词嵌入矩阵
-            # self.W = tf.Variable(tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"), name="W")
-            # # 利用词嵌入矩阵将输入的数据中的词转换成词向量，维度[batch_size, sequence_length, embedding_size]
-            # self.embeddedWords = tf.nn.embedding_lookup(self.W, self.inputX)
-
             with tf.variable_scope("words"):
-                # self.logger.info("WARNING: randomly initializing word vectors")
-                # self.W = tf.get_variable(
-                #     name="_word_embeddings",
-                #     dtype=tf.float32,
-                #     shape=[len(wordEmbedding), config.model.embeddingSize])
-
                 self.W = tf.Variable(
                     tf.cast(wordEmbedding, dtype=tf.float32, name="word2vec"),
                     name="_word_embeddings",
@@ -503,39 +492,22 @@ class BiLSTM(object):
                                                             self.inputX, name="word_embeddings")
 
             with tf.variable_scope("chars"):
-                    # get char embeddings matrix
-                # _char_embeddings = tf.get_variable(
-                #     name="_char_embeddings",
-                #     dtype=tf.float32,
-                #     shape=[config.char_size, config.model.dim_char])
 
                 _char_embeddings = tf.Variable(
                     tf.cast(charEmbeding, dtype=tf.float32, name="word2vec"),
                     name="_word_embeddings",
                     dtype=tf.float32,
                     trainable=True)
-                # new shape transpose is ok.
-                # self.char_ids_reshape = tf.reshape(self.char_ids, shape=(-1,  config.sequenceLength, config.word_length))
 
                 char_embeddings = tf.nn.embedding_lookup(_char_embeddings,
                                                          self.char_ids, name="char_embeddings")
 
 
-                # put the time dimension on axis=1
                 s = tf.shape(char_embeddings)
-                #     s[0]输入了多少行, s[1]是每行多少个词，s[-2]每个词多少个character
                 char_embeddings = tf.reshape(char_embeddings,
                                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
-                # word_lengths = tf.reshape(self.word_lengths, shape=[s[0] * s[1]])
 
                 char_embeddings = tf.transpose(char_embeddings, perm=[1, 0, 2])
-                # s = tf.shape(char_embeddings)
-                # 在cell层增加dropout
-                # bi lstm on chars
-                # cell_fw = LSTMCell(config.model.hidden_size_char,
-                #                                   state_is_tuple=True)
-                # cell_bw = LSTMCell(config.model.hidden_size_char,
-                #                                   state_is_tuple=True)
 
                 cell_fw = tf.nn.rnn_cell.DropoutWrapper(
                                         LSTMCell(config.model.hidden_size_char,
@@ -553,29 +525,13 @@ class BiLSTM(object):
                     time_major=True
                 )
 
-                # outputs, _ = _output
-                # output = tf.concat(outputs, 2)
-
-                # # read and concat output
-                #     不知道为什么这么用，是不是就是把time维度去掉了？
                 _, ((_, output_fw), (_, output_bw)) = _output
                 output = tf.concat([output_fw, output_bw], axis=-1)
 
-                # shape = (batch size, max sentence length, char hidden size)
-
-                # output = tf.transpose(output, perm=[1, 0, 2])
-
-                # output = tf.reshape(output,
-                #                 shape=[s[0], s[1], 2 * config.model.hidden_size_char])
-
-                #     对于上述矩阵的这个转换对吗？
                 output = tf.reshape(output,
                                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 output = tf.transpose(output, perm=[1, 0, 2])
             word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
-
-            # dropout不能在tflite上正常工作
-            # self.embeddedWords = tf.nn.dropout(word_embeddings, self.dropoutKeepProb)
             self.embeddedWords = word_embeddings
 
         # 定义两层双向LSTM的模型结构
@@ -879,7 +835,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=5)
 
         # 保存模型的一种方式，保存为pb文件
-        savedModelPath = "./model/Bi-LSTM/savedModel"
+        savedModelPath = "../model/Bi-LSTM/savedModel"
         if os.path.exists(savedModelPath):
             os.rmdir(savedModelPath)
         # builder = tf.saved_model.builder.SavedModelBuilder(savedModelPath)
@@ -982,7 +938,7 @@ with tf.Graph().as_default():
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
-                    path = saver.save(sess, "./model/Bi-LSTM/model/my-model", global_step=currentStep)
+                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
         # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
@@ -1000,7 +956,7 @@ with tf.Graph().as_default():
         #
         # builder.save()
         tf.compat.v1.saved_model.simple_save(sess,
-                                   "./model/Bi-LSTM/savedModel",
+                                   "../model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
                                            "keepProb": lstm.dropoutKeepProb,
                                            "char_ids": lstm.char_ids
@@ -1010,7 +966,7 @@ with tf.Graph().as_default():
 # %%
 
 # x = "this movie is full of references like mad max ii the wild one and many others the ladybug´s face it´s a clear reference or tribute to peter lorre this movie is a masterpiece we´ll talk much more about in the future"
-x = 'my USA phone number is +1-202-555-0169'
+x = 'this is 123123'
 
 # 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
 with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
@@ -1023,10 +979,9 @@ idx2label = {value: key for key, value in label2idx.items()}
 # word list
 # TODO by Jeffery
 # reviewIds = [
-
-xIds = [word2idx.get(item, word2idx[build_data.UNK]) if not item.isdigit() else word2idx[build_data.NUM] for item in
-     x.split(" ")]
-# xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
+#     [word2idx.get(item, word2idx[build_data.UNK]) if not item.isdigit() else word2idx[build_data.NUM] for item in
+#      review] for review in reviews]
+xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
 if len(xIds) >= config.sequenceLength:
     xIds = xIds[:config.sequenceLength]
 else:
@@ -1044,9 +999,7 @@ setence = [item for item in x.split(" ")]
 
 char_ids = []
 for word in setence:
-    # ids = [char2index.get(item, char2index[build_data.UNK]) for item in word]
-    ids = [char2index.get(item, char2index[build_data.UNK]) if not item.isdigit() else char2index[build_data.NUM] for item in
-           word]
+    ids = [char2index.get(item, char2index[build_data.UNK]) for item in word]
     char_ids.append(ids)
 
 # 先补充sequece数量
@@ -1076,7 +1029,7 @@ with graph.as_default():
     sess = tf.Session(config=session_conf)
 
     with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("./model/Bi-LSTM/my-model/")
+        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/my-model/")
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
