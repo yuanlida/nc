@@ -1091,7 +1091,7 @@ with graph.as_default():
     sess = tf.Session(config=session_conf)
 
     with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("./model/Bi-LSTM/my-model/")
+        checkpoint_file = tf.train.latest_checkpoint("./model/Bi-LSTM/model")
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
