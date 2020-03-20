@@ -366,13 +366,15 @@ class BiLSTM(object):
                     # # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
                     self.embeddedWords = tf.concat(outputs, 2)
 
+                    # error for lite.
                     # ((_, output_fw), (_, output_bw)) = self.current_state
                     # data2 = tf.concat([output_fw, output_bw], axis=-1)
 
         self.embeddedWords = tf.transpose(self.embeddedWords, [1, 0, 2])
-        # 去除最后时间步的输出作为全连接的输入
+        # # 去除最后时间步的输出作为全连接的输入
         finalOutput = self.embeddedWords[:, -1, :]
-        # finalOutput = self.embeddedWords
+        # error for lite
+        # finalOutput = data2
 
         outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
         output = tf.reshape(finalOutput, [-1, outputSize])  # reshape成全连接层的输入维度
