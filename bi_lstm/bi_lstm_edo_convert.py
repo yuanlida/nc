@@ -352,6 +352,8 @@ class BiLSTM(object):
                     lstmBwCell = tf.nn.rnn_cell.DropoutWrapper(
                         LSTMCell(num_units=hiddenSize, state_is_tuple=True),
                         output_keep_prob=self.dropoutKeepProb[0])
+                    if idx == 0:
+                        self.embeddedWords = tf.transpose(self.embeddedWords, perm=[1, 0, 2])
 
                     # 采用动态rnn，可以动态的输入序列的长度，若没有输入，则取序列的全长
                     # outputs是一个元祖(output_fw, output_bw)，其中两个元素的维度都是[batch_size, max_time, hidden_size],fw和bw的hidden_size一样
@@ -360,12 +362,17 @@ class BiLSTM(object):
                                                                                   self.embeddedWords, dtype=tf.float32,
                                                                                   scope="bi-lstm" + str(idx),
                                                                                   time_major=True)
-
-                    # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
+                    #
+                    # # 对outputs中的fw和bw的结果拼接 [batch_size, time_step, hidden_size * 2]
                     self.embeddedWords = tf.concat(outputs, 2)
 
+                    # ((_, output_fw), (_, output_bw)) = self.current_state
+                    # data2 = tf.concat([output_fw, output_bw], axis=-1)
+
+        self.embeddedWords = tf.transpose(self.embeddedWords, [1, 0, 2])
         # 去除最后时间步的输出作为全连接的输入
         finalOutput = self.embeddedWords[:, -1, :]
+        # finalOutput = self.embeddedWords
 
         outputSize = config.model.hiddenSizes[-1] * 2  # 因为是双向LSTM，最终的输出值是fw和bw的拼接，因此要乘以2
         output = tf.reshape(finalOutput, [-1, outputSize])  # reshape成全连接层的输入维度
