@@ -528,6 +528,7 @@ class BiLSTM(object):
                 )
 
                 _, ((_, output_fw), (_, output_bw)) = _output
+                # output = tf.concat([output_fw, output_bw], axis=-1)
                 output = tf.concat([output_fw, output_bw], axis=-1)
                 # tf.reshape(output_fw, [s[0], 50])
                 # tf.reshape(output_bw, [s[0], 50])
