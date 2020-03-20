@@ -504,6 +504,8 @@ class BiLSTM(object):
 
 
                 s = tf.shape(char_embeddings)
+                #     s[0]输入了多少行, s[1]是每行多少个词，s[-2]每个词多少个character
+                # shape = (batch size, max sentence length, char hidden size)
                 char_embeddings = tf.reshape(char_embeddings,
                                              shape=[s[0] * s[1], s[-2], config.model.dim_char])
 
@@ -535,9 +537,13 @@ class BiLSTM(object):
                 # output = tf.concat(outputs, 2)
                 # output = output[:, -1, :]
 
+                # outstate would be batchsize and state
+                # output = tf.reshape(output,
+                #                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
+                # output = tf.transpose(output, perm=[1, 0, 2])
+
                 output = tf.reshape(output,
-                                    shape=[s[1], s[0], 2 * config.model.hidden_size_char])
-                output = tf.transpose(output, perm=[1, 0, 2])
+                                    shape=[s[0], s[1], 2 * config.model.hidden_size_char])
             # word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
             word_embeddings = tf.concat([self.word_embeddings, output], axis=2)
             self.embeddedWords = word_embeddings
