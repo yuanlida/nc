@@ -561,9 +561,15 @@ class BiLSTM(object):
 
                 # # read and concat output
                 #     不知道为什么这么用，是不是就是把time维度去掉了？
-                _, ((_, output_fw), (_, output_bw)) = _output
-                output = tf.concat([output_fw, output_bw], axis=-1)
+                # _, ((_, output_fw), (_, output_bw)) = _output
+                # output = tf.concat([output_fw, output_bw], axis=-1)
 
+                # output_fw can not work,so use this one .
+                #     这么改了之后收敛也变慢了。
+                outputs, self.current_state = _output
+                output = tf.concat(outputs, 2)
+                output = tf.transpose(output, perm=[1, 0, 2])
+                output = output[:, -1, :]
                 # shape = (batch size, max sentence length, char hidden size)
 
                 # output = tf.transpose(output, perm=[1, 0, 2])
@@ -571,10 +577,13 @@ class BiLSTM(object):
                 # output = tf.reshape(output,
                 #                 shape=[s[0], s[1], 2 * config.model.hidden_size_char])
 
-                #     对于上述矩阵的这个转换对吗？
+                #     对于上述矩阵的这个转换对吗？ 做了这个转换收敛更快一些，那是为什么哪？
+                # output = tf.reshape(output,
+                #                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
+                # output = tf.transpose(output, perm=[1, 0, 2])
+
                 output = tf.reshape(output,
-                                    shape=[s[1], s[0], 2 * config.model.hidden_size_char])
-                output = tf.transpose(output, perm=[1, 0, 2])
+                                    shape=[s[0], s[1], 2 * config.model.hidden_size_char])
             word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
 
             # dropout不能在tflite上正常工作

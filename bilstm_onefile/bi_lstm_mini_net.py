@@ -536,6 +536,7 @@ class BiLSTM(object):
 
                 # outputs, self.current_state = _output
                 # output = tf.concat(outputs, 2)
+                # output = tf.transpose(output, perm=[1, 0, 2])
                 # output = output[:, -1, :]
 
                 # outstate would be batchsize and state
