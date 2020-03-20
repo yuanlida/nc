@@ -566,6 +566,7 @@ class BiLSTM(object):
 
                 # output_fw can not work,so use this one .
                 #     这么改了之后收敛也变慢了。
+                #     这个修改是否正确 TODO by anbo
                 outputs, self.current_state = _output
                 output = tf.concat(outputs, 2)
                 output = tf.transpose(output, perm=[1, 0, 2])
@@ -582,6 +583,8 @@ class BiLSTM(object):
                 #                     shape=[s[1], s[0], 2 * config.model.hidden_size_char])
                 # output = tf.transpose(output, perm=[1, 0, 2])
 
+                # 是用上面的变化，还是底下的，上面的收敛更快。
+                #     这个修改是否正确 TODO by anbo
                 output = tf.reshape(output,
                                     shape=[s[0], s[1], 2 * config.model.hidden_size_char])
             word_embeddings = tf.concat([self.word_embeddings, output], axis=-1)
