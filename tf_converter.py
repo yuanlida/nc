@@ -24,8 +24,8 @@ import tensorflow as tf
 # tf.saved_model.tag_constants.SERVING
 # converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/textCNN/savedModel", tag_set=[tf.saved_model.tag_constants.SERVING])
 # converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel", tag_set=[tf.saved_model.tag_constants.SERVING])
-# converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel", tag_set=['serve'], signature_key='predict')
-converter = tf.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel", tag_set=['serve'])
+converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel", tag_set=['serve'], signature_key='predict')
+# converter = tf.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel", tag_set=['serve'])
 
 # converter = tf.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/savedModel")
 
