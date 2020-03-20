@@ -33,8 +33,8 @@ converter = tf.compat.v1.lite.TFLiteConverter.from_saved_model("./model/Bi-LSTM/
 
 # converter.target_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
 #                         tf.lite.OpsSet.SELECT_TF_OPS]
-# converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
-#                                        tf.lite.OpsSet.SELECT_TF_OPS]
+converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS,
+                                       tf.lite.OpsSet.SELECT_TF_OPS]
 
 tflite_model = converter.convert()
 open("./model/Bi-LSTM/bi-lstm.tflite", "wb").write(tflite_model)
