@@ -1074,15 +1074,15 @@ elif len(char_ids) > config.sequenceLength:
 
 char_list = []
 for word in char_ids:
-    temp_ids = []
+    # temp_ids = []
     # 再补充每个word内的char数量
     if len(word) < config.word_length:
         for i in range(config.word_length - len(word)):
             word.append(char2index[build_data.PAD])
     elif len(word) > config.word_length:
         word = word[:config.word_length]
-    temp_ids.append(word)
-    char_list.append(temp_ids)
+    # temp_ids.append(word)
+    char_list.append(word)
 
 graph = tf.Graph()
 with graph.as_default():

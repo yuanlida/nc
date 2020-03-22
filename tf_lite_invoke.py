@@ -1,9 +1,8 @@
 import tensorflow as tf
-import numpy as np
 import string
 import json
 import build_data
-
+import numpy as np
 
 tf_lite_file = './model/Bi-LSTM/bi-lstm.tflite'
 char2index_file = './model/Bi-LSTM/charJson/charToIndex.json'
@@ -50,9 +49,16 @@ class TFLiteModel(object):
     word2id = None
     char2id = None
     sentence = None
-    chars = None
-    words = None
+    chars = []
+    words = []
     id2label = None
+
+    id_label = None
+    sentence_words = []
+    sentence_chars = []
+
+    sequenceLength = 32
+    word_length = 10
 
     def __init__(self, sentence):
         self.sentence = sentence
@@ -71,28 +77,102 @@ class TFLiteModel(object):
             self.char2id = json.load(f)
 
     def gen_chars(self):
-        pass
+        for word in self.sentence_words:
+            for _char in word:
+                self.sentence_chars.append(_char)
 
     def gen_words(self):
-        pass
+        for item in string.punctuation:
+            self.sentence = self.sentence.strip().replace(item, ' ' + item + ' ')
+        self.sentence_words = self.sentence.split()
 
     def generate_char_ids(self):
-        pass
+        char_ids = []
+        for word in self.sentence_words:
+            # use the original num
+            ids = [self.char2id.get(item, self.char2id[build_data.UNK]) for item in word]
+            # replace num with <num>
+            # ids = [self.char2id.get(item, self.char2id[build_data.UNK])
+            #        if not item.isdigit() else self.char2id[build_data.NUM]
+            #        for item in word]
+            char_ids.append(ids)
+
+        # 先补充sequece数量
+        if len(char_ids) < self.sequenceLength:
+            for i in range(self.sequenceLength - len(char_ids)):
+                char_ids.append([self.char2id[build_data.PAD]])
+        elif len(char_ids) > self.sequenceLength:
+            char_ids = char_ids[:self.sequenceLength]
+
+        char_list = []
+        for word in char_ids:
+            # temp_ids = []
+            # 再补充每个word内的char数量
+            if len(word) < self.word_length:
+                for i in range(self.word_length - len(word)):
+                    word.append(self.char2id[build_data.PAD])
+            elif len(word) > self.word_length:
+                word = word[:self.word_length]
+            # temp_ids.append(word)
+            char_list.append(word)
+        self.chars = np.asarray([char_list], dtype=np.int32)
 
     def generate_word_ids(self):
-        pass
+        words = [self.word2id.get(item, self.word2id[build_data.UNK])
+                 if not item.isdigit() else self.word2id[build_data.NUM]
+                 for item in self.sentence_words]
+        # xIds = [word2idx.get(item, word2idx[build_data.UNK]) for item in x.split(" ")]
+        if len(words) >= self.sequenceLength:
+            words = words[:self.sequenceLength]
+        else:
+            words = words + [self.word2id[build_data.PAD]] * (self.sequenceLength - len(words))
+        self.words = np.asarray([words], np.int32)
 
     def get_class(self):
-        pass
+        interpreter = tf.lite.Interpreter(model_path=tf_lite_file)
+        interpreter.allocate_tensors()
+
+        # Get input and output tensors.
+        input_details = interpreter.get_input_details()
+        output_details = interpreter.get_output_details()
+        print(input_details)
+        print(output_details)
+
+        # Test model on random input data.
+        # [1, 32, 10] chars
+        interpreter.set_tensor(input_details[0]['index'], self.chars)
+
+        # [1.0] dropout
+        dropout_array = [1.0]
+        np_dropout = np.asarray(dropout_array, dtype=np.float32)
+        interpreter.set_tensor(input_details[1]['index'], np_dropout)
+
+        # [1, 32] words
+        interpreter.set_tensor(input_details[2]['index'], self.words)
+
+        interpreter.invoke()
+
+        # The function `get_tensor()` returns a copy of the tensor data.
+        # Use `tensor()` in order to get a pointer to the tensor.
+        output_data = interpreter.get_tensor(output_details[0]['index'])
+        self.id_label = output_data[0]
 
     def get_label(self):
-        pass
+        return self.id2label[self.id_label]
 
     def analyze(self):
         self.load_char2id_json()
         self.load_label2id_json()
         self.load_word2id_json()
-        return 'labels'
+
+        self.gen_words()
+        self.gen_chars()
+
+        self.generate_word_ids()
+        self.generate_char_ids()
+
+        self.get_class()
+        return self.get_label()
 
 
 if __name__ == '__main__':
@@ -100,5 +180,4 @@ if __name__ == '__main__':
     sentence = 'my USA phone number is +1-202-555-0169'
     lite_model = TFLiteModel(sentence)
     label = lite_model.analyze()
-    print(label)
-
+    print('The label is ', label)
