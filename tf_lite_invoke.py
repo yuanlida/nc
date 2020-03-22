@@ -62,7 +62,8 @@ class TFLiteModel(object):
     word_length = 10
 
     def __init__(self, sentence):
-        self.sentence = sentence
+        if sentence != None:
+            self.sentence = sentence
 
     def load_label2id_json(self):
         with open(label2id_file, "r", encoding="utf-8") as f:
@@ -85,7 +86,7 @@ class TFLiteModel(object):
     def gen_words(self):
         for item in string.punctuation:
             self.sentence = self.sentence.strip().replace(item, ' ' + item + ' ')
-        self.sentence_words = self.sentence.split()
+        self.sentence_words = self.sentence.strip().split()
 
     def generate_char_ids(self):
         char_ids = []
@@ -136,8 +137,8 @@ class TFLiteModel(object):
         # Get input and output tensors.
         input_details = interpreter.get_input_details()
         output_details = interpreter.get_output_details()
-        print(input_details)
-        print(output_details)
+        # print(input_details)
+        # print(output_details)
 
         # Test model on random input data.
         # [1, 32, 10] chars
@@ -161,6 +162,9 @@ class TFLiteModel(object):
     def get_label(self):
         return self.id2label[self.id_label]
 
+    def set_sentence(self, sentence):
+        self.sentence = sentence
+
     def analyze(self):
         self.load_char2id_json()
         self.load_label2id_json()
@@ -178,7 +182,12 @@ class TFLiteModel(object):
 
 if __name__ == '__main__':
     # test_lite_is_useful()
-    sentence = 'my USA phone number is +1-202-555-0169'
-    lite_model = TFLiteModel(sentence)
+    s1 = 'my USA phone number is +1-202-555-0169'
+    s2 = 'This is a router.'
+    lite_model = TFLiteModel(s1)
     label = lite_model.analyze()
     print('The label is ', label)
+    lite_model.set_sentence(s2)
+    label = lite_model.analyze()
+    print('The label is ', label)
+
