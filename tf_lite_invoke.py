@@ -22,6 +22,9 @@ input_data = np.array(np.random.random_integers(0, 0, size=input_shape), dtype=n
 print(input_data)
 interpreter.set_tensor(input_details[1]['index'], input_data)
 
+if __name__ == '__main__':
+    pass
+
 input_shape = input_details[2]['shape']
 input_data = np.array(np.random.random_integers(0, 0, size=input_shape), dtype=np.int32)
 print(input_data)
