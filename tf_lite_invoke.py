@@ -4,6 +4,7 @@ import json
 import build_data
 import numpy as np
 
+# copy this files to ./model/ folder.
 tf_lite_file = './model/Bi-LSTM/bi-lstm.tflite'
 char2index_file = './model/Bi-LSTM/charJson/charToIndex.json'
 word2id_file = './model/Bi-LSTM/wordJson/word2idx.json'
