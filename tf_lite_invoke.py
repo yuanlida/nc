@@ -182,21 +182,14 @@ class TFLiteModel(object):
 
 if __name__ == '__main__':
     # test_lite_is_useful()
-    s1 = 'Bruce Jimenez'
-    s2 = 'Growth Team'
-    s3 = 'Castle I LinkedIn'
-    s4 = 'San Francisco, CA'
+    xs = ['Bruce Jimenez',
+          'Growth Team',
+          'Castle I LinkedIn',
+          'San Francisco, CA']
+    lite_model = TFLiteModel(None)
 
-    lite_model = TFLiteModel(s1)
-    label = lite_model.analyze()
-    print('The label is ', label)
-    lite_model.set_sentence(s2)
-    label = lite_model.analyze()
-    print('The label is ', label)
-    lite_model.set_sentence(s3)
-    label = lite_model.analyze()
-    print('The label is ', label)
-    lite_model.set_sentence(s4)
-    label = lite_model.analyze()
-    print('The label is ', label)
+    for sentence in xs:
+        lite_model.set_sentence(sentence)
+        label = lite_model.analyze()
+        print(sentence, '| label is ', label)
 
