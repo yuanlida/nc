@@ -182,7 +182,7 @@ class TFLiteModel(object):
 
 if __name__ == '__main__':
     # test_lite_is_useful()
-    s1 = 'my USA phone number is +1-202-555-0169'
+    s1 = 'Adele C. Oliva '
     s2 = 'This is a router.'
     lite_model = TFLiteModel(s1)
     label = lite_model.analyze()

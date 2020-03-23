@@ -32,3 +32,4 @@
 1、寻求新语料，平衡语料继续提升精度。 Jeffery  
 2、3层LSTM网络变为2层，可以减少模型三分之一大小。Jeffery  
 3、增加无分类的语料，或者在客户端用规则过滤那些不在[loc, tel, title, org, name]内的语句。 iOS + Jeffery   
+4、姓名标注的时候把Adele C. Oliva Edward P. Gilligan Michael A . Henos  这个点分开，这会导致name结果不准。
