@@ -182,12 +182,21 @@ class TFLiteModel(object):
 
 if __name__ == '__main__':
     # test_lite_is_useful()
-    s1 = 'Adele C. Oliva '
-    s2 = 'This is a router.'
+    s1 = 'Bruce Jimenez'
+    s2 = 'Growth Team'
+    s3 = 'Castle I LinkedIn'
+    s4 = 'San Francisco, CA'
+
     lite_model = TFLiteModel(s1)
     label = lite_model.analyze()
     print('The label is ', label)
     lite_model.set_sentence(s2)
+    label = lite_model.analyze()
+    print('The label is ', label)
+    lite_model.set_sentence(s3)
+    label = lite_model.analyze()
+    print('The label is ', label)
+    lite_model.set_sentence(s4)
     label = lite_model.analyze()
     print('The label is ', label)
 
