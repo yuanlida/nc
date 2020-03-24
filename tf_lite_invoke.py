@@ -23,18 +23,18 @@ def test_lite_is_useful():
 
     # Test model on random input data.
     input_shape = input_details[0]['shape']
-    input_data = np.array(np.random.random_integers(0, 0, size=input_shape), dtype=np.int32)
-    print(input_data)
+    input_data = np.array(np.random.random_integers(0, 0, size=(input_shape[0], input_shape[1], input_shape[2])), dtype=np.int32)
+    # print(input_data)
     interpreter.set_tensor(input_details[0]['index'], input_data)
 
     input_shape = input_details[1]['shape']
-    input_data = np.array(np.random.random_integers(0, 0, size=input_shape), dtype=np.float32)
-    print(input_data)
+    input_data = np.array(np.random.random_integers(0, 0, size=(2, input_shape[0])), dtype=np.float32)
+    # print(input_data)
     interpreter.set_tensor(input_details[1]['index'], input_data)
 
     input_shape = input_details[2]['shape']
-    input_data = np.array(np.random.random_integers(0, 0, size=input_shape), dtype=np.int32)
-    print(input_data)
+    input_data = np.array(np.random.random_integers(0, 0, size=(2, input_shape[0], input_shape[1])), dtype=np.int32)
+    # print(input_data)
     interpreter.set_tensor(input_details[2]['index'], input_data)
 
     interpreter.invoke()
