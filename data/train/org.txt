@@ -932,7 +932,7 @@ Integration Appliance , Inc .
 the connectors 
 Harbinger Capital Partners 
 Raffles Hospital 
-Netsipari ? 
+Netsipari
 Eagle Alpha 
 ideoapps 
 BION 
@@ -1645,7 +1645,7 @@ USC Marshall School of Business
 Cirrascale 
 Terasic Technologies 
 Socialfly 
-Leopold panovi ? 
+Leopold panovi
 colon cancer fund 
 David A . Polinsky 
 LiveAutographs 
@@ -2203,7 +2203,7 @@ Merieux Nutrisciences Corporation
 15 Marketing UK 
 Integrated SATA PHY and Controller 
 TubeSpree 
-K ? vaml ? Çama ? ? r Suyu 
+K  vaml  Çama   r Suyu
 Touch Business Unit . 
 Bunkspeed 
 Retail Convergence 
@@ -2572,7 +2572,7 @@ Sourcing in Vietnam
 Atlas . cz 
 iConsult 
 Advanced Carpet Cleaning 
-Serm ? Systems 
+Serm  Systems
 Carolina Factory Outlet 
 CTI Life Sciences Fund 
 Mo + 
@@ -2931,7 +2931,7 @@ Relish Yacht Dubai
 Associate of Internet Professionals ( AIP ) 
 Designbook 
 Talk & Do . TV 
-Biri ? imvar 
+Biri  imvar
 Influ Technologies 
 Bar Tab Program 
 State Information Center 
@@ -3578,7 +3578,7 @@ Iconix Biosciences
 Jetstream Communications 
 Camloop 
 Piston Cloud Computing 
-How ' s Your Pony ? 
+How ' s Your Pony
 Genie Timeline Backup 
 YoBucko 
 Eva C . Schweitzer 
@@ -4370,7 +4370,7 @@ Acistek
 Climb Digital SEO 
 100nos . com 
 Invicta Networks 
-D ? vids t ? belis 
+D  vids t  belis
 BOND 
 Below Zero Hosting Ltd 
 ProCloud 
@@ -4668,9 +4668,9 @@ Suffolk Holdings
 EpicBets 
 NYC NJ First 
 IVR providers 
-Andrius Rimk ? nas 
+Andrius Rimk  nas
 MTBiker . sk 
-Türk Ekonomi Bankas ? 
+Türk Ekonomi Bankas
 DriftDraft 
 Ingenious Zone 
 GeneTex 
@@ -4978,7 +4978,7 @@ InstallCore
 Cherry Tree Companies 
 Sloane Capital Management 
 Syllabontes 
-Bartosz Ko ? odziej 
+Bartosz Ko  odziej
 Michael W . Aguiar 
 BloggingAds 
 ezCater 
@@ -5220,7 +5220,7 @@ Switch2LEDs KTS Commerce
 Auto Replacement Parts 
 McFlyÂ® by Najee JÃ©rÃ©mie 
 XFit 
-Damian S ? uja 
+Damian S  uja
 SSD Korea 
 NewChannel Inc . 
 Arista Records 
@@ -5981,7 +5981,7 @@ Fitnio
 Z Server SMP 
 Crowdwave 
 Vycor Medical 
-Whose Tweet ? 
+Whose Tweet
 Pollfish 
 HyperSEND 
 Marin Magazine LLC . 
@@ -7016,7 +7016,7 @@ MIT Technology Licensing Office
 PartyLine 
 Wi - Chi 
 Aha Mobile 
-Adam Prze ? dzi ? k 
+Adam Prze  dzi  k
 Kendara 
 GetListed . org 
 iMeet , Inc . 
@@ -7729,7 +7729,7 @@ ulala . ro
 BertoldiGroup 
 Accelarad , creators of SeeMyRadiology . com 
 Fudan University 
-Muhammed Ek ? i 
+Muhammed Ek  i
 Isatis Intellectual Innovative Iranian Ideas 
 BC TEL Interactive 
 Filterview 
@@ -8442,7 +8442,7 @@ SIM - based Hosting Server
 Blacktar 
 Rezolit LLC 
 Hotelbid 
-Ready to Go ? Animate 
+Ready to Go  Animate
 Skyrider 
 Ruckus 
 Mohammed Habeebuddin 
@@ -8853,7 +8853,7 @@ EndGenitor Technologies Inc .
 SGB Media Group 
 CodeWise 
 Marc J . Verissimo 
-# NAME ? 
+# NAME
 Moshe Bar - Niv 
 Sano Intelligence 
 Dazzle Technolab Pvt ltd 
@@ -9567,7 +9567,7 @@ Twitpic
 KwaliStudio 2 . 0 
 CarGames 
 Dewmap 
-Artur Ka ? ek 
+Artur Ka  ek
 Berry Plastics 
 Capgemini Sogeti 
 GSO 
@@ -9973,7 +9973,7 @@ Criterion Capital Partners
 GameStop Digital Ventures 
 FontCubes . com 
 Service Blogger 
-Jongla IM iPhone App : https : / / itunes . apple . com / app / jongla - instant - messenger / id564199158 ? mt = 8 
+Jongla IM iPhone App : https : / / itunes . apple . com / app / jongla - instant - messenger / id564199158  mt = 8
 Capitol Hill 
 No Cook 
 Good Travel Software 
@@ -10331,7 +10331,7 @@ Molchester Ltd
 SimCloud Corporation 
 Kasel Custom Media Creations , Inc 
 TwitPub 
-Bula ? ? k Makinesi Parlat ? c ? s ? 
+Bula   k Makinesi Parlat  c  s
 Alpha Communications 
 Tikl 
 Wedding Stub 
@@ -11525,7 +11525,7 @@ Harvard Business Review
 Freeman Media 
 Befreelancer . com 
 Source Audio 
-FancyCellar - ? ? 
+FancyCellar -
 ChatBadge 
 nopCommerce 
 The Foodie Blogroll 
@@ -11638,7 +11638,7 @@ Outdoor Partners
 yongerp 
 iPREPpress 
 Hoopla Worldwide 
-Kristijan imi ? 
+Kristijan imi
 Oracle Advertising 
 Green River 
 Travolti 
@@ -12080,7 +12080,7 @@ zefty . com
 Clean Vision Networks 
 TODL 
 Big Terminal 
-Yasin Sava ? 
+Yasin Sava
 Priceza 
 IdeaTalent 
 Seattle Job Social 
@@ -12567,10 +12567,10 @@ Healthy Mommy DNA Insight
 Job Manager 
 MakeMyDabba . com 
 Digitaliz Agency 
-Pavel Van ? ? ek 
+Pavel Van   ek
 Eventivist 
 Robert E . Levine 
-Marcin Ja ? kiewicz 
+Marcin Ja  kiewicz
 Piedmont Angel Network 
 Beerwhich . com 
 Hyper Ventures 
@@ -13786,7 +13786,7 @@ Barking Deals , LLC
 Vividolabs 
 CCP Equity Partners 
 Coworking Florida 
-Oskars L ? sis 
+Oskars L  sis
 GameResort 
 Red Cup 
 PNMsoft 
@@ -15238,7 +15238,7 @@ MouthShut . com
 B / E Aerospace 
 Velvet Pixel 
 IBA Tax Group 
-Tomislav Grubii ? 
+Tomislav Grubii
 Autoviva 
 Think App Studio 
 Andrew M . Ziolkowski 
@@ -15425,7 +15425,7 @@ Neon Games
 ConnectItAll 
 Brodeur Worldwide 
 Living Proof 
-Kaan K ? ran 
+Kaan K  ran
 tabeso 
 Hertz 
 Augmented Dynamics 
@@ -16169,7 +16169,7 @@ ConwaySound
 Zinah Ventures , LLC 
 cheapstingybargains . com 
 BoardVantage 
-Where Do I Go ? ( iOS ) 
+Where Do I Go  ( iOS )
 ConversionLab 
 KID - FIT 
 Cyrano 
@@ -16184,7 +16184,7 @@ Watchtower
 Churchill Mortgage TN 
 JWI Capital 
 VaxGen 
-Jakub Tla ? ka 
+Jakub Tla  ka
 Houweling ' s Tomatoes 
 Telcordia Technologies 
 Vaadin 
@@ -18115,7 +18115,7 @@ inCircle
 CloudCreo 
 Young And CEO 
 Nelson - Gal Consulting 
-Mehmet Ali Sabuncuo ? lu 
+Mehmet Ali Sabuncuo  lu
 iblazr 
 The Fuelist 
 Exploroo Affiliate 
@@ -18268,7 +18268,7 @@ Maccent Software
 Mentii 
 Michael W . Flores , P . E . , 
 Insigniam 
-Hasan Sabri Kayao ? lu 
+Hasan Sabri Kayao  lu
 Mednet Healthcare Technologies 
 Khosla Labs 
 Secrets of Paris 
@@ -18845,7 +18845,7 @@ Asset Vue LLC .
 SunTecIndia 
 YoYo Games 
 WaveTwo 
-Tomá Kraj ? ík 
+Tomá Kraj  ík
 BuilderBuzz 
 First Solutions Co As 
 Derek J . Slattery 
@@ -19128,7 +19128,7 @@ William A . Kozy
 Physics Ventures 
 Xperscore 
 T - System 
-Anupras Dirvel ? 
+Anupras Dirvel
 Social Media Basic 
 Kenneth J . Novack 
 Lufin Partners AG 
@@ -19217,7 +19217,7 @@ Gutensite Programming / Development Services
 LonnyMag 
 Mapsicle 
 Degree Prospects 
-Saa Milinkovi ? 
+Saa Milinkovi
 Iroquois Capital 
 Triple Threat Academy 
 Docor International BV 
@@ -19990,7 +19990,7 @@ Marmot iGloves
 Social Groupware 
 Signage One 
 National Business Group on Health 
-Raj S . Inamdar ? 
+Raj S . Inamdar
 Thomas J . Rutherford 
 Atlas Trading International 
 Link Information Systems ( LIS ) 
@@ -21044,7 +21044,7 @@ Shah Facial Plastics
 Mavice 
 TalkTalk 
 Sutra Job Board Network 
-Aistis Lukoevi ? ius 
+Aistis Lukoevi  ius
 Villa rental 
 AllAboutApps 
 Statusly 
@@ -21412,7 +21412,7 @@ University of Tokyo
 Weber & Associates 
 BioMCN 
 Palo Alto Venture Partners 
-M ? BLS 
+M  BLS
 create barcode labels 
 Circlezon 
 Deja Crowd 
@@ -22046,7 +22046,7 @@ Joost
 WhatsFun . com Inc . 
 ContractorBhai . com 
 BlueSquare Resolutions 
-Cem Çal ? ? t ? ran 
+Cem Çal   t  ran
 Chatterous 
 Senesco Technologies 
 Continuum ElectroProducts 
@@ -23186,7 +23186,7 @@ Engineering Entrance Corner
 SVBio 
 Personics Labs 
 Digital Marketing Suite 
-Bula ? ? k Makinesi Deterjan ? 
+Bula   k Makinesi Deterjan
 Doublespace Services 
 EXL Group 
 Vitality 
@@ -23386,7 +23386,7 @@ Ezeebids
 FrameChannel 
 Jiangsu Institute Of Microbiology 
 Wm Shlackman Ltd 
-Çilek Havuz Sauna San . ve Tic . Ltd . ? ti . 
+Çilek Havuz Sauna San . ve Tic . Ltd .  ti .
 Digi - Net Technologies , Inc . 
 Eastman Kodak and Dynatech 
 eRx Network 
@@ -24813,7 +24813,7 @@ Eventide
 luxist . com 
 SAB Recruiters PVT LTD 
 Sphera Funds Management 
-The Factory ? 
+The Factory
 Evolix 
 eSeekers 
 Manual High School 
@@ -26034,7 +26034,7 @@ United Techno Solutions
 WashingtonVC 
 Early Bird 
 NJ Discount Vinyl Siding 
-Jaroslav Mina ? ík 
+Jaroslav Mina  ík
 DojiSpace 
 Actual Print Paper Brochure Creations 
 MediSapiens 
@@ -26118,7 +26118,7 @@ Dramas
 The Qpiz 
 Amazon ( . com ) Mechanical Turk 
 OnState 
-Branko Jeli ? i ? 
+Branko Jeli  i
 Pictometry International 
 The Ruppert Co . , LLC 
 Snapeous 
@@ -26450,7 +26450,7 @@ Workbooks
 Wappwolf Automator 
 Forefront Law Group 
 Roosst 
-Umut ? NEV ? 
+Umut  NEV
 Cupcake 
 Sidepath Inc . 
 EntryBoard 
@@ -27568,7 +27568,7 @@ Redline Trading Solutions
 Breville 
 Mosaikoo 
 Luke R . Burnett 
-Radek Kovalí ? ek 
+Radek Kovalí  ek
 TruongSinh Tran - Nguyen 
 Globe Capital LLC 
 Scholify 
@@ -27584,7 +27584,7 @@ Carpet Cleaning Belmont
 ecreative 
 WellServed 
 Venture Accelerator 
-Milo Milisavljevi ? 
+Milo Milisavljevi
 NNG Global Services Kft 
 Kolectiv Studio 
 Hefaistos Inc 
@@ -28502,7 +28502,7 @@ Surado Solutions
 Codagen Technologies 
 Blackford Analysis 
 Database - Brothers 
-Any New Books ? 
+Any New Books
 foo 
 PeerPong 
 Askketul 
@@ -28626,7 +28626,7 @@ Valen Technologies
 Dakota Imaging , Inc . / WebMD 
 Bassett Providentia 
 Stephen A . Blum 
-Bayku ? Music 
+Bayku  Music
 SPOC Medical 
 Stuart A . Auerbach 
 Witco Corporation 
@@ -29289,8 +29289,7 @@ Blackacid Networks , LLP .
 Givey 
 Starfall Education 
 TwapperKeeper 
-Private groups 
-Stand Strong Media 
+Stand Strong Media
 Arc Solutions 
 Hughes Software Systems 
 SIP Forum 
@@ -30584,7 +30583,7 @@ Borderfree , Inc .
 Mark E . Caputo 
 Racemi 
 LynxIT Solutions 
-O ? uzhan ( Oz ) Oflaz 
+O  uzhan ( Oz ) Oflaz
 eEye 
 Conjectur 
 MBA Building Supplies 
@@ -30757,7 +30756,7 @@ ProFundCom Hedge Fund Edition
 The Center for Innovative Technology 
 PayMeCredit 
 ATS 
-FlashTasar ? m 
+FlashTasar  m
 Kuznech 
 Rhodric C . Hackman 
 Tailwind Capital 
@@ -30881,7 +30880,7 @@ Rivalry
 Riverside Research 
 Dokko Group 
 CleanCode 
-Hotel Bia ? y Kamie ? 
+Hotel Bia  y Kamie
 NACE Solutions 
 Transponders 
 pamemazi . gr 
@@ -31355,7 +31354,7 @@ Bandify
 SYSTEM CONTROLS PVT LTD 
 IPBModifications . com 
 Emblaze 
-Adrian Achih ? ei 
+Adrian Achih  ei
 AKS Capital 
 arGEN - X 
 72 - Acre Property 
@@ -31367,7 +31366,7 @@ Teambox Suite
 Local & Organic Pantry Items 
 RNS Informatics Pvt Ltd 
 Sri Pradhyumna Technologies 
-Vous Avez Choisi ? 
+Vous Avez Choisi
 SuperForex 
 interactive dog toys 
 NeuroTronik 
@@ -31478,7 +31477,7 @@ Stellar Media Works
 Crescendo Networks 
 Fingertip Maestro 
 Zuum 
-Up ! ? for iOS 
+Up !  for iOS
 UIDAI - Unique Identification Authority of India 
 Stratus Contact Solutions 
 Baran A . K . 
@@ -32027,7 +32026,7 @@ Buzzoo
 Severstal 
 Edward P . Gilligan 
 Visionen machen Schule 
-TwójPasa ? 
+TwójPasa
 Central Coast Pathology Consultants 
 Webfor 
 Gala Pocket 
@@ -32489,7 +32488,7 @@ placespourtous . com
 Flexuspine 
 Ricky A . Lopez 
 OwnYourPhone 
-Nagy Dezs ? 
+Nagy Dezs
 Brenda F . Hatter 
 Reflectent Software 
 Living Vogue 
@@ -32868,7 +32867,7 @@ Technology Investment Company
 Yelli 
 DESIGNPLUS 
 Dotcom Computers 
-Sucuk Past ? rma 
+Sucuk Past  rma
 Tataatsu Idealabs 
 Antique Jewelry Mall 
 International Investment & Underwriting Limited 
@@ -34039,7 +34038,7 @@ My - Guides
 Health Benefits Direct 
 Inspro 
 Dualog 
-NetAk ? l 
+NetAk  l
 Americas Promise Alliance 
 Hill University Review 
 Quebec City Conference 
@@ -34205,7 +34204,7 @@ Clear Channel Multimedia
 Diners Club International 
 The Navicor Group 
 Patch 
-Hello . Let ' s ? ? ? 
+Hello . Let ' s
 Apprise Software 
 Hamilton Lane 
 webfluenz | s 
@@ -34328,7 +34327,7 @@ National Cancer Institute ' s Board of Scientific Councilors
 Kenton D . Fong 
 PackFlash 
 KEGames 
-Jongla IM Android app : https : / / play . google . com / store / apps / details ? id = org . apache . android . xmpp & feature = search _ result # ? t = W251bGwsMSwyLDEsIm9yZy5hcGFjaGUuYW5kcm9pZC54bXBwIl0 . 
+Jongla IM Android app : https : / / play . google . com / store / apps / details  id = org . apache . android . xmpp & feature = search _ result #  t = W251bGwsMSwyLDEsIm9yZy5hcGFjaGUuYW5kcm9pZC54bXBwIl0 .
 WishRegistry 
 Icertis Transportation Management 
 Viamet Pharmaceuticals 
@@ -35319,7 +35318,7 @@ Free HTML5 Video Player and Converter
 El Fresko Technologies 
 MGT plc 
 Triggertrap Mobile for iOS 
-Ufku ? ahin 
+Ufku  ahin
 Premier Dead Sea 
 Covaflex 
 Passpro Password Management 
@@ -35595,7 +35594,7 @@ web design & web development
 CyberGauard 
 Mercury ( now HP ) 
 Berkeley Square Partners 
-? stanbul Evden Eve Nakliyat 
+ stanbul Evden Eve Nakliyat
 Children ' s Obesity Fund 
 Apnex Medical 
 IDx 
@@ -36447,7 +36446,7 @@ Tree . com
 Vehrity 
 Calgary Dial A Bottle 
 DMC Office Services 
-boobik ? 
+boobik
 Enterprise Solution 
 GreenMap . org 
 IMSI Design 
@@ -36762,7 +36761,7 @@ Celframe Mobile
 R Capital 
 Context 
 Mark A . Goldsmith 
-Erol Kabaday ? 
+Erol Kabaday
 Transfix 
 SunSun Lighting 
 Law Office of Derreck Whitson 
@@ -36803,7 +36802,7 @@ Last Piece Software
 myPlex 
 Clore 
 Stephen T . Zarrilli 
-Grzegorz Bli ? ycki 
+Grzegorz Bli  ycki
 carpooling . it 
 Techs24x7 . com 
 Kevin P . Reddy 
@@ -37384,7 +37383,7 @@ SEO Website Audit
 Ibazar India 
 Cyhite 
 Sonnet 
-? ervil 
+ ervil
 Uralkali 
 Software Training Solutions 
 Adam W . Czaia 
@@ -37743,7 +37742,7 @@ Robert C . Rowe
 Infratest Burke 
 Lucix Corporation 
 Physicians Endoscopy 
-Wanna wine ? 
+Wanna wine
 Axxanaa 
 Yoyodyne Entertainment 
 UPMC 
@@ -37752,7 +37751,7 @@ San Franola Granola
 Lifeminders 
 EmNet , LLC 
 Next Avenue 
-Nikola Milovi ? 
+Nikola Milovi
 Logo Design Studio 
 Bullrun Financial 
 EditMe 
@@ -37899,7 +37898,7 @@ StartOut
 Styleta 
 Cdling Capital Services 
 GiveBestDeal . com 
-Trakya Cam Sanayi A . ? . 
+Trakya Cam Sanayi A .  .
 LibraryNext 
 tagstoc 
 Geoffroy Verney - Carron 
@@ -39544,7 +39543,7 @@ TheWebService
 CDA Research center 
 MyTripGuru 
 Fairway Wealth Management LLC 
-Przedszkole Swarz ? dz 
+Przedszkole Swarz  dz
 pTracker 
 MLMCloud 
 Wilson W . Cheung 
@@ -40316,7 +40315,7 @@ Minneware
 sharency 
 NHO 
 Active Networks 
-Aldona Jakutien ? 
+Aldona Jakutien
 Turbine 
 Kainos Software 
 Tangshan Huakai Biotechnology United 
@@ -40956,7 +40955,7 @@ Obscure
 DocuXplorer 
 Robert D . Reilly , Jr 
 Ad Delivery Audits 
-Ivan Kai ? 
+Ivan Kai
 ParcelFlowâ¢ 
 Switchouse , Inc 
 Mapreduce 
@@ -40988,7 +40987,7 @@ Daniel B .
 The Artesian Network 
 sniff 
 PeakColo 
-Güler Sabanc ? 
+Güler Sabanc
 InstaCute 
 info - bets 
 365 Things to do in Kitchener - Waterloo 
@@ -41949,7 +41948,7 @@ Airwalk Design
 amcneilly 
 Virtual Sands 
 Great Place to Work Institute , Inc 
-Mehmet Ayd ? n Bahad ? r 
+Mehmet Ayd  n Bahad  r
 GEO Trio 
 TransactTools 
 Clarity Wireless 
@@ -42178,7 +42177,7 @@ TechSipders
 CAT in Photonics Applications 
 Kin Leaves 
 EchoSign 
-blackBar ? 
+blackBar
 Cumulonimbus 
 Younify 
 Food for Benjamin 
@@ -42856,7 +42855,7 @@ ActiveBuilding
 StreetScape TM . 
 Lynx Consulting 
 Newforma Project Cloud 
-Hytec Ger ? tebau 
+Hytec Ger  tebau
 Genius . com , Inc 
 Sub Rosa 
 BCSocial 
@@ -44576,7 +44575,7 @@ Spatial Technologies
 Era Social S . de R . L . de C . V . 
 Glycart Biotechnology AG 
 Daeja ViewOne 
-? ? ? ? ? NetBarg 
+     NetBarg
 Uzair 
 RTS Technology Group Data Recovery Services 
 FieldOne 
@@ -45309,7 +45308,7 @@ Nexus 7
 MarketHATCH Rebates 
 Clearly Beer Pong 
 The Best Companies Group 
-Q7 Ingatlaniroda Gy ? r 
+Q7 Ingatlaniroda Gy  r
 PushThePrice Limited 
 Urban Planet Media & Entertainment 
 Bioserie 
@@ -47803,7 +47802,7 @@ ProVen VCT
 Ninja Trader 
 PublicationsList . org 
 SEMCO Engineering 
-Miko ? aj Czy ? 
+Miko  aj Czy
 iBuyintheUSA 
 AtomOrbit 
 TinyHippos 
@@ -48096,7 +48095,7 @@ ServiceZilla
 SevenSnap Entertainment GmbH 
 Narinder Technologies 
 Cap Sogeti France SA 
-Joseph Finkenbinder ? ? ? ? ? 
+Joseph Finkenbinder
 Beisheim Holding Schweiz 
 Village Christian Schools 
 Techweavers IT Solutions 
@@ -48198,7 +48197,7 @@ JVC Musical Industries
 FluimediX 
 NETOPIA Internet Café  Binondo Branch 
 Produced Water Absorbents 
-Vs ? vcredit 
+Vs  vcredit
 Mobile Video Ads 
 NaviSoft 
 Vollee 
@@ -48333,7 +48332,7 @@ Cleanex Contract Services
 Decor Tab Creator 
 CareTree 
 Entropy Research Lab 
-kevser ta ? 
+kevser ta
 InnoTech Conference 
 Thomas J . Farrell 
 ARTAS System 
@@ -48576,7 +48575,7 @@ Nu Profile
 Wakaru , LLC 
 Mediatap GbR 
 Gether 
-Aleksandra Kobrzy ? ska 
+Aleksandra Kobrzy  ska
 Carros . com . co 
 getextrabux . com 
 Lexi - Comp 
@@ -50071,7 +50070,7 @@ SEACOR Holdings
 DataNitro 
 AA DRIVING SCHOOL 
 NanoBioNexus 
-Otel Mobilyalar ? 
+Otel Mobilyalar
 Adega GmbH 
 Sitescene 
 Aaron Beaston - Blaakman 
@@ -50141,7 +50140,7 @@ SWASalert . com
 ALPHAThrottle . com 
 Showgo . tv 
 Straight2Market 
-Esat Ta ? atmanlar 
+Esat Ta  atmanlar
 Truper 
 Brighter Planet 
 Phingo 
@@ -50173,7 +50172,7 @@ Saya
 McGrigors LLP 
 Galileo International 
 Huntsman Cancer Foundation 
-Tomasz Giere ? 
+Tomasz Giere
 Cloud Architecture 
 Local Tour Guide 
 Trovare 
@@ -50893,7 +50892,7 @@ LovingRich
 LatinVenture 
 Vibease Inc . 
 Mapúa Institute of Technology 
-Esimple bili ? im ve yaz ? l ? m sistemleri Ltd 
+Esimple bili  im ve yaz  l  m sistemleri Ltd
 Wheels 
 iSense - SK 
 Electronics for Imaging 
@@ -50902,7 +50901,7 @@ Avinash Sales
 S . D . Thurlow 
 ToonUps 
 VehicleHistoryNevada . com 
-Duru Klima Sanayi Ticaret Limited ? irketi 
+Duru Klima Sanayi Ticaret Limited  irketi
 ConcertBoom 
 Chikka 
 Womanistan 
@@ -51181,7 +51180,7 @@ Zeeo Interactive
 Tablet Classroom Management Software 
 Jeffrey M . Mann 
 LeadFire 
-Erol Merdanovi ? 
+Erol Merdanovi
 PipingHot Network 
 Affine 
 TheMarkets Estimates 
@@ -52342,7 +52341,7 @@ Harris & Harris Group
 Globeset 
 InfoWatch 
 MAT Consultants 
-H ? REL 
+H  REL
 WannaPlayer 
 Apex Drugs & Pharma 
 ShapeUp 
@@ -52465,7 +52464,7 @@ Grofsoft
 Susuh 
 TIKTAK GAMES 
 Picture2Life 
-www . qualitestgroup . com / ? 
+www . qualitestgroup . com /
 Mark L . Matthews 
 Christopher R . Geyen 
 KAJ Hospitality 
@@ -52771,7 +52770,7 @@ Dustin AB
 Landmark Business Development Inc . 
 ItalyCities . eu 
 CPM / CPC advertisement 
-I ' m on LinkedIn - Now What ? ? ? 
+I ' m on LinkedIn - Now What
 Memman . com 
 Top Dentist NY 
 SnappyTV 
@@ -53621,7 +53620,7 @@ Polycom VVX500
 LeRoy T . Carlson , Jr . 
 CRE8ORS 
 Marketing Channel Tracker 
-P . S . Lets Wed ? 
+P . S . Lets Wed
 Babeltrip . com 
 Al - Futtaim Group 
 InSite Vision 
@@ -54375,7 +54374,7 @@ BelloVista Technologies
 TerraLUX 
 V2 Group 
 Pogostick 
-SeenThis ? 
+SeenThis
 ContextPlus Oracle Fusion Agent 
 Touchera 
 CareCloud 
@@ -54762,7 +54761,7 @@ FeedYourPlayer
 SponsorNet New Media 
 GREE Ventures 
 LendingMemo 
-Zbigniew Ledwo ? 
+Zbigniew Ledwo
 Open Network Technologies 
 VeriSign Authentication Services 
 Ignite Social Media 
@@ -56732,7 +56731,7 @@ RES HyperDrive
 Harold H . Shlevin 
 WebOrigination - Louisville SEO & Web Design 
 Prestone 
-Boran Reklam Dijital Bask ? 
+Boran Reklam Dijital Bask
 Icorp Investigators 
 Atronic Alarms 
 Publicis Groupe 
@@ -57568,7 +57567,7 @@ The Heist
 iCorrelate 
 Charisma BC for Pharma Distribution 
 OTP Bank 
-Fileli Ofis Koltuklar ? 
+Fileli Ofis Koltuklar
 Weagle 
 Fantoon 
 Alex Mont - Ros 
@@ -57869,7 +57868,7 @@ Reebee
 Verlagsgruppe Weltbild 
 Arqiva 
 APPNATION Conferences 
-Jovan Er ? i ? 
+Jovan Er  i
 MyStarAutograph 
 Solomon & Relihan 
 MRR1356 - RFID MidRange Reader 
@@ -61142,7 +61141,7 @@ Teen Togs
 BatteryQuality 
 24 - Rapid Response Service 
 Sensor Analytics 
-S . Volkan Kasaro ? lu 
+S . Volkan Kasaro  lu
 SmartSwipe 
 Datameer 
 Jonathan O ' Shaughnessy 
@@ -61301,7 +61300,7 @@ SEOmetrics
 Hilltop Energy Drink 
 Financeoid . com 
 Varuma AG 
-ÇOKHO ? 
+ÇOKHO
 Moving Company Pembroke Pines 
 American International Corp . 
 Adbookr 
@@ -62270,7 +62269,7 @@ John R . Stuelpnagel
 Early Stage East 
 Smarter Learn Limited 
 Active Biotech 
-el ? 
+el
 Skylab Industry 
 Tang Wind Energy 
 Phenona 
@@ -66107,7 +66106,7 @@ Riskified
 AgeCheq 
 CarOcean . co . uk 
 Philadelphia Scientific 
-Grzegorz P ? ka ? a 
+Grzegorz P  ka  a
 Mario Guenther - Bruns 
 Inca Digital Printers 
 WorldToStart 
@@ -66866,7 +66865,7 @@ Gary J . Smith
 Marketing the Change 
 Got Wraps 4 You 
 IES Solutions 
-Sv ? t hv ? zd 
+Sv  t hv  zd
 Standing Dog 
 SkyGlue 
 Think Brilliant Media Studios 
@@ -67092,7 +67091,7 @@ AccessCom
 MealStub 
 Daria Mochly - Rosen 
 Avior Computing 
-Pawe ? Miko ? ajczuk 
+Pawe  Miko  ajczuk
 Pieter W . Ingram 
 InnoHub BV 
 Bonnet 
@@ -68252,7 +68251,7 @@ Entergy Operations
 Athenstean 
 Richelle P . Parham 
 Reilly Partners 
-Femto - ? Tech , Inc 
+Femto -  Tech , Inc
 bottlerocketapps 
 Verus Event Management IT Solutions 
 PERRY B . HACKETT 
@@ -69548,7 +69547,7 @@ FrogZero
 Precept Software 
 The Cinnamon Club 
 Carbon Calculator 
-? nfipro Venture Capital 
+ nfipro Venture Capital
 GrandJunction 
 Plusbuyer Limited 
 Satori Brands 
@@ -69556,7 +69555,7 @@ Busytrade . com
 CELTREK 
 Pharminox 
 LIFE Interactive 
-Ofis Koltuklar ? 
+Ofis Koltuklar
 Spectrum Athletic Clubs - Santa Barbara 
 Bish Investments 
 FreedomTel 
@@ -70557,7 +70556,7 @@ International Cardiovascular Health Alliance
 Inspirest 
 The Negotiation Institute 
 CYNCZ 
-Soh ? lo 
+Soh  lo
 MaPS SYSTEM 
 HashCube 
 Cleanersclean 
@@ -70625,7 +70624,7 @@ Patrik D ' Souza
 Peachstate wireless warehouse 
 Vino Volo 
 Planet Vacation Club 
-Toplant ? Masalar ? 
+Toplant  Masalar
 SaleCycle 
 Code Monkeys at Work 
 Mesmo . tv 
@@ -70782,7 +70781,7 @@ DRM free classic ebooks
 Argine Consulting 
 Tender Support 
 Lotta Lindquist - Brosjo 
-Chariot - ? ? ? ? ? ? ? ? ? 
+Chariot -
 Nanopoint 
 Tiny Mind Apps 
 Scratchpad Studios 
@@ -70972,7 +70971,7 @@ WSI WORLD
 Jobvite 
 BlueSkyJets 
 Nexteppe Business Solutions 
-Micha ? Sta ? kiewicz 
+Micha  Sta  kiewicz
 Jitscale 
 Jiangxi LDK Solar Hi - Tech 
 Grand St . 
@@ -73014,7 +73013,7 @@ JSplash
 Modera Extranet 
 Infinite Touch 
 Genable Technologies Ltd . 
-sigortadükkan ? m . com 
+sigortadükkan  m . com
 Webflow 
 Unique LMS ( Learning Management System ) 
 SutraHR 
@@ -73076,7 +73075,7 @@ Procypher Software
 Gofresh 
 Aethur Interactive 
 Corazon 
-Tamer ? ahin 
+Tamer  ahin
 Fusion Broadcasting 
 CodingLogics 
 Key Health Institute of Edmond 
@@ -73724,7 +73723,7 @@ Techgene Solutions LLC
 Sticki Pages 
 Themelios Ventures 
 enXco 
-Bielska Wy ? sza Szko ? a Biznesu i Informatyki im . J . Tyszkiewicza 
+Bielska Wy  sza Szko  a Biznesu i Informatyki im . J . Tyszkiewicza
 AutoIDSavings . com 
 OyeChotu . com 
 Increase CRM 
@@ -73983,7 +73982,7 @@ Adcuda - Kansas City SEO
 Ocean Power Technologies 
 Brenntag AG 
 Blackbird Privilege Manager 
-Burak Divanl ? o ? lu 
+Burak Divanl  o  lu
 Pronet Security 
 Blue Orange Apps Limited 
 Safir Capital 
@@ -74248,7 +74247,7 @@ Queen Of Tickets
 Jarvana 
 Magento Rental Extension 
 TestTrack Learning Management System 
-Çizim Masas ? 
+Çizim Masas
 Mic Network 
 C - 12H2 - C20 208v Metered PDU 
 Jumbo . com 
@@ -74530,7 +74529,7 @@ Venture Capital Association , Colorado
 Pathfinder Technologies 
 Gregory J . Forres 
 Good Grounds For Pleasure 
-Robert N ? mec 
+Robert N  mec
 Dharmacon Inc . 
 eThor . com 
 KACE London 
@@ -75783,7 +75782,7 @@ Bibo
 VIP Global 
 Evirx 
 BugBuster 
-Where To ? 
+Where To
 Smowtion Behavioral Targeting 
 FriendFeedLinks 
 T - Systems North America 
@@ -76003,7 +76002,7 @@ AppCarousel
 Tactician Corporation 
 Astra Info Systems 
 Kanexa 
-? Shwrüm 
+ Shwrüm
 SinRollos . com 
 SGCIB 
 Just Bloom from Winx Club 
@@ -76470,11 +76469,11 @@ Executive Grapevine International
 AppsFlyer 
 unroll . me 
 Hi - Tech Appliance Repair 
-Iluta Rieksti ? a 
+Iluta Rieksti  a
 Viola Group 
 Bookya 
 Partner Supports ( Maroc ) SARL 
-Vuk Nikoli ? 
+Vuk Nikoli
 SBI Ven Capital 
 Loolyan 
 Convex Computer 
@@ -77207,7 +77206,7 @@ Rentabiliweb Group
 TextMe 
 ePolitix 
 Champion Trailers 
-S ? v ? El Sabunu 
+S  v  El Sabunu
 sCommerce Web Design and Develoment 
 Canvas8 
 GlobalMagic Corporation 
@@ -77670,7 +77669,7 @@ Confcallr
 Brass Agency 
 RotaryView 
 NUSKIN 
-Why Hasn ' t He ? 
+Why Hasn ' t He
 AppDirect 
 Watch4Net 
 FusionAds 
@@ -77724,7 +77723,7 @@ Puffin Web Browser
 Copart 
 Annuncio Software 
 RES Workspace Virtualization Suite 
-Piotr Ku ? micki 
+Piotr Ku  micki
 LDV Capital 
 cicayda 
 Oxbridge Notes 
@@ -77780,7 +77779,7 @@ Advanced Communications
 InPulse Medical 
 HatHunter 
 N2Vlabs 
-Ngh ? a Bình 24H 
+Ngh  a Bình 24H
 Who What Wear 
 Worldwide Data Systems 
 John W . Teitz 
@@ -77789,7 +77788,7 @@ Visual Information Map
 HackingTag Security 
 Weatherist . com 
 Astoria Financial Corporation 
-? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? mariat for trade & industry 
+                         mariat for trade & industry
 Sherpia 
 txtr 
 Trafigura 
@@ -79687,7 +79686,7 @@ Eklin Medical
 Osmonics 
 Maison De Castielle 
 DM Public Relations 
-F . U . H . Wale ? ski 
+F . U . H . Wale  ski
 CritterMap Software 
 Matomy Media Group 
 WPPilot 
@@ -80632,7 +80631,7 @@ SEI Investments
 Clarisa A . Tate 
 Sarder TV 
 Dolphin Geeks 
-công ty c ? ph ? n th ? ? ng m ? i và s ? n xu ? t redsun 
+công ty c  ph  n th   ng m  i và s  n xu  t redsun
 Gregory H . Nelson 
 Odyssey Research 
 Boston Interactive 
@@ -80653,7 +80652,7 @@ Calabria Technology
 Poke London 
 Chop Chop Soft 
 PediaPress 
-Sebastian J ? druszczak 
+Sebastian J  druszczak
 ArcaNatura LLC 
 Android Library 
 Altrade 
@@ -81561,7 +81560,7 @@ Gold America
 Phuser 
 Animacion Servicios Educativos 
 Urban Interactions 
-Affrah | ? ? ? ? ? ? ? ? ? 
+Affrah |
 Kiora 
 Fora Financial 
 TechHuddle 
@@ -81709,7 +81708,7 @@ MTech
 TipTop Search 
 Good Hands Whips 
 Bluenog ICE Portal 
-Garnitur na miar ? Pozna ? 
+Garnitur na miar  Pozna
 Umbraco CMS 
 ImHalal Search 
 USA SEOPros 
@@ -82780,7 +82779,7 @@ Hilton Eilat Queen of Sheba Hotel
 Axis Systems ( Cadence ) 
 IBM Brazil 
 Shire Biologics , Quebec 
-Bojana Borkovi ? 
+Bojana Borkovi
 Idearium 
 TV 2 
 Groupe Archambault 
@@ -83047,7 +83046,7 @@ Bertrand Management
 Account Reconcilation 
 Brainsoft 
 Convergent Investors 
-Çama ? ? r Suyu 
+Çama   r Suyu
 CatDV 
 Engine 5 
 Pipeline Manager 
@@ -83324,7 +83323,7 @@ Conversion Ventures LLC
 pc360buy . net 
 Casualing 
 Liberation Capital 
-AW Meble Wroc ? aw 
+AW Meble Wroc  aw
 EMBASSY Remote Administration Server ( ERAS ) for Device ID 
 Trinicom 
 Datafield 
@@ -84187,7 +84186,7 @@ PlanetMagpie IT Consulting
 Audocs 
 Quidel 
 Thomas M . Thees 
-Rokas Tamoi ? nas 
+Rokas Tamoi  nas
 Nananda Col , MD 
 Quick Hit 
 Availamail 
@@ -84402,7 +84401,7 @@ Memofon
 Primadesk 
 Sic Bo Deluxe Dice game 
 Kronomav Sistemas 
-Dosya Dolaplar ? 
+Dosya Dolaplar
 Ben Franklin Technology Partners of Central and Northern Pennsylvania 
 Hillary Chollet M . D . 
 EyeVerify 
@@ -85591,7 +85590,7 @@ QuickGene
 Arcion Therapeutics 
 Sprout 
 QuesCom 
-Ant Ek ? iler 
+Ant Ek  iler
 Flextech 
 Redbus Interhouse 
 First Page Sage 
@@ -85739,7 +85738,7 @@ Advanced Electronics GmbH
 Fici 
 Ringernation 
 LoBo 
-Scene This ? 
+Scene This
 Ingrian Networks 
 Stuff2 . do 
 Tumri 
@@ -85800,7 +85799,7 @@ nugg . ad AG
 Titan Pharmaceuticals 
 Quotit 
 Hopskoch 
-? SK ? - ? istanbul Su ve Kanalizasyon ? daresi 
+ SK  -  istanbul Su ve Kanalizasyon  daresi
 Live HD Video Streaming 
 01Startups 
 Tableau 
@@ -85878,7 +85877,7 @@ Lemonade Stand
 TCT Technical Training 
 itemfoo 
 CanWeNetwork 
-Maciej Mi ? tek 
+Maciej Mi  tek
 Maximizer Software 
 what ! design inc . 
 QR app 
@@ -86205,7 +86204,7 @@ Wipro Global R & D
 American Tank & Fabricating 
 Hyper Fight Club 
 Spartan Ventures 
-Oykun Asyal ? o ? lu 
+Oykun Asyal  o  lu
 UEI 
 Procurian 
 Industriaplex 
@@ -87469,7 +87468,7 @@ Laptops Recommendations , Reviews , Ranking and Comparison
 1UP Media 
 Freeads360 
 Tech Futures Group 
-Adam Gr ? zak 
+Adam Gr  zak
 Nacho Cove 
 ibcontact 
 Zandigo 
@@ -89626,7 +89625,7 @@ mLabs
 zeeshsoft 
 Fannie May Confections Brands 
 SmartSynch 
-Çal ? ? ma Masalar ? 
+Çal   ma Masalar
 UNIFY 
 Prism Capital Corporation 
 Top Test Prep 
@@ -89665,7 +89664,7 @@ BBVA New Ventures
 Silicon Dales Australia 
 Third Age 
 University Of Lllinois at Urbana - Champaign 
-Youth Centers of Israel / ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+Youth Centers of Israel /
 CleanTie 
 Minimal Loop 
 Chips N ' Dip 
@@ -90497,7 +90496,7 @@ Placemark
 Undz . org 
 Newsle 
 Blue Watchdog 
-CORIAN STARON FRANKE HI - MACS ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+CORIAN STARON FRANKE HI - MACS
 ShowSpace 
 Filament Creative 
 Sub10 Systems 
@@ -90665,7 +90664,7 @@ Zandan
 Peak Scientific 
 All At Once 
 Steven E . Seach 
-Ivan Ivankovi ? 
+Ivan Ivankovi
 Escape Artist Press 
 James A . Dayton 
 Hiskores 
@@ -90884,7 +90883,7 @@ Citona
 CellGlide 
 Mifratel 
 intermay 
-TÜB ? TAK 
+TÜB  TAK
 Pontai 
 Guru Careers 
 Uzanto Consulting 
@@ -92111,7 +92110,7 @@ The Rooth Law Firm
 thbi 
 HealthCare Impact Associates 
 Shenzhen HGD Industry Co . , Ltd . 
-Güvenlik Sistemleri ? stanbul 
+Güvenlik Sistemleri  stanbul
 paysafecard 
 Scotland 
 StudentFunder 
@@ -92161,7 +92160,7 @@ SuiteWorks Business Centre
 Cloud Certification Platform 
 San Diego Downtown 
 Hoiem Enterprises 
-Pray Time ? ? ? ? ? ? ? ? ? ? ? 
+Pray Time
 duPont REGISTRY Tampa Bay Magazine 
 Gerard T . Feeney 
 TopVets 
@@ -93543,8 +93542,8 @@ SPOTS
 Vantage Share 
 Manitoba Knights 
 Aggregame . com 
-Tomasz Seroczy ? ski 
-Aleksandar Hajdukovi ? 
+Tomasz Seroczy  ski
+Aleksandar Hajdukovi
 imWell 
 Vacation Rentals Kingston Plantation Travel 
 TinyGrab for iPhone 
@@ -95703,7 +95702,7 @@ Informavores
 Solar Movie 
 Whenpages 
 Sequesco 
-CORIAN STARON HI - MACS FRANKE HANEX ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+CORIAN STARON HI - MACS FRANKE HANEX
 Tutuka 
 Freelancer 
 Joe Button 
@@ -95771,7 +95770,7 @@ MicroTech
 1001 Menus 
 Rentscoper . com 
 Cox Enterprises 
-? stanbul ? zmir Evden Eve Nakliyat 
+ stanbul  zmir Evden Eve Nakliyat
 Picli 
 AlloCreche 
 Smart Crib 
@@ -96736,7 +96735,7 @@ Elderstreet Investments
 Garage Door Repair Boxborough 
 Schwab Institutional 
 BondsPro 
-Why do MBA ? 
+Why do MBA
 Buckeye Partners 
 Hillerich & Bradsby 
 Air Intelligence Agency 
@@ -97731,7 +97730,7 @@ Dibsie
 HasGeek Job Board 
 Lincoln Center for the Performing Arts 
 ShopVidoApp 
-OCI ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+OCI
 Jon T . Holmlund 
 Ahura Scientific 
 Aleutian Capital Partners 
@@ -99018,7 +99017,7 @@ Zone - ViP Network
 MOC Point - Of - Sale for Fly Shops 
 Zenconomy 
 Omnis Mundi 
-Dajafa . com ? ? ? ? 
+Dajafa . com
 energy company Total S . A 
 HUYA Bioscience International 
 CarRentalsMarket 
@@ -99963,7 +99962,7 @@ LePosha
 Cigalle Imports 
 Balaji " Bala " Jayaraman 
 Hammerline Capital 
-Zeynep Oran Çak ? ro ? lu 
+Zeynep Oran Çak  ro  lu
 Connect2Field 
 Bacuru 
 Borland 
@@ -100715,7 +100714,7 @@ Daniel Dy - Liacco
 MyEnvytory 
 Maraquia 
 Thomas J . Elliott 
-Fo ? s 
+Fo  s
 U . S . Department of the Treasury 
 New Island Capital 
 Deluxe Digital Distribution 
@@ -101322,7 +101321,7 @@ Retail Cashback
 Etnoteam spa 
 Pragyanet 
 Plurigames 
-Gökhan KULAKSIZO ? LU 
+Gökhan KULAKSIZO  LU
 Usersnap 
 Quotes ' Treasure 
 LTG Federal 
@@ -102234,7 +102233,7 @@ Wakoopa
 Student Advantage 
 Healthscreen Inc 
 Hearst Communications 
-J ? nis Kramp ? ns 
+J  nis Kramp  ns
 Andrew Cleland - Bogle 
 Dovetail Public Relations 
 QuScient 
@@ -103825,7 +103824,7 @@ Scede Staffing
 Blue Chip Venture Company 
 Scorpion Protective Coatings , Inc . 
 JMV Construction 
-Practica Seed Capital K ? B 
+Practica Seed Capital K  B
 crazymikesapps . com 
 Firmly Planted 
 Mugsho 
@@ -104257,7 +104256,7 @@ ACC
 ArtworkHeroes 
 Professional Help Desk 
 RGB ' s Modular Media Converter 
-Emre Fad ? ll ? oglu 
+Emre Fad  ll  oglu
 Scott K . McCune 
 Mul - T - Lock USA 
 Technetto 
@@ -104439,7 +104438,7 @@ FindIt
 MedXtend Corporation 
 ListCharming 
 Heartwood Gifts 
-Wimbi ? ? ? ? ? 
+Wimbi
 Video / Music Download 
 Lubert Adler 
 Michael J . Lochhead 
@@ -105332,7 +105331,7 @@ Adrian A . Bennett
 My Management TV 
 The Seattle Times 
 NewHive 
-Aurimas Petrevi ? ius 
+Aurimas Petrevi  ius
 HireSignals 
 Sportsvite 
 Dornan Consultancy 
@@ -105482,7 +105481,7 @@ Venture Advisors
 Whitefield / FMG 
 GrasshopperApps . com 
 Neon Factory for iOS 
-TOSAT Dan ? ? manl ? k 
+TOSAT Dan   manl  k
 HipCV 
 Sibersonik 
 OpenNow Technology 
@@ -105978,7 +105977,7 @@ Scrumy
 Aerospatiale Matra Lagardère International Organization 
 efectivox 
 Click to book button 
-Ilgaz ? umnulu 
+Ilgaz  umnulu
 Blue Diamond Machinery 
 Carepathways . com 
 DTS / S1 
@@ -113180,7 +113179,7 @@ Microtarget Computacion
 Enlargements 
 The College Shack 
 Lumzy 
-Maciej G ? uszek 
+Maciej G  uszek
 BiTMICRO Networks Inc 
 Ink Worldwide 
 Guide Financial 
@@ -114029,7 +114028,7 @@ BeiZ
 Acento Comunicacion 
 Brian K . Beutner 
 Kepware Technologies 
-Dell Precision M4300 ? ? ? ? ? 
+Dell Precision M4300
 European Energy Exchange AG 
 Office of Managment and Budget 
 AreWeThere . Yt 
@@ -114669,7 +114668,7 @@ James R . Scapa
 http : / / www . coupons . com 
 NTT Software 
 Thomas W . Swidarski 
-Panda Wan ( ? ? ) 
+Panda Wan (   )
 JoikuSoft 
 Reliant Solutions Inc . 
 MOD 
@@ -116135,7 +116134,7 @@ SyncShield
 Level 5 Networks 
 Jodeen A . Kozlak 
 CS Disco 
-Kür ? at M ? s ? rl ? o ? lu 
+Kür  at M  s  rl  o  lu
 trafo interactive 
 1st Bank 
 Orbis Unum | Digital 
@@ -116362,7 +116361,7 @@ KP Acoustics Ltd
 Philadelphia Weekly 
 Source EDP 
 TrademarkFly 
-Screen ? 
+Screen
 EcoEridania 
 Xmark Asset Management 
 Golden Gekko 
@@ -116790,7 +116789,7 @@ Recurify
 Penmark Capital 
 nGAP 
 Susan St . Leder 
-FL ? GHTTOHEALTH . COM 
+FL  GHTTOHEALTH . COM
 portablestores . com 
 Headcount Management 
 OREA 
@@ -116984,7 +116983,7 @@ New World Computing , Inc .
 KaChing ! 
 Imclone Systems 
 ThingM 
-CORIAN DUPONT STARON HI - MACS FRANKE HANEX ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+CORIAN DUPONT STARON HI - MACS FRANKE HANEX
 Cat Science 
 airpim 
 Figaro Systems 
@@ -117052,7 +117051,7 @@ Fractal Analytics
 BNI , The Vine 
 quitchen 
 McKinley Consulting 
-corian ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+corian
 Net World Solutions , India 
 getBarista 
 ZoneIn2 
@@ -117131,7 +117130,7 @@ Aeroplex Aerolease Group
 Salford Farm Machinery 
 Umundo 
 SW Development 
-3 ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+3
 WeShop 
 Bradley A . Burton 
 United Artists Entertaiment 
@@ -117508,7 +117507,7 @@ Tiro Security
 Bookit . com 
 Flexpay 
 Energy Projects Forum 
-What the Hashtag ? 
+What the Hashtag
 Combustion Engineering , Inc . 
 Listia 
 PiTV 
@@ -118015,7 +118014,7 @@ White Sand Group
 JobPilot 
 Kirloskar Brothers Limited 
 Elytics 
-What ' s next ? 
+What ' s next
 Vickie L . Capps 
 John L . Pestka 
 Doug A . Clarke 
@@ -118038,7 +118037,7 @@ Swati Web Technologies Pvt Ltd ( An ISO 9001 : 2008 Certified Company )
 Game Salad 
 Execution Labs 
 Boca Pharmacal 
-Pavel Pet ? ek 
+Pavel Pet  ek
 Auction Junkie 
 EDI Desktop 
 Gmail Backup Tool 
@@ -120885,7 +120884,7 @@ Voofie
 Los Angeles SEO Company 
 Openspace Store 
 Jagen 
-Ivars ? irsons 
+Ivars  irsons
 Everpix 
 Arb Studios 
 Web Prancer 
@@ -121063,7 +121062,7 @@ Stevens Institute
 ChainDrugStore . net 
 GRIS 
 CapXG 
-What ' s the Sniff ? 
+What ' s the Sniff
 Carly Fiorina Enterprises 
 American Dental Partners 
 Buff Stone 
@@ -121178,7 +121177,7 @@ Evolved Capital
 UnitStock 
 Memco Software 
 Edwin A . Joel 
-Are YOU Jelly ? 
+Are YOU Jelly
 Kedaara Capital 
 Ahmet C . Tatari 
 LogiSense Corporation 
@@ -122299,7 +122298,7 @@ GLO Gaming
 Kristen H . Rachels 
 Madeleine M . Brigidi 
 Lockbox 
-Andrius Klimavi ? ius 
+Andrius Klimavi  ius
 Pembrooke 
 Amacom , The Amazing Company 
 iVend eCommerce 
@@ -123545,7 +123544,7 @@ Insurance Panda
 GrabFan 
 Hilton Doha 
 Zeacom 
-Pawe ? Gle ? 
+Pawe  Gle
 DataViz 
 Booxmedia 
 Skimmer 
@@ -124182,7 +124181,7 @@ McCall Consulting Inc .
 DistinctDev 
 Fighting Chance 
 Directed Energy 
-DTLOK . com ( Does This Look Okay ? ) 
+DTLOK . com ( Does This Look Okay  )
 Badami Travel Guide 
 Schneider Electric 
 Bilibot 
@@ -124373,7 +124372,7 @@ SLevolution
 Onetouchstar Inc 
 Art of War 
 Comverge 
-Mark Tatro ? 
+Mark Tatro
 SherlockMD 
 ManagedServiceExpert 
 HICX Solutions 
@@ -124463,7 +124462,7 @@ Cartel Capital
 Art In Common 
 H30 Communications 
 TriggerMail 
-41 ? 29 ! 
+41  29 !
 Prognosis Health Information Systems 
 Bungie Software 
 ProtonBox 
@@ -126181,7 +126180,7 @@ FastSpring
 Spectacular Horsemanship 
 The Television Writers Vault 
 PlatformQ 
-Seka ? ky . cz 
+Seka  ky . cz
 miniCalamÃ©o 
 Strategic Marketing Solution LLC 
 CIMA 
@@ -127770,7 +127769,7 @@ Washington University in St . Louis
 CSG International 
 Markme 
 Seo Company In Singapore 
-Do You Wanna Hook Up ? 
+Do You Wanna Hook Up
 Venture Labs 
 Agility Ventures 
 Point2 IDX 
@@ -128475,7 +128474,7 @@ Citadel Capital
 Gaijin Entertainment 
 WiredMinds AG 
 Wicked Bytes UG ( haftungsbeschraenkt ) 
-Jacek Szyma ? ski 
+Jacek Szyma  ski
 ChuffCamp 
 Flexera Software FlexNet Operations 
 Motion Metrics 
@@ -128698,7 +128697,7 @@ HeBS Digital
 Cosmo Pharmaceuticals SpA 
 Neckerman 
 twttrip 
-Buyex ( ? ? ? ? ? ) 
+Buyex (      )
 Parallax Capital 
 Pegasystems 
 Powtoon 
@@ -128745,7 +128744,7 @@ BioRegenerative Sciences
 Vaulted . me 
 Purple Language Services ( Interpreting ) 
 Tamarix Capital 
-Yasin Ayd ? n 
+Yasin Ayd  n
 IFinancials 
 BHP Billiton 
 Flipbeets 
@@ -129343,7 +129342,7 @@ Marc Ecko Enterprises
 Clipatize 
 Tooncast reACTOR 
 BlogDay . org 
-Pawe ? Brodzi ? ski 
+Pawe  Brodzi  ski
 Scense 
 Steven K . Gord 
 SelfCloud for PC 
@@ -129767,7 +129766,7 @@ Open Support Systems
 Wildflower Health 
 BusinessReel 
 StannTron 
-Karolis Malcevi ? ius 
+Karolis Malcevi  ius
 Hungry1 
 MetaMunch 
 Koss DVD 
@@ -130862,7 +130861,7 @@ FanXT
 Mackrill Media 
 WIDIP 
 Great Works 
-martinwolf ? M & A Advisors 
+martinwolf  M & A Advisors
 SlideShowPro for Flash 
 N3V Games 
 iPowow 
@@ -131850,7 +131849,7 @@ vufind
 Intoto 
 XPS 
 Orris Infrastructure 
-Bar ? ? Gümü ? ta ? 
+Bar   Gümü  ta
 design xpress 
 Litmind 
 CFC s . r . o 
@@ -132450,7 +132449,7 @@ RedSpiral
 Goldweitz & Company , Inc . 
 Photo Time Machine 
 UniCaronas 
-Sta Stankovi ? 
+Sta Stankovi
 REIDCO 
 Kanguru USB Device Control 
 HearIt 
@@ -133051,7 +133050,7 @@ Vecarius
 BHVNederland 
 Click Here Publishing 
 iDeal Card 
-Ak ? n Sar ? özkan 
+Ak  n Sar  özkan
 Freee 
 Steven M . Plumb 
 Protea Medical 
@@ -133256,7 +133255,7 @@ FundedGrads
 GOG . com 
 One Main . com 
 The sporthorizon 
-Dude Where ' s My Car ? 
+Dude Where ' s My Car
 Austin Knight 
 RentalSeal . com 
 Uberpong 
@@ -134380,7 +134379,7 @@ Malibu Apps
 psHEALTH 
 TechColiseum Business center 
 Snaglur 
-Balamir Nazl ? ca 
+Balamir Nazl  ca
 Alaris Medical Systems 
 Marilyn J . Slavich 
 iFerry 
@@ -134412,7 +134411,7 @@ Xiaad . com
 Frontburner Consulting 
 Mattel Toys 
 Xylitol Canada 
-Murat Tortopo ? lu 
+Murat Tortopo  lu
 Pharmaceutical Profiles 
 ikoo 
 Struq 
@@ -135104,7 +135103,7 @@ DomVsem
 Green Global Software 
 Google Moderator 
 Grouse Ridge Capital 
-iga Hajdukovi ? 
+iga Hajdukovi
 Zanox Germany 
 Pangea Properties 
 IronPort Systems 
@@ -135522,7 +135521,7 @@ Air Duct Cleaning Granada Hills
 Mind Full of Ink 
 Viarentals 
 YieldMo 
-Yaz ? Tahtas ? 
+Yaz  Tahtas
 Thinkerous 
 NatImmune A / S 
 buyii . com . au 
@@ -136007,7 +136006,7 @@ Macronimous Web Solutions
 Startup Wise Guys 
 CATS Software 
 Construction Journal 
-? ? ? ? 
+
 IAmInTown 
 Freeworld Media 
 Regentech 
@@ -137423,7 +137422,7 @@ Protone
 Campus Threadz 
 http : / / hollywoodlife . com 
 PromptCloud 
-Efecan Ba ? öz 
+Efecan Ba  öz
 fabianas . com 
 Andrew N . Siegel 
 William Blair 
@@ -138671,7 +138670,7 @@ American Achievement Group
 Telegraaf Media Groep ( TMG ) 
 TheoFInance PLC 
 Proprietary Finance Ventures 
-? ukasz M ? ynek 
+ ukasz M  ynek
 Ibercheck 
 Vimity 
 Clipperton Finance 
@@ -138798,7 +138797,7 @@ ViaFo
 Unite Technologies 
 guangzhou F & J leather co . , ltd 
 TeeMeW 
-Sedat Karahanc ? 
+Sedat Karahanc
 MIT Enterprise Forum of Atlanta 
 Frank P . Paniagua , Jr . 
 Urban Pre - game 
@@ -139097,7 +139096,7 @@ Vegau Internet Marketing Consultants
 Emtrace Technologies 
 Green Energy Options 
 Octantis Pty Ltd 
-Sefa ? kizo ? ullar ? 
+Sefa  kizo  ullar
 Netlink 
 Arthur O ' Keefe 
 Mobile Vikings 
@@ -139684,7 +139683,7 @@ National Healthcare Services
 Javalobby 
 Boutique Consortium Real Estate 
 Inked 
-Povilas Balzaravi ? ius 
+Povilas Balzaravi  ius
 New York in the World Advisory Board 
 AirCell 
 Paul Gh . Abrudean 
@@ -139896,7 +139895,7 @@ Daily Burn an IAC Company
 Dotsub 
 Ceterus Networks 
 Upcycled Around Town 
-Milenko Kuzmanovi ? 
+Milenko Kuzmanovi
 CPHSE 
 agentmachine . com 
 Premier Footstools 
@@ -140888,7 +140887,7 @@ SymphonyIRI Group
 PerfectLine 
 GS Maritime Holding LLC . 
 JCBS Enterprises 
-Arkadiusz Kwa ? ny 
+Arkadiusz Kwa  ny
 ActiveMobi 
 Re - marriage . com 
 E - Generator 
@@ -141399,7 +141398,7 @@ Kimberly Casiano & Associates
 Ace Hardware 
 Eduslide 
 Frogmetrics 
-Piotrek P ? cherz 
+Piotrek P  cherz
 Primestream Corp 
 Dey Instruments 
 eCourier . co . uk 
@@ -141464,7 +141463,7 @@ Kloud Mobile
 Koffeeware Photo Web Shop 
 MedicalMime 
 Infurn 
-Ça ? sun Acemo ? lu 
+Ça  sun Acemo  lu
 AVens 
 SquareLoop , Inc . 
 VinotekaSoft 
@@ -141475,7 +141474,7 @@ chida . in
 Nature Technology 
 upiq 
 Corvus Software 
-Tomasz Ka ? owski 
+Tomasz Ka  owski
 Michele H . Pearl 
 A Sharp 
 4M IberoamÃ©rica 
@@ -141755,7 +141754,7 @@ Dreamnia
 Autobytel Japan 
 Playnery 
 Creative State 
-KodIT Us ? ugi Informatyczne 
+KodIT Us  ugi Informatyczne
 Super Super Hot 
 NTT Electronics 
 Cyber Development Group International 
@@ -141895,7 +141894,7 @@ Esteel Corporation
 TSOT 
 YapTime 
 Contemporary Computer Services 
-Konferans Koltuklar ? 
+Konferans Koltuklar
 ShopABlock 
 LDM Group 
 Applied Performance Sciences 
@@ -142492,7 +142491,7 @@ Visual QR Codes
 Safe Finans AS 
 Maximizer 
 AMVROSIA 
-Who Has The Biggest Brain ? 
+Who Has The Biggest Brain
 Tracklander 
 HiphopDNA 
 Linear Technology Corporation 
@@ -143890,7 +143889,7 @@ Dennis J . Belcastro
 reethroughchrist . com / 
 World Food Programme 
 SportsBoard 
-? sonka 
+ sonka
 Sundip R . Doshi 
 MPG Equity Partners LLC 
 Webtab 
@@ -144101,7 +144100,7 @@ Northlake Medical Supply
 Affinity Labs 
 Director , Online Production 
 American College of Osteopathic Family Practice 
-why can ' t these be deleted ? 
+why can ' t these be deleted
 Wikifestivals 
 ConnectSolutions Real - Time Collaboration Platform 
 NIQ Fashion 
@@ -145323,7 +145322,7 @@ Koeppel Direct
 Cooperative Education Ventures 
 Status Media 
 Zooble 
-TwójPasa ? . pl 
+TwójPasa  . pl
 LIBRARIAN - Library Management Software 
 Apex Construction 
 Dhaani Systems 
@@ -145814,7 +145813,7 @@ DMS Elektronik
 Trigger Happy 
 ShopSavvy Barcode Scanner ( Windows Phone 7 ) 
 Sumitomo Bank 
-Aster obs ? uga ? rodowiskowa 
+Aster obs  uga  rodowiskowa
 Cull Group 
 DHL 
 Savor 
@@ -146253,7 +146252,7 @@ Ronald M . Lindsay
 Google Goggles 
 Telesend 
 DocuHome 
-WhozAround ? 
+WhozAround
 Treasury Intelligence Solutions 
 CESART 
 Robert E . Fasano 
@@ -146458,7 +146457,7 @@ Beanstalk Foundation
 Hartz Group 
 PerformTech 
 GUNNAR Optiks 
-? zolasyon Portal ? 
+ zolasyon Portal
 MC Communications Inc . 
 Cool Van Media LLC 
 D . zigns Enterprise Solutions 
@@ -146480,7 +146479,7 @@ Playmous
 Internet Architecture Board , IETF 
 PharmaSecure 
 Companies Index 
-Ofis Bankolar ? 
+Ofis Bankolar
 Clicks2Customers 
 Retail Sciences 
 Harvard Design and Mapping 
@@ -146791,7 +146790,7 @@ JCWhitney . com
 Truition 
 LipoAdvisor . com 
 Abacus Technology 
-Mehmet T . Akal ? n 
+Mehmet T . Akal  n
 AfterWorkDeals SMS Platform 
 Boring 
 Cube Unlimited 
@@ -147065,7 +147064,7 @@ FootSourceMD
 Cheyne Capital 
 Fanzila 
 Campus1Housing , LLC 
-Micha ? Brzezi ? ski 
+Micha  Brzezi  ski
 Dr . Asha - Rose Migiro 
 Handelsblatt 
 affinitos 
@@ -147931,7 +147930,7 @@ Terra Marketing Group
 Zenbe Mail 
 Turnstyle Solutions 
 Novauris 
-www . ibeta . com / ? 
+www . ibeta . com /
 e * Restaurant 
 Jukata 
 Genesis Diamonds 
@@ -148618,7 +148617,7 @@ Food : A Cultural Culinary History
 Netbiscuits 
 Luckyprice . net 
 James L . Myracle 
-Seyahat Sa ? l ? k Sigortas ? 
+Seyahat Sa  l  k Sigortas
 e - takeaway 
 EEscape Ltd 
 Boards without Borders 
@@ -149502,7 +149501,7 @@ MacroCure
 StudioEngine 
 procter photography 
 UBS Securities 
-Ömer Karap ? nar 
+Ömer Karap  nar
 All - Dynamics Software 
 AMA LTD 
 Producteev 
@@ -149645,7 +149644,7 @@ Bartenders411
 Adjacency 
 Well 
 avocadostore 
-Taner ? ahin 
+Taner  ahin
 H & F Consulting 
 RigBag 
 Skyscape 
@@ -149729,7 +149728,7 @@ NERI
 Tropos Networks 
 Prestige Pop - up Sprinklers 
 Global Rail Systems 
-Cyprian Gwó ? d ? 
+Cyprian Gwó  d
 Hem Packaging 
 CEWE 
 Smoke51 
@@ -149816,7 +149815,7 @@ AOHNA Chaussures
 Moritz v . Grotthuss 
 LiquidSpace 
 Xanodyne Pharmaceuticals , Inc 
-Evita V ? tola 
+Evita V  tola
 Par & Birdie 
 Adanote 
 CAPPcore 
@@ -150394,7 +150393,7 @@ Disney Online
 Dimitris S . Moustakas 
 Harmony Homegrown , LLC 
 GlobalFreeloaders 
-? BRAH ? M ? LEN 
+ BRAH  M  LEN
 Sixth Sense Media 
 FYB Romania 
 SiempreSecos 
@@ -151497,7 +151496,7 @@ Bradford J . Duft
 Eric " Rick " Snaider 
 Top 5 Solar Energy Jobs : The Complete Guide 
 Transformagic 
-NSO Bili ? im ltd ? ti 
+NSO Bili  im ltd  ti
 RokketLaunch 
 SHS VIVEON AG 
 Bavly Milner 
@@ -152002,7 +152001,7 @@ HD +
 Cranial Technologies 
 Indscape 
 Patrick J . Scannell Jr 
-TM ? gain 
+TM  gain
 Charles E . Sheedy 
 Snoopal 
 Ballinger 
@@ -152207,7 +152206,7 @@ IKF Consulting Services
 SmartRatings 
 Golden Galleon 
 Jeffrey H . Greiner 
-? ? Yunio 
+  Yunio
 Rallyhood 
 Participation Toolkit 
 Ret ' d General George W . Casey Jr . 
@@ -152272,7 +152271,7 @@ SignatureLink Inc .
 eLagaan 
 David B . Stafford 
 The Big Spur Media Group 
-Hòa ? ? ng 
+Hòa   ng
 My Supplement Store 
 CAI 
 Candid io 
@@ -152345,7 +152344,7 @@ eMatchopolis
 Wendy S . Johnson 
 Indecomm Global Services 
 StandardNine 
-Özenç K ? l ? çc ? o ? lu 
+Özenç K  l  çc  o  lu
 Ziosoft Inc 
 modomoto 
 Starpower Communications 
@@ -152555,7 +152554,7 @@ Voxsmith
 fanmeetr 
 EurekaClick . com 
 Savin Wholesalers 
-What Are the Chances ? Probability Made Clear 
+What Are the Chances  Probability Made Clear
 ICIM Ltd . 
 Quadrillion 
 The Bauhub 
@@ -152702,7 +152701,7 @@ Goodsmiths
 ELTE - Home Furnishings Store 
 Wolfgang ' s Vault 
 Buvanagiri Handloooms 
-? lke Ajans 
+ lke Ajans
 Dekarta Capital 
 Opetopic 
 Noble Tiles 
@@ -152855,7 +152854,7 @@ Fabrication Games
 University Of Cambridge , Emmanuel College 
 DomainHole 
 Bob S . Turner 
-Is it old ? 
+Is it old
 Actuant 
 LesbianCupid 
 JN Interactive AB 
@@ -153620,7 +153619,7 @@ DealTattle
 LogAndRoll 
 nanoTherics 
 Koowie 
-WhoSetMeUp ? 
+WhoSetMeUp
 Web Development Sydney 
 ReproGenesis 
 TrekkSoft Payment Gateway 
@@ -155945,7 +155944,7 @@ VisionSync
 Moss Public Relations 
 Don ' t Shoot Enterprises 
 custom dog tags 
-Sami Can Tando ? du 
+Sami Can Tando  du
 Gibraltar Advisors 
 William F . Hopkins 
 Atlante Seeds 
@@ -155978,7 +155977,7 @@ Michael A . Krebs
 Add - in Express for Office and Delphi VCL 
 LaserNet 
 Anomalous Networks 
-E - KWIACIARNIE . pl - pasjonuj ? nas kwiaty 
+E - KWIACIARNIE . pl - pasjonuj  nas kwiaty
 J P N SOFT 
 Snibbe Interactive 
 Seen 
@@ -156561,7 +156560,7 @@ True Agency
 Artjoker Digital 
 Project Wedge 
 Personal Systems Group 
-Patika Outdoor Da ? c ? l ? k ve Kamp Malzemeleri 
+Patika Outdoor Da  c  l  k ve Kamp Malzemeleri
 Hypermobility 
 ChatterLime 
 Kuma Reality Games 
@@ -156777,7 +156776,7 @@ Fileyy
 State Street Global Investments 
 Spectrum Settlement Recovery 
 RenewableTech Ventures 
-Gülçin Gürses Ero ? lu 
+Gülçin Gürses Ero  lu
 StudioNeuro 
 AppsAlliance 
 Clockspot 
@@ -157342,7 +157341,7 @@ Masks by Septagon
 iPhone AT & T Unlock Service 
 OnlineBiz Software Soluton 
 Shops . com . ro 
-Rados ? aw Gorz ? dek 
+Rados  aw Gorz  dek
 Canadian Power & Sail Squadrons 
 House of Ruth Maryland 
 Juan Batiz - Benet 
@@ -157523,7 +157522,7 @@ aKa Web Design
 Hostelio 
 DoneEX 
 Heath W . Black 
-Ömer Özgün I ? IKMAN 
+Ömer Özgün I  IKMAN
 Fudha 
 textPlus 
 Tolerx , Inc . 
@@ -157773,7 +157772,7 @@ nContacto
 agnion 
 CMGDev 
 Shri Laxmi Industries 
-http : / / www . zenithsecurity . in / index . php ? main _ page = product _ info & cPath = 3 _ 42 & products _ id = 130 
+http : / / www . zenithsecurity . in / index . php  main _ page = product _ info & cPath = 3 _ 42 & products _ id = 130
 Gendel 
 O3Spaces 
 Fubrub 
@@ -158962,7 +158961,7 @@ List Australia
 Vector City Racers 
 SQA 
 Tunstall Healthcare Group 
-Merve ? ile 
+Merve  ile
 ExchangeHut . com 
 Zemetrics 
 Rapiscan Systems 
@@ -159732,7 +159731,7 @@ SemanticWorks
 William Jenkins Pharma Consulting 
 BillMyParents 
 Printronix 
-Atasay Evden Eve Nakliyat ve Ta ? ? mac ? l ? k ? zmir 
+Atasay Evden Eve Nakliyat ve Ta   mac  l  k  zmir
 Evomail 
 La Redoute 
 Reactable Experience 
@@ -159904,7 +159903,7 @@ Bacardi
 PatriotSoft BV The Netherlands 
 Computop 
 Bechtel Civil Infrastructure 
-Bili ? imciniz Bilgisayar Teknik Servis 
+Bili  imciniz Bilgisayar Teknik Servis
 Home Sale Directory ( www . homesalesdirectory . com ) 
 ESA Bioscience 
 Jeffery K . Rubenstein Criminal Defense Attorney 
@@ -160415,7 +160414,7 @@ Blue Eagle Roofing & Construction
 USBancorp 
 Centricl Global 
 Lolligift 
-Tahsin Y ? lmaz 
+Tahsin Y  lmaz
 Intelligent Business Entertainment 
 Indian Accessories 
 United State Marine Corp 
@@ -163098,7 +163097,7 @@ David M . Rainey
 L2 Cache 
 pMDsoft 
 AutoAlert Limited 
-Pawe ? So ? yga 
+Pawe  So  yga
 Loaded Media 
 GlamAero . com 
 Toperfahrung 
@@ -164745,7 +164744,7 @@ Ablechair
 Valiant Capital Partners 
 Pictaculous 
 Smart Remaps 
-1 - 800 - GOT - JUNK ? 
+1 - 800 - GOT - JUNK
 Wholesale Flights 
 MyDeal 
 MyLocator 
@@ -165973,7 +165972,7 @@ iwearyourshirt
 Siemens AG 
 United States Government 
 ClickSpring 
-Alt ? n Sepeti 
+Alt  n Sepeti
 Acclaim Shopfitters 
 Zao Island 
 Mediainteractive S . A . 
@@ -166705,7 +166704,7 @@ Concord Innovative
 Amp ' d Mobile 
 eMudhra PAN Services 
 Ambrent Inc . 
-Oda ve Kuma ? Parfümü 
+Oda ve Kuma  Parfümü
 BEA Systems 
 BitMango 
 Celilo Group Media 
@@ -167133,7 +167132,7 @@ Skribit
 Scitrium Europe Investments B . v . 
 w Finance 
 JavaSoft 
-O ? ga Jackovi ? ová 
+O  ga Jackovi  ová
 Evacuated Tube Transport Technologies ( ET3 ) 
 Letmecallu 
 GTE Internetworking 
@@ -167891,7 +167890,7 @@ Prosonix
 Ad - Juster , Inc . 
 European Space Agency 
 The Hackerati 
-Branko Tomi ? 
+Branko Tomi
 U . C . Davis 
 yellowstay 
 SevenLunches 
@@ -168219,7 +168218,7 @@ File Malware Protection System
 Xat 
 NHS 
 ShareNow 
-ACB Rent Wypo ? yczalnia Samochodów 
+ACB Rent Wypo  yczalnia Samochodów
 flexiguru . com 
 BrandCrowd 
 Red Karaoke Web 
@@ -168470,7 +168469,7 @@ Conwy Valley Plumbing
 NetCarrier 
 mParticle 
 Meteor Vineyard 
-Polska Agencja Rozwoju Przedsi ? biorczo ? ci 
+Polska Agencja Rozwoju Przedsi  biorczo  ci
 Carpet Cleaning Auburn 
 Hodge Creative Limited 
 FasttechBPO 
@@ -168505,7 +168504,7 @@ Offiria
 WriteReader ApS 
 CPMG 
 Gramond & AssociÃ©s 
-Zoltán Györk ? 
+Zoltán Györk
 Introhub 
 Forum Posts 
 Satellite Tool Kit ( STK ) 
@@ -169128,7 +169127,7 @@ SoftVideo
 FreeBit Co , Ltd 
 Nemo 
 1 - Stop Translation USA 
-Beycon web tasar ? m 
+Beycon web tasar  m
 Parinvest 
 K Nominees 
 Weatherly Consulting 
@@ -169277,7 +169276,7 @@ Trigd
 C Infinity 
 Navan C . Elam 
 Legitit . com 
-Juris Eizent ? ls 
+Juris Eizent  ls
 LimeJam 
 Kitenga 
 CodeIT 
@@ -169501,7 +169500,7 @@ Golden triangle tour
 HiveBrain 
 The Pritzker Organization 
 GlamChic . com 
-Skirmantas Maulevi ? ius 
+Skirmantas Maulevi  ius
 Vadem 
 SnapPitch 
 CAVU Medical 
@@ -169558,7 +169557,7 @@ Build - to - Order
 ITMaker 
 xx - xxx - xxx 
 Pobi Concept 
-Grzegorz ? mia ? ek 
+Grzegorz  mia  ek
 gpa software inc 
 Assembla 
 SnipReel 
@@ -169578,7 +169577,7 @@ Fil Adams - Mercer
 Groupe Insearch 
 N ' exdoor & Magic Systech 
 cliqview 
-Damir Zeki ? 
+Damir Zeki
 The Upper Crust Pizzeria 
 Sensible Solutions Sweden 
 YouReply 
@@ -169746,7 +169745,7 @@ Pure Imagination , Inc .
 Mere Parish 
 Sierra Semiconductor 
 ZisBoomBah 
-Olga Mirkovi ? - Maksimovi ? 
+Olga Mirkovi  - Maksimovi
 Crown in Town 
 Jesse M . Du Bey 
 EventKaddy 
@@ -170146,7 +170145,7 @@ Rex Bionics
 St . Patrick ' s 
 Sara Leide - Zytka 
 Listen & Learn Research 
-Vural ? eker 
+Vural  eker
 TRESTON 
 SystemSeed 
 1818 SBIC Fund Investment Committee 
@@ -171475,7 +171474,7 @@ Satellogic
 The Scotsman 
 Evolutionary Genomics 
 Visible . vc 
-Blue Blade Steel ? 
+Blue Blade Steel
 SoftService 
 Stardoll 
 Field ID 
@@ -171726,7 +171725,7 @@ CustVox AG
 United Management Technologies 
 Fliptu 
 Sales Cloud 
-Marek Przysta ? 
+Marek Przysta
 Ineto 
 FGC Consulting 
 Scotts Pressure Wash 
@@ -172586,7 +172585,7 @@ Mimix Broadband
 Oxford Web SEO 
 Clever & Son 
 Infinite Technology Inc . 
-Cihangir K ? rkgöz 
+Cihangir K  rkgöz
 EOS ( Ethical Oncology Science ) 
 Shuka Capital , LLC 
 Mincron SBC 
@@ -173713,7 +173712,7 @@ blogSpirit Business Edition
 Yumbles 
 Knox D ' Arcy 
 Revival Foods 
-What Can I Make For You ? 
+What Can I Make For You
 ReferQuest 
 WhatSalon 
 Datacraft Solutions 
@@ -173845,7 +173844,7 @@ Gate2Shop
 Satarii 
 Mention Me 
 The University of Alabama Athletics 
-Janssen Pharmaceuticals ? 
+Janssen Pharmaceuticals
 Genuine Group 
 Forty 
 Mobify 
@@ -176595,7 +176594,7 @@ Dwellicious
 Ivan O ' Donoghue 
 Web Application & Tools Development 
 SEO Maniac 
-Grup Masalar ? 
+Grup Masalar
 Pop - Post 
 Photopoll 
 Slow - Chic Hotels 
@@ -176681,7 +176680,7 @@ Noyo . com
 Smart Solutions KVM 
 Matchloc 
 Consul Risk Management 
-A film in your investment portfoliowhy ? 
+A film in your investment portfoliowhy
 Asset Management Outsourcing 
 Temenos 
 VIT Technology Business Incubator 
@@ -176947,7 +176946,7 @@ Fanminder
 Kootlai - Social networking software 
 263 . com 
 Venters and Associate 
-Kristina Nikoli ? 
+Kristina Nikoli
 Quadfit 
 Adaptive Medias , Inc . 
 SABE - The Student Accommodation Booking Engine 
@@ -177093,7 +177092,7 @@ Website Optimization
 Ilonn Hotel 
 Telekom Austria Czech Republic 
 118Boardshop . com 
-FORT Nieruchomo ? ci 
+FORT Nieruchomo  ci
 LakePlace . com 
 ParAccel AMIGOâ¢ 
 Seros 
@@ -178214,7 +178213,7 @@ apomio
 ChurnBee 
 Our Human Planet 
 Asset Marketing Services 
-Emir Ribi ? 
+Emir Ribi
 Strong Signal 
 E Things Soluciones SL 
 Rutledge Vine Capital 
@@ -179886,7 +179885,7 @@ Interac
 HomeVisor 
 Sling . com 
 Cyclope Internet Filtering Proxy 
-Elsa Ofis Mobilyalar ? ve Büro Koltuklar ? 
+Elsa Ofis Mobilyalar  ve Büro Koltuklar
 The PublishThis Content Cloud 
 Dathlon 
 Green Wave Holidays 
@@ -180938,7 +180937,7 @@ Increase YouTube Views
 fring Ltd 
 PhotoDune 
 TapMetrics 
-Niko ? uri ? 
+Niko  uri
 TESCRA 
 fullalisveris . com 
 Xmarksthespot . com 
@@ -182050,7 +182049,7 @@ Rent2Buy
 WebproLeads 
 Thomas Career Consulting 
 Jere W . Thompson , Jr . 
-U ? ur Özp ? nar 
+U  ur Özp  nar
 Medaxion 
 Pacific Ridge School 
 First Canadian 
@@ -184347,7 +184346,7 @@ Zhejiang Greenco Industry Co . , Ltd
 Morio Technology Management 
 Andy O ' Dell 
 SAS Parsimony 
-Mato Peri ? 
+Mato Peri
 Spain Tech Center 
 Visiwa 
 Mobile Solution 
@@ -184440,7 +184439,7 @@ DonorDirect
 ADI Intelligent Guides SL 
 Darin R . Winn 
 Redeemio . com 
-Multum Nieruchomo ? ci Gorzów 
+Multum Nieruchomo  ci Gorzów
 RimuHosting 
 Alberta Arborists 
 YouPorn 
@@ -184610,7 +184609,7 @@ MedSocket
 Aerocast 
 Buyknowing 
 Prestolite Electric Beijing 
-past ? 
+past
 Logic Nation 
 React Entertainment 
 NewBlue Audio Tools 
@@ -184724,7 +184723,7 @@ ICI Pharmaceuticals
 Switch Marketing and Communications Limited ( Switch Video ) . 
 Custom Web App ' s 
 webhostpak 
-www . medicosonline . net / ? 
+www . medicosonline . net /
 Nearbuy Systems 
 New Paradigm Developments LLC 
 Ad Delivery 
@@ -185234,7 +185233,7 @@ FADICA
 Huther Advertising 
 Tradera Nordic AB 
 ChatterMob 
-FAD ? IO 
+FAD  IO
 Cooliris 
 MB Web Design 
 FlatStack 
@@ -186559,7 +186558,7 @@ third force
 Nexabion Solutions 
 BLIP Systems 
 Smith Monitoring 
-Andris S ? lis 
+Andris S  lis
 Small business Web design 
 PLC Medical Systems 
 WorldEscape 
@@ -188182,7 +188181,7 @@ Main Street Capital
 moheshkhali24 . com 
 ILC Ltd 
 Touch Wood 
-Aleksandar Pej ? inovi ? 
+Aleksandar Pej  inovi
 WebTiger Search Marketing 
 Freeplay 
 B & B Tent and Party Rentals 
@@ -188193,7 +188192,7 @@ New Scholars
 TryPaper 
 Navision 
 NetRaker 
-Faruk Ate ? 
+Faruk Ate
 IMS division 
 Docassist for Intacct 
 Barwell Plc 
@@ -188417,7 +188416,7 @@ HTC EVO 4G
 Spiralcat 
 Little Gems Boutique - Islington 
 StackBlaze 
-ONOFFMIX ( ? ? ? ? ? ) 
+ONOFFMIX (      )
 FiberTower 
 TruckSpotting Android App 
 Todd Hanson Ph . D 
@@ -189628,7 +189627,7 @@ PowerPlug
 Nalco Chemical Company 
 Forte Systems 
 Olivier Dasse - Hartaut 
-www . logigear . com / ? 
+www . logigear . com /
 Dara Price - Olsen 
 LTC - Nortel Account Prime 
 GovHub 
@@ -192299,7 +192298,7 @@ Dlyte . com
 Supper Market 
 ISHIR 
 www . starregistry . com 
-Tar ? k Y ? ld ? r ? m 
+Tar  k Y  ld  r  m
 MITON INVESTMENT , a . s . 
 Superdrug Stores plc . 
 Alize 
@@ -193860,7 +193859,7 @@ Kodiak Networks
 Revelex Corp 
 Mosaic Information Technologies 
 AvenueSocial MEA 
-Konut Sigortas ? 
+Konut Sigortas
 Acrux Ads 
 Element Power 
 ExplorationFunder 
@@ -195007,7 +195006,7 @@ RRA , LLC .
 PostXL 
 GovernmentUncovered . com 
 Sellmoo Inc 
-Christian ? wikli ? ski 
+Christian  wikli  ski
 Non - Grocery Items 
 Cenbracom 
 Young / World Presidents Organization 
@@ -195134,7 +195133,7 @@ Run of One
 Mark J . Cola 
 HireWebDesignerIndia 
 SyncSy 
-Michal K ? ujszo 
+Michal K  ujszo
 Cofa Media 
 Allison C . Lerner 
 Licencia Black 
@@ -195148,7 +195147,7 @@ TiniDream Studios
 IDEC Pharmaecuticals 
 Chat Room 
 Pricelock Marketplace 
-Kaan Kayabal ? 
+Kaan Kayabal
 GoServices 
 Procar . com 
 Real De Oaxaca Restaurant 
@@ -195186,7 +195185,7 @@ BioFire Diagnostics
 Creative Coefficient 
 Kings Cove Metung 
 Call Anyone 
-WhatPoll ? 
+WhatPoll
 Adpressive 
 Redline Marketing Co . 
 Daniel O ' Mahony 
@@ -195635,7 +195634,7 @@ Clear Channel Radio
 ADITEC Vaccine Consortium 
 OnlineBootyCall 
 Ari J . Katz 
-Yurtd ? ? ? E ? itim Sa ? l ? k Sigortas ? 
+Yurtd    E  itim Sa  l  k Sigortas
 Orange County Perks 
 ST Labs 
 Cga Transmillennium , Inc 
@@ -197171,7 +197170,7 @@ Polish Tools
 ZoomCare TakeOut 
 Fishing Frenzy HD 
 web portal 
-Daniel Wla ? lak 
+Daniel Wla  lak
 Website Design London 
 IBTimes India 
 Jabbit 
@@ -197626,7 +197625,7 @@ Engine Digital
 Edenbrook Limited 
 Government Digital Service 
 Kabel Deutschland 
-Morena imati ? 
+Morena imati
 POPrl 
 MySecretAgent . com 
 Rainbow Computech 
@@ -197660,7 +197659,7 @@ Service design
 digmypics 
 Metadigs Web Solutions 
 Runnkeeper 
-Yönetici Masalar ? 
+Yönetici Masalar
 Quizworks 
 Aidan Madigan - Curtis 
 TechValidate Software 
@@ -197865,7 +197864,7 @@ Unitel Communications
 OneRoof Energy 
 White Label Distribution 
 imoodo 
-WhyCommunicate ? 
+WhyCommunicate
 Traction 
 WESCO / USMedtrans , SimAuthor , Newbridge , ICG / FOTI , IBM Global Svcs , Intelogic Trace , GE Computer Svcs 
 Mid - Atlantic Paging company 
@@ -202988,7 +202987,7 @@ Icons Consulting
 Textádo 
 Raptisoft 
 Cupr Hill 
-Agencja ? eglarska zeglujznami . pl 
+Agencja  eglarska zeglujznami . pl
 Henbury Music 
 Egainz 
 Solegear Bioplastics 
@@ -204208,7 +204207,7 @@ GlobalPlatform
 Expert Market 
 Insight Technology 
 CX - C 
-Bartosz Smólczy ? ski 
+Bartosz Smólczy  ski
 shoply 
 London School of Business & Finance 
 CHINA . COM 
@@ -207679,7 +207678,7 @@ SendFil . es
 Andrea B . Smith 
 CyberFlow Analytics 
 Spacedog 
-What Does Your Startup Do ? 
+What Does Your Startup Do
 Real - Time Innovations 
 Gutscheinwerte . de 
 MobileCrunch 
@@ -209193,7 +209192,7 @@ Adam Internet
 MobileMurf 
 Michael P . Bailey 
 SevenOnly di Bizzini e Marghitola 
-Can Turanl ? 
+Can Turanl
 Creative Kingdom Animation Studios Film 
 My Shopping My Deals 
 Good Ventures 
@@ -209516,7 +209515,7 @@ ANT Capital Ltd .
 PineCone Apps 
 Leadmotion 
 Campushift 
-Elsa Büro Mobilyalar ? | Üretici Firma 
+Elsa Büro Mobilyalar  | Üretici Firma
 Society Of Plastic Engineers 
 Belmont Hills Hospital 
 ImageEngine 
@@ -210568,7 +210567,7 @@ Zaya
 proteonomix 
 TechnoBird 
 Keepy 
-Emre K ? ran 
+Emre K  ran
 AdAstra 
 Pigeonews 
 NationalNet 
@@ -210701,7 +210700,7 @@ MindCET
 Oakley Network 
 Columbia Business Resources LLC . 
 SimplyJob 
-Kamil Wa ? kiel 
+Kamil Wa  kiel
 LoudClick 
 Sipro Lab Telecom 
 SoundBoard Angel Fund 
@@ -210731,7 +210730,7 @@ Electric Motors - Essential Part of Machines
 Corebridge 
 AmeriCares 
 OnBeep 
-Bitmez Oyunlar ? 
+Bitmez Oyunlar
 TransactionTree 
 Smallscale 
 skyBuilders . com 
@@ -211347,7 +211346,7 @@ Tastemakers
 31Projects 
 Webstrong 
 McDonald Dettwiler 
-Za ? ? s gaismas invest ? cijas 
+Za   s gaismas invest  cijas
 Michael C . Münnix 
 babyTEL 
 Google Education 
@@ -211367,7 +211366,7 @@ Publons
 Neighborhood Assistance Corporation of America 
 INXIGHT SOFTWARE 
 Pocketweb Ltd . 
-How ' s the bar ? 
+How ' s the bar
 dMarc Broadcasting 
 TV - replay 
 Moove Agency 
@@ -211621,7 +211620,7 @@ Hartley Consulting
 Option 1 Staffing 
 Lafango 
 qlc 
-Are You Watching This ? ! 
+Are You Watching This  !
 Charlesbridge Publishing 
 LanguageWire 
 Cellum Group 
@@ -212835,7 +212834,7 @@ MindArrow Systems Inc .
 Rogers Wireless / Digital Communications 
 Tekegysms 
 Aggregate Industries , Inc . 
-I Can Has Cheezburger ? 
+I Can Has Cheezburger
 Rugsandblinds 
 Datavail 
 Workman Consulting 
@@ -213155,7 +213154,7 @@ Shopbee
 TixxMe 
 10 Yetis Public Relations LTD 
 Missouri Technology Corporation 
-mFlyer ? for small - to - medium - sized businesses 
+mFlyer  for small - to - medium - sized businesses
 eTermLifeInsurance 
 Aeris Partners 
 DigitalOcean 
@@ -213368,7 +213367,7 @@ High Access Solutions Ltd
 Privacy Controls 
 Attolight 
 Collaborative Fun 
-Müge De ? erliyurt 
+Müge De  erliyurt
 TheSingularFactory 
 Inventure Cloud 
 frestyl 
@@ -213976,7 +213975,7 @@ SmartFacility . in
 Mossedog Oy 
 Nariel 
 Turku Polytechnic 
-5 ? ? ? ? ? ? 
+5
 Cloud Cig 
 Bright Seo Services 
 Incubii Consulting LLC 
@@ -214600,7 +214599,7 @@ Charles E . Smith
 Pinboard . In 
 WatchParty 
 Genentech Foundation 
-? What If ! 
+ What If !
 Technology and Media Consulting 
 Gilbert Guide 
 Workspice 
@@ -214966,11 +214965,11 @@ iCause App
 Mahesh V . Patel 
 FloorStyler 
 Fujitsu Interactive 
-http : / / www . redlinecompany . com / en / portfolio . html ? page = shop . product _ details & flypage = flypage _ images . tpl & product _ id = 212 & category _ id = 2 
+http : / / www . redlinecompany . com / en / portfolio . html  page = shop . product _ details & flypage = flypage _ images . tpl & product _ id = 212 & category _ id = 2
 StemTroniX 
 eKidFolio 
 Datafacts 
-Trafik Sigortas ? 
+Trafik Sigortas
 Quarterstf 
 The Little Black Book 
 Lowenstein Sandler 
@@ -215432,7 +215431,7 @@ Fits . me
 MonkeyStub 
 RunMyAccounts 
 Allerderm Laboratories 
-Zbigniew Pie ? lak 
+Zbigniew Pie  lak
 Linart 
 Rolf H . GÃ¼nther 
 Raffetto Herman Strategic Communications 
@@ -217551,7 +217550,7 @@ Alexis Horowitz - Burdick
 SL Capital Partners 
 Andrew R . Lane 
 Cathay Pacific Airways Ltd . 
-Kimberly Ra ? i ? 
+Kimberly Ra  i
 Celerify 
 ConnectBillions 
 / excelamktg 
@@ -217920,7 +217919,7 @@ yonova
 BlastCasta Feed - Processing Engine 
 Sipcall 
 Sprint Enterprise Mobility , Inc . 
-www . utest . com / ? 
+www . utest . com /
 DAX Automation 
 batterycharger 
 Scopelec 
@@ -219329,7 +219328,7 @@ Williams Social Games
 A & A Mold and Allergy Investigations 
 H - Farm Ventures 
 Scholaries 
-Tomek Ku ? nierczak 
+Tomek Ku  nierczak
 Funeral Finder 
 Dixie Chemical Company 
 Newtopia 
@@ -220121,7 +220120,7 @@ NYC Duct Mold Water Cleanup
 Slice Networks 
 Intranet Communications 
 Eventility 
-Damir Ismailovi ? 
+Damir Ismailovi
 National Forex 
 Talentguide 
 Aquavation 
@@ -220546,7 +220545,7 @@ TEXTKING
 Dutchcode 
 Wipro Technologies 
 Marketspace 
-? irket Haberleri 
+ irket Haberleri
 PeerDirect Inc . 
 What ' s App 
 Sally M . Gallagher 
@@ -220814,7 +220813,7 @@ Mathsoft Engineering & Education
 Haus Bauen 
 Incu Capital 
 Recurly . js - Javascript Library For Checkout Forms 
-Adrian Duli ? 
+Adrian Duli
 SEO 
 EMI Records Limited 
 Montara Capital Partners 
@@ -221722,7 +221721,7 @@ ShareThe
 Lincoln Road Spine 
 Intexys 
 ReGen Power Systems 
-Ainars Br ? velis 
+Ainars Br  velis
 AmberCart 
 TurnKey Vacation Rentals 
 Monterey Bay Document Scanning 
@@ -224741,7 +224740,7 @@ The Retail Zip Company
 Globe Citizen 
 PayerFusion 
 Health Informatics 
-YCOI / ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? 
+YCOI /
 Turisticka Komora na Makedonija - TKM 
 PromiseUP 
 Whisper 
@@ -224838,7 +224837,7 @@ Unix System Laboratories
 SutraJobs . com 
 Church & Dwight , Co . , Inc . 
 InSCTE 
-Should I Watch ? 
+Should I Watch
 Resco Systems , Philippines 
 Thinking Moves 
 TransElated 
@@ -225531,7 +225530,7 @@ Mural . ly
 Latte Software 
 KamaGames 
 DigiSight Technologies 
-WhosTalkin ? 
+WhosTalkin
 Datpresenter V2 . 0 Pro 
 Alan R . Pelton 
 FreeMarkets 
@@ -226632,7 +226631,7 @@ APICS
 Miami Search Engine Optimization 
 mediafeedia 
 Gateskip 
-S ? v ? Krem Deterjan 
+S  v  Krem Deterjan
 Blackstone Asia 
 Preation 
 ChatLingual 
@@ -227398,4 +227397,47 @@ Hydrocision
 Tech Integrated 
 Product Design and Package Design 
 Laptop Cop 
-American Association of Pharmaceutical Scientists 
+American Association of Pharmaceutical Scientists
+Dock Floats Ltd.
+Beacon of Hope Uganda
+' Friends & Family'
+Sands Resorts
+dtechno quip
+PCCare247 .com
+Sync Labs
+Venture Architects
+Addison Publishing
+Uni strategic
+Closed Loop Marketing Software wince
+Sublime Packaging
+Renew Kitchen Doors
+Weddings Zone
+supernsetips com
+Charleys Surplus
+HTML5 Mobile Apps
+Innovation Lover
+Auto IndiaMART
+Rick Holliday-Smith
+Lead Bids
+Apex International
+MSN Hotmail Technical Support
+ComplianceOnline compliance
+International Drug Mart Forum
+Brat Studios
+Naitin Inc.
+Founders Equity
+Auto Glass Authority
+Skyline Coatings
+Helios Solutions
+Ultimatch Dating
+Millisent
+AceFancyDress UK
+Web Vastu
+TradeWind Sales Media
+Nitin Scientific Industries
+Fox Hill Development
+Capital Alternatives
+What Whey
+FD9 Holdings B.V.
+Meitrack GPS
+ClickThrough Marketing
