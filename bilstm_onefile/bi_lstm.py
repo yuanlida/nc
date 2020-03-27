@@ -1014,6 +1014,9 @@ with tf.Graph().as_default():
         #                                      legacy_init_op=legacy_init_op)
         #
         # builder.save()
+
+        # test all evlal data
+
         tf.compat.v1.saved_model.simple_save(sess,
                                    "./model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
