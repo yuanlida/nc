@@ -206,7 +206,8 @@ if __name__ == '__main__':
           'Lida',
           'Lining',
           'Villa Seminia, 8, Sir Temi Zammit Avenue, Ta\'Xbiex XBX1011, Matlat',
-          'President & CEO'
+          'President & CEO',
+          'John E. Sestina CFP®, ChFC'
           ]
     lite_model = TFLiteModel(None)
 
