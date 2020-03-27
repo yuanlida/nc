@@ -207,7 +207,8 @@ if __name__ == '__main__':
           'Lining',
           'Villa Seminia, 8, Sir Temi Zammit Avenue, Ta\'Xbiex XBX1011, Matlat',
           'President & CEO',
-          'John E. Sestina CFP®, ChFC'
+          'John E. Sestina CFP®, ChFC',
+          'Ryan C. Unger'
           ]
     lite_model = TFLiteModel(None)
 
