@@ -40149,6 +40149,8 @@ Dennis Swangler
 Gregory M . Weinhoff
 Fotios Magoufis
 Nicola Tesser
+Calvin Tam
+Laurie L . Adams
 Hugh Hughes
 Brian Kenyon
 Nisha Munson
@@ -40156,9 +40158,12 @@ Jim Jensen
 Will Haines
 Tim Costello
 Bruno Virlet
+Benjamin Polovi
 Eric Lee Smith
 Mehetabel
 D . Scott Phoenix
+Patrik MALIÅ
+Fredrik Ã kerstrÃ¶m
 George Winter
 Michael O'Reilly
 Cormac Kelly
