@@ -208,7 +208,10 @@ if __name__ == '__main__':
           'Villa Seminia, 8, Sir Temi Zammit Avenue, Ta\'Xbiex XBX1011, Matlat',
           'President & CEO',
           'John E. Sestina CFP®, ChFC',
-          'Ryan C. Unger'
+          'Ryan C. Unger',
+          'A: 3580 Progress Drive Ste L Bensalem, PA',
+          '3580 Progress Drive Ste L Bensalem, PA',
+          'TEAM PENNSYLVANIA | WORKING. TOGETHER.'
           ]
     lite_model = TFLiteModel(None)
 
