@@ -205,7 +205,8 @@ if __name__ == '__main__':
           'Lining Shi',
           'Lida',
           'Lining',
-          'Villa Seminia, 8, Sir Temi Zammit Avenue, Ta\'Xbiex XBX1011, Matlat'
+          'Villa Seminia, 8, Sir Temi Zammit Avenue, Ta\'Xbiex XBX1011, Matlat',
+          'President & CEO'
           ]
     lite_model = TFLiteModel(None)
 
