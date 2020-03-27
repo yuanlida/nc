@@ -23,7 +23,8 @@ def test_lite_is_useful():
 
     # Test model on random input data.
     input_shape = input_details[0]['shape']
-    input_data = np.array(np.random.random_integers(0, 0, size=(input_shape[0], input_shape[1], input_shape[2])), dtype=np.int32)
+    input_data = np.array(np.random.random_integers(0, 0, size=(input_shape[0], input_shape[1], input_shape[2])),
+                          dtype=np.int32)
     # print(input_data)
     interpreter.set_tensor(input_details[0]['index'], input_data)
 
@@ -182,14 +183,33 @@ class TFLiteModel(object):
 
 if __name__ == '__main__':
     # test_lite_is_useful()
-    xs = ['Bruce Jimenez',
-          'Growth Team',
-          'Castle I LinkedIn',
-          'San Francisco, CA']
+    # xs = ['Bruce Jimenez',
+    #       'Growth Team',
+    #       'Castle I LinkedIn',
+    #       'San Francisco, CA']
+    xs = ['Rory Webb',
+          'Industrial Engineer',
+          'Portfolio',
+          'P: (415)555-6689',
+          'C:(415)555-9879',
+          '17a St Wich Street, City Centre, Bristol',
+          '289 Kentish Town Road , London',
+          '564 Market Street, Suite 700, San Francisco CA 94104',
+          'San Francisco, CA, 94107',
+          'Jeffrey',
+          'Crunchbase, Inc.',
+          '564 Market Street, Suite 700',
+          'San Francisco, CA 94104',
+          'San Francisco, CA, 94104',
+          'Lida Yuan',
+          'Lining Shi',
+          'Lida',
+          'Lining',
+          'Villa Seminia, 8, Sir Temi Zammit Avenue, Ta\'Xbiex XBX1011, Matlat'
+          ]
     lite_model = TFLiteModel(None)
 
     for sentence in xs:
         lite_model.set_sentence(sentence)
         label = lite_model.analyze()
         print(sentence, '| label is ', label)
-
