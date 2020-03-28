@@ -818,7 +818,7 @@ def get_binary_metrics(pred_y, true_y, f_beta=1.0):
     return acc, recall, precision, f_beta
 
 
-def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0):
+def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0, bool_test=False):
     """
     得到多分类的性能指标
     :param pred_y:
@@ -832,16 +832,17 @@ def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0):
     precision = multi_precision(pred_y, true_y, labels)
     f_beta = multi_f_beta(pred_y, true_y, labels, f_beta)
     labels_precision = []
-    for label in labels:
-        correct_num = 0
-        num = 0
-        for it in range(len(true_y)):
-            if label == true_y[it]:
-                if pred_y[it] == true_y[it]:
-                    correct_num = correct_num + 1
-                num = num + 1
-        single_precision = correct_num / num
-        labels_precision.append(single_precision)
+    if bool_test:
+        for label in labels:
+            correct_num = 0
+            num = 0
+            for it in range(len(true_y)):
+                if label == true_y[it]:
+                    if pred_y[it] == true_y[it]:
+                        correct_num = correct_num + 1
+                    num = num + 1
+            single_precision = correct_num / num
+            labels_precision.append(single_precision)
     return acc, recall, precision, f_beta, labels_precision
 
 
@@ -936,7 +937,7 @@ with tf.Graph().as_default():
 
             elif config.numClasses > 1:
                 acc, recall, prec, f_beta, labels_precision = get_multi_metrics(pred_y=predictions, true_y=batchY,
-                                                              labels=labelList)
+                                                              labels=labelList, bool_test=False)
 
             trainSummaryWriter.add_summary(summary, step)
 
@@ -963,7 +964,8 @@ with tf.Graph().as_default():
 
                 acc, precision, recall, f_beta = get_binary_metrics(pred_y=predictions, true_y=batchY)
             elif config.numClasses > 1:
-                acc, precision, recall, f_beta, labels_precision = get_multi_metrics(pred_y=predictions, true_y=batchY, labels=labelList)
+                acc, precision, recall, f_beta, labels_precision = get_multi_metrics(pred_y=predictions,
+                                                                                     true_y=batchY, labels=labelList, bool_test=True)
 
             evalSummaryWriter.add_summary(summary, step)
 
