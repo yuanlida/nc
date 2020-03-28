@@ -1006,7 +1006,7 @@ with tf.Graph().as_default():
                         for index_of_data, data in enumerate(item):
                             out_labels_precision[index_of_data] = out_labels_precision[index_of_data] + data
                     for index, item in enumerate(out_labels_precision):
-                        out_labels_precision[index] = out_labels_precision[index] / len(out_labels_precision)
+                        out_labels_precision[index] = out_labels_precision[index] / len(precision_of_labels)
 
                     time_str = datetime.datetime.now().isoformat()
                     print("{}, step: {}, loss: {}, acc: {},precision: {}, recall: {}, f_beta: {}, out_labels_precision:{}".format(time_str,
