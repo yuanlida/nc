@@ -835,9 +835,9 @@ def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0):
     for label in labels:
         correct_num = 0
         num = 0
-        for item in range(len(true_y)):
-            if label == true_y[item]:
-                if pred_y[item] == true_y[item]:
+        for it in range(len(true_y)):
+            if label == true_y[it]:
+                if pred_y[it] == true_y[it]:
                     correct_num = correct_num + 1
                 num = num + 1
         single_precision = correct_num / num
