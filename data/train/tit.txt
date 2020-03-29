@@ -92,7 +92,7 @@ Telecommunications Line Installers Repairer
 Bill and Account Collectors
 Product Analytics Lead, Data Science
 Data Science Analyst, Revenue Strategy and Operations, Google Marketing Solutions
-Helpers--Painters Mason
+Helpers - Painters Mason
 User Experience & Design
 Animal Breeder
 Public Policy and Government Relations Manager for Southern Cone (English and Spanish speaker)
@@ -124,7 +124,7 @@ Library Occupation
 Compliance Officers
 Brand Specialist (Fixed-Term Employee)
 Electronic Home Entertainment Equipment Installers and Repairers
-Helpers--Production Workers
+Helpers - Production Workers
 Administrative
 Radiologists
 People Operations
@@ -141,7 +141,7 @@ Environmental Engineering Technicians
 Technical Solutions Engineer, G Suite, Google Cloud
 Forest and Conservation Technicians
 Welding , Soldering , and Brazing Machine Setters , Operators , and Tenders
-Helpers--Installation , Maintenance , and Repair Workers
+Helpers - Installation , Maintenance , and Repair Workers
 Carpet Finisher
 Farmworkers , Farm , Ranch , and Aquacultural Animals
 Real Estate & Workplace Services
@@ -208,7 +208,7 @@ Social Work Teachers , Postsecondary
 Materials Engineers
 Tire Builders
 Other Food Preparation Worker
-Helpers--Installation Worker
+Helpers - Installation Worker
 Finance Auditor , Internal Audit
 Crane Operator
 Health Specialties Teachers , Postsecondary
@@ -328,7 +328,7 @@ Ads Marketing Manager, Latin America, Waze (Spanish)
 Software QA Engineer
 Leather Workers Repairer
 Technical Solutions Engineer, Firebase, Google Cloud
-Helpers--Production Worker
+Helpers - Production Worker
 Authorizers Clerk
 Market Research Analysts Specialist
 Partner Sales Manager, Go-to-Market Partnerships, Google Cloud
@@ -437,7 +437,7 @@ Examiners Searcher
 Executive
 Performance Specialist (Korean)
 Biologists
-Helpers--Carpenter
+Helpers - Carpenter
 Analyst , Partnerships and Trading , Large Customer Sales
 Media Planner
 Metal Workers and Plastic Workers
@@ -538,7 +538,7 @@ Tax Examiners Agent
 Marine Engineers Architect
 Industrial Safety and Health Engineers
 Quantitative User Experience Research Lead
-Helpers--Pipelayers Steamfitter
+Helpers - Pipelayers Steamfitter
 Transportation Inspectors
 Data Engineer
 Fashion Designers
@@ -779,7 +779,7 @@ Performance
 Forest Fire Inspectors and Prevention Specialists
 Officer
 Philosophy and Religion Teachers , Postsecondary
-Helpers--Painters , Paperhangers , Plasterers , and Stucco Masons
+Helpers - Painters , Paperhangers , Plasterers , and Stucco Masons
 Product Safety Engineers
 Aircraft Launch and Recovery Specialists
 Technical Specialist, Google Technical Services, Ads
@@ -834,7 +834,7 @@ Painting Tender
 Executive Chef
 Workers Supervisor
 Associate Account Strategist , Global Customer Services (French)
-Helpers--Brickmasons , Blockmasons , Stonemasons , and Tile and Marble Setters
+Helpers - Brickmasons , Blockmasons , Stonemasons , and Tile and Marble Setters
 Solutions Architect, Healthcare and Life Sciences, Google Cloud
 Rigging Assembler
 Decorator
@@ -1100,7 +1100,7 @@ Chrome Customer Success Manager , Google Cloud
 Solar Energy Installation Managers
 Hardware System Validation Engineer, Consumer Hardware
 Court Reporter
-Helpers--Electricians
+Helpers - Electricians
 Genetic Counselors
 Enterprise Customer Development Representative, Google Cloud (English, Korean)
 Research Analyst
@@ -1424,7 +1424,7 @@ Theatrical Performance
 Dietary Technician
 Sales Executive, Google Cloud Platform
 Associate Account Strategist (Polish) , Global Customer Experience
-Helpers--Roofers
+Helpers - Roofers
 CVO
 Partner
 Medical Records and Health Information Technicians
@@ -2070,7 +2070,7 @@ Broadcast Producer
 Floor Sanders and Finishers
 Real Estate Appraisal
 Medical Scientists , Except Epidemiologists
-Helpers--Roofer
+Helpers - Roofer
 Operations Lead , Google Play
 Head of Professional Services
 Promotions Specialist
@@ -2368,7 +2368,7 @@ Urban and Regional Planners
 Log Graders Scaler
 Miscellaneous Sales Worker
 Business Teachers , Postsecondary
-Helpers--Carpenters
+Helpers - Carpenters
 Commercial Pilot
 Food Cooking Machine Operators and Tenders
 Regional Counsel (Southeast Asia)
@@ -2745,7 +2745,7 @@ Food Inspector
 Farmworkers Animal
 Social Science Technician
 Physicians Other
-Helpers--Extraction Workers
+Helpers - Extraction Workers
 Loan Officers
 Partner Sales Engineer , Google Cloud
 Control , Door
@@ -2783,7 +2783,7 @@ Communication Equipment Worker
 Associate Account Strategist (Romanian) , Google Marketing Solutions Sales
 Customer Service Representative
 Business Operations Specialists
-Helpers--Electrician
+Helpers - Electrician
 Solutions Engineer, Google Cloud
 Traffic Technician
 Operations Specialist (Polish), Online Legal Support
@@ -3450,7 +3450,7 @@ Hardware QA Engineer
 Program Manager, Audio Visual (AV) Deployments
 Deputy Management Trainee
 Head of Ads Finance , Acquisitions , Google Marketing Solutions
-Helpers--Pipelayers , Plumbers , Pipefitters , and Steamfitters
+Helpers - Pipelayers , Plumbers , Pipefitters , and Steamfitters
 Sales Development Manager, Cross-Vertical Team
 Tellers
 Chrome OEM Channel Sales Manager, Chrome Enterprise and Education
@@ -3856,7 +3856,7 @@ Graduating Student
 Associate Account Strategist, GMS Sales and Services, University Graduate
 Computer Engineer
 Mine Shuttle Car Operators
-Helpers--Brickmasons Setter
+Helpers - Brickmasons Setter
 Senior Customer Manager
 UX Engineer , Front End
 Key Account Manager , Large Customer Sales

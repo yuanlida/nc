@@ -841,7 +841,11 @@ def get_multi_metrics(pred_y, true_y, labels, f_beta=1.0, bool_test=False):
                     if pred_y[it] == true_y[it]:
                         correct_num = correct_num + 1
                     num = num + 1
-            single_precision = correct_num / num
+            try:
+                single_precision = correct_num / num
+            except:
+                single_precision = 0
+
             labels_precision.append(single_precision)
     return acc, recall, precision, f_beta, labels_precision
 

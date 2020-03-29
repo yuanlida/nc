@@ -31,29 +31,36 @@ NONE = "O"
 #               './data/test/tel.txt',
 #               './data/test/tit.txt']
 
-# train_files = ['../data/test/loc.txt',
-#                '../data/test/name.txt',
-#                '../data/test/org.txt',
-#                '../data/test/tel.txt',
-#                '../data/test/tit.txt']
+train_files = ['../data/test/loc.txt',
+               '../data/test/name.txt',
+               '../data/test/org.txt',
+               '../data/test/tel.txt',
+               '../data/test/tit.txt']
+
+test_files = ['../data/test/loc.txt',
+              '../data/test/name.txt',
+              '../data/test/org.txt',
+              '../data/test/tel.txt',
+              '../data/test/tit.txt']
+# sample_files = ['./data/sample/loc.txt',
+#               './data/sample/name.txt',
+#               './data/sample/org.txt',
+#               './data/sample/tel.txt',
+#               './data/sample/tit.txt']
 #
-# test_files = ['../data/test/loc.txt',
-#               '../data/test/name.txt',
-#               '../data/test/org.txt',
-#               '../data/test/tel.txt',
-#               '../data/test/tit.txt']
+# train_files = ['../data/little_test/loc.txt',
+#                '../data/little_test/name.txt',
+#                '../data/little_test/org.txt',
+#                '../data/little_test/tel.txt',
+#                '../data/little_test/tit.txt']
+#
+# test_files = ['../data/little_test/loc.txt',
+#               '../data/little_test/name.txt',
+#               '../data/little_test/org.txt',
+#               '../data/little_test/tel.txt',
+#               '../data/little_test/tit.txt']
 
-train_files = ['../data/little_test/loc.txt',
-               '../data/little_test/name.txt',
-               '../data/little_test/org.txt',
-               '../data/little_test/tel.txt',
-               '../data/little_test/tit.txt']
 
-test_files = ['../data/little_test/loc.txt',
-              '../data/little_test/name.txt',
-              '../data/little_test/org.txt',
-              '../data/little_test/tel.txt',
-              '../data/little_test/tit.txt']
 
 words_json_file = './gen_data/words2id.json'
 chars_json_file = './gen_data/char2id.json'
