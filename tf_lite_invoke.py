@@ -187,7 +187,8 @@ if __name__ == '__main__':
     #       'Growth Team',
     #       'Castle I LinkedIn',
     #       'San Francisco, CA']
-    xs = ['Rory Webb',
+    xs = [
+        'Rory Webb',
           'Industrial Engineer',
           'Portfolio',
           'P: (415)555-6689',
@@ -211,7 +212,10 @@ if __name__ == '__main__':
           'Ryan C. Unger',
           'A: 3580 Progress Drive Ste L Bensalem, PA',
           '3580 Progress Drive Ste L Bensalem, PA',
-          'TEAM PENNSYLVANIA | WORKING. TOGETHER.'
+          'TEAM PENNSYLVANIA | WORKING. TOGETHER.',
+          'Dr. Brain Fann',
+        'Brain Fann',
+        'Phone: (931)381-6881'
           ]
     lite_model = TFLiteModel(None)
 
