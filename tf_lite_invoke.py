@@ -367,6 +367,7 @@ if __name__ == '__main__':
         'Philip Williams',
         'Bob Phillips',
         'Reed Piernock',
+        'Rakesh Kumar Sharma'
         'Dr. Rakesh Kumar Sharma',
         'Michael Klyhn Orkild',
         'Brenda A Lewis, LCSW',
