@@ -372,7 +372,10 @@ if __name__ == '__main__':
         'Michael Klyhn Orkild',
         'Brenda A Lewis, LCSW',
         'David Hughes',
-        'Ron Ben-Zeev'
+        'Ron Ben-Zeev',
+        'Pavel Strigunov',
+        'W. Mark Price',
+        'Christine D. Price',
     ]
     lite_model = TFLiteModel(None)
 
