@@ -11,6 +11,8 @@ Event Planner
 Drying Machine Operators Tender
 Buyer Representation
 Call
+LCSW
+Licensed Clinical Social Worker
 divisional manager
 Art Worker
 Septic Tank Servicers Cleaner
@@ -3234,6 +3236,8 @@ iso 18000
 Marketing Representative Manager
 Lawyer
 CEO
+CEO & Co - founder
+Chairman / CEO and Creative Director
 Shop Salesperson
 senior teller
 student
@@ -4316,6 +4320,10 @@ Bakery Clerk
 Heating and Air Conditioning Mechanics and Installers
 technical analysis
 general manager
+Vice President Product Development , Vice President Manufacturing Quality , Vice President Research and Development Planning and Business Systems and Vice President New Technology Research and Development
+Vice President of Business development & General Manager
+Vice President
+Chairman / CEO and Creative Director
 account
 Mediator
 Mobile UX Specialist, Large Customer Sales (English, Japanese)
@@ -4715,6 +4723,8 @@ compliance
 Media Research Manager (English and Turkish speaker)
 Health Educator
 Finance Manager , Photos
+Senior Web Front-end Developer, Web Services
+PRESIDENT/CEO
 developer
 Tailors , Dressmakers , and Custom Sewers
 Allergists and Immunologists
@@ -10520,3 +10530,5 @@ pair
 Help Desk
 Critical Care Registered Nurse
 Dairy
+President/CEO
+
