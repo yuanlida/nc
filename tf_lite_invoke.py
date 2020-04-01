@@ -359,7 +359,7 @@ if __name__ == '__main__':
 
         'Shannon Dique',
         'Philip Williams',
-        'Nawaf Totonchy|Operations Manager',
+        'Nawaf Totonchy',
         'Max Mathias',
         'Polina',
         'Lisa White',
