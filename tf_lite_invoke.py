@@ -401,6 +401,11 @@ if __name__ == '__main__':
         'T: 0161 798 8117M: 07753 86 35 01',
         'office: 205.879.3282 x5548',
         '877-UNFORGETTABLE',
+        '917.821.0241',
+        '+91-9014683773',
+        '610-955-4729',
+        '314.341.2008',
+        '(404) 719 3342',
 
         'Ignition Toll Free',
         'Outreachly, Inc ',
@@ -417,6 +422,8 @@ if __name__ == '__main__':
         'Fresh Convenience Catering',
         'TORGY LNG',
         'N W E Waste Services Limited',
+        'FROTTEE DI MARE',
+        'Owner & Founder at Seafoam Media',
 
         'Tour Manager/Merch Dealer',
         'Production & Photo Assistant',
@@ -466,6 +473,11 @@ if __name__ == '__main__':
         'Polina',
         'Lisa White',
         'Mark Cook',
+        'marjorie lau',
+        'Shaik Imran Basha',
+        'Joe Potts',
+        'Nikki Bisel',
+        'Tony Pope',
 
         'Bodilsgade 3. 1.Th 1732 København V Danmark',
         'a: 811 W 7th St, Los Angeles, CA 90017 ',
@@ -477,6 +489,8 @@ if __name__ == '__main__':
         '26 West 9th Street Suite 4D New York, NY 10011',
         'A: 3580 Progress Drive Ste L Bensalem, PA',
         '|s. 40 Alexander Street, Wembley WA 601',
+        'Steinwiesstrasse 52 CH-8032 Zürich',
+        '2732 Sutton Blvd. St. Louis, MO 63143',
     ]
     lite_model = TFLiteModel(None)
 
