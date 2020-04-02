@@ -566,6 +566,7 @@ if __name__ == '__main__':
         # 'Maya Maya Wysokinska',
         # 'Shannon Dique',
         'Lisa White',
+        'Reguts',
 
         # 'A: 3580 Progress Drive Ste L Bensalem, PA',
         # 'Via 4 1-00 Zona 4 Tec 2 Nivel 11 Ofic. 1101',
