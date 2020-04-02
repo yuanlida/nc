@@ -1479,6 +1479,7 @@ Cost Accounting Supervisor
 work experience
 Product Marketing Manager , Startups , SMB Marketing (English , German)
 CEO Assistant
+CEO
 executive assistant to the president
 Camp Counselor
 mediator
@@ -2959,6 +2960,7 @@ latex
 Stonemasons Setter
 President & CEO
 graduate assistant
+CEO
 owner / president
 Assistant Librarian
 Accounts Receivable Clerk
@@ -3242,6 +3244,7 @@ Chairman / CEO and Creative Director
 Shop Salesperson
 senior teller
 student
+CEO
 Module Lead
 support manager
 fund manager
@@ -4726,6 +4729,7 @@ Health Educator
 Finance Manager , Photos
 Senior Web Front-end Developer, Web Services
 PRESIDENT/CEO
+CEO & Co - founder
 developer
 Tailors , Dressmakers , and Custom Sewers
 Allergists and Immunologists
