@@ -40,7 +40,6 @@ Feedget
 Insilicon
 Myrtle Potter Media Inc .
 CBR522 Studios
-Ellissi
 The Persian Empire
 Happy City
 DirectWithHotels Inc .
@@ -69,14 +68,12 @@ Hey Nelly !
 Marketing A La Carte , Inc .
 Bizzabo
 Magento Image Zoom Extension
-Kong Zhong
 QSRWeb . com
 Enerkem
 AmQuip Crane Rental
 Loop Works
 Aflo
 Desire Mapping Technologies Pvt . Ltd
-Dahanu darshan
 RailsTeam
 BLM Investment Securities
 Tek - Tools Software
@@ -120,7 +117,6 @@ Beeztel
 Fieldwood Energy
 Copeland Funds Managment
 Shiply
-Allens Arthur Robinson
 TWB Company LLC
 Nuospace
 The Farwell state Saving Bank
@@ -247,7 +243,6 @@ FacebookLicious !
 ADVANCED CREDIT TECHNOLOGIES
 Colonial Life & Accident Insurance Company
 Twiper Autosegmentation of Twitter Users
-Chris O ' Connell
 Sugababes . nl
 Complex Magazine
 PharmaGen
@@ -279,7 +274,6 @@ SuperDoll
 Concept Art House
 Centennial Savings and Loan
 Sutherland Global Services
-Harry D ' Andrea
 Public Safety Online
 College Credential
 Chapman Instruments
@@ -415,7 +409,6 @@ www . celebequity . com
 Velocity Partners
 Massively Mobile
 Cambridge Discovery Chemistry Ltd .
-Scott DeSapio
 ASIS
 Real Estate Leads
 vcfo
@@ -443,10 +436,8 @@ Morgan Stanley International
 West Steag Partners
 SmartSignin
 fotocasa
-Dr . Ajmal Bangash , M . D . , M . B . A .
 Venture Partners
 Vinci Autoroutes
-Alexandre Pelletier - Normand
 DigitasLBi
 GoodMouth
 Maximiles
@@ -545,7 +536,6 @@ PolyWorks | Modeler
 Clear Dermatology
 Safer Minicabs
 Eliant
-clipping path specialist
 Photon Infotech
 Bitcorati
 Partigi
@@ -583,7 +573,6 @@ Command Technology Corporation
 Nordika Kindlustuse AS
 Urbantech
 Tim Wyatt - Gunning
-Business consulting
 DreamDesigners
 Coupons Hacker
 ABC Signup
@@ -694,7 +683,6 @@ Computer Hope
 K12Portal
 Biotech Stock Research
 Ultiapp
-Hilton Nairobi
 Shapelink
 Third Rock Ventures
 Webster Management Group , Inc .
@@ -722,7 +710,6 @@ Arvys Proteins Inc .
 Ignis
 You Learn Forex
 Luxury Link Travel Group
-Erin Robbins O ' Brien
 Redwood Properties
 Hacker Jobs UK
 Beanstalk Data
@@ -799,7 +786,6 @@ Convergent Networks Inc .
 Vringo
 Planned Systems International
 Arcadia Financial Management
-George O ' Leary
 EventVue
 Omio
 Orangery
@@ -1022,7 +1008,6 @@ MyRoad . com
 Google Analytics Mobile
 Cannapages . com
 Garage Door Repair Riverdale
-Brand Strategy and Brand Architecture
 Oddities . Us
 qoiob
 Startup Tank
@@ -1081,7 +1066,6 @@ Student Money Saver
 Malam Team
 Datometer
 KVN America
-Online Personal Assistant
 NaviVision
 Rouse Media
 Wataniya Telecom Algerie
@@ -1326,7 +1310,6 @@ KREATIO Software Pvt Ltd
 Opsonic Therapeutics
 Klipper
 Galgal Sytems
-Andreas G . MÃ¼ller
 FuturLink AP300
 Honey Girl Organics
 The Governor ' s House Inn
@@ -1591,7 +1574,6 @@ Free - Web - Hosting Starter Plan
 NaijaPulse
 Increo Solutions
 TroopZilla
-Cory O ' Daniel
 TSR
 Jaypore
 Digital Eskimo
@@ -1625,7 +1607,6 @@ JumpOffCampus
 Executive Recruiting Solutions
 MOBi - LEARN
 Chester Investments
-Michael Cam - Phung
 Utah Angels
 Pioneer Investments
 Adam Gottbetter INT
@@ -1683,7 +1664,6 @@ Aspose . Flash for Reporting Service
 Razorback Capital
 ConnectAde
 Data Loss Prevention Products
-Dr . Christina Lampe - Onnerud
 Wiener Games
 Microsoft FUSE Labs
 HodgePodge Solutions
@@ -1904,7 +1884,6 @@ Dropcard
 AirportAware
 Sevana Trades
 Carsonified
-Jose Carlos Torres O ' Reilly
 Check
 Mindful Medical
 EPIC
@@ -2214,7 +2193,6 @@ Geotourism Development Foundation
 Gema
 Sabit NYC
 TIME Equity Partners
-Brett L ' Esperance
 Technology Evaluation Centers
 Frinshable
 Morgan Joseph & Co
@@ -2413,7 +2391,7 @@ Ubiqoos
 Nimble Devices
 Paradoxes
 ActyWatch
-Shane Longman
+Shane Longman Pvt . Ltd .
 Organic To Go
 Regenesis Biomedical
 Sun Microsystems
@@ -2467,7 +2445,6 @@ Dragon View
 Esquare Info Solutions
 Expressdocs
 EzValidation
-Stephen O ' Shaughnessy
 KCG
 The Oklahoma Publishing Company
 Blue Halo Creative
@@ -2482,7 +2459,6 @@ Nakido
 Ben Venue Laboratories
 Envy Capital
 The Creative Bazaar
-Kevin O ' Bryant
 Songvest
 L DUB
 Disc Makers
@@ -2579,7 +2555,6 @@ Tami Gilboa - Arbel
 MerlinReader
 SOA Software
 TMT Investments
-Ron Marek
 introin . com
 Centocor
 Enverv
@@ -2611,7 +2586,6 @@ Barron ' s
 Talkmonitor
 Clutterme
 Harmony Capital
-Liam O ' Leary
 Silterra Malaysia
 Optimal Trader
 Enterprise Informatics
@@ -2728,7 +2702,6 @@ iList
 RelevantRankings . com
 Nettinumero . com
 Adotomi
-Dr . Gertrud Thormann - Huber
 ExtraDev
 MyQuest
 SoundStrokes Art
@@ -3002,7 +2975,6 @@ The Marionette Collective
 Wallmob
 FilmyPakode
 Farmson Analgesics
-Charlie O ' Neil
 fe - el web agency
 Webmonsters
 Luxus Mobile Car Detailing
@@ -3083,7 +3055,6 @@ BrandLegion
 Tosh Bruce - Morgan
 GetBack
 txtFeeder
-Janet Gershen - Siegel
 Amicus Capital
 Fortune Bid Holdings
 Partnership Investment Finance
@@ -3173,7 +3144,6 @@ TalkShoe
 Omaze
 Orbit Multimedia
 BigBlueHat
-Aaron O ' Mullan
 http : / / bollywoodlife . com
 SolarNexus
 Fire Pro Services
@@ -3255,7 +3225,6 @@ MaPaCoPa
 Sypherlink
 RainingClouds Technologies
 Just Eastern
-GEORGE S PRINISKI , JR
 Lightstream
 SINGAPORE GP PTE
 National Australia Bank Limited ( NAB )
@@ -3500,7 +3469,6 @@ RED - C Optical Networks
 Nearbox
 DiscoverOrg
 NetEdges
-Brian O ' Callaghan
 GWOP University
 Friendgiftr
 . ME Private Portal
@@ -3551,7 +3519,6 @@ Fantrotter
 NextLight Renewable Power
 StrikeIron
 Kareer . me
-Steve Mansfield - Devine
 Gizmodo Australia
 The Timken Company
 Public Media Works
@@ -3591,7 +3558,6 @@ clickstreem GmbH
 Stock Trade
 Storebrand
 GolfToImpress
-Chris O ' Brien
 Cogo Digital
 Dirty Face Angels
 Axon e - health
@@ -3842,7 +3808,6 @@ Reload Media
 SimpleReach
 Interactif Delta
 Mobile Commerce ( M - Com )
-Donal O ' Sullivan
 Intarcia Therapeutics
 Firecoresoft Studio
 iThink Group / StoryCub
@@ -4078,7 +4043,6 @@ E - harbor
 ConceptDraw Project 6
 HealthXL
 New Europe Corporate Advisory
-Oda O ' Carrol
 Web3000
 Vinegar Hill Apps
 Go Chevrolet
@@ -4267,7 +4231,6 @@ Solution Corporate Finance
 Social sta
 www . cuesongs . com /
 KIS Group
-VP Operations
 Plyfe
 TiGenix
 Golden Glenn
@@ -4365,7 +4328,6 @@ Donald Roland MD
 Third Day Web Design & Development
 Quaero Media
 SmeadSoft
-venture portfolio projector
 Berlin Capital Fund
 Cisco SPA525G2
 Green Mansions Catering
@@ -4375,7 +4337,6 @@ Termite Specialist
 Hiring Bounty
 TrainedOn
 en - uygun
-Aktieselskabet Christiansholms Fabrikker
 Lowe London
 Placecast
 Smart Planning
@@ -4543,7 +4504,6 @@ shoofster
 Investment AB Ãresund
 Delta Development Group
 Enthusiast
-Dr Mohan Thomas
 Creative Logic Media
 Hany
 100 Day Loans UK
@@ -4590,7 +4550,6 @@ Danaher Motion AB
 Talkster
 Dropouts
 StoneWood Group Inc .
-William Prensky , OMD
 AU Optronics
 Woodland Biofuels
 Trinitech Systems Inc
@@ -5121,7 +5080,6 @@ Alley Interactive
 Napuru . com
 Filmhuddle
 Anuraj S . L
-Jennifer O ' Keefe
 Eventstagr . am
 Video Syndication
 Premier Title Services
@@ -5569,7 +5527,6 @@ Autonomy Corporation
 Naqvi Injury Law
 International Security and Cooperation of Stanford University
 mixd . tv
-Al D ' Andrea
 themestre
 Accept Corporation
 Parcsis
@@ -5821,7 +5778,6 @@ Novelty
 Sidneyrees . com
 RES Software
 First Solid Consulting
-Annuaire Soleli
 Virgin Mango
 Lambda OpticalSystems
 Little Fish Travel
@@ -6020,7 +5976,6 @@ DJFURSTAR
 ATDC / Georgia Tech .
 Re . Active
 Toktumi
-Jack Daneils , PhD
 Remedy Corp .
 Shoutitout
 Ken Massa Plumbing & Heating
@@ -6117,7 +6072,6 @@ Aventura Plastic Surgery
 Indigo Media Consulting
 Zacon
 Video Distribution
-Mike O ' Connor
 Omnivore Partners
 KN Media
 TITAN
@@ -6359,7 +6313,6 @@ Vekami
 Bizzuka
 Lallier Construction Inc
 Development Center
-Dr . Fred Masarie , Jr
 RockLive
 Daily Grommet
 notebook
@@ -6424,7 +6377,6 @@ Piedmont Hospital
 NeoVSP
 BIO - NEMS
 Ntrepid Corporation
-Dionisio D ' Aguilar
 Chris Loomis Consultations A Private Investigations Firm
 Equity Dynamics , Inc .
 Fusion Studios
@@ -6556,7 +6508,6 @@ Passfaces
 Globe Motors
 Xtalic
 Siren Shoes
-Valerie Francis
 ULTIMATE COMMUNICATION SOFTWARE
 ShoppaTube
 Grafoid
@@ -6854,7 +6805,6 @@ Fabrus
 NDOT Sandwich
 Avecora OnDemand
 OneSpark
-Francisco D ' Souza
 Creative & Design
 New York Law School
 Satmex
@@ -7036,7 +6986,6 @@ Artapot
 Artifex Animation Studios
 Access Hosting
 Global Crossing
-Dr . TATTOFF
 Webrecorder
 IT Service Performance
 Goldstein , Frazer & Murphy LLP
@@ -7223,7 +7172,6 @@ White Lotus Corporation
 Ian Freed Consulting
 HootSuite for Android
 Software testing Services
-Professional
 XTENDSYS
 ScoopSt
 Konnect4
@@ -7338,7 +7286,6 @@ Pawngo
 Wobeek
 TRANSITiQ
 Smart Telecom
-Jeremy O ' Reilly
 Leadership Roles
 ENERGIEhaus24 . de / BLG Gesellschaft für Baumarketing mbH
 Monthly Drupal Backup / Upgrade
@@ -7731,7 +7678,6 @@ SincroPool
 Spicus
 ON Semiconductor
 Matthew Lyon - House
-Romain Amardeil
 Sales Tactics Inc .
 VHO
 Cristal Studios
@@ -7852,7 +7798,6 @@ Apps4Good . com
 IZMAYLOVA
 Realty Compass
 Wheaton College
-Alex Ouwens
 Hot Mix Mobile
 Piercy solicitors
 alottery . com
@@ -7860,7 +7805,6 @@ BursadeTransport . ro
 Bruce McKinnon , MBA
 RSA Driving School Meath
 Cyberempleo
-Harris Lanier
 PEAK Software
 Brainistic Technologies Ltd .
 Nimbus Music Player
@@ -7995,7 +7939,6 @@ Social Marketing Integration
 Jorge España & Assoc . , SRL
 ProtAffin Biotechnologie
 Wilton Board of finance
-Rebecca O ' Dell
 American Society of Civil Engineers
 iManage
 Suddenlee
@@ -8125,7 +8068,6 @@ cvMail . com . au
 Speckly
 United Health Technologies
 TransGaming
-William O ' Reilly
 Sparcq
 ClickSquared
 Netpulse
@@ -8219,7 +8161,6 @@ The Graduate Network
 TrackingTime
 CustomFlix
 MTV Interactive
-Mohammed Habeebuddin
 Michael O ' Neal
 Jarkko Joki - Tokola
 Teacherboards
@@ -9048,7 +8989,6 @@ Prystino Technologies
 Fodors . com
 LocalGuiding
 TheLoanPage
-EDDIE O ' CONNELL
 Crafts Gallery
 Addax
 Arthur Frommer ' s Budget Travel
@@ -9176,7 +9116,6 @@ Gems Creation
 UFXMarkets
 H & A Software
 Ziggi USB Document Camera
-Dragica Herman - Konevski
 hippo inc
 PayMarketPrice
 Bye Bye Doc
@@ -9451,7 +9390,6 @@ Aaron Singmaster - Judd
 Spark Devices
 SHS Gesellschaft für Beteiligungsmanagement mbH
 Litton PRC
-Kasanen Koulutusyhtiöt
 JC Unitec
 E2open
 51 Give
