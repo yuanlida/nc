@@ -580,7 +580,6 @@ if __name__ == '__main__':
         # # 'A: 3580 Progress Drive Ste L Bensalem, PA',
         # # 's. 40 Alexander Street, Wembley WA 6014',
 
-<<<<<<< HEAD
         # '+912025908121',
         # 'NL +316 41 88 7331 OFFICE NL  +31 20 716 5800 OFFICE USA +1 646 760 2630',
         # 'Cell: 818-268-8300',
@@ -677,7 +676,6 @@ if __name__ == '__main__':
         # '61, New York Tower \' A \'',
         # 'A: 3580 Progress Drive Ste L Bensalem, PA',
         # 's. 40 Alexander Street, Wembley WA 6014',
-=======
         'Dee Why N.S.W. 2099 Sydney, Australia.',
 
         'Lonny Cloud',
@@ -692,7 +690,6 @@ if __name__ == '__main__':
         'colorkarma',
         'VictoryPlus',
         'Allison James Estates and Homes',
->>>>>>> ab9ee2a7ddb69316f0b9a485d9a42022ba1c85a8
     ]
     lite_model = TFLiteModel(None)
 
