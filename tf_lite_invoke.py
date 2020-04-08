@@ -5,11 +5,15 @@ import build_data
 import numpy as np
 
 # copy this files to ./model/ folder.
-tf_lite_file = './model/Bi-LSTM/bi-lstm.tflite'
-char2index_file = './model/Bi-LSTM/charJson/charToIndex.json'
-word2id_file = './model/Bi-LSTM/wordJson/word2idx.json'
-label2id_file = './model/Bi-LSTM/wordJson/label2idx.json'
+# tf_lite_file = './model/Bi-LSTM/bi-lstm.tflite'
+# char2index_file = './model/Bi-LSTM/charJson/charToIndex.json'
+# word2id_file = './model/Bi-LSTM/wordJson/word2idx.json'
+# label2id_file = './model/Bi-LSTM/wordJson/label2idx.json'
 
+tf_lite_file = './bilstm_onefile23/bi-lstm.tflite'
+char2index_file = './bilstm_onefile23/charJson/charToIndex.json'
+word2id_file = './bilstm_onefile23/wordJson/word2idx.json'
+label2id_file = './bilstm_onefile23/wordJson/label2idx.json'
 
 def test_lite_is_useful():
     interpreter = tf.lite.Interpreter(model_path=tf_lite_file)
