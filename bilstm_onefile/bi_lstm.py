@@ -73,10 +73,10 @@ class ModelConfig(object):
     embeddingSize = 50
 
     # embeddings
-    dim_word = 50
+    dim_word = 25
     dim_char = 50
     # model hyperparameters
-    hidden_size_lstm = 100  # lstm on word embeddings
+    hidden_size_lstm = 50  # lstm on word embeddings
     hidden_size_char = 50  # lstm on chars
 
 
@@ -1027,7 +1027,7 @@ with tf.Graph().as_default():
 
                 if currentStep % config.training.checkpointEvery == 0:
                     # 保存模型的另一种方法，保存checkpoint文件
-                    path = saver.save(sess, "../model/Bi-LSTM/model/my-model", global_step=currentStep)
+                    path = saver.save(sess, "../model/Bi-LSTM/my-model", global_step=currentStep)
                     print("Saved model checkpoint to {}\n".format(path))
 
         # inputs = {"inputX": tf.saved_model.utils.build_tensor_info(lstm.inputX),
@@ -1048,7 +1048,7 @@ with tf.Graph().as_default():
         # test all evlal data
 
         tf.compat.v1.saved_model.simple_save(sess,
-                                   "../model/Bi-LSTM/savedModel",
+                                   "./model/Bi-LSTM/savedModel",
                                    inputs={"inputX": lstm.inputX,
                                            "keepProb": lstm.dropoutKeepProb,
                                            "char_ids": lstm.char_ids
@@ -1061,10 +1061,10 @@ with tf.Graph().as_default():
 x = 'my USA phone number is +1-202-555-0169'
 
 # 注：下面两个词典要保证和当前加载的模型对应的词典是一致的
-with open("../data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
+with open("./data/wordJson/word2idx.json", "r", encoding="utf-8") as f:
     word2idx = json.load(f)
 
-with open("../data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
+with open("./data/wordJson/label2idx.json", "r", encoding="utf-8") as f:
     label2idx = json.load(f)
 idx2label = {value: key for key, value in label2idx.items()}
 
@@ -1081,10 +1081,10 @@ else:
     xIds = xIds + [word2idx[build_data.PAD]] * (config.sequenceLength - len(xIds))
 
 # character list
-with open("../data/charJson/charToIndex.json") as f:
+with open("./data/charJson/charToIndex.json") as f:
     char2index = json.load(f)
 
-with open("../data/charJson/indexToChar.json") as f:
+with open("./data/charJson/indexToChar.json") as f:
     index2char = json.load(f)
 
 # setence 分解成char_ids
@@ -1124,7 +1124,7 @@ with graph.as_default():
     sess = tf.Session(config=session_conf)
 
     with sess.as_default():
-        checkpoint_file = tf.train.latest_checkpoint("../model/Bi-LSTM/model")
+        checkpoint_file = tf.train.latest_checkpoint("./model/Bi-LSTM/model")
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 

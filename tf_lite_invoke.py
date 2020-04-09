@@ -690,7 +690,50 @@ if __name__ == '__main__':
         'colorkarma',
         'VictoryPlus',
         'Allison James Estates and Homes',
+
     ]
+    body = """Reed Piernock (they/them)
+Senior Web Front-end Developer, Web Services
+Graduate Student in Communication, Culture & Technology
+Email // reed.piernock
+Phone // 202-687-1183
+Text // 202-630-4865
+David Hughes
+Hughes Publishing, LLC
+Triangle Parent Media Group
+919.594.6600
+Thanks,
+Arun Singh
+SharePoint Development & Support | AON -&nbsp;NA Retail
+TATA Consultancy Services
+Delhi-Gurgaon Expressway | SKYVIEW Corporate Park | Sector 74A | Gurgaon | Haryana 122004 | India
+Cell:+91 9560027616 | Email: arun.singh1@aon.com
+Thanks,
+Hanan Ben-Avi
+972-52-621-3339
+ben@billsys.com
+--
+Keao Caindec
+415-307-7324
+kcaindec@gmail.com
+Reguts
+Amarnath
+984131256
+All the Best,
+Don Taylor
+Call/text 303-548-9475
+Tdmgc4@msn.com
+"""
+#     body = """Reed Piernock
+# David Hughes
+#
+#
+# Arun Singh
+# Hanan Ben-Avi
+# Keao Caindec
+# Amarnath
+# Don Taylor"""
+    xs = body.split('\n')
     lite_model = TFLiteModel(None)
 
     for sentence in xs:

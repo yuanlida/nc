@@ -19,17 +19,17 @@ NONE = "O"
 #               './data/test/tit.txt']
 
 
-# train_files = ['./data/test/loc.txt',
-#                './data/test/name.txt',
-#                './data/test/org.txt',
-#                './data/test/tel.txt',
-#                './data/test/tit.txt']
-#
-# test_files = ['./data/test/loc.txt',
-#               './data/test/name.txt',
-#               './data/test/org.txt',
-#               './data/test/tel.txt',
-#               './data/test/tit.txt']
+train_files = ['./data/train/loc.txt',
+               './data/train/name.txt',
+               './data/train/org.txt',
+               './data/train/tel.txt',
+               './data/train/tit.txt']
+
+test_files = ['./data/test/loc.txt',
+              './data/test/name.txt',
+              './data/test/org.txt',
+              './data/test/tel.txt',
+              './data/test/tit.txt']
 
 train_files = ['../data/test/loc.txt',
                '../data/test/name.txt',
