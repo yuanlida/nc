@@ -692,6 +692,49 @@ if __name__ == '__main__':
         # 'colorkarma',
         # 'VictoryPlus',
         # 'Allison James Estates and Homes',
+
+        #### bodis data
+        'Zach Adamson',
+'Reservations Assistant',
+'Reservation Systems from CustomLinc',
+
+        'SCHWENT LAW FIRM web logo',
+'MICHELE KAIDO SCHWENT',
+'ATTORNEY AT LAW',
+'1401 N. Truman Blvd., Suite 1',
+'Festus, MO  63028',
+'Phone (636) 937-4994 / Fax (636) 937-2597',
+
+'Ron Ben-Zeev',
+'PRESIDENT/CEO',
+'OFFICE: 407.545.3030 ext. 221',
+'CELL: 407.221.7000',
+'EMAIL: RonB@WorldHousingSolution.com',
+
+'Leonor Morrow',
+'research | photography | poetry',
+'Jordan M Yee, AIA',
+'Chastain & Company, LLC',
+'LEED AP BD+C | O+M',
+'Architect',
+'(850) 380-8020',
+'Pavel Strigunov',
+'Director of Sales',
+'Direct: 917.831.2055',
+'Email: sales@wirefyshop.com',
+
+'Vy (VyVy) H. Vu',
+'GMU MHA Graduate Student',
+'vvu20@masonlive.gmu.edu',
+'Rauland Florida',
+
+'Yvonne Lombardo',
+
+'Healthcare Business Consultant',
+
+'License # EG13000340',
+
+'P: +1.239-693-5885 |yvonne.lombardo@ametek.com',
     ]
     lite_model = TFLiteModel(None)
 
