@@ -68,4 +68,19 @@ scp -i ~/.ssh/mykey -r ubuntu@34.212.42.106:~/nc/model/Bi-LSTM/wordJson ~/deskto
 ```
 sh clean.sh
 ```
-6. Copy the contents of **bi-lilstm.tflite**, **charJson**, **wordJson** and replace them in 
+6. Copy the contents of **bi-lilstm.tflite**, **charJson**, **wordJson** and paste them in [model/Bi-LSTM](https://github.com/yuanlida/nc/tree/master/model/Bi-LSTM)
+
+7. Afterwhich, perform **Quick Run** as mentioned above
+
+## Project Overview
+### Architecture
+After much comparison, we have settled with a Bi-lstm CRF neuralnetwork with word and character embeddings
+
+### Components
+- Train model and adjust hyperparameters: **bi_lstm.py**
+- Convert model into tensorflow lite for mobile: **tf_converter.py**
+- Evaluate model performance: **tf_lite_invoke.py**
+
+## Model Comparisons
+### Best Performance:
+Bilstm-onefile78
