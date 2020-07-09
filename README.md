@@ -3,6 +3,16 @@
 ## Description  
 This is a project under Edison Premium which contains the NER model used for classifying entities extraction from mail signature blocks
 
+## Project Overview
+### Architecture
+After much comparison, we have settled with a Bi-lstm CRF neuralnetwork with word and character embeddings
+
+### Components
+- Train model and adjust hyperparameters: **bi_lstm.py**
+- Convert model into tensorflow lite for mobile: **tf_converter.py**
+- Evaluate model using test-set data: **batch_test.py**
+- Quick-run to see model output: **tf_lite_invoke.py**
+
 ## Quick Run
 Navigate to tf_lite_invoke.py
 
@@ -72,14 +82,6 @@ sh clean.sh
 
 7. Afterwhich, perform **Quick Run** as mentioned above
 
-## Project Overview
-### Architecture
-After much comparison, we have settled with a Bi-lstm CRF neuralnetwork with word and character embeddings
-
-### Components
-- Train model and adjust hyperparameters: **bi_lstm.py**
-- Convert model into tensorflow lite for mobile: **tf_converter.py**
-- Evaluate model performance: **tf_lite_invoke.py**
 
 ## Model Comparisons
 ### Best Performance:
