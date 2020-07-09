@@ -4,6 +4,7 @@ text_cnn/per_model/
 convert
 .DS_Store
 model/Bi-LSTM/*
+!model/Bi-LSTM/.gitkeep
 **/summarys/
 enmbeding_chars.*
 embeding_words.*
