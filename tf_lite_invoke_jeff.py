@@ -59,7 +59,7 @@ class TFLiteModel(object):
     sentence_words = []
     sentence_chars = []
 
-    sequenceLength = 32
+    sequenceLength = 20
     word_length = 10
 
     def __init__(self, sentence):
@@ -378,34 +378,34 @@ if __name__ == '__main__':
         'Christine D. Price',
 
         ##############
-        '941-735-0040',
-        'Mobile: 610-564-1243',
-        'Text // 202-630-4865',
-        '01527 558282',
-        '0470399574',
-        't.  613.606.3608',
-        'OFFICE: 407.545.3030 ext. 221 CELL: 407.221.7000',
-        'm: 626 755 4988',
-        'T 62262000 | F 62200066 ',
-        '919811411632',
-        'Phone: 212-691-7883',
-        '919.594.6600',
-        'Office: 501.553.9321 Mobile: 501.909.9243',
-        'O: (215) 788-8485M: (267) 816-7268',
-        '505-454-9810',
-        't. 613.606.3608',
-        'Phone - 0141 554 5555',
-        'M: 0435148612',
-        '|t. +618 9387 3156',
-        'mobile: 07478 441488',
-        'T: 0161 798 8117M: 07753 86 35 01',
-        'office: 205.879.3282 x5548',
-        '877-UNFORGETTABLE',
-        '917.821.0241',
-        '+91-9014683773',
-        '610-955-4729',
-        '314.341.2008',
-        '(404) 719 3342',
+        # '941-735-0040',
+        # 'Mobile: 610-564-1243',
+        # 'Text // 202-630-4865',
+        # '01527 558282',
+        # '0470399574',
+        # 't.  613.606.3608',
+        # 'OFFICE: 407.545.3030 ext. 221 CELL: 407.221.7000',
+        # 'm: 626 755 4988',
+        # 'T 62262000 | F 62200066 ',
+        # '919811411632',
+        # 'Phone: 212-691-7883',
+        # '919.594.6600',
+        # 'Office: 501.553.9321 Mobile: 501.909.9243',
+        # 'O: (215) 788-8485M: (267) 816-7268',
+        # '505-454-9810',
+        # 't. 613.606.3608',
+        # 'Phone - 0141 554 5555',
+        # 'M: 0435148612',
+        # '|t. +618 9387 3156',
+        # 'mobile: 07478 441488',
+        # 'T: 0161 798 8117M: 07753 86 35 01',
+        # 'office: 205.879.3282 x5548',
+        # '877-UNFORGETTABLE',
+        # '917.821.0241',
+        # '+91-9014683773',
+        # '610-955-4729',
+        # '314.341.2008',
+        # '(404) 719 3342',
         # #
         'Ignition Toll Free',
         'Outreachly, Inc ',
@@ -428,15 +428,24 @@ if __name__ == '__main__':
         'Tour Manager/Merch Dealer',
         'Production & Photo Assistant',
         'Union Transfer | Box Office Manager',
-        # 'VP, Marketing ',
+        'VP, Marketing ',
         'Senior Web Front-end Developer, Web Services',
-        # 'Technical Manager',
+        'Technical Manager',
         'PRESIDENT/CEO',
-        # 'IT System Manager',
+        'IT System Manager',
         'Managing Director, Estates Division',
         'Division Director, Aquila',
         'VC, SIMATS, Chennai and Former Director, DFRL',
         'LCSW',
+        'Owner & Founder at Seafoam Media',
+        'Assistant Professor (सहायक प्राध्यापक)',
+        'Assistant Professor',
+        'digital producer',
+        'CEO ',
+        'VC, SIMATS, Chennai  and Former Director, DFRL ',
+        'President & CEO',
+        'Responsable Ventes Partenaires',
+        'CEO',
         'Office: 501.553.9321',
         'M: 0435148612',
         '+ 34 619730167',
@@ -529,21 +538,11 @@ if __name__ == '__main__':
         'Allison James Estates and Homes',
         'Ubiquo Labs',
         'FROTTEE DI MARE',
-        'Owner & Founder at Seafoam Media',
         'Ignition Toll Free',
         'VictoryPlus',
         'GLOBE ECOLOGISTICS PVT. LTD.',
         'Clyne Media, Inc.',
         'TORGY LNG',
-
-        'Assistant Professor (सहायक प्राध्यापक)',
-        'Assistant Professor',
-        'digital producer',
-        'CEO ',
-        'VC, SIMATS, Chennai  and Former Director, DFRL ',
-        'President & CEO',
-        'Responsable Ventes Partenaires',
-        'CEO',
 
         # '-Jeet Jeetender Chugh (जितेन्द्र चुघ)',
         'TIJN VAN STADE',
@@ -581,31 +580,31 @@ if __name__ == '__main__':
         # 's. 40 Alexander Street, Wembley WA 6014',
 
 # <<<<<<< HEAD
-        '+912025908121',
-        'NL +316 41 88 7331 OFFICE NL  +31 20 716 5800 OFFICE USA +1 646 760 2630',
-        'Cell: 818-268-8300',
-        '+91-9014683773',
-        '610-955-4729',
-        'Tel: 4087 0408',
-        '941-735-0040',
-        'Mobile: 610-564-1243',
-        'Phone // 202-687-1183',
-        'Text // 202-630-4865',
-        '(614) 206-5555',
-        't.  613.606.3608',
-        'OFFICE: 407.545.3030 ext. 221',
-        'CELL: 407.221.7000',
-        # 'm: 626 755 4988',
-        'T 62262000 | F 62200066',
-        '212-691-7883',
-        'Office: 501.553.9321',
-        'Mobile: 501.909.9243',
-        '0845 519 4439 07742 462 072',
-        'Mobile: +380-963873850',
-        't. 613.606.3608',
-        'M: 0435148612',
-        'T: 0161 798 8117',
-        'M: 07753 86 35 01',
+#         '+912025908121',
+#         'NL +316 41 88 7331 OFFICE NL  +31 20 716 5800 OFFICE USA +1 646 760 2630',
+#         'Cell: 818-268-8300',
+#         '+91-9014683773',
+#         '610-955-4729',
+#         'Tel: 4087 0408',
+#         '941-735-0040',
+#         'Mobile: 610-564-1243',
+#         'Phone // 202-687-1183',
+#         'Text // 202-630-4865',
+#         '(614) 206-5555',
+#         't.  613.606.3608',
+#         'OFFICE: 407.545.3030 ext. 221',
+#         'CELL: 407.221.7000',
+#         # 'm: 626 755 4988',
+#         'T 62262000 | F 62200066',
+#         '212-691-7883',
+#         'Office: 501.553.9321',
+#         'Mobile: 501.909.9243',
+#         '0845 519 4439 07742 462 072',
+#         'Mobile: +380-963873850',
+#         't. 613.606.3608',
+#         'M: 0435148612',
+#         'T: 0161 798 8117',
+#         'M: 07753 86 35 01',
 
         # 'Dept. of Chemistry and Biology (रसायन&nbsp;एवं जीवविज्ञान विभाग) Indian Institute of Science Education and Research, Pune (भारतीय विज्ञान&nbsp;शिक्षा एवं अनुसंधान संस्थान, पुणे)',
         # 'This is NOMOBO! Watch NOW',
@@ -738,6 +737,22 @@ if __name__ == '__main__':
     ]
     lite_model = TFLiteModel(None)
 
+body = """(BRIAN) HEXTER
+Ron Ben-Zeev
+marjorie lau
+Jeetender Chugh
+Jeetender Chugh (जितेन्द्र चुघ)
+Donato 
+Christian
+Lonny Cloud
+Peter Barquet
+dawn shrum
+Nilesh Sapar
+Scott Konradt
+Francisco Garcia
+Hanan Ben-Avi
+"""
+# xs = body.split('\n')
 with open ('/Users/macos/Desktop/Edison-ai/ner-tflite/invoke.txt', 'w') as w:
     n = 0
     for sentence in xs:

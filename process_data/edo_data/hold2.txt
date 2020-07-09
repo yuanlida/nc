@@ -1,0 +1,1499 @@
+Chairperson B-TIT
+: O
+Outlook B-ORG
+Migration B-ORG
+Team B-ORG
+
+Detailed O
+Description O
+: O
+
+Deal O
+Terms O
+
+Thanks O
+in O
+advance O
+, O
+
+Audrey B-PER
+D I-PER
+. I-PER
+Robertson I-PER
+
+Transwestern B-ORG
+Pipeline I-ORG
+Company I-ORG
+
+email B-EML
+address I-EML
+: I-EML
+audrey I-EML
+. I-EML
+robertson I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+5849 I-TEL
+
+( B-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+2551 I-TEL
+Fax I-TEL
+
+Thanks O
+, O
+Gary B-PER
+
+Reyna B-PER
+Cabrera I-PER
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+3072 I-TEL
+
+Thanks O
+! O
+
+Mike B-PER
+McGowan I-PER
+
+Thanks O
+. O
+Lynn B-PER
+
+Rick B-PER
+
+John B-PER
+Buchanan I-PER
+
+Fran B-PER
+Fagan I-PER
+
+Sr B-TIT
+. I-TIT
+HR I-TIT
+Rep I-TIT
+
+Enron B-ORG
+Transportation I-ORG
+Services I-ORG
+
+713 B-TEL
+. I-TEL
+853 I-TEL
+. I-TEL
+5219 I-TEL
+
+fran B-EML
+. I-EML
+fagan I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Thanks O
+, O
+
+Brad B-PER
+
+Miranda B-PER
+
+x3 O
+- O
+6252 O
+
+Ok O
+
+Yes O
+need O
+to O
+get O
+it O
+in O
+asap O
+
+Larry B-PER
+
+Gary B-PER
+
+thanks O
+, O
+
+Joe B-PER
+Linhart I-PER
+
+Chris B-PER
+Greaney I-PER
+
+Thank O
+you O
+again O
+! O
+
+Chris B-PER
+Sebesta I-PER
+
+Northern B-ORG
+Natural I-ORG
+Gas I-ORG
+
+Office B-TEL
+: I-TEL
+402 I-TEL
+- I-TEL
+398 I-TEL
+- I-TEL
+7064 I-TEL
+
+Fax B-TEL
+: I-TEL
+402 I-TEL
+- I-TEL
+398 I-TEL
+- I-TEL
+7413 I-TEL
+
+chris B-EML
+. I-EML
+sebesta I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Randy B-PER
+Bryan I-PER
+
+Market B-TIT
+Services I-TIT
+Representative I-TIT
+
+Northern B-ORG
+Natural I-ORG
+Gas I-ORG
+Company I-ORG
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+0438 I-TEL
+
+Thanks O
+again O
+! O
+
+Ken B-PER
+Powers I-PER
+
+( B-TEL
+402 I-TEL
+) I-TEL
+398 I-TEL
+- I-TEL
+7065 I-TEL
+
+MS B-PER
+
+Ava B-PER
+- O
+35842 B-TEL
+
+Thanks O
+
+Ava B-PER
+
+Maggie B-PER
+
+Toby B-PER
+Kuehl I-PER
+
+ETS B-ORG
+Electronic I-ORG
+Communications I-ORG
+
+Office B-TEL
+: I-TEL
+EB I-TEL
+3946 I-TEL
+
+Phone B-TEL
+: I-TEL
+( I-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+1527 I-TEL
+
+Email O
+: O
+< O
+mailto O
+: O
+toby B-EML
+. I-EML
+kuehl I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+> O
+toby B-EML
+. I-EML
+kuehl I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+< O
+mailto O
+: O
+toby B-EML
+. I-EML
+kuehl I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+> O
+
+Thanks O
+: O
+John B-PER
+Buchanan I-PER
+
+Deborah B-PER
+
+HotTap B-ORG
+Helpdesk I-ORG
+
+3 B-TEL
+- I-TEL
+6063 I-TEL
+
+FYI O
+
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+- O
+- O
+- O
+- O
+- O
+Original O
+Message O
+- O
+- O
+- O
+- O
+- O
+
+FYI O
+Thanks O
+. O
+Lynn B-PER
+
+Mike B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Thanks O
+. O
+Lynn B-PER
+
+Thanks O
+. O
+Lynn B-PER
+Blair I-PER
+
+Ricki B-PER
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Large O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+test O
+
+Lynn B-PER
+
+Ava B-PER
+, O
+please O
+put O
+me O
+on O
+the O
+list O
+. O
+
+Lynn B-PER
+
+This O
+is O
+fun O
+! O
+! O
+! O
+! O
+
+Thanks O
+Lynn B-PER
+
+I O
+agree O
+. O
+Thanks O
+, O
+Lynn B-PER
+
+Fyi O
+. O
+Lynn B-PER
+
+Fyi O
+. O
+Lynn B-PER
+
+Thanks O
+, O
+Lynn B-PER
+
+Fyi O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Lynn B-PER
+
+Janet B-PER
+
+FYI O
+. O
+Steve B-PER
+
+Thank O
+you O
+, O
+
+South B-LOC
+Central I-LOC
+= I-LOC
+20 I-LOC
+
+Randy B-PER
+
+Jamie B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Nancy B-PER
+
+Tracy B-PER
+Scott I-PER
+
+ETS B-TIT
+HR I-TIT
+
+Anna B-PER
+C I-PER
+. I-PER
+Salazar I-PER
+
+Enron B-ORG
+Corp I-ORG
+
+P B-LOC
+. I-LOC
+O I-LOC
+. I-LOC
+Box I-LOC
+1188 I-LOC
+
+Houston B-LOC
+, I-LOC
+Texas I-LOC
+77251 B-TEL
+- I-TEL
+1188 I-TEL
+
+Tax B-TIT
+Accountant I-TIT
+
+713 B-TEL
+- I-TEL
+345 I-TEL
+- I-TEL
+8722 I-TEL
+
+Nancy B-PER
+( B-TEL
+x36311 I-TEL
+) I-TEL
+
+Amy B-PER
+
+Ricki B-PER
+
+Shane B-PER
+
+Thanks O
+
+Beverly B-PER
+
+Mrs B-PER
+. I-PER
+Sheila I-PER
+Nacey I-PER
+
+8630 B-LOC
+Pine I-LOC
+Falls I-LOC
+Dr I-LOC
+. I-LOC
+
+Houston B-LOC
+, I-LOC
+TX I-LOC
+77095 I-LOC
+
+Gina B-PER
+
+Tks O
+- O
+Mike B-PER
+W I-PER
+. I-PER
+
+Brian B-PER
+Robinho I-PER
+
+FT B-ORG
+Energy I-ORG
+
+brobinhold B-EML
+@ I-EML
+ftenergy I-EML
+. I-EML
+com I-EML
+
+720 B-TEL
+- I-TEL
+548 I-TEL
+- I-TEL
+5722 I-TEL
+
+Terry B-PER
+Kowalke I-PER
+
+We O
+will O
+start O
+checking O
+these O
+for O
+May O
+Accounting O
+, O
+
+The O
+TW O
+Team O
+
+Mary B-PER
+
+Home O
+Address O
+
+10622  B-LOC
+Endicott I-LOC
+Lane I-LOC
+
+Houston B-LOC
+,  I-LOC
+TX  I-LOC
+77318 I-LOC
+
+Thanks O
+. O
+Lynn B-PER
+
+Here O
+is O
+our O
+first O
+draft O
+. O
+
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Thanks O
+. O
+LYnn B-PER
+
+= O
+09FYI O
+. O
+Thansk O
+. O
+Lynn B-PER
+
+FYI O
+, O
+Thanks O
+. O
+Lynn B-PER
+
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+
+FYI O
+, O
+Thanks O
+. O
+Lynn B-PER
+
+Ava B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Steve B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+= O
+09FYI O
+. O
+Thanks O
+. O
+lYnn B-PER
+
+Steve B-PER
+, O
+FYI O
+. O
+Thansk O
+. O
+Lynn B-PER
+
+Sheila B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Did O
+you O
+receive O
+? O
+
+John B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Thank O
+. O
+Lynn B-PER
+
+Approved O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+
+Shelley B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Ava B-PER
+, O
+no O
+problem O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+= O
+09Fyi O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+I O
+am O
+available O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Thanks O
+for O
+the O
+help O
+. O
+Lynn B-PER
+
+Lynn B-PER
+Blair I-PER
+
+Northern B-ORG
+Natural I-ORG
+Gas I-ORG
+Co I-ORG
+. I-ORG
+
+Gas I-ORG
+Logistics I-ORG
+
+Phone B-TEL
+: I-TEL
+( I-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+7637 I-TEL
+. I-TEL
+
+Fax B-TEL
+: I-TEL
+( I-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+8000 I-TEL
+
+FYI O
+. O
+thanks O
+. O
+Lynn B-PER
+
+SLA O
+mtg O
+, O
+. O
+Thanks O
+Lynn B-PER
+
+FYI O
+. O
+Lynn B-PER
+
+= O
+09FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+fyi O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Dennis B-PER
+P I-PER
+. I-PER
+Lee I-PER
+
+ETS O
+
+Gas B-ORG
+Logistics I-ORG
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+1715 I-TEL
+
+dennis B-EML
+. I-EML
+lee I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Raetta B-PER
+
+James B-PER
+
+More O
+as O
+it O
+develops O
+! O
+
+Your O
+pal O
+, O
+
+Mike B-PER
+
+Renee B-PER
+Perry I-PER
+J I-PER
+
+Lori B-PER
+Saffer I-PER
+
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+0641 I-TEL
+
+Sincerely O
+, O
+
+Amy B-PER
+Mulligan I-PER
+
+Donna B-PER
+
+Thanks O
+, O
+Kim B-PER
+.0
+
+Thanks O
+DS B-PER
+
+Pat B-PER
+Davidson I-PER
+
+Gas B-TIT
+Scheduling I-TIT
+Manager I-TIT
+
+Southern B-ORG
+California I-ORG
+Gas I-ORG
+Company I-ORG
+
+pdavidson B-EML
+@ I-EML
+socalgas I-EML
+. I-EML
+com I-EML
+
+Thanks O
+Ramona B-PER
+
+Elizabeth B-PER
+
+x3  B-TEL
+-  I-TEL
+6928  I-TEL
+
+- O
+Rita B-PER
+
+See O
+me O
+if O
+you O
+have O
+questions O
+. O
+
+Sandra B-PER
+
+thanks O
+- O
+that O
+was O
+funny O
+
+have O
+a O
+great O
+day O
+
+sandra B-PER
+
+oh O
+- O
+laughing O
+
+Who O
+is O
+Joey B-PER
+? O
+
+Warmest O
+regards O
+, O
+
+Warmest O
+Regards O
+, O
+
+Sincerely O
+, O
+
+thanks O
+
+thnks O
+
+Think O
+warm O
+thoughts O
+Susan B-PER
+- O
+
+The B-ORG
+Brawner I-ORG
+' I-ORG
+s I-ORG
+
+15911 B-LOC
+Marwick I-LOC
+Ct I-LOC
+
+Houston B-LOC
+, I-LOC
+Tx I-LOC
+77095 I-LOC
+
+home B-TEL
+281 I-TEL
+- I-TEL
+855 I-TEL
+- I-TEL
+8797 I-TEL
+
+sandra B-PER
+cell B-TEL
+713 I-TEL
+- I-TEL
+594 I-TEL
+- I-TEL
+7369 I-TEL
+
+kenny B-PER
+cell  B-TEL
+281 I-TEL
+- I-TEL
+381 I-TEL
+- I-TEL
+7288 I-TEL
+
+thanks O
+for O
+the O
+laughs O
+
+i O
+love O
+you O
+
+Thank O
+you O
+for O
+your O
+comments O
+. O
+
+Thank O
+You O
+
+Best O
+Regards O
+, O
+
+i O
+dont O
+book O
+these O
+trades O
+
+my O
+im O
+is O
+sandra B-PER
+brawner I-PER
+
+John B-PER
+Craig I-PER
+Taylor I-PER
+
+08 O
+/ O
+16 O
+/ O
+2000 O
+11 O
+: O
+18 O
+AM O
+
+thanks O
+- O
+did O
+it O
+last O
+week O
+
+Peter B-PER
+F I-PER
+Keavey I-PER
+
+04 O
+/ O
+12 O
+/ O
+2001 O
+02 O
+: O
+24 O
+PM O
+
+Love O
+and O
+Kisses O
+
+Regards O
+, O
+
+Jared B-PER
+
+Michael B-PER
+
+Outlook B-ORG
+2000 I-ORG
+Migration I-ORG
+Team I-ORG
+
+I O
+love O
+you O
+
+Jeff B-PER
+
+Too O
+Funny O
+! O
+
+See O
+below O
+from O
+Tricia O
+Spence O
+. O
+
+Good O
+Luck O
+- O
+I O
+hoped O
+I O
+helped O
+- O
+
+thank O
+you O
+for O
+the O
+invite O
+. O
+But O
+I O
+will O
+not O
+be O
+able O
+to O
+attend O
+. O
+
+- O
+- O
+- O
+- O
+- O
+Original O
+Message O
+- O
+- O
+- O
+- O
+- O
+
+Fangming B-PER
+
+GASFUNDY  B-EML
+@ I-EML
+ENRON I-EML
+
+11 O
+/ O
+10 O
+/ O
+2000 O
+10 O
+: O
+55 O
+AM O
+
+Sent O
+by O
+: O
+Chris I-EML
+Gaskill I-EML
+@ I-EML
+ENRON I-EML
+
+To O
+: O
+
+cc O
+: O
+( O
+bcc O
+: O
+Andrea B-PER
+Ring I-PER
+/ O
+HOU O
+/ O
+ECT O
+) O
+
+Thanks O
+Again O
+for O
+the O
+time O
+, O
+
+Steve B-PER
+
+Aaron B-PER
+
+I O
+have O
+received O
+your O
+E O
+- O
+Mail O
+. O
+
+Thanks O
+. O
+
+Teresa B-PER
+
+Teresa B-PER
+G I-PER
+. I-PER
+Bushman I-PER
+
+Enron B-ORG
+North I-ORG
+America I-ORG
+Corp I-ORG
+. I-ORG
+
+1400 B-LOC
+Smith I-LOC
+Street I-LOC
+, I-LOC
+EB I-LOC
+3835A I-LOC
+
+Houston B-LOC
+, I-LOC
+TX I-LOC
+77002 I-LOC
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+7895 I-TEL
+
+fax  B-TEL
+(  I-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+3393 I-TEL
+
+teresa B-EML
+. I-EML
+g I-EML
+. I-EML
+bushman I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Mathew B-PER
+
+Kimat B-PER
+
+gun O
+
+Adam B-PER
+Johnson I-PER
+
+x54877 B-TEL
+
+EnronOnline B-ORG
+
+AGA O
+for O
+5 O
+/ O
+11 O
+/ O
+01 O
+is O
+119 O
+
+Lucy B-PER
+Marshall I-PER
+
+Executive B-TIT
+Assistant I-TIT
+
+Office B-TEL
+713 I-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+4525 I-TEL
+
+Fax B-TEL
+713 I-TEL
+- I-TEL
+345 I-TEL
+- I-TEL
+7864 I-TEL
+
+Cell B-TEL
+713 I-TEL
+- I-TEL
+417 I-TEL
+- I-TEL
+7802 I-TEL
+
+lucy_marshall B-EML
+@ I-EML
+enron I-EML
+. I-EML
+net I-EML
+
+Henry B-PER
+Van I-PER
+
+Thanks O
+, O
+
+Amanda B-PER
+
+Eric B-PER
+
+Thank O
+You O
+, O
+
+Market B-TIT
+Data I-TIT
+
+Employee O
+Name O
+: O
+
+DE B-PER
+PAOLIS I-PER
+, I-PER
+TAMMI I-PER
+
+FERRIES B-PER
+, I-PER
+NELSON I-PER
+
+ROYED B-PER
+, I-PER
+JEFFREY I-PER
+
+Matt B-PER
+Motsinger I-PER
+
+x35221 B-TEL
+
+Scott B-PER
+
+Rumaldo B-PER
+Lopez I-PER
+
+Outlook B-ORG
+Migration I-ORG
+Team I-ORG
+
+HR B-TIT
+
+Melissa B-PER
+Solis I-PER
+
+x35167 I-TEL
+
+< O
+Embedded O
+Picture O
+( O
+Metafile O
+) O
+> O
+
+Craig B-PER
+= O
+20 O
+
+Savita B-PER
+
+X31787 B-TEL
+
+Louise B-PER
+& I-PER
+John I-PER
+
+fyi O
+
+fyi O
+. O
+. O
+. O
+
+fyi O
+. O
+. O
+
+Agaon B-PER
+, O
+no O
+apologies O
+necessary O
+, O
+
+Rogers B-PER
+
+Mike B-PER
+McConnell I-PER
+
+Tom B-PER
+
+Swig B-PER
+
+Vicki  B-PER
+Versen I-PER
+
+x30903 B-TEL
+
+Enron B-ORG
+Global I-ORG
+Technology I-ORG
+
+any O
+news O
+from O
+harry B-PER
+? O
+
+Ken B-PER
+Lay I-PER
+
+Conf B-LOC
+Room I-LOC
+05075 I-LOC
+
+Kim B-PER
+
+x30681 B-TEL
+
+Chris B-PER
+
+3 B-TEL
+- B-TEL
+7533 B-TEL
+
+November O
+8 O
+, O
+2001 O
+
+Kimberly B-PER
+Bates I-PER
+
+East B-ORG
+Gas I-ORG
+/ I-ORG
+Origination I-ORG
+
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+5193 I-TEL
+
+713 I-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8453 I-TEL
+Fax I-TEL
+
+Thank O
+you O
+
+Leonidas B-PER
+G I-PER
+. I-PER
+Savvas I-PER
+
+Analyst B-TIT
+
+East B-ORG
+Gas I-ORG
+Trading I-ORG
+Group I-ORG
+
+ENRON B-ORG
+CORP I-ORG
+. I-ORG
+
+Phone B-TEL
+: I-TEL
+713 I-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+4566 I-TEL
+
+Cellular B-TEL
+: I-TEL
+832 I-TEL
+- I-TEL
+816 I-TEL
+- I-TEL
+8329 I-TEL
+
+Fax B-TEL
+: I-TEL
+713 I-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8453 I-TEL
+
+leonidas B-EML
+. I-EML
+savvas
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML

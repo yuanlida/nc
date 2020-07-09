@@ -1,0 +1,299 @@
+EB I-LOC
+3835A I-LOC
+
+Houston B-LOC
+, I-LOC
+TX I-LOC
+77002 I-LOC
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+7895 I-TEL
+
+fax  B-TEL
+(  I-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+3393 I-TEL
+
+teresa B-EML
+. I-EML
+g I-EML
+. I-EML
+bushman I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Mathew B-PER
+
+Kimat B-PER
+
+gun O
+
+Adam B-PER
+Johnson I-PER
+
+x54877 B-TEL
+
+EnronOnline B-ORG
+
+AGA O
+for O
+5 O
+/ O
+11 O
+/ O
+01 O
+is O
+119 O
+
+Lucy B-PER
+Marshall I-PER
+
+Executive B-TIT
+Assistant I-TIT
+
+Office B-TEL
+713 I-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+4525 I-TEL
+
+Fax B-TEL
+713 I-TEL
+- I-TEL
+345 I-TEL
+- I-TEL
+7864 I-TEL
+
+Cell B-TEL
+713 I-TEL
+- I-TEL
+417 I-TEL
+- I-TEL
+7802 I-TEL
+
+lucy_marshall B-EML
+@ I-EML
+enron I-EML
+. I-EML
+net I-EML
+
+Henry B-PER
+Van I-PER
+
+Thanks O
+, O
+
+Amanda B-PER
+
+Eric B-PER
+
+Thank O
+You O
+, O
+
+Market B-TIT
+Data I-TIT
+
+Employee O
+Name O
+: O
+
+DE B-PER
+PAOLIS I-PER
+, I-PER
+TAMMI I-PER
+
+FERRIES B-PER
+, I-PER
+NELSON I-PER
+
+ROYED B-PER
+, I-PER
+JEFFREY I-PER
+
+Matt B-PER
+Motsinger I-PER
+
+x35221 B-TEL
+
+Scott B-PER
+
+Rumaldo B-PER
+Lopez I-PER
+
+Outlook B-ORG
+Migration I-ORG
+Team I-ORG
+
+HR B-TIT
+
+Melissa B-PER
+Solis I-PER
+
+x35167 I-TEL
+
+< O
+Embedded O
+Picture O
+( O
+Metafile O
+) O
+> O
+
+Craig B-PER
+= O
+20 O
+
+Savita B-PER
+
+X31787 B-TEL
+
+Louise B-PER
+& I-PER
+John I-PER
+
+fyi O
+
+fyi O
+. O
+. O
+. O
+
+fyi O
+. O
+. O
+
+Agaon B-PER
+, O
+no O
+apologies O
+necessary O
+, O
+
+Rogers B-PER
+
+Mike B-PER
+McConnell I-PER
+
+Tom B-PER
+
+Swig B-PER
+
+Vicki  B-PER
+Versen I-PER
+
+x30903 B-TEL
+
+Enron B-ORG
+Global I-ORG
+Technology I-ORG
+
+any O
+news O
+from O
+harry B-PER
+? O
+
+Ken B-PER
+Lay I-PER
+
+Conf B-LOC
+Room I-LOC
+05075 I-LOC
+
+Kim B-PER
+
+x30681 B-TEL
+
+Chris B-PER
+
+3 B-TEL
+- B-TEL
+7533 B-TEL
+
+November O
+8 O
+, O
+2001 O
+
+Kimberly B-PER
+Bates I-PER
+
+East B-ORG
+Gas I-ORG
+/ I-ORG
+Origination I-ORG
+
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+5193 I-TEL
+
+713 I-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8453 I-TEL
+Fax I-TEL
+
+Thank O
+you O
+
+Leonidas B-PER
+G I-PER
+. I-PER
+Savvas I-PER
+
+Analyst B-TIT
+
+East B-ORG
+Gas I-ORG
+Trading I-ORG
+Group I-ORG
+
+ENRON B-ORG
+CORP I-ORG
+. I-ORG
+
+Phone B-TEL
+: I-TEL
+713 I-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+4566 I-TEL
+
+Cellular B-TEL
+: I-TEL
+832 I-TEL
+- I-TEL
+816 I-TEL
+- I-TEL
+8329 I-TEL
+
+Fax B-TEL
+: I-TEL
+713 I-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8453 I-TEL
+
+leonidas B-EML
+. I-EML
+savvas
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML

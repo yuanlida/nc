@@ -6,42 +6,42 @@ NUM = "<NUM>"
 PAD = "<PAD>"
 NONE = "O"
 
-# train_files = ['./data/train/loc.txt',
-#                './data/train/name.txt',
-#                './data/train/org.txt',
-#                './data/train/tel.txt',
-#                './data/train/tit.txt']
-#
-# test_files = ['./data/test/loc.txt',
-#               './data/test/name.txt',
-#               './data/test/org.txt',
-#               './data/test/tel.txt',
-#               './data/test/tit.txt']
-
-
 train_files = ['./data/train/loc.txt',
                './data/train/name.txt',
                './data/train/org.txt',
-               './data/train/tel.txt',
+               #'./data/train/tel.txt',
                './data/train/tit.txt']
 
 test_files = ['./data/test/loc.txt',
               './data/test/name.txt',
               './data/test/org.txt',
-              './data/test/tel.txt',
+              #'./data/test/tel.txt',
               './data/test/tit.txt']
 
-train_files = ['../data/test/loc.txt',
-               '../data/test/name.txt',
-               '../data/test/org.txt',
-               '../data/test/tel.txt',
-               '../data/test/tit.txt']
 
-test_files = ['../data/test/loc.txt',
-              '../data/test/name.txt',
-              '../data/test/org.txt',
-              '../data/test/tel.txt',
-              '../data/test/tit.txt']
+# train_files = ['../data/train/loc.txt',
+#                '../data/train/name.txt',
+#                '../data/train/org.txt',
+#        #        '../data/train/tel.txt',
+#                '../data/train/tit.txt']
+#
+# test_files = ['../data/test/loc.txt',
+#               '../data/test/name.txt',
+#               '../data/test/org.txt',
+#         #      '../data/test/tel.txt',
+#               '../data/test/tit.txt']
+
+# train_files = ['../data/test/loc.txt',
+#                '../data/test/name.txt',
+#                '../data/test/org.txt',
+#        #       '../data/test/tel.txt',
+#                '../data/test/tit.txt']
+#
+# test_files = ['../data/test/loc.txt',
+#               '../data/test/name.txt',
+#               '../data/test/org.txt',
+#         #      '../data/test/tel.txt',
+#               '../data/test/tit.txt']
 # sample_files = ['./data/sample/loc.txt',
 #               './data/sample/name.txt',
 #               './data/sample/org.txt',
@@ -70,7 +70,7 @@ def build_vocab_words():
     vocab_words = set()
     for item in train_files:
         with open(item) as f:
-            lines = f.readlines()
+            lines = f.readlines().lower()
         for line in lines:
             words = line.split()
             for word in words:
@@ -86,7 +86,7 @@ def build_vocab_chars():
     vocab_chars = set()
     for item in train_files:
         with open(item) as f:
-            lines = f.readlines()
+            lines = f.readlines().lower()
         for line in lines:
             for item in line.strip().split():
                 for c in item:

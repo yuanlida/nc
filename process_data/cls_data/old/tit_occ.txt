@@ -1,0 +1,1682 @@
+Chief Executive
+General Manager
+Operations Manager
+Legislator
+Advertising Manager
+Marketing Manager
+Promotions Manager
+Relations Manager
+Manager
+Sales Manager
+Public Relations Manager
+Fundraising Manager
+Operations Specialties Manager
+Administrative Services Manager
+Computer Manager
+Information Systems Manager
+Financial Manager
+Industrial Production Manager
+Purchasing Manager
+Transportation Manager
+Storage Manager
+Distribution Manager
+Compensation Manager
+Benefits Manager
+Human Resources Manager
+Training Manager
+Development Manager
+Other Management Occupation
+Farmers Manager
+Ranchers Manager
+Other Agricultural Manager
+Construction Manager
+Education Administrator
+Administrators Center/Program
+Preschool Center/Program
+Childcare Center/Program
+Administrators School
+Elementary School
+Secondary School
+Education Administrators, Postsecondary
+Education Administrators, All Other
+Architectural Manager
+Engineering Manager
+Food Service Manager
+Funeral Service Manager
+Gaming Manager
+Lodging Manager
+Medical Manager
+Health Services Manager
+Natural Sciences Manager
+Postmasters Superintendent
+Mail Superintendent
+Property Manager
+Estate Manager
+Community Association Manager
+Social Manager
+Community Service Manager
+Emergency Management Director
+Miscellaneous Manager
+Managers, All Other
+Business Occupation
+Financial Operations Occupation
+Business Operations Specialist
+Agents Athlete
+Artists Athlete
+Performers Athlete
+Athlete
+Buyers Agent
+Purchasing Agent
+Adjusters Investigator
+Appraisers Investigator
+Examiners Investigator
+Investigator
+Insurance Appraisers, Auto Damage
+Compliance Officer
+Cost Estimator
+Human Resources Worker
+Human Resources Specialist
+Farm Labor Contractor
+Labor Relations Specialist
+Logistician
+Management Analyst
+Meeting Planner
+Convention Planner
+Planner
+Event Planner
+Fundraiser
+Compensation Specialist
+Benefits Specialist
+Specialist
+Job Analysis Specialist
+Training Specialist
+Development Specialist
+Market Research Analysts Specialist
+Marketing Specialist
+Miscellaneous Business Operations Specialist
+Business Operations Specialists, All Other
+Financial Specialist
+Accountants Auditor
+Auditor
+Appraisers Estate
+Assessor of Real Estate
+Budget Analyst
+Credit Analyst
+Financial Analysts Advisor
+Advisor
+Financial Analyst
+Personal Financial Advisor
+Insurance Underwriter
+Financial Examiner
+Credit Counselors Officer
+Loan Officer
+Credit Counselor
+Examiners Agent
+Collectors Agent
+Preparers Agent
+Agent
+Revenue Agent
+Tax Examiners Agent
+Tax Preparer
+Miscellaneous Financial Specialist
+Financial Specialists, All Other
+Computer Occupation
+Mathematical Occupation
+Computer Scientist
+Information Research Scientist
+Computer Analyst
+Information Analyst
+Computer Systems Analyst
+Information Security Analyst
+Software Developers Programmer
+Programmer
+Computer Programmer
+Software Developers, Application
+Software Developers, Systems Software
+Web Developer
+Database Architect
+Systems Administrators Architect
+Network Architect
+Database Administrator
+Network Administrator
+Computer Systems Administrator
+Computer Network Architect
+Computer Support Specialist
+Computer User Support Specialist
+Computer Network Support Specialist
+Miscellaneous Computer Occupation
+Computer Occupations, All Other
+Mathematical Science Occupation
+Actuary
+Mathematician
+Operations Research Analyst
+Statistician
+Miscellaneous Mathematical Science Occupation
+Architecture Occupation
+Engineering Occupation
+Architects Cartographer
+Surveyors Cartographer
+Cartographer
+Architects
+Architects, Naval
+Landscape, Naval
+Landscape Architect
+Surveyors Photogrammetrist
+Cartographers Photogrammetrist
+Photogrammetrist
+Surveyor
+Engineer
+Aerospace Engineer
+Agricultural Engineer
+Biomedical Engineer
+Chemical Engineer
+Civil Engineer
+Computer Hardware Engineer
+Electrical Engineer
+Electronics Engineer
+Environmental Engineer
+Engineers Safety
+Including Health Safety
+Safety
+Health Inspector
+Engineers Inspector
+Mining Safety Engineers Inspector
+Inspector
+Industrial Engineer
+Marine Engineers Architect
+Naval Architect
+Materials Engineer
+Mechanical Engineer
+Mining Engineer
+Engineers Engineer
+Including Mining Safety Engineer
+Nuclear Engineer
+Petroleum Engineer
+Miscellaneous Engineer
+Engineers, All Other
+Drafters Technician
+Technicians Technician
+Technician
+Mapping Technician
+Drafter
+Architectural Drafter
+Civil Drafter
+Electrical Drafter
+Electronics Drafter
+Mechanical Drafter
+Drafters, All Other
+Engineering Technicians
+Aerospace Engineering Technician
+Operations Technician
+Civil Engineering Technician
+Electrical Technician
+Electronics Engineering Technician
+Electro-Mechanical Technician
+Environmental Engineering Technician
+Industrial Engineering Technician
+Mechanical Engineering Technician
+Surveying Technician
+Life Occupation
+Physical Occupation
+Occupation
+Social Science Occupation
+Life Scientist
+Agricultural Scientist
+Food Scientist
+Animal Scientist
+Food Scientists Technologist
+Technologist
+Soil Scientist
+Plant Scientist
+Biological Scientist
+Biochemists Biophysicist
+Biophysicist
+Microbiologist
+Zoologists Biologist
+Wildlife Biologist
+Biological Scientists, All Other
+Conservation Scientists Forester
+Forester
+Conservation Scientist
+Medical Scientist
+Epidemiologist
+Medical Scientists
+Miscellaneous Life Scientist
+Life Scientists, All Other
+Physical Scientist
+Astronomers Physicist
+Physicist
+Astronomer
+Atmospheric Scientist
+Space Scientist
+Chemists Scientist
+Materials Scientist
+Chemist
+Environmental Scientists Geoscientist
+Geoscientist
+Environmental Scientists Health
+Specialists Health
+Including Health
+Geoscientists Geographer
+Hydrologists Geographer
+Geographer
+Hydrologist
+Miscellaneous Physical Scientist
+Physical Scientists, All Other
+Social Scientists Worker
+Related Worker
+Economist
+Survey Researcher
+Psychologist
+Clinical Psychologist
+Counseling Psychologist
+School Psychologist
+Industrial-Organizational Psychologist
+Psychologists, All Other
+Sociologist
+Urban Planner
+Regional Planner
+Miscellaneous Social Scientists Worker
+Anthropologists Archeologist
+Archeologist
+Historian
+Political Scientist
+Social Scientists
+Workers
+Life Technician
+Physical Technician
+Social Science Technician
+Agricultural Technician
+Food Science Technician
+Biological Technician
+Chemical Technician
+Geological Technician
+Petroleum Technician
+Nuclear Technician
+Social Science Research Assistant
+Environmental Science Health
+Technicians Health
+Forensic Science Technician
+Forest Technician
+Conservation Technician
+Technicians
+Community Occupation
+Social Service Occupation
+Counselors Specialist
+Workers Specialist
+Other Community Specialist
+Social Service Specialist
+Counselor
+Educational Counselor
+Guidance Counselor
+School Counselor
+Vocational Counselor
+Marriage Therapist
+Family Therapist
+Rehabilitation Counselor
+Abuse Counselor
+Disorder Counselor
+Mental Health Counselor
+Counselors, All Other
+Social Worker
+Child Worker
+Family Worker
+Worker
+School Social Worker
+Healthcare Social Worker
+Mental Health Worker
+Substance Abuse Social Worker
+Social Workers, All Other
+Miscellaneous Community Specialist
+Health Educator
+Probation Officers Specialist
+Correctional Treatment Specialist
+Social Assistant
+Human Service Assistant
+Community Health Worker
+Community Other
+Specialists Other
+Religious Worker
+Clergy
+Directors Education
+Religious Activities Education
+Education
+Miscellaneous Religious Worker
+Religious Workers, All Other
+Legal Occupation
+Lawyers Worker
+Judges Worker
+Lawyers Clerk
+Judicial Law Clerk
+Lawyer
+Magistrates Worker
+Other Judicial Worker
+Judges Officer
+Adjudicators Officer
+Officer
+Hearing Officer
+Arbitrators Conciliator
+Mediators Conciliator
+Conciliator
+Judges Magistrate
+Magistrate
+Legal Support Worker
+Paralegals Assistant
+Legal Assistant
+Miscellaneous Legal Support Worker
+Court Reporter
+Examiners Searcher
+Abstractors Searcher
+Searcher
+Legal Support Workers, All Other
+Education Occupation
+Training Occupation
+Library Occupation
+Postsecondary Teacher
+Business Teachers, Postsecondary
+Math Postsecondary
+Teachers Postsecondary
+Postsecondary
+Computer Science Teachers, Postsecondary
+Mathematical Science Teachers, Postsecondary
+Engineering Postsecondary
+Architecture Teachers, Postsecondary
+Engineering Teachers, Postsecondary
+Life Sciences Teachers, Postsecondary
+Agricultural Sciences Teachers, Postsecondary
+Biological Science Teachers, Postsecondary
+Forestry Postsecondary
+Physical Sciences Teachers, Postsecondary
+Atmospheric Postsecondary
+Earth Postsecondary
+Marine Postsecondary
+Chemistry Teachers, Postsecondary
+Environmental Science Teachers, Postsecondary
+Physics Teachers, Postsecondary
+Social Sciences Teachers, Postsecondary
+Anthropology Postsecondary
+Area Postsecondary
+Ethnic Postsecondary
+Economics Teachers, Postsecondary
+Geography Teachers, Postsecondary
+Political Science Teachers, Postsecondary
+Psychology Teachers, Postsecondary
+Sociology Teachers, Postsecondary
+Social Sciences Teachers, Postsecondary, All Other
+Health Teachers, Postsecondary
+Health Specialties Teachers, Postsecondary
+Nursing Instructors Postsecondary
+Education Postsecondary
+Education Teachers, Postsecondary
+Library Science Teachers, Postsecondary
+Law Postsecondary
+Justice Postsecondary
+Criminal Justice Postsecondary
+Law Teachers, Postsecondary
+Social Work Teachers, Postsecondary
+Arts Postsecondary
+Communications Postsecondary
+Art Postsecondary
+Drama Postsecondary
+Communications Teachers, Postsecondary
+English Language Postsecondary
+Foreign Language Postsecondary
+History Teachers, Postsecondary
+Philosophy Postsecondary
+Miscellaneous Postsecondary Teacher
+Graduate Teaching Assistant
+Home Economics Teachers, Postsecondary
+Recreation Postsecondary
+Vocational Education Teachers, Postsecondary
+Postsecondary Teachers, All Other
+Preschool Teacher
+Primary Teacher
+Secondary Teacher
+Teacher
+Special Education School Teacher
+Kindergarten Teacher
+Preschool Teachers
+Kindergarten Teachers
+Elementary Teacher
+Middle School Teacher
+Elementary School Teachers
+Teachers Education
+Career/Technical Education
+Career/Technical Education Teachers, Middle School
+Secondary School Teacher
+Career/Technical Education Teachers, Secondary School
+Special Education Teacher
+Special Education Teachers, Preschool
+Teachers School
+Kindergarten School
+Special Education Teachers, Middle School
+Special Education Teachers, Secondary School
+Special Education Teachers, All Other
+Other Teachers Instructor
+Instructor
+Adult Basic Instructor
+Secondary Education Instructor
+Literacy Teachers Instructor
+Self-Enrichment Education Teacher
+Miscellaneous Teachers Instructor
+TeachersTeacher
+Instructors Teacher
+Other Teacher
+Substitute Teacher
+Librarians Archivist
+Curators Archivist
+Archivist
+Archivists Technician
+Curators Technician
+Museum Technician
+Curator
+Museum Technicians Conservator
+Conservator
+Librarian
+Library Technician
+Audio-Visual Specialist
+Multimedia Collections Specialist
+Farm Advisor
+Home Management Advisor
+Instructional Coordinator
+Teacher Assistant
+Education Worker
+Training Worker
+Library Worker
+Education Other
+Training Other
+Arts Occupation
+Design Occupation
+Entertainment Occupation
+Sports Occupation
+Media Occupation
+Art Worker
+Design Worker
+Artists Worker
+Art Director
+Craft Artist
+Artists Illustrator
+Painters Illustrator
+Sculptors Illustrator
+Illustrator
+Multimedia Artists Animator
+Animator
+Artists Other
+Designer
+Commercial Designer
+Industrial Designer
+Fashion Designer
+Floral Designer
+Graphic Designer
+Interior Designer
+Merchandise Displayers Trimmer
+Window Trimmer
+Set Designer
+Exhibit Designer
+Designers, All Other
+Entertainers Worker
+Performers Worker
+Sports Worker
+Actors Director
+Producers Director
+Director
+Actor
+Athletes Worker
+Coaches Worker
+Umpires Worker
+Athletes Competitor
+Sports Competitor
+Coaches Scout
+Scout
+Umpires Official
+Referees Official
+Official
+Other Sports Official
+Dancers Choreographer
+Choreographer
+Dancer
+Musicians Worker
+Singers Worker
+Music Directors Composer
+Composer
+Musicians Singer
+Singer
+Miscellaneous Entertainers Worker
+Entertainers Other
+Performers Other
+Sports Other
+Media Worker
+Communication Worker
+Announcer
+Radio Announcer
+Television Announcer
+Public Address System Announcer
+Other Announcer
+Analysts Correspondent
+Reporters Correspondent
+Correspondent
+Broadcast News Analyst
+Public Relations Specialist
+Writers Editor
+Editor
+Technical Writer
+Writers Author
+Author
+Miscellaneous Media Worker
+Interpreters Translator
+Translator
+Media Other
+Communication Equipment Worker
+Broadcast Operator
+Sound Engineering Technicians Operator
+Radio Operator
+Audio Technician
+Video Equipment Technician
+Broadcast Technician
+Sound Engineering Technician
+Photographer
+Television Editor
+Video Editor
+Motion Picture Camera Operators Editor
+Operators Picture
+Television Picture
+Video Picture
+Picture
+Motion Picture
+Film Editor
+Healthcare Practitioners Occupation
+Technical Occupation
+Health Diagnosing Practitioner
+Treating Practitioner
+Chiropractor
+Dentist
+False General
+Oral Surgeon
+Maxillofacial Surgeon
+Orthodontist
+Prosthodontist
+Dentists, All Other Specialist
+Dietitians Nutritionist
+Nutritionist
+Optometrist
+Pharmacist
+Physicians Surgeon
+Surgeon
+Anesthesiologist
+Family Practitioner
+General Practitioner
+False General
+Obstetricians Gynecologist
+Gynecologist
+False General
+Psychiatrist
+Physicians Other
+Surgeons Other
+Physician Assistant
+Podiatrist
+Therapist
+Occupational Therapist
+Physical Therapist
+Radiation Therapist
+Recreational Therapist
+Respiratory Therapist
+Speech-Language Pathologist
+Exercise Physiologist
+Therapists, All Other
+Veterinarian
+Registered Nurse
+Nurse Anesthetist
+Nurse Midwife
+Nurse Practitioner
+Audiologist
+Miscellaneous Health Diagnosing Practitioner
+Health Diagnosing Other
+Practitioners Other
+Health Technologists Technician
+Clinical Laboratory Technologists Technician
+Dental Hygienist
+Diagnostic Related Technologists Technician
+Cardiovascular Technologists Technician
+Diagnostic Medical Sonographer
+Nuclear Medicine Technologist
+Radiologic Technologist
+Magnetic Resonance Imaging Technologist
+Emergency Medical Technicians Paramedic
+Paramedic
+Health Practitioner Support Technologists Technician
+Dietetic Technician
+Pharmacy Technician
+Psychiatric Technician
+Respiratory Therapy Technician
+Surgical Technologist
+Veterinary Technologists Technician
+Ophthalmic Medical Technician
+Licensed Practical Nurse
+Licensed Vocational Nurse
+Medical Records Technician
+Health Information Technician
+Opticians, Dispensing
+Miscellaneous Health Technologists Technician
+Orthotists Prosthetist
+Prosthetist
+Hearing Aid Specialist
+Health Technologists Other
+Other Healthcare Practitioners Occupation
+Occupational Health Technician
+Safety Specialists Technician
+Occupational Health Specialist
+Safety Specialist
+Safety Technician
+Miscellaneous Health Practitioners Worker
+Technical Worker
+Athletic Trainer
+Genetic Counselor
+Healthcare Practitioners Other
+Healthcare Support Occupation
+Nursing Aide
+Psychiatric Aide
+Aide
+Home Health Aide
+Nursing Assistant
+Orderly
+Occupational Therapy Aide
+Physical Therapist Assistants Aide
+Occupational Therapy Assistants Aide
+Occupational Therapy Assistant
+Physical Therapist Assistant
+Physical Therapist Aide
+Other Healthcare Support Occupation
+Massage Therapist
+Miscellaneous Healthcare Support Occupation
+Dental Assistant
+Medical Assistant
+Medical Equipment Preparer
+Medical Transcriptionist
+Pharmacy Aide
+Veterinary Assistants Caretaker
+Laboratory Animal Caretaker
+Phlebotomist
+Healthcare Support Workers, All Other
+Protective Service Occupation
+Supervisor of Protective Service Workers
+first-line Supervisor of Law Enforcement Workers
+first-line Supervisor of Correctional Officers
+first-line Supervisor of Police Detectives
+Detective
+first-line Supervisor of Fire Fighting Workers
+Prevention Worker
+Miscellaneous First-Line Supervisors, Protective Service Worker
+first-line Supervisor of Protective Service Workers, All Other
+Fire Fighting Worker
+Firefighter
+Fire Inspector
+Fire Inspectors Investigator
+Forest Fire Inspectors Specialist
+Prevention Specialist
+Law Enforcement Worker
+Bailiffs Jailer
+Officers Jailer
+Jailer
+Bailiff
+Correctional Officers Jailer
+Detectives Investigator
+Criminal Investigator
+Fish Warden
+Game Warden
+Parking Enforcement Worker
+Police Officer
+Sheriff's Patrol Officer
+Transit Polouse
+Railroad Polouse
+Other Protective Service Worker
+Animal Control Worker
+Private Detectives Investigator
+Security Guards Officer
+Gaming Surveillance Officer
+Gaming Surveillance Officers Investigator
+Gaming Investigator
+Security Guard
+Miscellaneous Protective Service Worker
+Crossing Guard
+Lifeguards Worker
+Patrol Worker
+Other Recreational Protective Service Worker
+Transportation Security Screener
+Protective Service Workers, All Other
+Food Preparation Occupation
+Serving Related Occupation
+Supervisor of Food Preparation Workers
+Serving Worker
+Chefs Cook
+Head Cook
+first-line Supervisor of Food Preparation Workers
+Cooks Worker
+Food Preparation Worker
+Cook
+Cooks, Fast Food
+Cooks Cafeteria
+Institution Cafeteria
+Cafeteria
+Cooks, Private Household
+Cooks, Restaurant
+Cooks, Short Order
+Cooks, All Other
+Food Worker
+Beverage Serving Worker
+Bartender
+Fast Food Worker
+Counter Worker
+Combined Food
+Combined FoodPreparation Food
+Workers Food
+Including Fast Food
+Attendants Shop
+Cafeteria Shop
+Concession Shop
+Shop
+Coffee Shop
+Waiters Waitress
+Waitress
+Food Servers, Nonrestaurant
+Other Food Preparation Worker
+Serving Related Worker
+Dining Room Helper
+Cafeteria Attendants Helper
+Bartender Helper
+Dishwasher
+Hosts Shop
+Hostesses Shop
+Restaurant Shop
+Lounge Shop
+Miscellaneous Food Preparation Worker
+Food Preparation Other
+Building Occupation
+Grounds Cleaning Occupation
+Maintenance Occupation
+Supervisor of Building Workers
+Grounds Cleaning Worker
+Maintenance Worker
+first-line Supervisor of Building Workers
+first-line Supervisor of Housekeeping Workers
+Janitorial Worker
+Landscaping Worker
+Service Worker
+Groundskeeping Worker
+Building Cleaning Worker
+Pest Control Worker
+Janitors Cleaner
+Cleaners Cleaner
+Housekeeping Cleaner
+Maids Cleaner
+Building Cleaning Workers, All Other
+Grounds Maintenance Worker
+Handlers Vegetation
+Sprayers Vegetation
+Vegetation
+Applicators Vegetation
+Tree Trimmers Pruner
+Pruner
+Grounds Maintenance Workers, All Other
+Personal Care Occupation
+Service Occupation
+Supervisor of Personal Care Workers
+first-line Supervisor of Gaming Workers
+first-line Supervisor of Personal Service Workers
+Animal Care Worker
+Animal Trainer
+Nonfarm Animal Caretaker
+Entertainment Attendants Worker
+Gaming Services Worker
+Gaming Dealer
+Gaming Runner
+Sports Book Writers Runner
+Runner
+Gaming Service Workers, All Other
+Motion Picture Projectionist
+Ushers Taker
+Attendants Taker
+Taker
+Ticket Taker
+Miscellaneous Entertainment Attendants Worker
+Amusement Attendant
+Recreation Attendant
+Costume Attendant
+Room Attendant
+Coatroom Attendant
+Attendant
+Dressing Room Attendant
+Entertainment Attendants Other
+Funeral Service Worker
+Embalmer
+Funeral Attendant
+Morticians Director
+Undertakers Director
+Funeral Director
+Personal Appearance Worker
+Barbers Cosmetologist
+Hairdressers Cosmetologist
+Hairstylists Cosmetologist
+Cosmetologist
+Barber
+Miscellaneous Personal Appearance Worker
+Artists Performance
+Theatrical Performance
+Performance
+Manicurists Pedicurist
+Pedicurist
+Shampooer
+Skincare Specialist
+Porters Concierge
+Bellhops Concierge
+Concierge
+Baggage Porters Bellhop
+Bellhop
+Tour Guide
+Travel Guide
+Other Personal Care Worker
+Childcare Worker
+Personal Care Aide
+Recreation Worker
+Fitness Worker
+Fitness Trainers Instructor
+Aerobics Instructor
+Residential Advisor
+Miscellaneous Personal Care Worker
+Personal Care Other
+Sales Occupation
+Related Occupation
+Supervisor of Sales Workers
+first-line Supervisor of Sales Workers
+first-line Supervisor of Retail Sales Workers
+first-line Supervisor of non-retail Sales Workers
+Retail Sales Worker
+Cashier
+Gaming Change Persons Cashier
+Booth Cashier
+Counter Salesperson
+Rental Clerks Salesperson
+Parts Salesperson
+Counter Clerk
+Rental Clerk
+Retail Salesperson
+Sales Representatives, Service
+Advertising Sales Agent
+Insurance Sales Agent
+Securities Agent
+Commodities Agent
+Financial Services Sales Agent
+Travel Agent
+Miscellaneous Sales Representatives, Service
+Sales Representatives, Services, All Other
+Representatives Manufacturing
+Wholesale Manufacturing
+Manufacturing
+Representatives Product
+Wholesale Product
+Manufacturing Product
+Technical Product
+Scientific Product
+Other Sales Worker
+Models Promoter
+Demonstrators Promoter
+Promoter
+Product Promoter
+Model
+Real Estate Brokers Agent
+Sales Agent
+Real Estate Broker
+Real Estate Sales Agent
+Sales Engineer
+Telemarketer
+Miscellaneous Sales Worker
+Workers Worker
+News Worker
+Vendors Worker
+Sales Other
+Office Occupation
+Administrative Support Occupation
+Supervisor of Office Workers
+Administrative Support Worker
+first-line Supervisor of Office Workers
+Communications Equipment Operator
+Switchboard Operators, Including Answering Service
+Telephone Operator
+Miscellaneous Communications Equipment Operator
+Communications Equipment Operators, All Other
+Financial Clerk
+Bill Collector
+Account Collector
+Billing Clerk
+Posting Clerk
+Bookkeeping Clerk
+Accounting Clerk
+Clerk
+Auditing Clerk
+Gaming Cage Worker
+Payroll Clerk
+Timekeeping Clerk
+Procurement Clerk
+Teller
+Miscellaneous Financial Clerk
+Financial Clerks, All Other
+Information Clerk
+Record Clerk
+Brokerage Clerk
+Correspondence Clerk
+Court Clerk
+Municipal Clerk
+License Clerk
+Authorizers Clerk
+Checkers Clerk
+Customer Service Representative
+Eligibility Interviewers, Government Program
+File Clerk
+Hotel Clerk
+Motel Clerk
+Resort Desk Clerk
+Interviewers Loan
+Loan
+Library Assistants, Clerical
+Loan Interviewers Clerk
+New Accounts Clerk
+Order Clerk
+Assistants Timekeeping
+Timekeeping
+Receptionists Clerk
+Reservation Clerk
+Transportation Ticket Agents Clerk
+Travel Clerk
+Miscellaneous Information Clerk
+Information Other
+Clerks Other
+Recording Worker
+Scheduling Worker
+Dispatching Worker
+Distributing Worker
+Cargo Agent
+Freight Agent
+Couriers Messenger
+Messenger
+Dispatcher
+Police Dispatcher
+Fire Dispatcher
+Ambulance Dispatcher
+Dispatchers Ambulance
+Police Ambulance
+Fire Ambulance
+Ambulance
+Meter Readers, Utility
+Postal Service Worker
+Postal Service Clerk
+Postal Service Mail Carrier
+Sorters Operator
+Processors Operator
+Operator
+Processing Machine Operator
+Production Clerk
+Planning Clerk
+Expediting Clerk
+Shipping Clerk
+Receiving Clerk
+Traffic Clerk
+Stock Clerks Filler
+Order Filler
+Weighers Recordkeeping
+Measurers Recordkeeping
+Checkers Recordkeeping
+Recordkeeping
+Samplers Recordkeeping
+Secretaries Assistant
+Administrative Assistant
+Executive Secretaries Assistant
+Executive Administrative Assistant
+Legal Secretary
+Medical Secretary
+Secretaries Executive
+Assistants Executive
+Legal Executive
+Medical Executive
+Executive
+Other Office Worker
+Computer Operator
+Data Entry Worker
+Information Processing Worker
+Data Entry Keyer
+Word Processors Typist
+Typist
+Desktop Publisher
+Insurance Claims Clerk
+Policy Processing Clerk
+Mail Clerks Service
+Operators Service
+Office Clerks, General
+Office Machine Operators
+Proofreaders Marker
+Copy Marker
+Statistical Assistant
+Miscellaneous Office Worker
+Office Other
+Farming Occupation
+Fishing Occupation
+Forestry Occupation
+Farming Worker
+Fishing Worker
+Forestry Worker
+Agricultural Worker
+Agricultural Inspector
+Animal Breeder
+Graders Product
+Sorters Product
+Agricultural Product
+Miscellaneous Agricultural Worker
+Agricultural Equipment Operator
+Farmworkers Greenhouse
+Laborers Greenhouse
+Crop Greenhouse
+Nursery Greenhouse
+Greenhouse
+Farmworkers Animal
+Farm Animal
+Ranch Animal
+Animal
+Aquacultural Animal
+Agricultural Workers, All Other
+Forest Worker
+Conservation Worker
+Logging Worker
+Faller
+Logging Equipment Operator
+Log Graders Scaler
+Scaler
+Logging Workers, All Other
+Construction Occupation
+Extraction Occupation
+Supervisor of Construction Workers
+Extraction Worker
+first-line Supervisor of Construction Trades Workers
+Construction Trades Worker
+Boilermaker
+Brickmasons Stonemason
+Blockmasons Stonemason
+Stonemason
+Brickmasons Blockmason
+Blockmason
+Carpenter
+Carpet Finisher
+Floor Finisher
+Finisher
+Tile Installers Finisher
+Carpet Installer
+Layers Tile
+Carpet Tile
+Wood Tile
+Tile
+Hard Tile
+Floor Sanders Finisher
+Tile Setter
+Marble Setter
+Masons Worker
+Finishers Worker
+Terrazzo Worker
+Cement Masons Finisher
+Concrete Finisher
+Terrazzo Workers Finisher
+Construction Laborer
+Construction Equipment Operator
+Paving Operator
+Surfacing Operator
+Tamping Equipment Operator
+Pile-Driver Operator
+Operating Engineers Operator
+Other Construction Equipment Operator
+Installers Taper
+Taper
+Drywall Installer
+Ceiling Tile Installer
+Electrician
+Glazier
+Insulation Worker
+Workers Wall
+Floor Wall
+Ceiling Wall
+Wall
+Insulation Workers, Mechanical
+Painters Paperhanger
+Paperhanger
+Painters Maintenance
+Construction Maintenance
+Maintenance
+Pipelayers Steamfitter
+Plumbers Steamfitter
+Pipefitters Steamfitter
+Steamfitter
+Pipelayer
+Plasterers Mason
+Stucco Mason
+Reinforcing Iron Worker
+Rebar Worker
+Roofer
+Sheet Metal Worker
+Structural Iron Worker
+Steel Worker
+Solar Photovoltaic Installer
+Helpers, Construction Trade
+Helpers--Brickmasons Setter
+Blockmasons Setter
+Stonemasons Setter
+Setter
+Helpers--Carpenter
+Helpers--Electrician
+Helpers--Painters Mason
+Paperhangers Mason
+Mason
+Helpers--Pipelayers Steamfitter
+Helpers--Roofer
+Helpers, Construction Trades, All Other
+Other Construction Worker
+Construction Inspector
+Building Inspector
+Elevator Installers Repairer
+Repairer
+Fence Erector
+Hazardous Materials Removal Worker
+Highway Maintenance Worker
+Rail-Track Laying Operator
+Maintenance Equipment Operator
+Septic Tank Servicers Cleaner
+Sewer Pipe Cleaner
+Miscellaneous Construction Worker
+Derrick Mining
+Drill Mining
+Mining
+Operators Mining
+Oil Mining
+Gas Mining
+Operators Gas
+Oil Gas Drillers
+Workers Blaster
+Experts Blaster
+Blaster
+Mining Machine Operator
+Continuous Mining Machine Operator
+Mine Cutting Operator
+Channeling Machine Operator
+Mining Machine Operators, All Other
+Rock Splitters, Quarry
+Roof Bolters, Mining
+Roustabouts Gas
+Helpers--Extraction Worker
+Miscellaneous Extraction Worker
+Extraction Workers, All Other
+Installation Occupation
+Repair Occupation
+Installation Worker
+Repair Worker
+Mechanics Repairer
+Installers Repairer
+Electrical Repairer
+Computer Repairer
+Teller Repairer
+Office Machine Repairer
+Radio Repairer
+Telecommunications Equipment Installers Repairer
+Cellular Repairer
+Tower Equipment Installers Repairer
+Telecommunications Equipment Installer
+Telecommunications Equipment InstallersInstaller
+Repairers Installer
+Miscellaneous Electrical Repairer
+Avionics Technician
+Motor Repairer
+Tool Repairer
+Related Repairer
+Electrical Equipment
+Electronics Installers Equipment
+Repairers Equipment
+Transportation Equipment
+Commercial Equipment
+Industrial Equipment
+Electrical Relay
+Repairers Relay
+Powerhouse Relay
+Substation Relay
+Relay
+Electronic Equipment Installers Vehicle
+Repairers Vehicle
+Motor Vehicle
+Electronic Home Entertainment Equipment Installers Repairer
+Security Installer
+Fire Alarm Systems Installer
+Vehicle Repairer
+Aircraft Mechanics Technician
+Service Technician
+Automotive Technicians Repairer
+Automotive Body Repairer
+Automotive Glass Installers Repairer
+Automotive Service Technicians Mechanic
+Mechanic
+Bus Specialist
+Truck Mechanics Specialist
+Diesel Engine Specialist
+Heavy Vehicle Mechanic
+Mobile Equipment Service Technicians Mechanic
+Farm Equipment Mechanics Technician
+Mobile Heavy Equipment Mechanics
+Rail Car Repairer
+Small Engine Mechanic
+Motorboat Mechanics Technician
+Motorcycle Mechanic
+Outdoor Power Equipment Mechanic
+Other Small Engine Mechanic
+Miscellaneous Vehicle Repairer
+Bicycle Repairer
+Recreational Vehicle Service Technician
+Tire Repairers Changer
+Changer
+Control Repairer
+Valve Installers Repairer
+Mechanical Door Repairer
+Control, Door
+Valve Installers, Door
+Repairers, Door
+Heating Installer
+Conditioning Installer
+Installer
+Refrigeration Mechanics Installer
+Home Appliance Repairer
+Industrial Machinery Mechanic
+Maintenance Workers, Machinery
+Millwright
+Refractory Materials Repairers
+Line Installers Repairer
+Electrical Power-Line Installers Repairer
+Telecommunications Line Installers Repairer
+Precision Instrument Repairer
+Equipment Repairer
+Camera Repairer
+Photographic Equipment Repairer
+Medical Equipment Repairer
+Musical Instrument Repairers Tuner
+Tuner
+Watch Repairer
+Precision Instrument Other
+Repairers Other
+False General
+Worker General
+General
+Wind Turbine Service Technician
+Coin Repairer
+Vending Repairer
+Amusement Machine Servicers Repairer
+Commercial Diver
+Fabric Menders
+Locksmiths Repairer
+Safe Repairer
+Manufactured Building Installer
+Mobile Home Installer
+Rigger
+Signal Repairer
+Track Switch Repairer
+Helpers--Installation Worker
+Installation Other
+Maintenance Other
+Production Occupation
+Supervisor of Production Workers
+first-line Supervisor of Production Workers
+Operating Worker
+Assemblers Fabricator
+Fabricator
+Structure Assembler
+Surfaces Assembler
+Rigging Assembler
+Assembler
+Systems Assembler
+Electrical Assembler
+Electronics Assembler
+Electromechanical Assembler
+Winders Finisher
+Tapers Finisher
+Electrical Finisher
+Electronic Finisher
+Assemblers Finisher
+Engine Assembler
+Other Machine Assembler
+Structural Metal Fabricators Fitter
+Fitter
+Miscellaneous Assemblers Fabricator
+Fiberglass Laminators Fabricator
+Timing Device Assemblers Adjuster
+Adjuster
+AssemblersAssembler
+Fabricators Assembler
+Other Assembler
+Including Team Assembler
+Food Processing Worker
+Baker
+Butchers Worker
+Meat Worker
+Poultry Worker
+Fish Processing Worker
+Butchers Cutter
+Meat Cutter
+Meat Trimmer
+Poultry Trimmer
+Trimmer
+Fish Cutters Trimmer
+Slaughterers Packer
+Meat Packer
+Miscellaneous Food Processing Worker
+Food Tender
+Roasting Tender
+Baking Tender
+Tender
+Drying Machine Operators Tender
+Food Batchmaker
+Food Cooking Machine Operators Tender
+Food Processing Workers, All Other
+Metal Worker
+Metal WorkersWorker
+Plastic Worker
+Computer Control Programmers Operator
+Operators Plastic
+Metal Plastic
+Plastic
+Programmers Plastic
+Setters Plastic
+Tenders Plastic
+Extruding Plastic
+Cutting Plastic
+Punching Plastic
+Drilling Plastic
+Grinding Plastic
+Lapping Plastic
+Polishing Plastic
+Lathe Plastic
+Milling Plastic
+Machinist
+Operators Caster
+Tenders Caster
+Pourers Caster
+Caster
+Metal-Refining Furnace Operators Tender
+Pourers Metal
+Casters Metal
+Metal
+Model Makers Plastic
+Patternmakers Plastic
+Makers Plastic
+Molders Plastic
+Foundry Mold Coremaker
+Coremaker
+Molding Plastic
+Coremaking Plastic
+Tool Maker
+Die Maker
+Welding Worker
+Soldering Worker
+Brazing Worker
+Welders Brazer
+Cutters Brazer
+Solderers Brazer
+Brazer
+Welding Tender
+Soldering Tender
+Setters Tender
+Operators Tender
+Miscellaneous Metal Worker
+Miscellaneous Metal WorkersWorker
+Workers Plastic
+Plating Plastic
+Grinders Sharpener
+Filers Sharpener
+Sharpener
+Metal Workers Other
+Printing Worker
+Prepress Technicians Worker
+Printing Press Operator
+Print Binding Worker
+Finishing Worker
+Textile Worker
+Apparel Worker
+Furnishings Worker
+Laundry Worker
+Dry-Cleaning Worker
+Pressers Material
+Textile Material
+Garment Material
+Material
+Related Material
+Sewing Machine Operator
+Shoe Worker
+Leather Worker
+Shoe Repairer
+Leather Workers Repairer
+Shoe Machine Operators Tender
+Tailors Sewer
+Dressmakers Sewer
+Sewer
+Sewers, Hand
+Custom Sewer
+Textile Bleaching Tender
+Dyeing Machine Operators Tender
+Textile Knitting Tender
+Winding Tender
+Twisting Tender
+Extruding Fiber
+Setters Fiber
+Operators Fiber
+Fiber
+Tenders Fiber
+Synthetic Fiber
+Glass Fiber
+Fabric Patternmaker
+Apparel Patternmaker
+Upholsterer
+Textile Other
+Apparel Other
+Woodworker
+Cabinetmakers Carpenter
+Bench Carpenter
+Furniture Finisher
+Model Makers, Wood
+Patternmakers, Wood
+Model Makers, Wood
+Patternmakers, Wood
+Setters, Wood
+Operators, Wood
+Tenders, Wood
+Setters, Sawing
+Operators, Sawing
+Tenders, Sawing
+Miscellaneous Woodworker
+Woodworkers
+Plant Operator
+System Operator
+Operators Dispatcher
+Distributors Dispatcher
+Nuclear Power Reactor Operator
+Power Distributors Dispatcher
+Power Plant Operator
+Stationary Engineers Operator
+Boiler Operator
+Water Operator
+Wastewater Treatment Plant Operator
+Miscellaneous Plant Operator
+Chemical Plant Operator
+Gas Plant Operator
+Operators Gauger
+Gauger
+Plant Operators
+Other Production Occupation
+Chemical Equipment Operators Tender
+Separating Tender
+Filtering Tender
+Clarifying Tender
+Precipitating Tender
+Crushing Worker
+Grinding Worker
+Polishing Worker
+Mixing Worker
+Blending Worker
+Crushing Tender
+Grinding Tender
+Grinding Workers, Hand
+Mixing Tender
+Cutting Worker
+Cutters, Hand
+Trimmers, Hand
+Cutting Tender
+Extruding Tender
+Forming Tender
+Pressing Tender
+Furnace Tender
+Kiln Tender
+Oven Tender
+Drier Tender
+Kettle Operators Tender
+Inspectors Weigher
+Testers Weigher
+Sorters Weigher
+Samplers Weigher
+Weigher
+Jewelers Worker
+Precious Stone Worker
+Medical Technician
+Dental Technician
+Ophthalmic Laboratory Technician
+Dental Laboratory Technician
+Medical Appliance Technician
+Packaging Tender
+Filling Machine Operators Tender
+Painting Worker
+Coating Tender
+Painting Tender
+Painters, Transportation Equipment
+Coating Worker
+Decorating Worker
+Semiconductor Processor
+Photographic Process Workers Operator
+Miscellaneous Production Worker
+Adhesive Bonding Machine Operators Tender
+Cleaning Tender
+Washing Tender
+Metal Pickling Equipment Operators Tender
+Cooling Tender
+Freezing Equipment Operators Tender
+Etchers Engraver
+Engraver
+Shapers, Plastic
+Casters, Plastic
+Tire Builder
+Helpers--Production Worker
+Production Workers
+Transportation Occupation
+Material Moving Occupation
+Supervisor of Transportation Workers
+Material Moving Worker
+Aircraft Cargo Handling Supervisor
+First-Line Supervisor
+First-Line Supervisors of Transportation Supervisor
+Workers Supervisor
+Air Transportation Worker
+Aircraft Pilots Engineer
+Flight Engineer
+Pilots Engineer
+Copilots Engineer
+Commercial Pilot
+Air Traffic Controllers Specialist
+Airfield Operations Specialist
+Air Traffic Controller
+Flight Attendant
+Motor Vehicle Operator
+Ambulance Drivers Technician
+Attendants Technician
+Emergency Medical Technician
+Bus Driver
+Drivers Intercity
+Transit Intercity
+Intercity
+Bus Drivers, School or Special Client
+Driver/Sales Workers Driver
+Truck Driver
+Driver/Sales Worker
+Heavy Driver
+Tractor-Trailer Truck Driver
+Light Truck or Delivery Services Driver
+Taxi Drivers Chauffeur
+Chauffeur
+Miscellaneous Motor Vehicle Operator
+Motor Vehicle Operators, All Other
+Rail Transportation Worker
+Locomotive Engineers Operator
+Locomotive Engineer
+Locomotive Firer
+Engineers Hostler
+Operators Hostler
+Hostler
+Brake Operator
+Signal Operator
+Switch Operator
+Railroad Conductors Yardmaster
+Yardmaster
+Subway Operator
+Streetcar Operator
+Miscellaneous Rail Transportation Worker
+Rail Transportation Workers, All Other
+Water Transportation Worker
+Sailors Oiler
+Marine Oiler
+Ship Operator
+Boat Captains Operator
+Captains, Vessel
+Mates, Vessel
+Pilot of Water Vessels
+Motorboat Operator
+Ship Engineer
+Other Transportation Worker
+Bridge Tender
+Lock Tender
+Parking Lot Attendant
+Automotive Attendant
+Watercraft Service Attendant
+Traffic Technician
+Transportation Inspector
+Transportation Attendants
+Miscellaneous Transportation Worker
+Transportation Workers
+Conveyor Operators Tender
+Crane Operator
+Tower Operator
+Dredge Operator
+Excavating Operator
+Loading Machine Operator
+Dragline Operator
+Loading Machine Operators, Underground Mining
+Hoist Operator
+Winch Operator
+Industrial Truck Operator
+Tractor Operator
+Laborers, Hand
+Movers, Hand
+Cleaner of Vehicles Equipment
+Equipment
+Freight, Hand
+Stock, Hand
+Machine Feeders Offbearer
+Offbearer
+Packers, Hand
+Packagers, Hand
+Pumping Station Operator
+Gas Compressor Operator
+Gas Pumping Station Operator
+Pump Operators
+Wellhead Pumper
+Refuse Collector
+Recyclable Material Collector
+Mine Shuttle Car Operator
+Car Loader
+Truck Loader
+Loader
+Ship Loader
+Miscellaneous Material Moving Worker
+Material Moving Workers

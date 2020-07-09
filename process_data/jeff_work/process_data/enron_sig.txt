@@ -1,0 +1,5670 @@
+Chairperson B-TIT
+: O
+Outlook B-ORG
+Migration B-ORG
+Team B-ORG
+
+Detailed O
+Description O
+: O
+
+Deal O
+Terms O
+
+Thanks O
+in O
+advance O
+, O
+
+Audrey B-PER
+D I-PER
+. I-PER
+Robertson I-PER
+
+Transwestern B-ORG
+Pipeline I-ORG
+Company I-ORG
+
+email B-EML
+address I-EML
+: I-EML
+audrey I-EML
+. I-EML
+robertson I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+5849 I-TEL
+
+( B-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+2551 I-TEL
+Fax O
+
+Thanks O
+, O
+Gary B-PER
+
+Reyna B-PER
+Cabrera I-PER
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+3072 I-TEL
+
+Thanks O
+! O
+
+Mike B-PER
+McGowan I-PER
+
+Thanks O
+. O
+Lynn B-PER
+
+Rick B-PER
+
+John B-PER
+Buchanan I-PER
+
+Fran B-PER
+Fagan I-PER
+
+Sr B-TIT
+. I-TIT
+HR I-TIT
+Rep I-TIT
+
+Enron B-ORG
+Transportation I-ORG
+Services I-ORG
+
+713 B-TEL
+. I-TEL
+853 I-TEL
+. I-TEL
+5219 I-TEL
+
+fran B-EML
+. I-EML
+fagan I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Thanks O
+, O
+
+Brad B-PER
+
+Miranda B-PER
+
+x3 O
+- O
+6252 O
+
+Ok O
+
+Yes O
+need O
+to O
+get O
+it O
+in O
+asap O
+
+Larry B-PER
+
+Gary B-PER
+
+thanks O
+, O
+
+Joe B-PER
+Linhart I-PER
+
+Chris B-PER
+Greaney I-PER
+
+Thank O
+you O
+again O
+! O
+
+Chris B-PER
+Sebesta I-PER
+
+Northern B-ORG
+Natural I-ORG
+Gas I-ORG
+
+Office O
+: O
+402 B-TEL
+- I-TEL
+398 I-TEL
+- I-TEL
+7064 I-TEL
+
+Fax O
+: O
+402 B-TEL
+- I-TEL
+398 I-TEL
+- I-TEL
+7413 I-TEL
+
+chris B-EML
+. I-EML
+sebesta I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Randy B-PER
+Bryan I-PER
+
+Market B-TIT
+Services I-TIT
+Representative I-TIT
+
+Northern B-ORG
+Natural I-ORG
+Gas I-ORG
+Company I-ORG
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+0438 I-TEL
+
+Thanks O
+again O
+! O
+
+Ken B-PER
+Powers I-PER
+
+( B-TEL
+402 I-TEL
+) I-TEL
+398 I-TEL
+- I-TEL
+7065 I-TEL
+
+MS B-PER
+
+Ava B-PER
+- O
+35842 B-TEL
+
+Thanks O
+
+Ava B-PER
+
+Maggie B-PER
+
+Toby B-PER
+Kuehl I-PER
+
+ETS B-ORG
+Electronic I-ORG
+Communications I-ORG
+
+Office O
+: O
+EB O
+3946 B-TEL
+
+Phone O
+: O
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+1527 I-TEL
+
+Email O
+: O
+< O
+mailto O
+: O
+toby B-EML
+. I-EML
+kuehl I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+> O
+toby B-EML
+. I-EML
+kuehl I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+< O
+mailto O
+: O
+toby B-EML
+. I-EML
+kuehl I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+> O
+
+Thanks O
+: O
+John B-PER
+Buchanan I-PER
+
+Deborah B-PER
+
+HotTap B-ORG
+Helpdesk I-ORG
+
+3 B-TEL
+- I-TEL
+6063 I-TEL
+
+FYI O
+
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+- O
+- O
+- O
+- O
+- O
+Original O
+Message O
+- O
+- O
+- O
+- O
+- O
+
+FYI O
+Thanks O
+. O
+Lynn B-PER
+
+Mike B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Thanks O
+. O
+Lynn B-PER
+
+Thanks O
+. O
+Lynn B-PER
+Blair I-PER
+
+Ricki B-PER
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Large O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+test O
+
+Lynn B-PER
+
+Ava B-PER
+, O
+please O
+put O
+me O
+on O
+the O
+list O
+. O
+
+Lynn B-PER
+
+This O
+is O
+fun O
+! O
+! O
+! O
+! O
+
+Thanks O
+Lynn B-PER
+
+I O
+agree O
+. O
+Thanks O
+, O
+Lynn B-PER
+
+Fyi O
+. O
+Lynn B-PER
+
+Fyi O
+. O
+Lynn B-PER
+
+Thanks O
+, O
+Lynn B-PER
+
+Fyi O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Lynn B-PER
+
+Janet B-PER
+
+FYI O
+. O
+Steve B-PER
+
+Thank O
+you O
+, O
+
+South B-LOC
+Central I-LOC
+= I-LOC
+20 I-LOC
+
+Randy B-PER
+
+Jamie B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Nancy B-PER
+
+Tracy B-PER
+Scott I-PER
+
+ETS B-TIT
+HR I-TIT
+
+Anna B-PER
+C I-PER
+. I-PER
+Salazar I-PER
+
+Enron B-ORG
+Corp I-ORG
+
+P B-LOC
+. I-LOC
+O I-LOC
+. I-LOC
+Box I-LOC
+1188 I-LOC
+
+Houston B-LOC
+, I-LOC
+Texas I-LOC
+77251 B-TEL
+- I-TEL
+1188 I-TEL
+
+Tax B-TIT
+Accountant I-TIT
+
+713 B-TEL
+- I-TEL
+345 I-TEL
+- I-TEL
+8722 I-TEL
+
+Nancy B-PER
+( B-TEL
+x36311 I-TEL
+) I-TEL
+
+Amy B-PER
+
+Ricki B-PER
+
+Shane B-PER
+
+Thanks O
+
+Beverly B-PER
+
+Mrs B-PER
+. I-PER
+Sheila I-PER
+Nacey I-PER
+
+8630 B-LOC
+Pine I-LOC
+Falls I-LOC
+Dr I-LOC
+. I-LOC
+
+Houston B-LOC
+, I-LOC
+TX I-LOC
+77095 I-LOC
+
+Gina B-PER
+
+Tks O
+- O
+Mike B-PER
+W I-PER
+. I-PER
+
+Brian B-PER
+Robinho I-PER
+
+FT B-ORG
+Energy I-ORG
+
+brobinhold B-EML
+@ I-EML
+ftenergy I-EML
+. I-EML
+com I-EML
+
+720 B-TEL
+- I-TEL
+548 I-TEL
+- I-TEL
+5722 I-TEL
+
+Terry B-PER
+Kowalke I-PER
+
+We O
+will O
+start O
+checking O
+these O
+for O
+May O
+Accounting O
+, O
+
+The O
+TW O
+Team O
+
+Mary B-PER
+
+Home O
+Address O
+
+10622  B-LOC
+Endicott I-LOC
+Lane I-LOC
+
+Houston B-LOC
+,  I-LOC
+TX  I-LOC
+77318 I-LOC
+
+Thanks O
+. O
+Lynn B-PER
+
+Here O
+is O
+our O
+first O
+draft O
+. O
+
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Thanks O
+. O
+LYnn B-PER
+
+= O
+09FYI O
+. O
+Thansk O
+. O
+Lynn B-PER
+
+FYI O
+, O
+Thanks O
+. O
+Lynn B-PER
+
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+~ O
+* O
+
+FYI O
+, O
+Thanks O
+. O
+Lynn B-PER
+
+Ava B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Steve B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+= O
+09FYI O
+. O
+Thanks O
+. O
+lYnn B-PER
+
+Steve B-PER
+, O
+FYI O
+. O
+Thansk O
+. O
+Lynn B-PER
+
+Sheila B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Did O
+you O
+receive O
+? O
+
+John B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+Thank O
+. O
+Lynn B-PER
+
+Approved O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+FYI O
+. O
+
+Shelley B-PER
+, O
+FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Ava B-PER
+, O
+no O
+problem O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+= O
+09Fyi O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+I O
+am O
+available O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Thanks O
+for O
+the O
+help O
+. O
+Lynn B-PER
+
+Lynn B-PER
+Blair I-PER
+
+Northern B-ORG
+Natural I-ORG
+Gas I-ORG
+Co I-ORG
+. I-ORG
+
+Gas I-ORG
+Logistics I-ORG
+
+Phone B-TEL
+: I-TEL
+( I-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+7637 I-TEL
+. I-TEL
+
+Fax B-TEL
+: I-TEL
+( I-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+8000 I-TEL
+
+FYI O
+. O
+thanks O
+. O
+Lynn B-PER 
+
+SLA O
+mtg O
+, O
+. O
+Thanks O
+Lynn B-PER 
+
+FYI O
+. O
+Lynn B-PER
+
+= O
+09FYI O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+fyi O
+. O
+Thanks O
+. O
+Lynn B-PER
+
+Dennis B-PER
+P I-PER
+. I-PER
+Lee I-PER
+
+ETS O
+
+Gas B-ORG
+Logistics I-ORG
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+1715 I-TEL
+
+dennis B-EML
+. I-EML
+lee I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Raetta B-PER
+
+James B-PER
+
+More O
+as O
+it O
+develops O
+! O
+
+Your O
+pal O
+, O
+
+Mike B-PER
+
+Renee B-PER
+Perry I-PER
+J I-PER
+
+Lori B-PER
+Saffer I-PER
+
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+0641 I-TEL
+
+Sincerely O
+, O
+
+Amy B-PER
+Mulligan I-PER
+
+Donna B-PER
+
+Thanks O
+, O
+Kim B-PER
+.0
+
+Thanks O
+DS B-PER
+
+Pat B-PER
+Davidson I-PER
+
+Gas B-TIT
+Scheduling I-TIT
+Manager I-TIT
+
+Southern B-ORG
+California I-ORG
+Gas I-ORG
+Company I-ORG
+
+pdavidson B-EML
+@ I-EML
+socalgas I-EML
+. I-EML
+com I-EML
+
+Thanks O
+Ramona B-PER
+
+Elizabeth B-PER
+
+x3  B-TEL
+-  I-TEL
+6928  I-TEL
+
+- O
+Rita B-PER
+
+See O
+me O
+if O
+you O
+have O
+questions O
+. O
+
+Sandra B-PER
+
+thanks O
+- O
+that O
+was O
+funny O
+
+have O
+a O
+great O
+day O
+
+sandra B-PER
+
+oh O
+- O
+laughing O
+
+Who O
+is O
+Joey B-PER
+? O
+
+Warmest O
+regards O
+, O
+
+Warmest O
+Regards O
+, O
+
+Sincerely O
+, O
+
+thanks O
+
+thnks O
+
+Think O
+warm O
+thoughts O
+Susan B-PER
+- O
+
+The B-ORG
+Brawner I-ORG
+' I-ORG
+s I-ORG
+
+15911 B-LOC
+Marwick I-LOC
+Ct I-LOC
+
+Houston B-LOC
+, I-LOC
+Tx I-LOC
+77095 I-LOC
+
+home O
+281 B-TEL
+- I-TEL
+855 I-TEL
+- I-TEL
+8797 I-TEL
+
+sandra B-PER
+cell O
+713 B-TEL
+- I-TEL
+594 I-TEL
+- I-TEL
+7369 I-TEL
+
+kenny B-PER
+cell O
+281 B-TEL
+- I-TEL
+381 I-TEL
+- I-TEL
+7288 I-TEL
+
+thanks O
+for O
+the O
+laughs O
+
+i O
+love O
+you O
+
+Thank O
+you O
+for O
+your O
+comments O
+. O
+
+Thank O
+You O
+
+Best O
+Regards O
+, O
+
+i O
+dont O
+book O
+these O
+trades O
+
+my O
+im O
+is O
+sandra B-PER
+brawner I-PER
+
+John B-PER
+Craig I-PER
+Taylor I-PER
+
+08 O
+/ O
+16 O
+/ O
+2000 O
+11 O
+: O
+18 O
+AM O
+
+thanks O
+- O
+did O
+it O
+last O
+week O
+
+Peter B-PER
+F I-PER
+Keavey I-PER
+
+04 O
+/ O
+12 O
+/ O
+2001 O
+02 O
+: O
+24 O
+PM O
+
+Love O
+and O
+Kisses O
+
+Regards O
+, O
+
+Jared B-PER
+
+Michael B-PER
+
+Outlook B-ORG
+2000 I-ORG
+Migration I-ORG
+Team I-ORG
+
+I O
+love O
+you O
+
+Jeff B-PER
+
+Too O
+Funny O
+! O
+
+See O
+below O
+from O
+Tricia O
+Spence O
+. O
+
+Good O
+Luck O
+- O
+I O
+hoped O
+I O
+helped O
+- O
+
+thank O
+you O
+for O
+the O
+invite O
+. O
+But O
+I O
+will O
+not O
+be O
+able O
+to O
+attend O
+. O
+
+- O
+- O
+- O
+- O
+- O
+Original O
+Message O
+- O
+- O
+- O
+- O
+- O
+
+Fangming B-PER
+
+GASFUNDY  B-EML
+@ I-EML
+ENRON I-EML
+
+11 O
+/ O
+10 O
+/ O
+2000 O
+10 O
+: O
+55 O
+AM O
+
+Sent O
+by O
+: O
+Chris I-EML
+Gaskill I-EML
+@ I-EML
+ENRON I-EML
+
+To O
+: O
+
+cc O
+: O
+( O
+bcc O
+: O
+Andrea B-PER
+Ring I-PER
+/ O
+HOU O
+/ O
+ECT O
+) O
+
+Thanks O
+Again O
+for O
+the O
+time O
+, O
+
+Steve B-PER
+
+Aaron B-PER
+
+I O
+have O
+received O
+your O
+E O
+- O
+Mail O
+. O
+
+Thanks O
+. O
+
+Teresa B-PER
+
+Teresa B-PER
+G I-PER
+. I-PER
+Bushman I-PER
+
+Enron B-ORG
+North I-ORG
+America I-ORG
+Corp I-ORG
+. I-ORG
+
+1400 B-LOC
+Smith I-LOC
+Street I-LOC
+, I-LOC
+EB I-LOC
+3835A I-LOC
+
+Houston B-LOC
+, I-LOC
+TX I-LOC
+77002 I-LOC
+
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+7895 I-TEL
+
+fax O
+(  B-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+3393 I-TEL
+
+teresa B-EML
+. I-EML
+g I-EML
+. I-EML
+bushman I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Mathew B-PER
+
+Kimat B-PER
+
+gun O
+
+Adam B-PER
+Johnson I-PER
+
+x54877 B-TEL
+
+EnronOnline B-ORG
+
+AGA O
+for O
+5 O
+/ O
+11 O
+/ O
+01 O
+is O
+119 O
+
+Lucy B-PER
+Marshall I-PER
+
+Executive B-TIT
+Assistant I-TIT
+
+Office O
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+4525 I-TEL
+
+Fax O
+713 B-TEL
+- I-TEL
+345 I-TEL
+- I-TEL
+7864 I-TEL
+
+Cell O
+713 B-TEL
+- I-TEL
+417 I-TEL
+- I-TEL
+7802 I-TEL
+
+lucy_marshall B-EML
+@ I-EML
+enron I-EML
+. I-EML
+net I-EML
+
+Henry B-PER
+Van I-PER
+
+Thanks O
+, O
+
+Amanda B-PER
+
+Eric B-PER
+
+Thank O
+You O
+, O
+
+Market B-TIT
+Data I-TIT
+
+Employee O
+Name O
+: O
+
+DE B-PER
+PAOLIS I-PER
+, I-PER
+TAMMI I-PER
+
+FERRIES B-PER
+, I-PER
+NELSON I-PER
+
+ROYED B-PER
+, I-PER
+JEFFREY I-PER
+
+Matt B-PER
+Motsinger I-PER
+
+x35221 B-TEL
+
+Scott B-PER
+
+Rumaldo B-PER
+Lopez I-PER
+
+Outlook B-ORG
+Migration I-ORG
+Team I-ORG
+
+HR B-TIT
+
+Melissa B-PER
+Solis I-PER
+
+x35167 B-TEL
+
+< O
+Embedded O
+Picture O
+( O
+Metafile O
+) O
+> O
+
+Craig B-PER
+= O
+20 O
+
+Savita B-PER
+
+X31787 B-TEL
+
+Louise B-PER
+& I-PER
+John I-PER
+
+fyi O
+
+fyi O
+. O
+. O
+. O
+
+fyi O
+. O
+. O
+
+Agaon B-PER
+, O
+no O
+apologies O
+necessary O
+, O
+
+Rogers B-PER
+
+Mike B-PER
+McConnell I-PER
+
+Tom B-PER
+
+Swig B-PER
+
+Vicki  B-PER
+Versen I-PER
+
+x30903 B-TEL
+
+Enron B-ORG
+Global I-ORG
+Technology I-ORG
+
+any O
+news O
+from O
+harry B-PER
+? O
+
+Ken B-PER
+Lay I-PER
+
+Conf B-LOC
+Room I-LOC
+05075 I-LOC
+
+Kim B-PER
+
+x30681 B-TEL
+
+Chris B-PER
+
+3 B-TEL
+- B-TEL
+7533 B-TEL
+
+November O
+8 O
+, O
+2001 O
+
+Kimberly B-PER
+Bates I-PER
+
+East B-ORG
+Gas I-ORG
+/ I-ORG
+Origination I-ORG
+
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+5193 I-TEL
+
+713 B-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8453 I-TEL
+Fax O
+
+Thank O
+you O
+
+Leonidas B-PER
+G I-PER
+. I-PER
+Savvas I-PER
+
+Analyst B-TIT
+
+East B-ORG
+Gas I-ORG
+Trading I-ORG
+Group I-ORG
+
+ENRON B-ORG
+CORP I-ORG
+. I-ORG
+
+Phone O
+: B-TEL
+713 I-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+4566 I-TEL
+
+Cellular O
+: O
+832 B-TEL
+- I-TEL
+816 I-TEL
+- I-TEL
+8329 I-TEL
+
+Fax O
+: O
+713 B-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8453 I-TEL
+
+leonidas B-EML
+. I-EML
+savvas
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+fyi O
+. O
+
+Tammie B-PER
+Schoppe I-PER
+
+on O
+behalf O
+of O
+UBS B-ORG
+HR I-ORG
+
+Amanda B-PER
+Rybarski I-PER
+
+Office O
+: O
+( B-TEL
+713 I-TEL
+) I-TEL
+853 I-TEL
+- I-TEL
+4384 I-TEL
+
+Fax O
+: O
+( B-TEL
+713 I-TEL
+) I-TEL
+646 I-TEL
+- I-TEL
+3564 I-TEL
+
+Cell O
+: O
+( B-TEL
+713 I-TEL
+) I-TEL
+560 I-TEL
+- I-TEL
+0934 I-TEL
+
+Dan B-PER
+Diamond I-PER
+
+yep O
+, O
+that O
+my O
+son O
+! O
+! O
+! O
+! O
+
+Stan B-PER
+
+Enjoy O
+! O
+
+The B-ORG
+Yahoo I-ORG
+! I-ORG
+Greetings I-ORG
+Team I-ORG
+
+Jon B-PER
+
+Customer B-TIT
+and I-TIT
+Business I-TIT
+Services I-TIT
+
+Global B-ORG
+Infrastructure I-ORG
+
+Brian B-PER
+
+David B-PER
+Oxley I-PER
+
+http O
+: O
+/ O
+/ O
+esource O
+. O
+enron O
+. O
+com O
+
+John B-PER
+
+- O
+AGA O
+' O
+00to01Dec8 O
+. O
+pdf O
+
+- O
+Daily O
+. O
+Dec13 O
+. O
+pdf O
+
+Many O
+Thanks O
+, O
+
+Liz B-PER
+Taylor I-PER
+
+Assistant B-TIT
+to O
+Greg B-PER
+Whalley I-PER
+
+713 B-TEL
+. I-TEL
+853 I-TEL
+. I-TEL
+1935 I-TEL
+office O
+
+713 B-TEL
+. I-TEL
+853 I-TEL
+. I-TEL
+1838 I-TEL
+fax O
+
+713 B-TEL
+. I-TEL
+854 I-TEL
+. I-TEL
+3056 I-TEL
+mobile O
+
+chance O
+
+Gas B-ORG
+Fundamentals I-ORG
+
+Fax O
+: O
+( B-ORG
+713 I-ORG
+) I-ORG
+646 I-ORG
+- I-ORG
+8453 I-ORG
+
+Pager O
+: O
+( B-TEL
+877 I-TEL
+) I-TEL
+482 I-TEL
+- I-TEL
+0772 I-TEL
+
+Dave B-PER
+Forster I-PER
+
+713 B-TEL
+. I-TEL
+853 I-TEL
+. I-TEL
+1861 I-TEL
+
+E O
+- O
+Mail O
+: O
+David B-EML
+. I-EML
+Forster I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+David B-PER
+Oxley I-PER
+
+Head B-TIT
+, I-TIT
+Human I-TIT
+Resources I-TIT
+
+Thanks O
+, O
+Tony B-PER
+Jarrett I-PER
+
+Benefits O
+
+Ext O
+. O
+3 B-TEL
+- I-TEL
+7829 I-TEL
+
+Thank O
+you O
+, O
+
+Teresa B-PER
+Mandola I-PER
+( B-TEL
+39807 I-TEL
+) I-TEL
+- O
+Power O
+
+Jennifer B-PER
+McQuade I-PER
+( B-TEL
+53614 I-TEL
+) I-TEL
+- O
+Power O
+
+Dan B-PER
+Diamond I-PER
+( B-TEL
+39673 I-TEL
+) I-TEL
+- O
+Gas O
+
+Enron B-ORG
+Benefits I-ORG
+Department I-ORG
+
+Jeff B-PER
+the I-PER
+Genius I-PER
+
+Corporate B-ORG
+Benefits I-ORG
+
+Lisa B-PER
+Shoemake I-PER
+
+East B-ORG
+Power I-ORG
+Trading I-ORG
+
+EB3125a O
+
+Off O
+. O
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+9194 I-TEL
+
+Fax O
+713 B-TEL
+- I-TEL
+646 I-TEL
+- I-TEL
+8272 I-TEL
+
+Stephanie B-PER
+Sever I-PER
+
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+3465 I-TEL
+
+Certification O
+Document O
+
+Karen B-PER
+Buckley I-PER
+
+Kind O
+regards O
+, O
+
+Adrianne B-PER
+
+x57302 B-TEL
+
+Louise B-PER
+
+UBSWenergy B-ORG
+. O
+com O
+
+Stephen B-PER
+R I-PER
+. I-PER
+Harrington I-PER
+
+Technical B-TIT
+Project I-TIT
+Manager I-TIT
+, I-TIT
+ECS I-TIT
+Project I-TIT
+
+Enron B-ORG
+Net I-ORG
+Works I-ORG
+, I-ORG
+LLC I-ORG
+
+w O
+: O
+713 B-TEL
+- I-TEL
+853 I-TEL
+- I-TEL
+7619 I-TEL
+
+p O
+: O
+877 B-TEL
+- I-TEL
+651 I-TEL
+- I-TEL
+7361 I-TEL
+
+c O
+: O
+713 B-TEL
+- I-TEL
+444 I-TEL
+- I-TEL
+7279 I-TEL
+
+stephen B-EML
+. I-EML
+harrington I-EML
+@ I-EML
+enron I-EML
+. I-EML
+com I-EML
+
+Good O
+Luck O
+
+Julie B-PER
+: O
+- O
+) O
+
+Thank O
+you O
+. O
+
+* O
+additional O
+offers O
+
+Carolyn B-PER
+Graham I-PER
+
+Enron B-ORG
+NetWorks I-ORG
+LLC I-ORG
+
+Vendor B-TIT
+Management I-TIT
+
+713 B-TEL
+- I-TEL
+345 I-TEL
+- I-TEL
+8008 I-TEL
+
+Stephanie B-PER
+Trabia I-PER
+ext O
+5546 B-TEL
+
+Alan B-PER
+Newman I-PER
+ext  O
+5548 B-TEL
+
+David B-PER
+Hewitt I-PER
+ext O
+5545 B-TEL
+
+Singapore O
+( B-TEL
+011 I-TEL
+) I-TEL
+- I-TEL
+65 I-TEL
+- I-TEL
+342 I-TEL
+- I-TEL
+2931 I-TEL
+
+Soo B-PER
+Molyneux I-PER
+
+Charlotte B-PER
+Marson I-PER
+
+http O
+: O
+/ O
+/ O
+pacmembers O
+. O
+enron O
+. O
+com O
+
+I O
+have O
+a O
+seperate O
+system O
+. O
+1 O
+
+I O
+believe O
+1 O
+. O
+
+Sincere O
+Regards O
+, O
+
+Enjoy O
+
+Sandra B-PER
+Brawner I-PER
+
+thnks O
+
+i O
+dont O
+get O
+it O
+
+Rick B-PER
+
+fyi O
+, O
+rick O
+
+please O
+schedule O
+
+test3 O
+
+Attached O
+
+thanks O
+, O
+rick B-PER
+buy B-PER
+
+Weird O
+, O
+but O
+ok O
+by O
+me O
+. O
+Rick B-PER
+Buy I-PER
+
+test2 O
+
+feb O
+2 O
+i O
+think O
+why O
+? O
+? O
+
+Rick B-PER
+Buy I-PER
+
+keep O
+' O
+em O
+coming O
+, O
+rick B-PER
+
+Best O
+of O
+luck O
+, O
+Rick B-PER
+
+excellent
+!
+!
+!
+!
+!
+
+I
+have
+done
+this
+3
+times
+now
+.
+
+Is
+this
+correct
+?
+Rick
+
+Thanks
+,
+Rick
+
+Call
+me
+if
+a
+problem
+,
+Rick
+Buy
+
+How
+is
+progress
+on
+this
+?
+Rick
+
+fyi
+,
+please
+respond
+,
+tx
+rick
+
+fyi
+-
+comments
+?
+rick
+
+will
+not
+attend
+,
+tx
+rick
+
+fine
+
+to
+your
+hearts
+content
+
+Thanks
+,
+Rick
+Buy
+
+What
+conference
+?
+Rick
+
+fine
+by
+me
+,
+rick
+
+This
+is
+fine
+by
+me
+.
+Rick
+Buy
+
+Please
+print
+and
+file
+tx
+rick
+
+Lisa
+Fair
+
+(
++
+44
+207
+783
+7123
+)
+
+Thanks
+.
+.
+dy
+
+Any
+news
+on
+this
+.
+Rick
+
+Has
+this
+been
+verified
+.
+Rick
+
+Molly
+
+Regards
+
+Bill
+
+01
+/
+02
+/
+2000
+00
+:
+34
+
+Any
+progress
+here
+.
+Rick
+
+Any
+more
+on
+this
+issue
+.
+Rick
+
+Did
+this
+go
+ok
+.
+Rick
+
+Kathy
+Mayfield
+
+12
+/
+13
+/
+2000
+05
+:
+02
+PM
+
+12
+/
+13
+/
+2000
+05
+:
+07
+PM
+
+Thank
+you
+in
+advance
+.
+
+Dorothy
+
+Vickie
+
+EB4836
+
+713
+-
+853
+-
+9864
+
+Per
+your
+request
+.
+
+Tanya
+
+Jim
+
+3
+
+Please
+see
+attached
+.
+
+Aren
+'
+t
+we
+all
+?
+
+Charla
+Reese
+
+Manager
+,
+Community
+Relations
+
+x35202
+
+Pam
+
+Kent
+W
+.
+Morrison
+
+KM
+Business
+Analyst
+Consultant
+
+Thanks
+.
+
+LI52100
+
+HAPPY
+HOLIDAYS
+
+Lee
+Steele
+
+Manager
+Enron
+Networks
+
+(
+713
+)
+345
+-
+8259
+
+Emy
+C
+.
+Geraldo
+
+3
+-
+5391
+
+Enron
+Corp
+.
+
+Enron
+Europe
+Gas
+Trading
+VaR
+Violation
+
+From
+:
+Rick
+Causey
+
+Dial
+in
+-
+011
+44
+207
+783
+0508
+
+Dial
+In
+for
+Domestic
+:
+1
+-
+877
+-
+987
+-
+1409
+
+Leaders
+Name
+:
+Gary
+Hickerson
+
+Pass
+Code
+:
+Gary
+
+Lisa
+Fair
+
++
+44
+207
+783
+7123
+
+To
+be
+rescheduled
+.
+
+Domestic
+800
+-
+745
+-
+1000
+
+International
+801
+-
+977
+-
+0648
+
+Code
+8531935
+
+Attorney
+:
+J
+.
+C
+.
+Nickens
+
+s
+&
+p
+
+Pager
+:
+713
+-
+764
+-
+6467
+
+Frank
+
+ASME
+International
+
+Capitol
+Update
+
+October
+24
+,
+2001
+
+Public
+Affairs
+Program
+Manager
+
+1828
+L
+Street
+,
+NW
+,
+Suite
+906
+
+Washington
+,
+DC
+20036
+
+Phone
+:
+202
+.
+785
+.
+3756
+
+Fax
+:
+202
+.
+429
+.
+9417
+
+Email
+:
+legatskim
+@
+asme
+.
+org
+
+regards
+,
+
+RZ
+
+The
+New
+York
+Times
+on
+the
+Web
+
+Ned
+Crady
+
+Enron
+Global
+Markets
+
+Office
+:
+(
+713
+)
+853
+-
+4552
+
+Email
+:
+ncrady
+@
+enron
+.
+com
+
+Caroline
+Bond
+
+Managing
+Director
+
+Melissa
+R
+.
+Murray
+
+Government
+Relations
+
+Phone
+:
+202
+.
+785
+.
+7380
+
+Email
+:
+murraym
+@
+asme
+.
+org
+
+William
+W
+.
+Brown
+
+Cheers
+big
+ears
+,
+
+Jules
+
+Cassandra
+.
+
+Sharon
+Sullo
+
+x31946
+
+Thanks
+,
+Julie
+
+To
+future
+success
+,
+
+Chris
+Risenhoover
+
+Regional
+Account
+Manager
+
+Tripwire
+,
+Inc
+.
+
+972
+-
+306
+-
+1658
+(
+voice
+)
+
+801
+-
+327
+-
+6548
+(
+fax
+)
+
+ChrisR
+@
+Tripwire
+.
+com
+
+www
+.
+Tripwire
+.
+com
+
+"
+Boldness
+has
+genius
+,
+power
+,
+and
+magic
+in
+it
+.
+"
+
+-
+Goethe
+
+James
+Buzek
+
+Enron
+Net
+Works
+
+713
+-
+345
+-
+3510
+
+Talk
+to
+you
+soon
+,
+
+Julie
+
+Thanks
+again
+,
+
+Kevin
+
+Hema
+Malini
+
+Hema
+@
+Izhuta
+.
+com
+
+Phone
+:
+1
+800
+485
+7004
+ext
+202
+
+http
+:
+/
+/
+www
+.
+Izhuta
+.
+com
+
+Rita
+
+Wendy
+Conwell
+
+Dave
+
+Sue
+
+Kelly
+M
+.
+Johnson
+
+Tel
+:
+713
+-
+853
+-
+6485
+
+Fax
+:
+713
+-
+853
+-
+2534
+
+E
+-
+Mail
+:
+kelly
+.
+johnson
+@
+enron
+.
+com
+
+David
+L
+.
+Belden
+
+Executive
+Director
+
+Mary
+James
+Legatski
+
+Government
+Relations
+Representative
+
+Best
+regards
+,
+
+Sato
+
+Enron
+Japan
+
+Julie
+Haviland
+
+Senior
+Registered
+Account
+Adminstrator
+
+Emery
+Financial
+Group
+of
+
+Regards
+,
+akp
+
+Regards
+,
+
+Frank
+
+Donna
+Wackerle
+
+Sr
+.
+Admin
+Asst
+.
+
+Compliance
+
+713
+-
+853
+-
+9755
+
+503
+-
+464
+-
+2663
+
+Lee
+,
+
+Look
+forward
+to
+receiving
+your
+email
+.
+
+Thanks
+again
+.
+
+Bridge
+Line
+Information
+
+Monica
+
+Ed
+Sacks
+
+Rick
+,
+
+I
+received
+this
+from
+Dawn
+Derr
+in
+Corporate
+Accounting
+.
+
+Cheers
+,
+
+Amy
+Schram
+
+Marketing
+Manager
+
+Subsurface
+Consultants
+&
+Associates
+
+2500
+Tanglewilde
+,
+Suite
+120
+
+Houston
+,
+Tx
+77063
+
+713
+.
+789
+.
+2444
+
+713
+.
+789
+.
+4449
+fax
+
+Cindy
+
+Harris
+713
+-
+368
+-
+2309
+
+Montgomery
+936
+-
+539
+-
+7843
+
+Waller
+979
+-
+826
+-
+7643
+
+Brazoria
+979
+-
+864
+-
+1320
+
+Fort
+Bend
+281
+-
+341
+-
+8670
+
+Liberty
+936
+-
+336
+-
+4629
+
+Chambers
+409
+-
+267
+-
+8301
+
+Galveston
+409
+-
+766
+-
+2280
+
+Monica
+Reasoner
+
+Karen
+Thiessen
+
+Program
+Manager
+&
+Senior
+Research
+Associate
+
+Business
+Research
+Group
+
+The
+Conference
+Board
+of
+Canada
+
+1
+-
+613
+-
+526
+-
+3090
+,
+ext
+.
+245
+
+thiessen
+@
+conferenceboard
+.
+ca
+
+Tori
+L
+.
+Wells
+
+Office
+of
+Ken
+Lay
+
+Chairman
+&
+CEO
+
+ENRON
+
+Joannie
+
+3
+-
+1769
+
+DP
+
+FINAL
+
+Doug
+
+Douglas
+A
+.
+Leyendecker
+
+Leyendecker
+&
+Associates
+
+713
+-
+862
+-
+3030
+
+http
+:
+/
+/
+www
+.
+leyendecker
+.
+com
+
+Ted
+
+PRELIMINARY
+
+Are
+you
+aware
+of
+this
+?
+
+Wanda
+
+Mark
+
+Time
+:
+6
+:
+00pm
+
+Place
+:
+Kenneally
+'
+s
+
+Carol
+North
+
+Don
+Rollins
+
+Enron
+Corporation
+
+Risk
+Assessment
+&
+Control
+
+713
+-
+853
+-
+9176
+
+Sally
+=
+20
+
+Rocky
+V
+.
+Emery
+
+Emery
+Financial
+Group
+
+of
+First
+Union
+Securities
+,
+Inc
+.
+
+713
+-
+853
+-
+2400
+
+Vince
+
+Vince
+Kaminski
+
+I
+will
+keep
+you
+advised
+.
+
+Robert
+
+Marcus
+
+Greg
+Piper
+
+Sally
+Beck
+
+Mark
+Pickering
+
+PARTICIPANTS
+:
+Lisa
+Mellencamp
+
+1
+-
+3769
+
+Jeffrey
+McMahon
+and
+Ray
+Bowen
+
+Thanks
+.
+Paula
+
+Please
+advise
+,
+
+Clare
+Fitzgerald
+
+marcus
+evans
+
+303
+E
+.
+Wacker
+Drive
+,
+20th
+Floor
+
+Chicago
+,
+IL
+60601
+
+Ph
+:
+312
+-
+540
+-
+3000x6785
+
+Fx
+:
+312
+-
+894
+-
+6390
+
+Ben
+
+Gordon
+
+Tracey
+Kozadinos
+
+Risk
+Assessment
+&
+Control
+-
+Reporting
+
+713
+.
+853
+.
+3446
+
+Maribel
+M
+Monterrey
+
+Donna
+Lowry
+
+Cheers
+loser
+,
+
+Gina
+Corteselli
+
+Dennis
+
+Molly
+
+Alice
+Wright
+
+Assistant
+to
+Elizabeth
+Sager
+
+1400
+Smith
+St
+.
+,
+EB3809A
+
+Houston
+,
+Texas
+77002
+
+Tel
+:
+713
+-
+853
+-
+5438
+
+Fax
+:
+713
+-
+646
+-
+3491
+
+alice
+.
+wright
+@
+enron
+.
+com
+
+See
+attached
+:
+
+No
+failures
+today
+.
+
+Maribel
+M
+Monterrey
+
+Office
+:
+(
+713
+)
+853
+-
+9048
+
+Fax
+:
+(
+713
+)
+853
+-
+9476
+
+Maribel
+.
+Monterrey
+@
+enron
+.
+com
+
+Rich
+Christiansen
+
+fyi
+,
+draft
+8
+-
+k
+below
+:
+
+Attendees
+:
+Rick
+Buy
+
+http
+:
+/
+/
+erv
+.
+corp
+.
+enron
+.
+com
+
+Terri
+Bachand
+
+Enron
+Global
+Finance
+
+(
+713
+)
+853
+-
+6528
+
+Thank
+you
+kindness
+and
+I
+look
+forward
+to
+hearing
+from
+you
+.
+
+Stephanie
+
+3
+-
+9283
+
+Please
+call
+if
+you
+have
+any
+questions
+.
+
+No
+Failures
+
+Rosie
+
+Valeria
+Hope
+-
+HR
+Rep
+(
+3
+-
+7573
+)
+
+Human
+Resources
+
+Becky
+Zikes
+
+(
+713
+)
+853
+-
+1843
+
+<
+<
+memo
+to
+Buy
+.
+doc
+>
+>
+
+Risk
+Waters
+Group
+
+28
+-
+29
+Haymarket
+
+London
+,
+UK
+
+SW1Y
+4RX
+
+Tel
+:
+00
+44
+(
+0
+)
+20
+7484
+9700
+
+Mailto
+:
+listadmin
+@
+riskwaters
+.
+com
+
+EDD
+
+0766576
+
+Jim
+Derrick
+
+Cristal
+Metz
+
+Executive
+Assistant
+,
+PGE
+
+503
+-
+464
+-
+8997
+
+cristal_metz
+@
+pgn
+.
+com
+
+Louise
+Kitchen
+
+Chief
+Operating
+Officer
+
+Enron
+Americas
+
+Tel
+:
+713
+853
+3488
+
+Fax
+:
+713
+646
+2308
+
+Harry
+Saul
+
+HAPPY
+NEW
+YEAR
+,
+
+Cheryl
+Hasan
+
+Coordinator
+,
+Member
+Recruitment
+
+Thanks
+and
+regards
+,
+
+joan
+
+Many
+thanks
+!
+!
+
+SAP
+Security
+(
+Eva
+)
+
+Thanks
+-
+
+John
+Suttle
+
+Thanks
+for
+your
+continued
+understanding
+.
+
+Rgds
+
+Manager
+,
+State
+Government
+Relations
+
+3
+-
+3831
+
+Executive
+Assistant
+to
+Jim
+Fallon
+
+Office
+of
+the
+Chairman
+
+Enron
+Broadband
+Services
+
+Fax
+713
+-
+345
+-
+7864
+
+Cell
+713
+-
+417
+-
+7802
+
+lucy
+.
+marshall
+@
+enron
+.
+com
+
+Handouts
+only
+.
+
+Best
+regards
+,
+
+Chip
+
+Happy
+New
+Year
+by
+the
+way
+.
+
+Dal
+Coger
+
+Principal
+
+Britt
+Davis
+
+Enron
+Litigation
+Unit
+
+3
+-
+6307
+
+Parking
+&
+Transportation
+Desk
+
+3
+-
+7060
+
+Shona
+Wilson
+
+Director
+,
+Global
+Risk
+Operations
+
+X39123
+
+Tsunami
+Partners
+
+Executive
+Search
+&
+Selection
+
+Ph
+#
+781
+-
+395
+-
+2981
+
+Ph
+#
+781
+-
+874
+-
+0527
+
+Cell
+781
+-
+718
+-
+8397
+
+Fax
+781
+-
+395
+-
+2719
+
+wireless
+email
+7817188397
+@
+msg
+.
+myvzw
+.
+com
+
+web
+site
+http
+:
+/
+/
+tsunamipartners
+.
+tripod
+.
+com
+
+Stig
+Faltinsen
+(
+UK
+)
+
+Kirstee
+Hewitt
+(
+UK
+)
+
+781
+-
+395
+-
+2981
+
+Kimm
+Cashiola
+
+Mariner
+Energy
+,
+Inc
+.
+
+Executive
+Assistant
+
+to
+VP
+Finance
+&
+Administration
+
+End
+User
+Support
+Help
+Desk
+
+(
+281
+)
+584
+-
+5571
+
+(
+281
+)
+584
+-
+5690
+Fax
+
+Bj
+?
+rn
+Hagelmann
+
+Director
+
+Rac
+-
+Market
+Risk
+Management
+
+E
+-
+Mail
+:
+bjorn
+.
+hagelmann
+@
+enron
+.
+com
+
+Office
+:
++
+1
+713
+345
+7984
+
+Trade
+Floor
+:
++
+1
+713
+345
+0338
+
+Mobil
+:
++
+1
+281
+451
+4156
+
+?
+Corp
+$
+68
+.
+9MM
+$
+60
+.
+7MM
+
+?
+Americas
+$
+46
+.
+5MM
+$
+39
+.
+6MM
+
+?
+Gas
+$
+17
+.
+6MM
+$
+23
+.
+8MM
+
+?
+Power
+$
+48
+.
+9MM
+$
+49
+.
+5MM
+
+?
+So
+.
+Cone
+Pwr
+$
+239K
+$
+239K
+
+?
+So
+.
+Cone
+Gas
+$
+63K
+$
+63K
+
+Liz
+Fricke
+
+Many
+thanks
+,
+
+Lucy
+
+Madeline
+
+Thank
+You
+,
+
+Yes
+,
+it
+is
+.
+
+Andrew
+
+Got
+it
+.
+It
+'
+s
+fine
+.
+
+Here
+'
+s
+the
+e
+-
+mail
+again
+.
+
+Kevin
+Garland
+
+The
+Sterling
+Group
+
+Eight
+Greenway
+Plaza
+
+Houston
+,
+Texas
+77046
+
+Work
+Phone
+:
+713
+-
+877
+-
+8257
+
+Cell
+Phone
+:
+713
+-
+598
+-
+1653
+
+kgarland
+@
+sterlinggrp
+.
+net
+
+Sheila
+Walton
+
+Stacey
+-
+power
+is
+ok
+too
+
+Tks
+
+looked
+harmless
+-
+I
+sent
+it
+
+Tammie
+Schoppe
+
+Enron
+Americas
+-
+Office
+of
+the
+Chair
+
+Assistant
+to
+Louise
+Kitchen
+
+713
+.
+853
+.
+4220
+office
+
+713
+.
+646
+.
+8562
+fax
+
+713
+.
+253
+.
+2131
+mobile
+
+http
+:
+/
+/
+www
+.
+kenron
+.
+net
+/
+
+Best
+regards
+
+Pam
+Butler
+
+Date
+:
+December
+11
+,
+2001
+
+Time
+:
+9
+:
+00
+AM
+CST
+
+Location
+:
+ECN
+5C2
+(
+old
+building
+)
+
+Laura
+Valencia
+
+Tel
+:
+713
+-
+853
+-
+6485
+
+Fax
+:
+713
+/
+853
+-
+2534
+
+Marcy
+Brinegar
+
+MBM
+Consultants
+
+(
+770
+)
+886
+-
+6202
+(
+Office
+)
+
+(
+678
+)
+234
+-
+7644
+(
+Cell
+)
+
+(
+770
+)
+886
+-
+8202
+(
+fax
+)
+
+brinconsult
+@
+aol
+.
+com
+
+mbmconsult
+@
+adelphia
+.
+net
+
+Sharon
+
+David
+
+Paul
+D
+.
+Flack
+
+Clements
+,
+O
+'
+Neill
+,
+Pierce
+,
+Nickens
+&
+Wilson
+,
+L
+.
+L
+.
+P
+.
+
+1000
+Louisiana
+,
+Suite
+1800
+
+Houston
+,
+Texas
+77002
+
+(
+713
+)
+654
+-
+7615
+
+(
+713
+)
+654
+-
+7690
+(
+fax
+)
+
+flack
+@
+copn
+.
+com
+
+Additional
+requests
+from
+UBS
+.
+
+Assets
+Dave
+Gorte
+/
+Michael
+Tribolet
+
+London
+Ted
+Murphy
+
+EES
+Jay
+Hachen
+
+Knock
+yourself
+out
+.
+
+web
+site
+<
+http
+:
+/
+/
+tsunamipartners
+.
+tripod
+.
+com
+/
+>
+
+LaMetrice
+Dopson
+
+Global
+Infrastructure
+-
+Senior
+Director
+
+Enron
+NetWorks
+
+(
+770
+)
+886
+-
+6202
+
+web
+site
+"
+http
+:
+/
+/
+tsunamipartners
+.
+tripod
+.
+com
+/
+"
+
+Shona
+
+Thanks
+for
+your
+help
+.
+
+Amy
+
+cell
+:
+713
+-
+859
+-
+6266
+
+send
+non
+-
+enron
+-
+email
+.
+
+Delainey
+
+Owner
+:
+Karen
+K
+Heathman
+
+Report
+Name
+:
+Brad
+Larson
+
+Days
+In
+Mgr
+.
+Queue
+:
+7
+
+Love
+,
+
+Kind
+regards
+,
+
+Urs
+Widmer
+
+UBS
+Warburg
+
+Sharon
+
+Karen
+
+Sr
+.
+Director
+
+RAC
+Compliance
+
+(
+713
+)
+853
+-
+1939
+
+(
+713
+)
+646
+-
+4039
+fax
+
+dp
+
+Doug
+
+Paula
+
+Rob
+Walls
+John
+Ale
+
+x6
+-
+6017
+x5
+-
+5263
+
+Cell
+(
+713
+)
+562
+-
+7572
+Cell
+(
+713
+)
+305
+-
+8263
+
+cc
+:
+Jim
+Derrick
+,
+Lance
+Schuler
+
+Greg
+
+Thanks
+so
+much
+for
+your
+help
+!
+
+Kortney
+Brown
+
+x30616
+
+Imelda
+:
+
+Bel
+Gas
+Phy
+Option
+product
+customer
+profile
+list
+approved
+from
+credit
+.
+
+Gabriel
+
+Thanks
+-
+Janet
+&
+Dan
+
+Michelle
+Wenz
+
+713
+-
+853
+-
+0920
+
+michelle
+.
+wenz
+@
+enron
+.
+com
+
+Sheila
+
+Tina
+Spiller
+
+Assistant
+to
+Greg
+Piper
+
+President
+&
+CEO
+
+Enron
+Net
+Works
+LLC
+
+Phone
+713
+.
+853
+.
+5746
+
+Fax
+713
+.
+646
+.
+8070
+
+Rick
+Carson
+
+Hard
+Copy
+:
+
+Wanda
+Curry
+
+Lori
+Pinder
+
+Supervisor
+,
+Corporate
+Services
+
+and
+Assistant
+Secretary
+
+1400
+Smith
+St
+.
+,
+Room
+4922
+
+713
+.
+853
+.
+6099
+
+Melissa
+Magley
+
+Days
+In
+Mgr
+.
+Queue
+:
+6
+
+Ray
+
+Ted
+and
+acquantances
+
+Chrissy
+Grove
+
+Network
+Security
+
+713
+.
+345
+.
+8269
+
+Andrew
+Gibbins
+
+Enron
+Contract
+Management
+
+Enron
+House
+,
+40
+Grosvenor
+Place
+
+London
+SW1X
+7EN
+
+Tel
+:
++
+44
+(
+0
+)
+20
+7783
+4711
+
+Fax
+:
++
+44
+(
+0
+)
+20
+7783
+9240
+
+Scott
+Marra
+
+Administrator
+for
+Policy
+and
+Media
+Relations
+
+International
+Swaps
+and
+Derivatives
+Association
+
+600
+Fifth
+Avenue
+
+Rockefeller
+Center
+-
+27th
+floor
+
+New
+York
+,
+NY
+10020
+
+Phone
+:
+(
+212
+)
+332
+-
+2578
+
+Fax
+:
+(
+212
+)
+332
+-
+1212
+
+Email
+:
+smarra
+@
+isda
+.
+org
+
+Kelly
+Boots
+
+Thanks
+-
+Dan
+
+kcashiola
+@
+mariner
+-
+energy
+.
+com
+<
+mailto
+:
+kcashiola
+@
+mariner
+-
+energy
+.
+com
+>
+
+Marion
+Sczykutowicz
+
+marion
+.
+sczykutowicz
+@
+enron
+.
+com
+
+713
+/
+853
+-
+5331
+
+713
+/
+646
+-
+8517
+(
+Fax
+)
+
+Ankush
+
+Steven
+
+cell
+713
+305
+4883
+
+Kelly
+
+Cindy
+Hudler
+
+Risk
+Assessment
+&
+Control
+-
+Underwriting
+
+1400
+Smith
+St
+.
+
+Houston
+,
+Tx
+77002
+-
+7361
+
+P
+:
+713
+.
+853
+.
+6944
+
+F
+:
+713
+.
+646
+.
+3601
+
+E
+:
+cindy
+.
+hudler
+@
+enron
+.
+com
+
+Cassandra
+=
+20
+
+Stay
+Safe
+
+Bill
+Reid
+
+CEO
+-
+netR
+&
+M
+
+(
+972
+)
+814
+-
+4678
+
+www
+.
+netr
+-
+m
+.
+com
+
+Terri
+
+x33565
+
+Not
+sure
+what
+to
+make
+of
+it
+.
+Any
+input
+would
+be
+appreciated
+
+Hang
+in
+there
+.
+
+Done
+.
+
+karl
+
+Samantha
+Davidson
+
+357
+N
+Post
+Oak
+Ln
+#
+113
+
+Houston
+,
+TX
+77024
+
+(
+713
+)
+853
+-
+4294
+Work
+
+(
+713
+)
+680
+-
+8898
+Home
+
+(
+713
+)
+907
+-
+4678
+Mobile
+
+texastaryn
+@
+netscape
+.
+net
+
+Here
+it
+is
+
+Lea
+Savala
+
+Herbert
+S
+.
+Winokur
+,
+Jr
+.
+
+Capricorn
+Management
+,
+G
+.
+P
+.
+
+203
+-
+861
+-
+6600
+
+203
+-
+861
+-
+6671
+(
+fax
+)
+
+Sincerely
+yours
+,
+
+Yoram
+Dankner
+
+Naveen
+Andrews
+(
+58668
+)
+.
+
+jeff
+
+Ravi
+Thuraisingham
+,
+CFA
+
+Director
+,
+Storage
+Trading
+,
+
+EBS
+Global
+Wholesale
+Markets
+
+713
+-
+853
+-
+3057
+desk
+
+713
+-
+516
+-
+5440
+cell
+
+Peter
+Antoniadis
+
+416
+-
+217
+-
+4166
+
+Travis
+C
+.
+McCullough
+
+Enron
+North
+America
+Corp
+.
+
+1400
+Smith
+Street
+EB
+3882A
+
+Houston
+,
+Texas
+77002
+
+Phone
+:
+(
+713
+)
+853
+-
+1575
+
+Fax
+:
+(
+713
+)
+646
+-
+3393
+/
+3490
+
+Joni
+Fisher
+
+Billy
+
+Distribution
+:
+
+Executive
+Committee
+
+Policy
+Committee
+
+A
+&
+A
+Committee
+(
+Western
+only
+)
+
+Recruiting
+Executive
+Leads
+
+Cassandra
+
+(
+and
+Scott
+Vonderheide
+)
+
+(
+no
+change
+from
+yesterday
+)
+
+GP
+
+Rebecca
+Skupin
+
+Enron
+Media
+Services
+
+713
+-
+853
+-
+3314
+
+Rob
+
+Rob
+Brown
+
+Manager
+,
+Enron
+Corp
+.
+
+Financial
+Accounting
+&
+Reporting
+
+Off
+.
+713
+.
+853
+.
+9702
+
+Cell
+713
+.
+303
+.
+4497
+
+rob
+.
+brown
+@
+enron
+.
+com
+
+Days
+In
+Mgr
+.
+Queue
+:
+5
+
+Vlady
+.
+
+Chip
+Schneider
+
+713
+-
+853
+-
+1789
+
+3AC
+1418
+
+No
+Failures
+today
+.
+
+Sherron
+S
+.
+Watkins
+
+Vice
+President
+,
+Enron
+Corp
+.
+
+713
+-
+345
+-
+8799
+office
+
+713
+-
+416
+-
+0620
+cell
+
+VaR
+
+Jeffrey
+McMahon
+
+Tracy
+
+503
+-
+464
+-
+8755
+
+Bill
+Dorsey
+.
+
+Wendy
+
+x30699
+
+Susan
+
+Janette
+Elbertson
+
+Administrative
+Coordinator
+
+Enron
+Wholesale
+Services
+
+Legal
+Department
+
+Telephone
+:
+(
+713
+)
+853
+-
+7906
+
+Fax
+:
+(
+713
+)
+646
+-
+2600
+
+e
+-
+mail
+:
+janette
+.
+elbertson
+@
+enron
+.
+com
+
+KG
+
+1400
+Smith
+Street
+EB
+824
+
+Fax
+:
+(
+713
+)
+646
+-
+8860
+
+Chris
+Abel
+
+Manager
+
+Global
+Risk
+Controls
+
+Donna
+M
+.
+Cagle
+
+Executive
+Administrator
+to
+President
+&
+CEO
+
+580
+WestLake
+Park
+Blvd
+.
+,
+Suite
+1300
+
+Houston
+,
+TX
+77079
+
+281
+/
+584
+-
+5511
+(
+phone
+)
+281
+/
+584
+-
+5515
+(
+fax
+)
+
+dcagle
+@
+mariner
+-
+energy
+.
+com
+
+Thanks
+,
+Mariella
+
+Daily
+Loss
+
+Aparna
+Rajaram
+
+Ph
+:
+(
+713
+)
+345
+-
+4563
+
+Aparna
+.
+Rajaram
+@
+enron
+.
+com
+
+With
+Best
+Regards
+,
+
+Rohel
+Mahmud
+
+Account
+Manager
+
+Zaconta
+
+Tel
+#
+248
+351
+0015
+ext
+.
+313
+
+Fax
+#
+248
+351
+5627
+
+email
+:
+rohelm
+@
+zaconta
+.
+com
+
+website
+:
+www
+.
+zaconta
+.
+com
+
+Alix
+Gage
+
+Email
+:
+
+Days
+In
+Mgr
+.
+Queue
+:
+4
+
+Any
+thoughts
+?
+
+Jo
+
+Jim
+Lobdell
+
+Vice
+President
+
+Risk
+Management
+,
+Reporting
+,
+Controls
+&
+Credit
+
+Portland
+General
+Electric
+
+(
+503
+)
+464
+-
+2723
+
+Rodney
+
+Cindy
+Stark
+
+Executive
+Assistant
+to
+Stan
+Horton
+
+Tel
+:
+713
+/
+853
+-
+6197
+
+Fax
+:
+713
+/
+345
+-
+7047
+
+Cindy
+.
+Stark
+@
+enron
+.
+com
+
+Rgds
+,
+
+(
+713
+)
+345
+-
+7712
+
+Geoff
+Kates
+
+Thank
+You
+,
+
+Hank
+Emery
+
+An
+SPE
+Gulf
+Coast
+Section
+
+Business
+&
+Technology
+Workshop
+
+Final
+Violation
+Memos
+
+RSVP
+to
+joy
+.
+wagman
+@
+enron
+.
+com
+
+Limited
+spaces
+are
+available
+.
+
+Thomas
+Severance
+
+Director
+North
+American
+Sales
+
+<
+http
+:
+/
+/
+www
+.
+algorithmics
+.
+com
+/
+>
+
+The
+Woodlands
+Resort
+&
+Conference
+Center
+
+2301
+N
+.
+Millbend
+Drive
+
+The
+Woodlands
+,
+TX
+77380
+
+Phone
+:
+281
+-
+367
+-
+1100
+
+Fax
+:
+281
+-
+364
+-
+6299
+
+3
+-
+1879
+
+Atos
+Origin
+
+Kind
+regards
+.
+
+Prameesh
+Barlota
+
+Tel
+:
+513
+-
+985
+1421
+Fax
+:
+513
+-
+793
+5062
+Mobile
+:
+513
+-
+314
+7075
+
+Ken
+
+MRP
+
+Rick
+C
+.
+
+Max
+Sonnonstine
+
+x5
+-
+8261
+
+Kortney
+
+Dale
+Schuett
+
+Senior
+Account
+Executive
+
+WhiteLight
+Systems
+
+(
+925
+)
+462
+-
+2497
+Office
+
+dale
+@
+whitelight
+.
+com
+<
+<
+Bank
+Technology
+News_Dresdner
+.
+htm
+>
+>
+
+www
+.
+whitelight
+,
+com
+
+Thanks
+,
+
+Thanks
+for
+your
+help
+!
+
+Agenda
+:
+
+8
+:
+30
+-
+8
+:
+50
+:
+Daily
+officialization
+status
+
+8
+:
+50
+-
+9
+:
+30
+:
+
+Please
+call
+w
+/
+any
+questions
+.
+
+Let
+'
+s
+discuss
+in
+the
+coming
+weeks
+.
+
+Like
+it
+
+Shirley
+Cox
+
+Assistant
+to
+Sheila
+Walton
+
+51721
+

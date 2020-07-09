@@ -41,10 +41,10 @@ from tensorflow.lite.experimental.examples.lstm.rnn import bidirectional_dynamic
 
 class TrainingConfig(object):
     # change the epochs.
-    epoches = 10
+    epoches = 4
     evaluateEvery = 100
     checkpointEvery = 100
-    learningRate = 0.001
+    learningRate = 0.01
 
 
 class ModelConfig(object):
@@ -73,11 +73,11 @@ class ModelConfig(object):
     embeddingSize = 50
 
     # embeddings
-    dim_word = 25
-    dim_char = 50
+    dim_word = 50
+    dim_char = 100
     # model hyperparameters
     hidden_size_lstm = 50  # lstm on word embeddings
-    hidden_size_char = 50  # lstm on chars
+    hidden_size_char = 100  # lstm on chars
 
 
 class Config(object):
@@ -92,7 +92,7 @@ class Config(object):
 
     stopWordSource = "../data/english"
 
-    numClasses = 5  # 二分类设置为1，多分类设置为类别的数目
+    numClasses = 4  # 二分类设置为1，多分类设置为类别的数目
 
     rate = 0.8  # 训练集的比例
 

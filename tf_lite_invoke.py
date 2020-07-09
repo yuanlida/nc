@@ -5,15 +5,15 @@ import build_data
 import numpy as np
 
 # copy this files to ./model/ folder.
-# tf_lite_file = './model/Bi-LSTM/bi-lstm.tflite'
-# char2index_file = './model/Bi-LSTM/charJson/charToIndex.json'
-# word2id_file = './model/Bi-LSTM/wordJson/word2idx.json'
-# label2id_file = './model/Bi-LSTM/wordJson/label2idx.json'
+tf_lite_file = './model/Bi-LSTM/bi-lstm.tflite'
+char2index_file = './model/Bi-LSTM/charJson/charToIndex.json'
+word2id_file = './model/Bi-LSTM/wordJson/word2idx.json'
+label2id_file = './model/Bi-LSTM/wordJson/label2idx.json'
 
-tf_lite_file = './bilstm_onefile23/bi-lstm.tflite'
-char2index_file = './bilstm_onefile23/charJson/charToIndex.json'
-word2id_file = './bilstm_onefile23/wordJson/word2idx.json'
-label2id_file = './bilstm_onefile23/wordJson/label2idx.json'
+# tf_lite_file = './bilstm_onefile23/bi-lstm.tflite'
+# char2index_file = './bilstm_onefile23/charJson/charToIndex.json'
+# word2id_file = './bilstm_onefile23/wordJson/word2idx.json'
+# label2id_file = './bilstm_onefile23/wordJson/label2idx.json'
 
 def test_lite_is_useful():
     interpreter = tf.lite.Interpreter(model_path=tf_lite_file)
@@ -63,7 +63,7 @@ class TFLiteModel(object):
     sentence_words = []
     sentence_chars = []
 
-    sequenceLength = 32
+    sequenceLength = 20
     word_length = 10
 
     def __init__(self, sentence):
@@ -678,48 +678,103 @@ if __name__ == '__main__':
         'VictoryPlus',
         'Allison James Estates and Homes',
 
+
     ]
-    body = """Reed Piernock (they/them)
-Senior Web Front-end Developer, Web Services
-Graduate Student in Communication, Culture & Technology
-Email // reed.piernock
-Phone // 202-687-1183
-Text // 202-630-4865
-David Hughes
-Hughes Publishing, LLC
-Triangle Parent Media Group
-919.594.6600
-Thanks,
-Arun Singh
-SharePoint Development & Support | AON -&nbsp;NA Retail
-TATA Consultancy Services
-Delhi-Gurgaon Expressway | SKYVIEW Corporate Park | Sector 74A | Gurgaon | Haryana 122004 | India
-Cell:+91 9560027616 | Email: arun.singh1@aon.com
-Thanks,
+#     body = """480 San Antonio Rd., Suite 115
+# Mountain View, CA 94040"""
+#
+    
+
+    body = """(BRIAN) HEXTER
+Ron Ben-Zeev
+marjorie lau
+Jeetender Chugh (जितेन्द्र चुघ)
+Donato 
+Christian
+Lonny Cloud
+Peter Barquet
+dawn shrum
+Nilesh Sapar
+Scott Konradt
+Francisco Garcia
 Hanan Ben-Avi
-972-52-621-3339
-ben@billsys.com
---
-Keao Caindec
-415-307-7324
-kcaindec@gmail.com
-Reguts
-Amarnath
-984131256
-All the Best,
-Don Taylor
-Call/text 303-548-9475
-Tdmgc4@msn.com
-"""
-#     body = """Reed Piernock
-# David Hughes
-#
-#
-# Arun Singh
-# Hanan Ben-Avi
-# Keao Caindec
-# Amarnath
-# Don Taylor"""
+～～～～～～～"""
+    body = """DAEL OATES
+Harald  Albrecht
+KOWITZ
+Julie Kowitz Margolies
+FLAMINIANO Ronald Jonn Villamil
+Evan de Barra AKA Karl
+Rob Record
+Alexander
+Tolivar Wills
+Joseph Kelly
+L.J. Santillan
+Doug Swift
+elina scorey
+CHASSEN HAYNES
+Morris (Moe) Vervaecke
+CHRIS LLOYD
+San Jose, CA 95129
+San Jose CA 95129
+Los Gatos CA 95032
+1559 Union Ave. Suite # 142
+twitter
+Sampler
+1385 S. Colorado Blvd.
+SN-23 Rahul Street,Pune
+Suite A-220
+Denver, CO 80222
+15, S.C Dey Street
+Vidyasagar Tower
+Kolkata - 700073
+"1 Fusionopolis Place
+Level #03-20
+Galaxis West Lobby
+Singapore 138522
+To manage your subscription preferences, login to your Sampler account
+To manage your subscription preferences,
+login to your Sampler account
+Change Password, Didn't request this change?
+Take care,
+Have questions, suggestions, or feedback? Drop us a line at feedback@topinetworks.com
+Manage notifications , Give feedback . Privacy policy
+Forgot Password
+Today's topic summary, I apologise,the alg obviously stops when
+2225C Patrick F. Taylor Hall
+Baton Rouge, LA    70803
+12th Floor, Tower-B, SAS Tower, Medicity, Sector-38 Gurgaon -    122001GuruGram   -     122001
+Flight Department
+Owner  &  Operator
+ATTORNEY AT LAW
+Associate Dean for Academic Affairs
+Asst. Manager - Medico Marketing
+Make it happen in your career"""
+
+    body = """Middle Schoool Track & Field Head Coach
+High School Soccer Asst. Coach
+IT Support
+Rob Record
+Carla Roppo-Owczarek
+& Systems
+admin
+Lisa white
+IT Support
+Ian Hamilton
+Comercial strategy office
+wildmoor
+Responsable Ventes Partenaires
+Sr. Systems Engineer / Technology
+Managing Director, Estates Division
+(BRIAN) HEXTER
+Jordan McDonald
+PO Box 7193
+Gujarat, INDIA
+Legal, financial, technical translations
+Senior Engineer - Projects & Services
+Chargé de projets """
+
+
     xs = body.split('\n')
     lite_model = TFLiteModel(None)
 
