@@ -29,6 +29,7 @@
 - lr=0.01
 - W,c = 50,100
 - Hw,hc = 50,100
+
 ![m76](https://github.com/yuanlida/nc/blob/master/performance/m76.png)
 
 -----------------
@@ -131,6 +132,7 @@
 - W,c =  50,100
 - Hw, hc = 50,100
 - Dev/ valida/nction set done in training 
+
 ![m70](https://github.com/yuanlida/nc/blob/master/performance/m70.png)
 
 
@@ -158,4 +160,5 @@
 - W,c = 100,70
 - Hw,hc = 100,70
 - Score: 10
+
 ![m78](https://github.com/yuanlida/nc/blob/master/performance/m78.png)
