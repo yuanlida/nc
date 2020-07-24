@@ -29,15 +29,15 @@
 - lr=0.01
 - W,c = 50,100
 - Hw,hc = 50,100
-![m76](https://github.com/freshiefrey/edison-projects/blob/master/nc/performance/m76.png)
+![m76](https://github.com/yuanlida/nc/blob/master/performance/m76.png)
 
 -----------------
 
 ## Older Versions
-![m10-11](https://github.com/freshiefrey/edison-projects/blob/master/nc/performance/m10-11.png)
+![m10-11](https://github.com/yuanlida/nc/blob/master/performance/m10-11.png)
 
 
-![m1-9](https://github.com/freshiefrey/edison-projects/blob/master/nc/performance/m1-9.png)
+![m1-9](https://github.com/yuanlida/nc/blob/master/performance/m1-9.png)
 
 ### M22:
 - ADDED QA
@@ -130,8 +130,8 @@
 - Embedding = 50
 - W,c =  50,100
 - Hw, hc = 50,100
-- Dev/ validation set done in training 
-![m70](https://github.com/freshiefrey/edison-projects/blob/master/nc/performance/m70.png)
+- Dev/ valida/nction set done in training 
+![m70](https://github.com/yuanlida/nc/blob/master/performance/m70.png)
 
 
 ### M71
@@ -158,4 +158,4 @@
 - W,c = 100,70
 - Hw,hc = 100,70
 - Score: 10
-![m78](https://github.com/freshiefrey/edison-projects/blob/master/nc/performance/m78.png)
+![m78](https://github.com/yuanlida/nc/blob/master/performance/m78.png)

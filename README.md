@@ -177,7 +177,7 @@ sh clean.sh
 
 ### Process
 **Data Augmentation, generation, sorting:**
-[process_data/jeff_work](https://github.com/freshiefrey/edison-projects/tree/master/nc/process_data/jeff_work)
+[process_data/jeff_work](https://github.com/yuanlida/nc/tree/master/process_data/jeff_work)
 
 ### Dataset
 - [x] TIT: 
@@ -212,7 +212,7 @@ sh clean.sh
     - [Baby names, USA names](https://drive.google.com/drive/folders/1gFa_LGndIC0qPp-1ICt1aKNnyCtvcsB6?usp=sharing)
 
 ## Model Evaluation Comparisons
-View ![Performance](https://github.com/freshiefrey/edison-projects/blob/master/nc/performance)
+View ![Performance](https://github.com/yuanlida/nc/blob/master/nc/performance)
 
 
 ## List of edge-cases / wrongly classified
